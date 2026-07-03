@@ -1,0 +1,12 @@
+O que são as representação de dados
+
+Computador é um eletrônico  e como todos os eletrônicos ele representa com sinais 0 e 1 , eles são digitos binários (bits), isso serve para qualquer eletrônico 
+e o 0 e 1 não da para representar tudo pois fica muito ilimitado, por isso eles reunem uma sequencia de 0 e 1. Um conjunto de 8 bits (0100001) 
+e chamos de Bytes, 1 Byte é uma sequencia minima que pode representar uma informação, exemplo: 01000001 representa a letra A,. Então quando você 
+digita a letra A o computador entende essa sequêcia de bytes, para saber mais informações basta pesquisar “código multibyte UTF-8”. Quando vc pega uma 
+sequêcia de bits grande temos um multiplo de bytes, exemplo 1024 bytes = 1 KB
+1024 KB = 1 MB
+1024 MB = 1 GB
+1024 GB = 1TB
+ainda tem mais do que essas informações. temos diferença nas siglas, exemplo: MB é diferente de Mb, pos MB (MEGABYTES) e Mb (MEGABITS), 
+MB usamos para se referir a armazenamento e o Mb usamos para se referir a transmissão.
