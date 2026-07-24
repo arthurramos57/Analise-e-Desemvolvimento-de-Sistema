@@ -1,0 +1,6 @@
+Como as pessoas vão ver o site
+
+Os arquivos HTML e CSS ficam guardado no servidor, quando você a URL(endenreço) sabemos que o servidor ele tem um nome (URL) e um número,
+quando você faz a pesquisa ela é feita pelo servidor DNS. Nisso o DNS vai pesquisar e te retornar o número do servidor e você vai ter acesso 
+ao HTML e CSS. Quando o HTML e CSS estiver guardado no PC nenhuma pessoa consegue acessar o site, pois o seu site esta no PC, mas não está no DNS e 
+por isso seu HTML e CSS não está em um servidor.
