@@ -1,0 +1,46 @@
+<code>: utilizamos quando vamos escrever algum codigo-fonte no site e quermeos deixar a fonte, espaçamento e tamanho da letra tudo igual no codigo fonte escrito no site
+<pre>: essa tag ja adiciona espaçamento e quebra de linha em um texto
+<q>: utilizamos quando vamos colocar uma citação em nosso site
+<blockquote>: utilizamos para escrever uma citação completa no nosso site
+<abbr>: utilizamos para colocar o significado para as palavras que colocamos abreviada em nosso site
+<bdo dir="rtl"></bdo>: utilizamos para deixar o texto invertido
+<bdo dir="ltr"></bdo>: utilizamos para deixar o texto normal
+
+Exemplo:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outras Formatações</title>
+</head>
+<body>
+    <h1>Outras Formatações</h1>
+    <h2>Código-Fonte / Pré-Formataçao</h2>
+    <p>O comando <code>document.getElementByld('test')</code> é escrito em linguagem em javascript</p>
+    <pre>
+        <code>
+    num = int(input('Digite um número'))
+    if num % 2 ==0:
+        print(f'0 número {num} é PAR')
+    else:
+        print(f'0 numero {num} é IMPAR')
+    print(Fim do programa')    
+    </code>
+</pre>
+    <h2>Citações</h2>
+    <p>Como diria um pai de um amiogo: <q>o computador é um burro muito rápido.</q></p>
+    <h2>Citação Completa</h2>
+    <p>Segundo a Eleanor, em seu livro</p>
+    <blockquote cite="https://umanerdliteraria.blogspot.com/">
+        Era muito raro encontrar alguém assim, ele pensava. Alguém para amar para sempre; alguém que também o amaria para sempre.
+    </blockquote>
+    <h2>Abreviações</h2>
+    <p>Estou estudando <abbr title="HyperTextMarkupLanguage">HTML</abbr> e <abbr title="CascadingStyleSheets">CSS</abbr>. Estou adorando!</p>
+    <h2>Texto Invertido</h2>
+    <p> <bdo dir="rtl">Estou aprendendo a criar coisas em HTML</bdo></p>
+    <h2>Texto normal</h2>
+    <p> <bdo dir="ltr">Estou aprendendo a criar coisas em HTML</bdo></p>
+</body>
+</html>
