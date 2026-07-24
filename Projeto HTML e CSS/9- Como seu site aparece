@@ -4,3 +4,31 @@ Os arquivos HTML e CSS ficam guardado no servidor, quando você a URL(endenreço
 quando você faz a pesquisa ela é feita pelo servidor DNS. Nisso o DNS vai pesquisar e te retornar o número do servidor e você vai ter acesso 
 ao HTML e CSS. Quando o HTML e CSS estiver guardado no PC nenhuma pessoa consegue acessar o site, pois o seu site esta no PC, mas não está no DNS e 
 por isso seu HTML e CSS não está em um servidor.
+
+Só funciona se estiver no servidor
+
+Para você ter acesso ao DNS você precisa ter um domínio para que ele possa dar um endereço(URL) para as pessoas conseguir pesquisar seu site. 
+Outra coisa que você precisa é uma Hospedagem para você conseguir guardar os arquivos do seu site em um servidor.
+
+Domínio: Nome que identifica seu site, nome único, pago anualmente e vários TLDs (.com, .store e tc),
+GTLD (.gov, .edu e etc) e os CCTLD (.com.br, .com.us e etc).
+
+Hospedagem: Local aonde seu site vai estar armazenado, espaço para armazenar arquivo, pago mensalmente e tem espaço, memória e recursos.
+
+URL: é um localizador de recurso único, é um endereço que só leva a rota há um único site, por isso URL são únicas. 
+
+Exemplo
+
+www.instagram.com/homenaranha
+
+esse endereço todo, chamamos de URL.
+
+instagram.com: esse é um domínio.
+
+instagram: nome do domínio.
+
+.com: é o TLD.
+
+www: subdomínio.
+
+/homemaranha: é um caminho.
