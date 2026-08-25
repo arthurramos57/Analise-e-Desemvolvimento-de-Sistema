@@ -1,0 +1,24 @@
+O que são HTML 
+
+HTML (HyperText Markup Language) é uma linguagem de marcação usada para criar e organizar o conteúdo de páginas da internet. 
+Ela define elementos como títulos, textos, imagens, links, tabelas e vídeos. O navegador, como Chrome, Edge, Firefox ou Safari, 
+interpreta o código HTML e transforma essas informações na página que vemos na tela. O HTML trabalha com o conceito de hipertexto, 
+que permite conectar diferentes conteúdos por meio de links. Assim, uma página pode levar o usuário para outra página, imagem, 
+vídeo ou documento.
+
+O HTML surgiu a partir do trabalho de Tim Berners-Lee, no CERN, com o objetivo de facilitar o compartilhamento de informações e documentos entre pesquisadores. Com 
+o passar dos anos, o HTML foi evoluindo. A versão que estudamos atualmente é conhecida como HTML5, que trouxe novos elementos e recursos para 
+a criação de sites modernos.O desenvolvimento do HTML envolve organizações como a W3C e a WHATWG, responsáveis pela definição e evolução dos 
+padrões da linguagem.
+
+O que são CSS
+
+CSS (Cascading Style Sheets) é uma linguagem utilizada para definir a aparência de uma página HTML. Enquanto o HTML cuida principalmente da estrutura e 
+do conteúdo, o CSS cuida da aparência e apresentação.
+
+Por exemplo:
+HTML: cria um título, um parágrafo ou uma imagem.
+CSS: define a cor, tamanho, posição, fonte, espaçamento e outros aspectos visuais desses elementos.
+
+Antes do CSS, a aparência dos elementos era configurada diretamente no HTML, o que tornava a manutenção de sites grandes muito mais trabalhosa. Com o CSS, podemos 
+colocar as regras de aparência em um único arquivo e aplicá-las a várias páginas.
