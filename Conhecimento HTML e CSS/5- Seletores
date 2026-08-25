@@ -1,0 +1,50 @@
+Seletores ID e Class
+
+ID
+O ID serve para identificar um elemento de forma única.
+
+No CSS usamos #:
+#titulo {
+    color: blue;
+}
+No HTML:
+<h1 id="titulo">Olá!</h1>
+O material destaca que uma determinada id deve ser utilizada apenas uma vez no documento.
+
+Regras importantes para nomes de ID:
+não usar espaços;
+evitar acentos e caracteres especiais;
+diferencia maiúsculas de minúsculas.
+
+Classes
+
+A principal diferença entre ID e classe é:
+ID = identificação única
+Classe = pode ser reutilizada
+
+No CSS, uma classe começa com .:
+.azul {
+    color: blue;
+}
+No HTML:
+<p class="azul">Texto azul</p>
+<p class="azul">Outro texto azul</p>
+
+A mesma classe pode ser aplicada a vários elementos.
+Também é possível colocar mais de uma classe no mesmo elemento.
+
+Combinando seletores
+Podemos combinar seletores para atingir elementos mais específicos.
+
+Exemplo:
+p.destaque {
+    color: red;
+}
+
+Seleciona apenas <p> que possuem a classe destaque.
+
+Outro:
+#conteudo p.destaque strong {
+    color: blue;
+}
+Seleciona elementos <strong> dentro de parágrafos com a classe destaque, que estejam dentro do elemento com ID conteudo.
