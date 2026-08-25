@@ -1,0 +1,162 @@
+Sintex e Estrutura de uma pagina HTML
+
+O HTML utiliza tags para identificar e organizar os diferentes tipos de conteúdo de uma página. Elas normalmente ficam entre < e > e indicam ao navegador 
+onde um elemento começa e termina.
+
+Exemplo
+
+<p> Meu Texto</p>
+
+<p>: Minha tag de abertura
+Meu Texto: Conteudo 
+</p>: Minha tag de fechamento
+
+Algumas tags não precisam de fechamento, como <br>, utilizada para fazer uma quebra de linha.
+IMPORTANTE: HTML não é uma linguagem de programação. É uma linguagem de marcação, utilizada para definir a estrutura do conteúdo de uma página.
+
+Atributos
+
+Os atributos servem para fornecer informações adicionais a uma tag. Eles são colocados normalmente na tag de abertura.
+
+Exemplo
+
+<p style="color:blue;">Meu Texto</p>
+
+<p>: Essa é a tag
+style: Atributo
+color:blue; : É o valor do atributo
+
+Estrutura básica do HTML
+
+Uma página HTML possui uma estrutura organizada. As principais partes são:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Meu título</h1>
+    <p>Meu primeiro parágrafo.</p>
+</body>
+
+</html>
+
+<!DOCTYPE html>: Informa ao navegador que o documento utiliza HTML5. Deve ser a primeira instrução do documento.
+<html>: É a raiz do documento e envolve todo o código HTML.
+lang="pt-br": Informa que o conteúdo está em português do Brasil. Isso ajuda navegadores, buscadores e leitores de tela a interpretar corretamente o idioma.
+<head>: Contém informações sobre a página que não são, em geral, o conteúdo principal mostrado ao usuário.
+<title>: Define o título que aparece na aba do navegador e também pode ser utilizado pelos mecanismos de busca.
+<body>: Contém o conteúdo que será apresentado ao usuário, como textos, imagens, vídeos, áudios etc.
+
+UTF-8
+
+A tag:
+<meta charset="utf-8">
+define a codificação dos caracteres. Ela permite que o navegador interprete corretamente caracteres como á, é, ç, ã e outros símbolos.
+
+Títulos: <h1> até <h6>
+
+As tags <h1> até <h6> são utilizadas para criar títulos e subtítulos.
+
+A hierarquia é:
+<h1>: Título principal
+<h2>: Subtítulo
+<h3>: Nível seguinte
+<h4>: Médio nível
+<h5>: Menor nível
+<h6>: Menor nível
+
+O <h1> representa o maior nível de destaque e o <h6>, o menor.
+
+Parágrafos: <p>
+
+A tag <p> é utilizada para criar parágrafos de texto.
+
+<p>Este é um parágrafo.</p>
+
+Ela ajuda a organizar o texto em diferentes blocos, deixando o conteúdo mais estruturado.
+
+Comentários
+Os comentários servem para colocar anotações dentro do código sem que elas apareçam na página.
+
+São escritos assim:
+<!-- Este é um comentário -->
+
+Eles são úteis para explicar o código e facilitar sua manutenção no futuro.
+
+EXERCÍCIOS
+
+Título
+
+<!DOCTYPE html>
+<html lang="pt-br"> <!--colocar o conteudo do site em protugues brasil-->
+<head>
+    <meta charset="UTF-8"> <!--usado para não ter problema com acentuação-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo</title>
+</head>
+<body>
+    <h1>Esse é o cabeçalho</h1>
+    <p>esse é um paragrafo</p>
+    <p>esse é outro paragrafo</p>
+</body>
+</html>
+
+Diferença Entre <h1> e <h6>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferença de h1 a h6</title>
+</head>
+<body>
+    <h1>maior de todos</h1>
+    <h2>o tamanho meio termo</h2>
+    <h3>o tamanho meio termo</h3>
+    <h4>o tamanho meio termo</h4>
+    <h5>tamanho meio termo</h5>
+    <h6>menor de todos</h6>
+</body>
+</html>
+
+Primeiro Código
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esse é meu primeiro codigo criado na faculdade</title>
+</head>
+<body>
+    <h1>Olá Mundo</h1>
+<p>Sejam Bem-vindos ao meu primeiro codigo html na faculdade, 
+estou muito animado com essa minha nova trajetoria.</p>
+
+<p> programação é uma area muito facil de aprender quando 
+você tem uma rotina de estudos teoricos e estudo pratico.</p>
+</body>
+</html>
+
+Colocar Comentário
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo a Colocar comentários</title>
+</head>
+<body>
+    <!--Esse é um comentario-->
+    <p>esse é um paragrafo teste para o nosso comentario</p>
+    <p>esse é o segundo paragrafo que nos mostra que o comentario não aparece na web</p>
+    <!--esses comentarios não são mostrado na web-->
+</body>
+</html>
