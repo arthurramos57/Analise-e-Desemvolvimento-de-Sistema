@@ -1,0 +1,167 @@
+O que é CSS?
+
+CSS (Cascading Style Sheets) é uma linguagem de estilo utilizada junto com o HTML. Enquanto o HTML organiza a estrutura e o conteúdo da página, 
+o CSS define sua aparência.
+
+Sintaxe do CSS
+O CSS possui três conceitos principais:
+Seletor → Propriedade → Valor
+h1 {
+    color: blue;
+}
+h1 → seletor: indica qual elemento HTML será alterado.
+color → propriedade: indica o que será alterado.
+blue → valor: indica como será a alteração.
+
+Pense assim:
+
+Seletor = quem?
+Propriedade = o quê?
+Valor = como?
+
+3 formas de usar CSS
+
+Existem três métodos principais:
+
+Inline
+Interno
+Externo
+
+1. Inline
+
+O CSS é colocado diretamente na tag HTML através do atributo style.
+
+<body style="background-color: red;">
+
+Também podemos colocar várias propriedades:
+
+<h1 style="color: green; margin-left: 10px;">
+    Meu título
+</h1>
+
+As propriedades são separadas por ;.
+
+Vantagem: rápido para pequenas alterações.
+Desvantagem: fica difícil de organizar quando o site cresce.
+
+Exercício
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo Inline</title>
+</head>
+<body style="background-color: aqua;">
+    <h1 style="color: blue; margin-left: 20px;background-color: azure;">Esse é meu site Lorem</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, illum sapiente. Quos ipsa officiis repellendus voluptatem 
+    tempora reiciendis ullam, doloribus, aspernatur deleniti quam nam modi, similique aperiam laborum ex obcaecati?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda facilis doloremque, praesentium reprehenderit 
+    explicabo repellendus impedit veniam officia! Aspernatur, tempore? Omnis tempore cum non at ratione neque, dicta veniam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nam in, eveniet ex, amet, explicabo rem dolorum maxime ipsam 
+    fugiat assumenda voluptas alias odio voluptatibus unde corrupti at pariatur suscipit?</p>
+</body>
+</html>
+
+2. CSS Interno
+
+O CSS fica dentro da tag <style>, normalmente no <head>:
+
+<head>
+    <style>
+        body {
+            background-color: yellow;
+        }
+
+        h1 {
+            color: blue;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+É útil quando o estilo será utilizado em uma página específica.
+
+Exercício
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(128, 72, 4);
+        }
+        h1{
+            color: blueviolet;
+            background-color: black;
+            margin-left: 40px;
+        }
+        p {
+            color: azure;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+    <title>Estilo Interno</title>
+</head>
+<body>
+    <h1>Treinando o Estilo Interno e CSS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, aut. Eius alias ea, libero tempora deserunt aperiam 
+    laborum obcaecati eligendi quasi vero veritatis accusamus molestias? Debitis deserunt molestiae quam minus?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus velit quas explicabo. Illo placeat quisquam enim 
+    reprehenderit inventore quae odio doloremque suscipit beatae, hic tempore, nesciunt ea impedit sit? Sequi.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, unde omnis autem alias maiores quasi blanditiis 
+    aspernatur doloremque reiciendis aperiam sunt consectetur adipisci nostrum consequatur enim. Sed nesciunt delectus libero.</p>
+</body>
+</html>
+
+3. CSS Externo ⭐
+
+O CSS fica em um arquivo separado, por exemplo:
+style.css
+Dentro dele:
+body {
+    background-color: yellow;
+}
+
+h1 {
+    color: blue;
+}
+Depois, conectamos o CSS ao HTML usando <link> dentro do <head>:
+<link rel="stylesheet" href="style.css">
+O material considera o método externo o mais indicado, porque o mesmo arquivo CSS pode ser utilizado em várias páginas.
+
+Exercício
+
+body{
+    background-color: cadetblue;
+}
+h1 {
+    color: burlywood;
+    text-align: center;
+    background-color: blueviolet;
+}
+p{
+    color: rgb(213, 192, 163);
+    margin-left: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+Caminhos de arquivos
+Quando o CSS está em outra pasta, precisamos indicar o caminho no href.
+
+Se estiver dentro de uma pasta chamada style:
+<link rel="stylesheet" href="style/style.css">
+
+Se precisar voltar uma pasta:
+<link rel="stylesheet" href="../style/style.css">
+
+Para voltar duas:
+<link rel="stylesheet" href="../../style/style.css">
+
+Importante
+./   → pasta atual
+../  → volta uma pasta
+../../ → volta duas
