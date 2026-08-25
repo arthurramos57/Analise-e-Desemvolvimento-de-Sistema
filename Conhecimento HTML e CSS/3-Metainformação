@@ -1,0 +1,121 @@
+Elementos de Metainformação
+
+SEO (Search Engine Optimization) é um conjunto de técnicas utilizadas para melhorar a posição de um site nos resultados dos mecanismos de busca. A ideia é fazer 
+com que uma página tenha mais visibilidade e receba mais visitantes. Para isso, é importante conhecer o público que se deseja alcançar.
+
+Tipos de pesquisa na internet
+
+1. Navegacional
+A pessoa sabe qual site quer acessar, mas não sabe exatamente o endereço.
+
+2. Informacional
+A pessoa está procurando alguma informação, mas ainda não sabe exatamente qual site irá utilizar.
+
+3. Transacional
+A pessoa pretende realizar alguma ação, como comprar um produto, acessar o internet banking ou comparar produtos.
+
+Meta Tags
+
+As meta tags ficam dentro do <head> e fornecem informações sobre a página para navegadores, mecanismos de busca e outros sistemas.
+Essas informações são chamadas de metadados.
+
+Por exemplo:
+<meta name="author" content="Arthur">
+Nesse caso, estamos informando o autor da página.
+
+O arquivo apresenta cinco atributos principais para meta:
+
+name
+http-equiv
+content
+charset
+property
+
+name
+O atributo name é utilizado para fornecer informações destinadas principalmente aos mecanismos de busca.
+
+Alguns exemplos:
+<meta name="author" content="Arthur">
+<meta name="description" content="Meu site pessoal">
+<meta name="keywords" content="HTML, CSS, programação">
+Principais valores
+
+author → informa o autor da página.
+
+copyright → informa direitos autorais.
+
+description → fornece uma descrição sobre o conteúdo da página.
+
+keywords → define palavras-chave relacionadas à página.
+
+robots → fornece instruções relacionadas à indexação e aos links pelos robôs de busca.
+
+Robots
+A meta tag robots pode indicar aos mecanismos de busca como lidar com a página.
+
+Alguns valores apresentados no material:
+
+index → permite que a página seja indexada.
+noindex → impede a indexação.
+follow → permite seguir os links da página.
+nofollow → impede que os links sejam seguidos.
+none → indica que a página deve ser ignorada.
+noarchive → impede o arquivamento da página.
+
+http-equiv
+O atributo http-equiv fornece informações destinadas ao navegador.
+
+O material apresenta exemplos relacionados a:
+
+controle de cache;
+idioma;
+validade da página;
+atualização automática;
+tipo de script;
+tipo de estilo.
+
+Um exemplo é:
+<meta http-equiv="refresh" content="50">
+Isso informa ao navegador para atualizar a página após determinado tempo.
+
+property e Open Graph
+O atributo property é apresentado no material como uma forma de fornecer informações utilizadas em redes sociais.
+
+Um exemplo é o Open Graph, que permite definir como uma página será apresentada quando compartilhada.
+
+Podemos definir:
+<meta property="og:title" content="Meu site">
+<meta property="og:image" content="URL-da-imagem">
+<meta property="og:url" content="URL-do-site">
+<meta property="og:description" content="Descrição do site">
+Assim, podemos controlar informações como título, imagem, URL e descrição que serão associadas ao conteúdo compartilhado.
+
+charset
+O charset define a codificação dos caracteres utilizados na página.
+
+O mais importante para você decorar é:
+<meta charset="utf-8">
+O UTF-8 permite que o navegador interprete corretamente diversos caracteres, incluindo os usados no português, como:
+
+á, é, í, ó, ú, ã, õ, ç
+
+O material destaca o UTF-8 como padrão de codificação para HTML5.
+
+Exercício 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!--Avisa a codificação, acentos-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--sistema de busca, barra de pesquisa-->
+    <meta http-equiv="..." content="..."><!--sistema de busca, para o navegador-->
+    <meta property="..." content="..."><!--Para divulgação de site por terceiros-->
+    <title>Document</title>
+</head>
+<body>
+    <h1>esse cabeçalho é um que possui a letra ç escrita corretamente</h1>
+<p>Esse parágrafo ele está cheio de acentos</p>
+<p>O texto aceita acentos e "ç" pois está devidamente marcado com a tag meta charset="UTF-8"</p>
+<!--Podemos perceber o quão importante é o UTF-8-->
+</body>
+</html>
