@@ -1,0 +1,116 @@
+Tipos de Cores
+
+Cores Hexadecimal
+
+No sistema hexadecimal, as cores são formadas por uma mistura de três cores primárias: Vermelho (R), Verde (G) e Azul (B). 
+O código funciona em pares (#RRGGBB), usando números de 0 a 9 e letras de A a F.Para criar cores fortes, vibrantes e intensas,
+o segredo é usar os valores máximos (F) para as cores que você quer destacar e o valor mínimo (0) para o que quer apagar.
+O que representam as letras e números?
+Valores Fracos (Escuros/Apagados): 0, 1, 2, 3.
+Valores Médios: 4, 5, 6, 7, 8, 9.
+Valores Fortes (Brilhantes/Intensos): A, B, C, D, E, F (sendo F o mais forte de todos).
+
+Exemplo
+
+CSS
+
+body{
+    background-color: #666;
+}
+h1{
+    color: #ffffff;
+}
+p{
+    background-color: #000000;
+    color: #008b00;
+}
+#spider{
+    background-color: #0000cc;
+    color: #cc0000;
+}
+.iron{
+    background-color: #cc0000;
+    color: #ccdd00;
+}
+
+Cores RGB
+
+No sistema RGB, os valores vão de 0 a 255 em números, ou de 0% a 100% em porcentagem.
+
+Escala de Intensidade
+0 (0%): Totalmente apagado (mais fraco).
+64 (25%): Intensidade baixa.
+128 (50%): Intensidade média (meio-tom).
+192 (75%): Intensidade alta.
+255 (100%): Intensidade máxima (mais forte).
+
+Canais Puros (Do Fraco ao Forte)
+Vermelho: (0,0,0) [0%] → (128,0,0) [50%] → (255,0,0) [100%]
+Verde: (0,0,0) [0%] → (0,128,0) [50%] → (0,255,0) [100%]
+Azul: (0,0,0) [0%] → (0,0,128) [50%] → (0,0,255) [100%]
+
+Extremos de Luz
+Preto (Mínimo): (0,0,0) ou 0%, 0%, 0%
+Branco (Máximo): (255,255,255) ou 100%, 100%, 100%
+
+Exemplo
+
+CSS
+
+body{
+    background-color: rgb(75, 75, 75);
+}
+
+h1{
+    color: rgb(100%, 100%, 100%);
+}
+
+p{
+    background-color: rgb(64, 255, 64);
+    color: rgb(192, 192, 0);
+}
+
+#superman{
+    background-color: rgb(255, 64, 64);
+    color: rgb(0, 0, 128);
+}
+
+.flash{
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 64);
+}
+
+Palavras Chaves Cores
+
+Blue
+Red
+Black
+
+São o nome das cores
+
+Exemplo
+
+CSS
+
+body{
+    background-color: darkgray;
+}
+
+h1{
+    color: white;
+}
+
+#robin{
+    background-color: yellow;
+    color: darkred;
+}
+
+.asanoturna{
+    background-color: black;
+    color: lightskyblue;
+}
+
+p{
+    background-color: black;
+    color: white;
+}
