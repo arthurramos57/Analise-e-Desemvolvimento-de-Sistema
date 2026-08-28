@@ -1,0 +1,601 @@
+Formatação da página HTML e Elementos Textuais
+
+Estrutura básica do HTML
+
+Uma página HTML possui principalmente:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Título</title>
+</head>
+<body>
+    <h1>Meu título</h1>
+    <p>Meu parágrafo.</p>
+</body>
+</html>
+
+<html>: estrutura da página.
+<head>: informações da página, título, configurações etc.
+<body>: conteúdo que aparece na tela.
+<h1>: título.
+<p>: parágrafo.
+<style>: CSS interno.
+
+Recomendação: em projetos reais, prefira CSS externo.
+
+Background — Fundo
+
+O background controla o fundo de elementos.
+
+Principais propriedades
+Propriedade	Função
+background-color	Cor do fundo
+background-image	Imagem de fundo
+background-repeat	Repetição da imagem
+background-attachment	Fundo fixo ou rolando
+background-position	Posição da imagem
+background-size	Tamanho da imagem
+background-origin	Define onde o fundo começa
+background-clip	Define até onde o fundo é pintado
+background-color
+
+Define a cor:
+
+body {
+    background-color: #CCC;
+}
+background-image
+
+Coloca uma imagem:
+
+body {
+    background-image: url("fundo.jpg");
+}
+
+Exemplo em um codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: aqua;
+        }
+    </style>
+    <title>Background-color</title>
+</head>
+<body>
+    <h1>Usando o background-color</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eos ex velit. 
+Quo odio corporis illo dolorem fuga rem reprehenderit, totam deserunt tempora exercitationem! Laudantium, facilis. Vero quis quaerat suscipit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo sint nostrum consequatur non, 
+ad laboriosam voluptatem consectetur quos animi velit eligendi esse distinctio iste placeat obcaecati! Saepe sapiente consectetur ea?</p>
+    <a href="pag02.html">pag02</a>
+</body>
+</html>
+
+background-repeat
+
+Controla a repetição:
+
+background-repeat: repeat;
+
+Principais valores:
+
+repeat: repete nos dois sentidos.
+no-repeat: não repete.
+repeat-x: repete horizontalmente.
+repeat-y: repete verticalmente.
+
+Exemplo no codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-image: url("imagem/media.png");
+            background-repeat: round;
+        }
+    </style>
+    <title>background repat</title>
+</head>
+<body>
+    <h1>Usando o background repeat</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quam aliquid, aut nobis nam possimus, 
+id dignissimos, quasi eius quos incidunt. Soluta dolor numquam accusantium, aut quos nostrum aliquam dolorem?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quo doloremque blanditiis tempora 
+laborum similique culpa voluptatum, molestias, officiis officia illum, autem rem fuga quisquam repellendus nisi magnam distinctio velit.</p>
+    <a href="pag04.html">pag04</a>
+</body>
+</html>
+
+background-attachment
+background-attachment: fixed;
+fixed: fundo permanece fixo.
+scroll: fundo acompanha a rolagem.
+
+Exemplo no codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-image: url("imagem/media.png");
+            background-attachment: fixed;
+        }
+    </style>
+    <title>background-attachment</title>
+</head>
+<body>
+    <h1>usando background-attachment</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat asperiores tempora, iste esse, 
+dolores quo ad consequatur facilis officia id fugit nulla facere praesentium optio iure ipsam, error porro enim?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, minima perferendis! Modi, dolore. 
+Nostrum dolorum numquam ipsam, autem reiciendis dicta, vel velit officiis, porro sit a natus id est officia!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda qui saepe id, quisquam quas 
+reprehenderit adipisci cum iusto molestias. Sint perferendis impedit nobis incidunt accusantium amet recusandae expedita! Aperiam, veritatis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem eligendi assumenda ratione 
+necessitatibus quisquam temporibus qui illo porro beatae, voluptatum eaque eveniet vitae mollitia eos omnis nobis earum. Fuga, ea.</p>
+    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor libero assumenda beatae, repellat aliquid perspiciatis 
+neque deleniti atque facere sit, ad non dolore, explicabo suscipit possimus reiciendis molestiae! Dolore, non?</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo pariatur veritatis ut aut ipsam eligendi eum saepe! 
+Recusandae adipisci ad labore sunt tempora eius ea cum qui, natus laudantium. Nostrum?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ut, quas magnam sint laboriosam officia et incidunt assumenda, 
+similique quisquam cumque quos excepturi nihil nostrum dolores iusto aperiam? Deserunt, cum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae porro voluptatum quibusdam quo odio labore voluptatibus, 
+quidem velit quaerat assumenda blanditiis neque atque. Quisquam excepturi fugit error! Sint, nam possimus!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, veniam laudantium eveniet earum quidem porro deserunt hic cumque 
+neque a fugit. Qui sequi nesciunt a tempore laboriosam deserunt dolorum delectus.</p>
+    <a href="pag05.html">pag05</a>
+</body>
+</html>
+
+background-position
+Define a posição:
+
+background-position: center;
+
+Exemplos:
+
+center
+left top
+right bottom
+50% 50%
+background-size
+
+Define o tamanho:
+
+background-size: 300px 500px;
+
+Os mais importantes:
+
+auto: tamanho original.
+cover: cobre todo o espaço, podendo cortar a imagem.
+contain: mostra a imagem inteira dentro do espaço.
+
+Exemplo codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-image: url("imagem/media.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+    <title>background position</title>
+</head>
+<body>
+    <h1>Usando o background position</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque expedita adipisci placeat, soluta quo maxime culpa facere 
+id voluptates perferendis voluptatem commodi porro doloribus, autem aliquam, voluptatum sequi quidem tenetur.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt cupiditate dolore delectus et illo facilis itaque 
+iure voluptatum illum velit. Voluptates dolores obcaecati, accusamus itaque optio dolore fugiat commodi delectus.</p>
+    <a href="pag06.html">pag06</a>
+</body>
+</html>
+
+Exemplo codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-image: url("imagem/media.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 260px 260px;
+        }
+    </style>
+    <title>background size</title>
+</head>
+<body>
+    <h1>Usando o background size</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex similique voluptas fugit voluptatibus 
+obcaecati repellendus, illo perferendis provident a eaque ratione aspernatur non corporis harum minima tempora aliquam dolores quis!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione assumenda aliquid dicta illum blanditiis 
+recusandae quia doloremque temporibus ipsum cupiditate, nam odio, deleniti omnis itaque, dolore at. Sunt, possimus placeat.</p>
+    <p><a href="pag07.html">pag07</a></p>
+</body>
+</html>
+
+Background resumido
+
+É possível juntar várias propriedades:
+
+body {
+    background: #F00 url("fundo.jpg") no-repeat fixed center;
+}
+
+A ordem básica é:
+
+cor, imagem, repetição, fixação, posição
+
+ Múltiplos backgrounds
+
+Podemos colocar várias imagens:
+
+body {
+    background-image: url(img1.jpg), url(img2.jpg);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+}
+
+As imagens são colocadas em camadas, seguindo a ordem declarada.
+
+Exemplo no Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-image: url("imagem/grande.png");
+        }
+    </style>
+    <title>Background imagem</title>
+</head>
+<body>
+    <h1>usando background imagem</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est dolorum nam eaque aut necessitatibus, 
+culpa repellat rem, assumenda placeat amet odio fuga distinctio delectus eum. Aperiam error vel fugit sit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laboriosam reprehenderit ducimus 
+voluptatem dignissimos, omnis iure illum reiciendis eos, molestias nisi velit deleniti culpa doloremque libero et at, repellat ut?</p>
+    <a href="pag03.html">pag03</a>
+</body>
+</html>
+
+Border — Borda
+
+A propriedade border cria bordas nos elementos.
+
+Possui três partes principais:
+
+border: largura estilo cor;
+
+Exemplo:
+
+h1 {
+    border: 3px solid red;
+}
+Propriedades
+border-width → largura.
+border-style → estilo.
+border-color → cor.
+
+Exemplo:
+
+border: 3px solid #F00;
+
+Significa:
+
+3px → largura
+solid → estilo
+#F00 → cor
+
+Exemplo no codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1{
+            border: 10px solid black;
+            border-style: dashed;
+        }
+        p{
+            border: 5px solid blueviolet;
+            border-style: double;
+        }
+    </style>
+    <title>Border</title>
+</head>
+<body>
+    <h1>Usando a tag border</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius non fuga quod iure odio quia tenetur eaque excepturi, quae, assumenda enim. 
+Facere voluptatem nostrum voluptates deleniti possimus quia perferendis totam!</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, est neque nulla incidunt adipisci repellendus 
+quod dolorem expedita deleniti qui magnam dolores nihil iure sed cum quia quo, corporis excepturi.</p>
+</body>
+</html>
+
+Margin e Padding
+
+Essa é uma das partes mais importantes do CSS.
+
+Margin
+
+É o espaço FORA da borda.
+
+margin: 20px;
+Padding
+
+É o espaço DENTRO da borda.
+
+padding: 20px;
+
+Pense assim:
+
+      MARGIN
+ ┌───────────────┐
+ │    BORDER     │
+ │  ┌─────────┐  │
+ │  │ PADDING │  │
+ │  │┌───────┐│  │
+ │  ││CONTEÚDO││  │
+ │  │└───────┘│  │
+ │  └─────────┘  │
+ └───────────────┘
+Direções
+
+Para margin:
+
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+Para padding:
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+Abreviação — regra do relógio
+
+Quando usamos 4 valores:
+
+margin: 10px 20px 30px 40px;
+
+A ordem é:
+
+Cima → Direita → Baixo → Esquerda
+
+        10px
+         ↑
+40px ← elemento → 20px
+         ↓
+        30px
+3 valores
+margin: 10px 20px 30px;
+
+Significa:
+
+cima = 10px
+esquerda/direita = 20px
+baixo = 30px
+2 valores
+margin: 10px 20px;
+cima/baixo = 10px
+esquerda/direita = 20px
+1 valor
+margin: 10px;
+
+Todos os lados = 10px.
+
+A mesma lógica vale para padding.
+
+Exemplo no codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1{
+         border: 1px solid pink;
+         margin: 10px 5px 10px 5px;
+         padding: 10px 5px 10px 5px;
+        }
+        p{
+           border: 1px solid pink;
+         margin: 20px 10px 20px 10px;
+         padding: 20px 10px 20px 10px;
+        }
+    </style>
+    <title>padding and marging</title>
+</head>
+<body>
+    <h1>Usando o padding e margin</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil et, perspiciatis totam quisquam dicta odio suscipit 
+porro dolorum minima consectetur voluptates. Eligendi, dicta earum. Voluptatibus dignissimos ratione eligendi modi deserunt.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolorem, iusto laborum quia, voluptatum rem ducimus exercitationem 
+dolore quo vel inventore maiores nihil illo similique vitae soluta corrupti sit sapiente?</p>
+</body>
+</html>
+
+Formatação de textos
+font-family
+
+Define a fonte:
+
+p {
+    font-family: Arial, sans-serif;
+}
+font-size
+
+Define o tamanho:
+
+h1 {
+    font-size: 30px;
+}
+font-style
+
+Define o estilo:
+
+font-style: normal;
+font-style: italic;
+font-style: oblique;
+font-variant
+
+Pode usar versalete:
+
+font-variant: small-caps;
+font-weight
+
+Define o peso:
+
+font-weight: normal;
+font-weight: bold;
+
+@font-face
+
+Permite utilizar uma fonte externa:
+
+@font-face {
+    font-family: minhafonte;
+    src: url("teste_fonte.woff");
+}
+
+Depois:
+
+p {
+    font-family: minhafonte;
+}
+
+src = source (origem).
+
+Espaçamento entre linhas
+
+line-height controla a altura das linhas:
+
+p {
+    line-height: 20px;
+}
+
+Alinhamento do texto
+
+text-align:
+
+text-align: left;
+text-align: center;
+text-align: right;
+
+Exemplo:
+
+h1 {
+    text-align: center;
+
+Decoração do texto
+
+text-decoration:
+
+text-decoration: none;
+text-decoration: underline;
+text-decoration: overline;
+text-decoration: line-through;
+
+Recuo do parágrafo
+
+text-indent cria um recuo na primeira linha:
+
+p {
+    text-indent: 30px;
+}
+
+Transformação do texto
+
+text-transform altera a aparência das letras:
+
+text-transform: uppercase;
+
+TUDO MAIÚSCULO
+
+text-transform: lowercase;
+
+tudo minúsculo
+
+text-transform: capitalize;
+
+Primeira Letra De Cada Palavra
+
+Exemplo no codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 20px;
+            text-decoration: overline;
+            text-transform: uppercase;
+        }
+        h2{
+           @font-face {
+            font-family: minhafonte;
+            src: url("https://cdn.sanity.io/images/599r6htc/regionalized/ac875cfdf51939b47dcedad9aa832bc0dd8a5fbc-1128x1128.png?q=75&fit=max&auto=format&dpr=2");
+           }
+        }
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-style: italic;
+            line-height: 1px;
+            text-indent: 5px;
+        }
+    </style>
+    <title>fontes de palavras</title>
+</head>
+<body>
+    <h1>Usandos fontes e estilos nas palavras</h1>
+    <h2>meu subtitulo do site</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus illo in blanditiis enim dolores, nemo ut natus 
+optio dolor officia repellendus. Distinctio voluptatibus esse, animi quaerat obcaecati vero nesciunt suscipit.</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non porro at numquam eius odit debitis nemo consectetur, 
+soluta perferendis quas? Sapiente voluptatibus velit tenetur aperiam aut sunt ipsum a nobis.</p>
+    <br>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem excepturi cum eaque, totam, quasi exercitationem 
+tempora temporibus ullam expedita nulla necessitatibus! Maxime rerum recusandae magnam dignissimos dolor omnis ullam et!</p>
+</body>
+</html>
