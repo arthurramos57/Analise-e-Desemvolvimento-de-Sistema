@@ -1,0 +1,292 @@
+Construindo Layout
+
+DIV, FLOAT e POSITION
+
+<div> — divisão/seção
+
+A tag <div> serve para criar uma divisão ou seção da página HTML.
+
+Ela é muito utilizada para agrupar conteúdos e depois aplicar CSS.
+
+Exemplo:
+
+<div id="minha_div">
+    <h2>Meu título</h2>
+    <p>Meu conteúdo.</p>
+</div>
+
+Podemos aplicar CSS à <div>:
+
+#minha_div {
+    color: red;
+    background-color: yellow;
+    width: 300px;
+    height: 200px;
+    border: 4px solid green;
+}
+
+Resumindo: DIV = uma caixa/seção que agrupa conteúdo.
+
+id na DIV
+
+Podemos identificar uma <div> através do atributo id:
+
+<div id="topo"></div>
+
+E no CSS:
+
+#topo {
+    background-color: blue;
+}
+
+float
+
+A propriedade float permite fazer um elemento flutuar para um dos lados.
+
+Direita
+float: right;
+Esquerda
+float: left;
+
+Exemplo:
+
+#minha_div {
+    width: 300px;
+    height: 200px;
+    float: right;
+}
+
+A <div> ficará posicionada à direita.
+
+Criando um layout com DIV + FLOAT
+
+Podemos dividir uma página em várias partes:
+
+<div id="geral">
+    <div id="topo">Topo</div>
+    <div id="lado">Lateral</div>
+    <div id="meio">Conteúdo</div>
+    <div id="rodape">Rodapé</div>
+</div>
+
+E organizar com CSS:
+
+#topo {
+    width: 100%;
+    height: 20%;
+}
+
+#lado {
+    float: left;
+    width: 20%;
+    height: 60%;
+}
+
+#meio {
+    float: left;
+    width: 80%;
+    height: 60%;
+}
+
+#rodape {
+    width: 100%;
+    height: 20%;
+    clear: both;
+}
+Estrutura visual:
+┌─────────────────────────────┐
+│            TOPO             │
+├──────────┬──────────────────┤
+│          │                  │
+│  LADO    │      MEIO        │
+│  20%     │      80%         │
+│          │                  │
+├──────────┴──────────────────┤
+│           RODAPÉ            │
+└─────────────────────────────┘
+
+clear
+
+Quando usamos float, podemos precisar limpar a flutuação.
+
+clear: both;
+
+No exemplo do material:
+
+#rodape {
+    clear: both;
+}
+
+float: faz o elemento flutuar
+clear: limpa a flutuação
+
+position
+
+A propriedade position permite definir o posicionamento de um elemento.
+
+Os principais valores apresentados são:
+
+Valor	Função
+
+static: Posicionamento padrão
+relative:	Mantém relação com sua posição original/pai
+absolute:	Permite posicionamento através de top e left
+fixed:	Posicionamento em relação à janela do navegador
+
+position: absolute
+
+Permite posicionar um elemento usando:
+
+position: absolute;
+top: 50px;
+left: 80px;
+
+Isso significa:
+
+50px → distância do topo
+80px → distância da esquerda
+
+Exemplo:
+
+#minha_div {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+}
+
+Importante
+
+Segundo o material, o elemento com absolute não considera os outros conteúdos da página para determinar sua posição.
+Por isso, ele pode ficar sobre outros elementos.
+
+position: relative
+
+O relative mantém o elemento relacionado à sua posição original.
+
+Um uso muito importante mostrado no material é criar um elemento pai com:
+
+#div_pai {
+    position: relative;
+}
+
+E colocar dentro dele um elemento com:
+
+#minha_div {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+}
+
+Nesse caso, o elemento absolute utiliza o elemento pai relative como referência para seu posicionamento.
+
+Pai: position: relative
+Filho: position: absolute
+
+Essa combinação é muito importante para criar elementos posicionados dentro de uma determinada área.
+
+position: fixed
+
+O material apresenta fixed como um posicionamento relacionado à janela do navegador.
+
+position: fixed;
+
+Ele pode ser utilizado para elementos que precisam permanecer fixos em determinada posição da tela.
+
+Exemplo de Layout no Codigo
+
+style.css
+
+head{
+    background-color: rgb(255, 255, 255);
+}
+nav{
+    background-color: rgb(0, 0, 0);
+    color: red;
+}
+section{
+    background-color: white;
+    padding: 10px;
+}
+article{
+    background-color: lightgray;
+    display: block;
+}
+aside{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
+    width: 50%;
+    float: left;
+}
+footer{
+    background-color: black;
+    color: white;
+    height: 50px;
+}
+.pp{
+    background-color: black;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aprimorando layouts</title><!--Vamos utilizar a tag header, nav, section, article, aside, footer-->
+</head>
+<body>
+    <header>
+        <nav>
+        <ul>
+            <li>Filmes em Cartaz</li>
+            <li>Filmes em Breve</li>
+        </ul> 
+        </nav>
+    </header>
+    <section>
+        <article>
+            <header>
+                <h2>Homem Aranha</h2>
+                <p>Filme vai estrar no dia 14/04 <a href="####">Acesse a pré-venda dos ingressos clicando aqui.</a></p>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quae officiis repudiandae nihil tempore dignissimos? Aliquid 
+            recusandae quod iure sed eos ex. Modi est consequuntur optio cum commodi suscipit error?</p>
+          <footer>
+               <details>
+            <summary>Clique aqui para saber mais sobre a pré-venda</summary>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati eaque temporibus consequuntur earum explicabo, aperiam, 
+            dolore qui corporis deleniti voluptatum tenetur modi sequi. Similique dignissimos fuga debitis deserunt quasi excepturi!</p>
+            </details>
+          </footer>
+        </article> 
+        </section>
+        <section>
+            <article>
+            <aside>
+                <h2>Mais detalhes sobre o filme</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum mollitia non vitae, earum facilis quos ea. 
+                Reiciendis error culpa incidunt explicabo? </p>
+            </aside>
+            <aside>
+                <h2>Mais detalhe sobre a pré-venda</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nobis provident, quidem nisi illum dolorum ratione ex.</p>
+                </aside>
+            </article>
+        </section> 
+        <section>
+            <article>
+                <header>
+                    <h2>Pré-Venda</h2>
+                    <p>Pré-venda dos ingressos começará no dia 05/04 <a href="###">Clique aqui para adquirir seu ingresso.</a></p>
+                </header>
+            </article>
+        </section>
+        <footer>
+            <h2>Politica da nossa empresa</h2>
+            <p class="pp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ex porro cupiditate cum. Consequatur, 
+            assumenda! Magni quasi at expedita porro ut, impedit numquam aliquam temporibus, repudiandae facere laborum quis assumenda!</p>
+            <p class="pp">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic laborum ipsa ratione pariatur, earum consequuntur 
+            necessitatibus, voluptate libero veniam reprehenderit alias dolorum nostrum, obcaecati laudantium repellendus odit aut voluptatem. Aperiam?</p>
+        </footer>
+</body>
+</html>
