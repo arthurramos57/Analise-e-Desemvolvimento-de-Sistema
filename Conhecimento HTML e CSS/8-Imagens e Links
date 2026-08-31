@@ -1,0 +1,356 @@
+Trabalhando com Imagens e Link
+
+Inserindo imagens no HTML
+
+Para inserir uma imagem usamos a tag:
+
+<img src="imagem.jpg" alt="Descrição da imagem" title="Título da imagem">
+
+Principais atributos
+Atributo	Função
+<img>: Insere uma imagem
+src:	Indica onde está a imagem
+alt:	Texto alternativo da imagem
+title:	Descrição exibida ao passar o mouse
+
+alt é importante porque:
+Aparece caso a imagem não carregue;
+Ajuda na acessibilidade;
+Pode ajudar mecanismos de busca a entenderem a imagem.
+
+title: Exibe uma descrição/tooltip quando o usuário passa o mouse sobre a imagem.
+
+Caminhos das imagens
+
+A localização do arquivo é indicada no src.
+
+Mesma pasta
+<img src="foto.jpg">
+
+Dentro de uma pasta
+<img src="imagens/foto.jpg">
+
+Voltando uma pasta
+<img src="../foto.jpg">
+
+Voltando duas pastas
+<img src="../../foto.jpg">
+../ significa subir um nível de pasta.
+
+Formatos de imagem
+
+Os principais formatos apresentados são:
+
+JPG/JPEG: boa qualidade e geralmente menor tamanho.
+PNG: indicado quando é necessária alta qualidade ou transparência.
+GIF: recomendado principalmente para imagens animadas.
+
+Formatando imagens com CSS
+
+As propriedades principais apresentadas são:
+
+img {
+    border: 2px solid red;
+    width: 400px;
+    height: 300px;
+}
+
+Propriedades
+border: cria uma borda;
+width: define a largura;
+height: define a altura.
+
+Você pode aplicar diretamente no HTML:
+
+<img src="foto.jpg" style="width:400px; height:300px;">
+
+Ou, de preferência, utilizando CSS:
+
+img {
+    width: 400px;
+    height: 300px;
+}
+
+figure e figcaption
+
+São elementos do HTML5 usados para estruturar melhor imagens e suas legendas.
+
+figure
+
+Agrupa o conteúdo, permitindo sua organização e formatação.
+
+<figure>
+    <img src="foto.jpg" alt="Descrição">
+</figure>
+figcaption
+
+Adiciona uma legenda à imagem:
+
+<figure>
+    <img src="foto.jpg" alt="Descrição">
+    <figcaption>Legenda da imagem</figcaption>
+</figure>
+Resumindo:
+figure: agrupa o conteúdo
+figcaption: cria a legenda
+img: insere a imagem
+
+display
+
+A propriedade display determina como um elemento será exibido.
+
+Principais valores
+Valor	Função
+inline	Elemento fica na mesma linha
+block	Elemento ocupa sua própria linha
+none	Elemento não aparece
+list-item	Elemento aparece como item de lista
+initial	Volta ao valor padrão
+
+Exemplo:
+
+figure {
+    display: block;
+}
+
+Criando hiperlinks
+
+Para criar links usamos:
+
+<a href="endereco">Texto do link</a>
+Principais elementos
+<a>: cria o link/âncora;
+href: indica o destino do link.
+
+Exemplo:
+
+<a href="https://www.exemplo.com">Acessar site</a>
+
+Links para arquivos locais
+Arquivo na mesma pasta
+<a href="pagina.html">Abrir página</a>
+Arquivo dentro de uma pasta
+<a href="paginas/pagina.html">Abrir página</a>
+Arquivo em uma pasta acima
+<a href="../pagina.html">Abrir página</a>
+
+A lógica é a mesma utilizada nos caminhos das imagens.
+
+title em links
+
+Podemos adicionar uma descrição:
+
+<a href="https://www.exemplo.com" title="Acessar o site">
+    Site
+</a>
+
+O title pode aparecer como uma pequena descrição ao passar o mouse.
+
+target="_blank"
+
+Usado para abrir o link em uma nova aba/janela do navegador.
+
+<a href="https://www.exemplo.com" target="_blank">
+    Abrir site
+</a>
+
+Links para download
+
+O atributo download indica que o arquivo deve ser baixado.
+
+<a href="arquivo.pdf" download="meu-arquivo">
+    Baixar arquivo
+</a>
+
+Nesse caso:
+
+href: indica qual arquivo será baixado;
+download: indica que o objetivo é fazer o download;
+o valor de download pode definir o nome do arquivo.
+
+Estilizando links com CSS
+
+Existem quatro estados principais:
+
+a:link
+
+Link normal/não visitado.
+
+a:link {
+    color: blue;
+}
+a:visited
+
+Link que já foi visitado.
+
+a:visited {
+    color: purple;
+}
+a:hover
+
+Quando o mouse passa sobre o link.
+
+a:hover {
+    color: red;
+}
+a:active
+
+Enquanto o link está sendo clicado.
+
+a:active {
+    color: green;
+}
+
+Exemplo Imagem no Codigo
+
+Imagem Inline
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colocando imagem inline</title>
+</head>
+<body>
+    <h1>Colocando imagem e utilizando o estilo inline</h1>
+    <img src="imagem/image-inline.jpg" alt="Essa é uma imagem do goku e vegeta juntos" 
+    title="Dragon Ball Super" style="border: black solid 1px; width: 200px; height: 150px;">
+    <br>
+    <a href="pag02.html">estilo interno
+    </a>
+</body>
+</html>
+
+Imagem Interno
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img{
+            border: 3px solid lightblue;
+            width: 400px;
+            height: 350px;
+        }
+    </style>
+    <title>Imagem interno</title>
+</head>
+<body>
+    <h1>Colocando imagem e aplicando estilo interno</h1>
+    <img src="imagem/imagem-interna.jpeg" alt="goku e vegeta super sayajin vindo para tela" title="Dragon Ball Super">
+    <br>
+    <a href="pag03.html">Elementos Figuere e figcaption</a>
+</body>
+</html>
+
+Imagem Externo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemento Figure e Figcaption</title>
+</head>
+<body>
+    <h1>Aplicando o Elemento Figure e Figcaption</h1>
+    <figure>
+        <img src="imagem/image-inline.jpg" alt="Goku e Vegeta juntos" title="Dragon Ball Super" style="width: 300px; height: 250px; border: 2px solid blue;">
+        <figcaption>Essa uma imagem da melhor amizade dos animes</figcaption>
+    </figure>
+    <br>
+    <a href="pag04.html">formatação figure</a>
+</body>
+</html>
+
+Usando o CSS em Imagem
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img{
+            border: 5px solid lightskyblue;
+            width: 400px;
+            height: 350px;
+        }
+        figure{
+            margin: 50px 100px 50px 100px;
+        }
+    </style>
+    <title>Formatação do Elemento Figure</title>
+</head>
+<body>
+    <h1>Aplicando Estilo  no Elemento Figure</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel at suscipit fugiat aliquid laudantium ut nihil, blanditiis fuga quidem reiciendis soluta. 
+    Vel obcaecati ea, est accusantium commodi minima perspiciatis provident?</p>
+    <figure>
+        <img src="imagem/imagem-interna.jpeg" alt="Goku e Vegeta juntos super sayajin blue" title="Dragon Ball Super">
+        <figcaption>Essa é a melhor amizade dos animes</figcaption>
+    </figure>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque iusto distinctio neque consectetur alias repellendus 
+    inventore minus veritatis obcaecati, sapiente deserunt blanditiis similique totam doloremque, delectus laboriosam, laudantium odio enim.</p>
+</body>
+</html>
+
+Exemplo Link no Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+</head>
+<body>
+    <h1>Usando Links Externos</h1>
+    <p>Você pode <a href="https://github.com/arthurramos57" target="_blank" rel="external">acessar meu repositório público no Github</a></p>
+    <p>Você também pode <a href="https://www.youtube.com/@CazeTV" target="_blank" rel="external">assistir todos os jogos da copa aqui</a></p>
+    <h1>Usandos Links Internos</h1>
+    <p>Esta é minha primeira pagina. Se você quiser, pode acessar também a minha  <a href="pag002.html" rel="next" target="_self">segunda pagina</a></p>
+    <p>Você também pode acessar nossa  <a href="noticia formula um/pag003.html" rel="next" target="_self">pagina de noticia</a></p>
+    <h1>Links para Downloads</h1>
+    <ul>
+        <li> <a href="livro/Canal Dark -  Personagens em Frutas 1 - Copia.pdf" type="application/pdf">Baixa livro em pdf</a></li>
+        <li> <a href="livro/Canal Dark -  Personagens em Frutas 1 - Copia.zip" type="application/zip">Baixar livro em zip</a></li>
+        
+    </ul>
+</body>
+</html>
+
+Paginas Link Exemplo Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 2</title>
+</head>
+<body>
+    <h1>Está é minha senguda pagina</h1>
+    <p>primeira vez que eu crio uma segunda pagina, estou muito feliz.</p>
+    <p>Esta pagina é um oferecimento <a href="https://www.formula1.com/" target="_blank" rel="nofollow">formula 1</a> </p>
+    <p>Se você quiser voltar para pagina um,  <a href="index.html" rel="prev" target="_self">clique aqui</a></p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 3</title>
+</head>
+<body>
+    <h1> Terceira pagina</h1>
+    <p>Essa é minha terceira pagina</p>
+    <p>para voltar para pagina 1 <a href="../index.html" rel="prev" target="_self">clique aqui</a></p>
+    <p>Voltar pagina 2  <a href="../pag002.html" rel="prev" target="_self">clique aqui</a></p>
+</body>
+</html>
