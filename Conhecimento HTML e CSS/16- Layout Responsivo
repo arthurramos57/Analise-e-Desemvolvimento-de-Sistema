@@ -1,0 +1,217 @@
+Criando Layout Responsivo
+
+layout responsivo
+
+É uma forma de criar páginas que se adaptam automaticamente a diferentes tamanhos de tela, como:
+
+Desktop
+Celular
+Tablet
+
+Isso é feito principalmente com HTML e CSS.
+
+Viewport
+
+O viewport é a área visível da página no dispositivo.
+
+A configuração mais importante é:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+width=device-width → faz a página usar a largura do dispositivo.
+initial-scale=1.0 → define o zoom inicial como 100%.
+
+Essa é uma das linhas mais importantes para sites responsivos.
+
+Cuidados com o viewport
+
+Para evitar problemas em celulares:
+
+Evite elementos com largura fixa.
+Evite depender de tamanhos fixos.
+Prefira valores relativos, como %.
+Evite imagens maiores que a tela para não criar rolagem horizontal.
+
+Grid-View
+
+O Grid-View divide a página em 12 colunas.
+
+Cada coluna possui aproximadamente:
+
+width: 8.33%;
+
+Porque:
+
+100 ÷ 12 = 8,33%
+
+Isso permite organizar o conteúdo e facilitar a criação de layouts responsivos.
+
+box-sizing: border-box
+
+Um recurso importante para controlar o tamanho dos elementos:
+
+* {
+    box-sizing: border-box;
+}
+
+Com border-box, o padding e a border ficam dentro da largura e altura definidas, evitando que o elemento fique maior do que o planejado.
+
+O * significa todos os elementos HTML.
+
+Estrutura de um layout
+
+Um layout pode ser dividido em:
+
+┌─────────────────────────┐
+│          TOPO           │
+├──────┬──────────┬───────┤
+│ Menu │  CONTEÚDO│ Menu  │
+│ Esq. │   Meio   │ Dir.  │
+├──────┴──────────┴───────┤
+│         RODAPÉ           │
+└─────────────────────────┘
+
+Podemos utilizar div, width, float, height, padding e border para organizar essas áreas.
+
+overflow e position
+.organiza {
+    overflow: auto;
+    position: relative;
+}
+overflow: auto → cria barras de rolagem quando necessário.
+position: relative → faz elementos posicionados dentro dela usarem essa div como referência.
+
+Imagens responsivas
+
+Para fazer uma imagem acompanhar o tamanho da tela:
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+Para impedir que ela aumente além do tamanho original:
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+max-width: 100% é especialmente útil para evitar que imagens ultrapassem o espaço disponível.
+
+Vídeos responsivos
+
+Vídeos podem utilizar a mesma ideia das imagens:
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+ou:
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+@media
+
+A regra @media permite alterar o CSS quando determinada condição é atingida.
+
+Exemplo:
+
+@media only screen and (max-width: 700px) {
+    body {
+        background-color: #000;
+    }
+}
+
+Nesse caso, quando a tela tiver até 700px de largura, o fundo ficará preto.
+
+Isso é fundamental para criar diferentes estilos para celular, tablet e desktop.
+
+Frameworks
+
+Frameworks fornecem ferramentas prontas para facilitar a criação de layouts responsivos.
+
+Exemplos citados no material:
+
+Bootstrap
+Materialize
+Semantic UI
+Foundation
+Cascade Framework
+
+Eles podem economizar tempo no desenvolvimento.
+
+Templates
+
+Também existem templates prontos que podem ser utilizados como base para sites responsivos.
+A ideia é aproveitar estruturas existentes e adaptá-las ao projeto.
+
+Validadores HTML e CSS
+
+Servem para verificar se o código possui problemas.
+
+W3C HTML Validator → valida HTML.
+W3C CSS Validator → valida CSS.
+Unicorn → validador unificado.
+
+Exemplo Layout Responsivo Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .topo{
+            background-color: aqua;
+            border: 2px solid black;
+            height: 50px;
+            padding: 5px;
+        }
+        .menuesquerdo{
+            background-color: bisque;
+            border: 2px solid black;
+            width: 15%;
+            height: 400px;
+            float: left;
+            padding: 5px;
+        } 
+        .centro{
+            background-color: blanchedalmond;
+            border: 2px solid black;
+            width: 70%;
+            height: 400px;
+            float: left;
+        }
+        .menudireito{
+            background-color: beige;
+            border: 2px solid black;
+            width: 15%;
+            height: 400px;
+            float: right;
+            padding: 5px;
+        }
+        .baixo{
+            border: 2px solid black;
+            height: 50px;
+            clear: both;
+            background-color: aquamarine;
+            padding: 5px;
+        }
+    </style>
+    <title>Layout Responsivel</title>
+</head>
+<body>
+    <div class="topo">Topo</div>
+    <div class="menuesquerdo">Menu Esquerdo</div>
+    <div class="centro">Centro</div>
+    <div class="menudireito">Menu Direito</div>
+    <div class="baixo">Baixo</div>
+</body>
+</html>
