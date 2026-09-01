@@ -1,0 +1,478 @@
+Menus
+
+<div> — Divisão de conteúdo
+
+A tag <div> serve para criar uma divisão ou bloco de conteúdo dentro da página HTML.
+
+Ela é muito utilizada junto com CSS para organizar e estilizar partes do site.
+
+Exemplo:
+
+<div>
+    <h2>Título</h2>
+    <p>Conteúdo da página.</p>
+</div>
+
+Podemos aplicar CSS à <div> usando id, class ou diretamente com style.
+
+float
+
+A propriedade float permite fazer um elemento flutuar para a esquerda ou direita.
+
+float: left;
+
+ou
+
+float: right;
+
+Ela pode ser usada para criar layouts com duas ou mais áreas.
+
+Exemplo:
+
+#lado {
+    float: left;
+    width: 20%;
+}
+
+#meio {
+    float: left;
+    width: 80%;
+}
+clear
+
+O clear é utilizado para impedir que um elemento continue sofrendo influência dos elementos que estão flutuando.
+
+clear: both;
+
+position
+
+A propriedade position permite controlar a posição dos elementos.
+
+static
+
+É o padrão.
+
+position: static;
+
+O elemento segue a ordem normal do HTML.
+
+relative
+
+Mantém o elemento em sua posição original, mas permite movimentá-lo usando top, left, right e bottom.
+
+position: relative;
+absolute
+
+Permite posicionar o elemento em relação ao seu elemento de referência, normalmente um ancestral com position: relative.
+
+position: absolute;
+top: 50px;
+left: 80px;
+
+O elemento pode ficar sobre outros elementos.
+
+fixed
+
+Posiciona o elemento em relação à janela do navegador.
+
+position: fixed;
+
+É bastante utilizado para elementos que permanecem fixos na tela.
+
+HTML5 e elementos semânticos
+
+Antigamente, muitos layouts eram construídos praticamente apenas com <div>.
+
+No HTML5 surgiram elementos semânticos, que deixam mais claro qual é a função de cada parte da página.
+
+Os principais são:
+
+Tag	Função
+<header>: Cabeçalho
+<nav>: Área de navegação
+<section>: Seção do conteúdo
+<article>: Conteúdo/artigo independente
+<aside>: Conteúdo lateral/relacionado
+<footer>: Rodapé
+<details>: Informações adicionais
+<summary>: Título/legenda de <details>
+Exemplo de estrutura:
+<header>
+    <nav>
+        <!-- Menu -->
+    </nav>
+</header>
+
+<section>
+    <article>
+        <!-- Conteúdo -->
+    </article>
+
+    <aside>
+        <!-- Conteúdo lateral -->
+    </aside>
+</section>
+
+<footer>
+    <!-- Rodapé -->
+</footer>
+
+Importante: isso não significa que <div> deixou de existir. A <div> continua sendo muito importante quando não existe um elemento semântico adequado.
+
+<header>
+
+Representa o cabeçalho de uma página ou seção.
+
+Pode conter:
+
+Logo
+Título
+Menu
+Campo de pesquisa
+<header>
+    <h1>Meu Site</h1>
+</header>
+
+<nav>
+
+Representa uma área de navegação, normalmente contendo links.
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+</nav>
+
+<section>
+
+Representa uma seção do conteúdo.
+
+<section>
+    <h2>Sobre nós</h2>
+    <p>Conteúdo...</p>
+</section>
+
+<article>
+
+Representa um conteúdo independente, como:
+
+Artigo
+Notícia
+Post
+Publicação
+<article>
+    <h2>Título do artigo</h2>
+    <p>Conteúdo do artigo...</p>
+</article>
+
+<aside>
+
+Representa um conteúdo lateral ou relacionado ao conteúdo principal.
+
+Exemplos:
+
+Barra lateral
+Menu lateral
+Banner
+Informações relacionadas
+<aside>
+    <h2>Saiba mais</h2>
+    <p>Informações adicionais.</p>
+</aside>
+
+<footer>
+
+Representa o rodapé de uma página ou seção.
+
+Pode conter:
+
+Copyright
+Informações
+Links
+Contato
+<footer>
+    <p>Copyright 2026</p>
+</footer>
+
+<details> e <summary>
+
+São utilizados juntos para criar informações que podem ser abertas e fechadas pelo usuário.
+
+<details>
+    <summary>Clique para saber mais</summary>
+    <p>Informações adicionais.</p>
+</details>
+
+Listas no HTML
+
+Existem dois principais tipos.
+
+Lista ordenada — <ol>
+
+Apresenta os itens numerados.
+
+<ol>
+    <li>Primeiro item</li>
+    <li>Segundo item</li>
+    <li>Terceiro item</li>
+</ol>
+
+Resultado:
+
+Primeiro item
+Segundo item
+Terceiro item
+Lista não ordenada — <ul>
+
+Apresenta os itens normalmente com marcadores.
+
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+<li>
+
+Representa cada item da lista.
+
+<li>Item da lista</li>
+
+Listas intercaladas
+
+É possível colocar uma lista dentro de outra.
+
+<ol>
+    <li>HTML</li>
+    <ul>
+        <li>Tags</li>
+        <li>Atributos</li>
+    </ul>
+
+    <li>CSS</li>
+</ol>
+
+Isso permite criar subitens e estruturas hierárquicas.
+
+list-style-type
+
+Usado no CSS para alterar o tipo de marcador da lista.
+
+Para <ul>:
+
+ul {
+    list-style-type: disc;
+}
+
+Algumas opções:
+
+disc
+circle
+square
+none
+
+Para <ol>:
+
+decimal
+lower-alpha
+upper-alpha
+lower-roman
+upper-roman
+none
+
+list-style-image
+
+Permite utilizar uma imagem como marcador.
+
+ul {
+    list-style-image: url("marcador.gif");
+}
+
+list-style-position
+
+Controla a posição do marcador.
+
+ul {
+    list-style-position: inside;
+}
+
+ou:
+
+ul {
+    list-style-position: outside;
+}
+
+outside é apresentado no material como o padrão.
+
+Propriedade list-style
+
+É uma forma abreviada de configurar a lista.
+
+ul {
+    list-style: square inside url("marcador.gif");
+}
+
+Ela reúne:
+
+list-style-type
+list-style-position
+list-style-image
+
+Criando menus
+
+Uma lista <ul> pode ser transformada em um menu de navegação usando CSS.
+
+Estrutura:
+
+<ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Contato</a></li>
+    <li><a href="#">Sobre</a></li>
+</ul>
+
+O CSS remove os marcadores:
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+E o link pode ocupar todo o espaço do item:
+
+li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+Menu vertical
+
+O menu fica um item abaixo do outro.
+
+li a {
+    display: block;
+}
+
+Podemos criar efeito quando o mouse passa sobre o item:
+
+li a:hover {
+    background-color: yellow;
+}
+:hover
+
+Representa o estado em que o mouse está sobre o elemento.
+
+Exemplo Menu Vertical no Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            text-align: center;
+            border: 2px solid black;
+            padding: 8px 20px 8px 20px;
+            width: 100px;
+            background-color: darkblue;
+        }
+        li a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+        li a:hover{
+            color: sienna;
+            font-size: 17px;
+        }
+    </style>
+    <title>Menu Vertical</title>
+</head>
+<body>
+    <h1>Menu Vertical</h1>
+    <ul>
+        <li><a href="##" title="Cafeteria Medieval" target="_blank">Café Pequeno</a></li>
+        <li><a href="##">Início</a></li>
+        <li><a href="##">Cardápio</a></li>
+        <li><a href="##">Serviço</a></li>
+        <li><a href="##">Contato</a></li>
+    </ul>
+    <br>
+    <a href="exercicio01.html">menu Horizontal</a>
+</body>
+</html>
+
+Menu horizontal
+
+Para transformar o menu em horizontal, o material utiliza:
+
+li {
+    float: left;
+}
+
+E:
+
+ul {
+    overflow: hidden;
+}
+
+Assim:
+
+Home | Contato | Sobre | Produtos
+
+em vez de:
+
+Home
+Contato
+Sobre
+Produtos
+
+Exemplo Menu Horizontal Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul{
+            list-style-type: none;
+            width: 700px;
+            padding: 0px;
+            margin: 0px;
+        }
+        li{
+            text-align: center;
+            padding: 16px 32px 16px 32px;
+            float: left;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            background-color: darkblue;
+        }
+        li a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <title>Menu Horizontal</title>
+</head>
+<body>
+    <h1>Menu Horizontal</h1>
+    <ul>
+        <li> <a href="###" title="Cafeteria Medieval">Café Pequeno</a></li>
+        <li><a href="###">Início</a></li>
+        <li><a href="###">Cardápio</a></li>
+        <li><a href="###">Serviços</a></li>
+        <li><a href="###">Contato</a></li>
+    </ul>
+</body>
+</html>
