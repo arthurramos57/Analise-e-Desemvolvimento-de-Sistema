@@ -1,0 +1,201 @@
+Aprimorando Layout
+
+<div>
+Cria uma divisão/seção genérica.
+É muito usada para agrupar elementos.
+Pode receber id, class e estilos CSS.
+Não possui significado semântico específico.
+
+float
+
+#lado {
+    float: left;
+    width: 20%;
+}
+
+#meio {
+    float: left;
+    width: 80%;
+}
+
+É utilizado no material para posicionar elementos lado a lado.
+
+clear
+
+clear: both;
+
+Faz o elemento deixar de ser afetado pelos float anteriores.
+
+position
+
+Valor	Ideia principal
+static: Posicionamento padrão
+relative: Mantém a posição original como referência
+absolute: Posiciona usando uma referência de posicionamento
+fixed: Posiciona em relação à janela do navegador
+
+Exemplo:
+
+#minha_div {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+}
+
+Um conceito muito importante do material é:
+
+#pai {
+    position: relative;
+}
+
+#filho {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+}
+
+Nesse caso, o elemento absolute usa o elemento pai posicionado como referência.
+
+HTML5 semântico
+
+Aqui está uma das partes mais importantes para você levar para seus próximos projetos.
+
+Em vez de fazer tudo assim:
+
+<div id="topo"></div>
+<div id="menu"></div>
+<div id="conteudo"></div>
+<div id="rodape"></div>
+
+O HTML5 permite utilizar elementos que explicam o papel daquele conteúdo:
+
+<header>
+    <nav>
+        ...
+    </nav>
+</header>
+
+<section>
+    <article>
+        ...
+    </article>
+
+    <aside>
+        ...
+    </aside>
+</section>
+
+<footer>
+    ...
+</footer>
+
+Principais elementos
+
+header
+→ Cabeçalho de uma página ou seção.
+
+nav
+→ Área destinada à navegação.
+
+section
+→ Seção de conteúdo.
+
+article
+→ Conteúdo independente, como um artigo ou publicação.
+
+aside
+→ Conteúdo relacionado/complementar, normalmente uma barra lateral.
+
+footer
+→ Rodapé de uma página ou seção.
+
+details
+→ Área que pode ser expandida para mostrar informações adicionais.
+
+summary
+→ Título/resumo clicável do details.
+
+Exemplo:
+
+<details>
+    <summary>Clique aqui para mais detalhes</summary>
+
+    <p>
+        Aqui estão informações adicionais.
+    </p>
+</details>
+
+Exemplo no Codigo
+
+<!DOCTYPE HTML>
+ <html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+       <title>Exemplo de Estrutura de uma página simples com HTML 5</title>
+       <style>
+           header{background-color:#CCC;}
+           nav{background-color:#FF0;}
+           section{background-color:#FFF;padding: 10px;}
+           article{background-color:#0F0;display: block;}
+           aside{background-color:#00F;width:50%;float:left;}
+           footer{background-color:#000;color:#FFF;height: 50px;}
+           details{color:#F00;}
+       </style>
+ 
+</head>
+<body>
+   <header>
+     <nav>
+       <ul>
+         <li>Home</li>
+         <li>Quem somos</li>
+         <li>Nossos produtos</li>
+         <li>Contato</li>
+         </ul>
+     </nav>
+   </header>
+ 
+   <section>
+     <article>
+       <header>
+         <h2>Título do Artigo</h2>
+         <p>Publicado em 22 de Março de 2017 por <a href="#">Author</a> - <a href="#">30 comentários</a></p>
+       </header>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+       <footer>
+         <details>
+            <summary>Clique aqui para mais detalhes </summary>
+            <p>Aqui você têm mais informações sobre os detalhes.</p>
+         </details>
+       </footer>
+     </article>
+   </section>
+   <section>
+     <article>    
+       <aside>
+         <h2>Aqui você pode saber mais...</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+       </aside>
+                
+       <aside>
+         <h2>Aqui você pode saber mais...</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+       </aside>
+     </article>
+   </section>
+   <section>
+     <article>
+       <header>
+         <h2>Título do Artigo</h2>
+         <p>Publicado em 22 de Março de 2017 por <a href="#">Author</a> - <a href="#">30 comentários</a></p>
+       </header>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+     </article>
+   </section>
+  
+   <footer>
+     <p>Copyright 2017</p>
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
+   </footer>
+</body>
+</html>
