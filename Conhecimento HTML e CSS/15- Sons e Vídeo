@@ -1,0 +1,101 @@
+Colocando Sons e Vídeos
+
+Vídeos — <video>
+
+Os formatos apresentados são:
+
+MP4 → video/mp4
+WebM → video/webm
+Ogg → video/ogg
+
+Existem duas formas principais:
+
+Usando src diretamente:
+
+<video src="meu_video.mp4" controls></video>
+
+Usando <source>:
+
+<video controls>
+    <source src="meu_video.mp4" type="video/mp4">
+    <source src="meu_video.ogg" type="video/ogg">
+</video>
+
+O <source> permite fornecer diferentes formatos para que o navegador utilize aquele que conseguir reproduzir.
+
+Principais atributos:
+
+controls → mostra os controles do vídeo.
+autoplay → tenta iniciar automaticamente.
+width e height → definem dimensões.
+CSS também pode ser usado para definir tamanho.
+
+Exemplo:
+
+<video width="600" height="400" controls>
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+Áudios — <audio>
+
+Os formatos apresentados são:
+
+MP3 → audio/mpeg
+Ogg → audio/ogg
+WAV → audio/wav
+
+Também existem duas formas:
+
+Usando src:
+
+<audio src="meu_audio.mp3" controls></audio>
+
+Usando <source>:
+
+<audio controls>
+    <source src="meu_audio.mp3" type="audio/mpeg">
+    <source src="meu_audio.ogg" type="audio/ogg">
+    <source src="meu_audio.wav" type="audio/wav">
+</audio>
+
+Principais atributos:
+
+controls → mostra play, pausa e volume.
+autoplay → inicia automaticamente.
+loop → repete continuamente.
+
+Exemplo:
+
+<audio controls autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+Exemplo Video e Audio Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio e Video</title>
+</head>
+<body>
+    <div id="video">
+        <h1>Vídeo</h1>
+    <video controls width="420px" height="240px">
+        <source src="midias/Video-Em-720.mp4" type="video/mp4">
+    </video>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi rem ex nulla tempora sapiente cumque optio maxime aspernatur alias quibusdam. 
+    Ullam quis molestiae facilis doloribus ducimus quam, dolore numquam nam.</p>
+    </div>
+
+    <div id="audio">
+        <h1>Audio</h1>
+        <audio controls>
+            <source src="midias/mondamusic-brazilian-phonk-phonk-542543.mp3" type="audio/mpeg">    
+        </audio>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laboriosam quis totam commodi? Consectetur, neque? 
+        Quidem ipsum beatae repellendus id dicta molestias quia. Alias sint suscipit eius nulla, repudiandae provident.</p>
+    </div>
+</body>
+</html>
