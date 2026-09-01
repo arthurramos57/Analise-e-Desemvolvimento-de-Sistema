@@ -1,0 +1,339 @@
+Criando Tabelas
+
+Tabelas em HTML — Resumo
+
+As tabelas são utilizadas no HTML para organizar e apresentar dados relacionados de forma estruturada. Atualmente, não são recomendadas para criar o layout de uma página.
+
+1. Estrutura básica
+
+As principais tags são:
+
+Tag	Função
+<table>	Cria a tabela
+<tr>	Cria uma linha
+<td>	Cria uma célula com dados
+<th>	Cria uma célula de cabeçalho
+<caption>	Adiciona uma legenda à tabela
+
+Exemplo:
+
+<table>
+    <caption>Alunos</caption>
+    <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+    </tr>
+    <tr>
+        <td>Arthur</td>
+        <td>19</td>
+    </tr>
+</table>
+
+CSS em tabelas
+
+Podemos utilizar CSS para melhorar a aparência:
+
+table, th, td {
+    border: 1px solid black;
+}
+
+Principais propriedades:
+
+border: define a borda.
+border-collapse: controla a união das bordas.
+padding: espaço interno das células.
+text-align: alinhamento horizontal.
+vertical-align: alinhamento vertical.
+border-spacing: espaço entre células.
+background-color: cor de fundo.
+width: largura.
+height: altura.
+
+Mesclando células
+
+Existem dois atributos importantes:
+
+colspan → mescla colunas.
+
+<td colspan="3">Título</td>
+
+rowspan → mescla linhas.
+
+<td rowspan="3">Título</td>
+
+Dicas:
+colspan = coluna
+rowspan = linha
+
+Agrupando colunas
+
+As tags:
+
+<colgroup> → agrupa colunas.
+<col> → define características das colunas.
+
+Exemplo:
+
+<colgroup>
+    <col span="3" style="background-color:red;">
+    <col style="background-color:yellow;">
+</colgroup>
+
+Dividindo a tabela em partes
+
+HTML permite separar a tabela em:
+
+<thead> → cabeçalho.
+<tbody> → corpo.
+<tfoot> → rodapé.
+
+Estrutura:
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Arthur</td>
+            <td>19</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="2">Total</td>
+        </tr>
+    </tfoot>
+</table>
+
+Exemplo Tabela Codigo
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cabeca2{
+    border: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #60a5fa;
+    background-color: #dbeafe;
+}
+.cabeca3{
+    border: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #2563eb;
+    background-color: #dbeafe;
+}
+.cabeca4{
+    border: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #1e40af;
+    background-color: #dbeafe;
+}
+.titulo1{
+    border-right: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    background-color: grey;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.titulo2{
+    border-right: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    background-color: rgb(188, 188, 188);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.simples1{
+    border-right: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    background-color: #60a5fa;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.simples2{
+    border-right: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    background-color: #2563eb;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.simples3{
+    border-right: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    background-color: #1e40af;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.simples4{
+    border-right: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    background-color: #84b8f8;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.simples5{
+    border-right: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    background-color: #4b7de7;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.simples6{
+    border-right: 3px solid white;
+    padding: 8px 16px 8px 16px;
+    background-color: #3d57ab;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.botao1{
+    border-color: #60a5fa;
+    background-color: #60a5fa;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px 32px 16px 32px; 
+}
+.botao2{
+   border-color: #2563eb;
+    background-color: #2563eb;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px 32px 16px 32px; 
+}
+.botao3{
+    border-color: #1e40af;
+    background-color: #1e40af;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px 32px 16px 32px;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tabela de preço</title>
+</head>
+<body>
+    <table><caption>Praticando Faculdade</caption>
+    <thead>
+        <tr>
+            <th></th>
+            <th class="cabeca2">PRATA <br>$10 <br> POR MÊS*</th>
+            <th class="cabeca3">OURO <br> $20 <br>POR MÊS</th>
+            <th class="cabeca4">DIAMANTE <br> $30 <br> POR MÊS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th class="titulo1">ARMAZNAMENTO</th>
+        <td class="simples1">10 GB</td>
+        <td class="simples2">50 GB</td>
+        <td class="simples3">100 GB</td>
+        </tr>
+        <tr>
+            <th class="titulo2">NOME DOMÍNIOS</th>
+            <td class="simples4">1</td>
+            <td class="simples5">10</td>
+            <td class="simples6">ILIMITADO</td>
+        </tr>
+        <tr>
+            <th class="titulo1">SUBDOMINIOS</th>
+            <td class="simples1">10</td>
+            <td class="simples2">50</td>
+            <td class="simples3">ILIMITADO</td>
+        </tr>
+        <tr>
+            <th class="titulo2">CONTAS DE E-MAIL</th>
+            <td class="simples4">10</td>
+            <td class="simples5">50</td>
+            <td class="simples6">ILIMITADO</td>
+        </tr>
+        <tr>
+            <th class="titulo1">27/7 SUPORTE</th>
+            <td class="simples1">X</td>
+            <td class="simples2">X</td>
+            <td class="simples3">X</td>
+        </tr>
+        <tr>
+            <th class="titulo2">CPANEL</th>
+            <td class="simples4">X</td>
+            <td class="simples5">X</td>
+            <td class="simples6">X</td>
+        </tr>
+        <tr>
+            <th class="titulo1">SISTEMA GRÁTIS</th>
+            <td class="simples1">X</td>
+            <td class="simples2">X</td>
+            <td class="simples3">X</td>
+        </tr>
+        <tr>
+            <th class="titulo2">MODELOS</th>
+            <td class="simples4">X</td>
+            <td class="simples5">X</td>
+            <td class="simples6">X</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td><button class="botao1">Inscreva-se</button></td>
+            <td><button class="botao2">Inscreva-se</button></td>
+            <td><button class="botao3">Inscreva-se</button></td>
+        </tr>
+    </tfoot>
+    </table>
+</body>
+</html>
