@@ -1,0 +1,279 @@
+Criando Animação e Transições
+
+Animações com @keyframes
+
+As animações CSS permitem modificar gradualmente o estilo de um elemento sem JavaScript ou Flash.
+
+O @keyframes define os estados da animação:
+
+@keyframes teste {
+    from {
+        background-color: blue;
+    }
+
+    to {
+        background-color: red;
+    }
+}
+
+Para aplicar:
+
+div {
+    animation-name: teste;
+    animation-duration: 10s;
+}
+
+Principais propriedades:
+
+animation-name: nome do @keyframes.
+animation-duration: duração da animação.
+animation-delay: atraso antes de começar.
+animation-iteration-count: quantidade de repetições.
+animation-direction: direção da animação.
+animation-timing-function: velocidade/comportamento da animação.
+
+Usando porcentagens
+
+Em vez de apenas from e to, podemos criar vários momentos:
+
+@keyframes teste {
+    0%   { left: 0; top: 0; }
+    25%  { left: 400px; top: 0; }
+    50%  { left: 400px; top: 400px; }
+    75%  { left: 0; top: 400px; }
+    100% { left: 0; top: 0; }
+}
+
+Isso permite que o elemento mude de posição, cor, tamanho etc. durante a animação.
+
+Repetição
+animation-iteration-count: 4;
+
+Executa a animação 4 vezes.
+
+Para repetir infinitamente:
+
+animation-iteration-count: infinite;
+
+Direção
+animation-direction: reverse;
+
+Executa no sentido contrário.
+
+animation-direction: alternate;
+
+Executa indo e voltando.
+
+Velocidade da animação
+
+A propriedade animation-timing-function controla como a velocidade varia:
+
+Valor	Comportamento
+ease: começa devagar, acelera e termina devagar
+linear:	velocidade constante
+ease-in:	começa devagar
+ease-out:	termina devagar
+ease-in-out:	começa e termina devagar
+cubic-bezier():	permite criar uma curva personalizada
+
+Forma abreviada de animation
+
+Em vez de escrever várias propriedades:
+
+animation-name: teste;
+animation-duration: 10s;
+animation-timing-function: ease-in;
+animation-delay: 5s;
+animation-iteration-count: 4;
+animation-direction: alternate;
+
+Podemos usar:
+
+animation: teste 10s ease-in 5s 4 alternate;
+
+A ordem é:
+
+nome → duração → velocidade → atraso → repetições → direção
+
+Transições
+
+As transições servem para fazer uma mudança de propriedade acontecer de forma suave.
+
+Exemplo:
+
+div {
+    width: 300px;
+    transition: width 4s;
+}
+
+div:hover {
+    width: 600px;
+}
+
+Quando o mouse passa sobre a div, ela aumenta gradualmente.
+
+transition
+
+Podemos aplicar a várias propriedades:
+
+transition: width 2s, height 4s;
+
+transition-timing-function
+
+Controla a velocidade da transição.
+
+Possui os mesmos principais valores:
+
+ease
+linear
+ease-in
+ease-out
+ease-in-out
+cubic-bezier()
+
+transition-delay
+
+Define um atraso antes da transição acontecer:
+
+transition-delay: 3s;
+
+Transformações — transform
+
+A propriedade transform permite mover, girar, aumentar, diminuir ou inclinar elementos.
+
+Principais funções:
+
+Função	O que faz
+translate():	move o elemento
+translateX():	move no eixo X
+translateY():	move no eixo Y
+rotate():	gira o elemento
+scale():	aumenta/diminui
+scaleX():	altera o tamanho no eixo X
+scaleY():	altera o tamanho no eixo Y
+skew():	inclina em X e Y
+skewX():	inclina no eixo X
+skewY():	inclina no eixo Y
+matrix():	combina transformações 2D
+
+Exemplos:
+
+transform: translate(100px, 50px);
+
+Move o elemento.
+
+transform: rotate(180deg);
+
+Gira 180 graus.
+
+transform: scale(2);
+
+Aumenta o tamanho em 2 vezes.
+
+Transformações 3D
+
+O material também apresenta funções 3D:
+
+rotate3d()
+rotateX()
+rotateY()
+rotateZ()
+scale3d()
+scaleZ()
+translate3d()
+translateZ()
+matrix3d()
+
+Elas permitem trabalhar com rotação, escala e movimento em três dimensões.
+
+Transição + Transformação
+
+Podemos combinar os dois:
+
+div {
+    transition: transform 2s;
+}
+
+div:hover {
+    transform: rotate(180deg);
+}
+
+Assim, quando o mouse passar sobre o elemento, ele gira suavemente.
+
+Também podemos combinar várias propriedades:
+
+transition: width 2s, height 4s, transform 2s;
+
+Exemplo Animação Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes maravilha{
+            0%{transform: translate(0, 0); background-color: orange;}
+            25%{transform: translate(1100px, 0); background-color: yellow;}
+            50%{transform: translate(5px, 400px); background-color: red;}
+            75%{transform: translate(-5px, -5px); background-color: black;}
+            100%{transform: translate(0, 0); background-color: orange;}
+        }
+        div{
+            border: 2px solid lightblue;
+            text-align: center;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            width: 400px;
+            height: 300px;
+            background-color: orangered;
+            position: absolute;
+            animation: maravilha 10s ease-in 5s 2 alternate;
+        }
+    </style>
+    <title>Animação</title>
+</head>
+<body>
+    <div>
+        <h1>O chapeleiro maluco</h1>
+        <p>-"Não tenha medo de perder pessoas. Tenha medo de <br> se perder tentando agradar a todos."</p>
+    </div>
+</body>
+</html>
+
+Exemplo Transições Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            width: 400px;
+            height: 300px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 17px;
+           transition: width 4s ease-out 2s, height 8s ease-out 2s, background-color 0.5s, color 0.5s;
+        }
+        div:hover{
+            background-color: lightskyblue;
+            color: lightslategray;
+            width: 800px;
+            height: 400px;
+            font-size: 20px;
+        }
+    </style>
+    <title>Transição</title>
+</head>
+<body>
+    <div>
+        <h1>Chapeleiro Maluco</h1>
+        <p>-"Cuidado com o que vc fala quando está com <br> raiva, porque depois você pode até esquecer, <br> mas quem ouve, não esquece nunca mais."</p>
+    </div>
+</body>
+</html>
