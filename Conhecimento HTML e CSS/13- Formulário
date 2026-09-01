@@ -1,0 +1,246 @@
+Criando Formulário
+
+Formulários em HTML
+
+Os formulários HTML são usados para receber informações dos usuários, como pesquisas, logins, cadastros e envio de dados.
+
+<form>
+
+É o elemento principal do formulário:
+
+<form action="teste.php" method="post">
+</form>
+action → define para onde os dados serão enviados.
+method → define como os dados serão enviados:
+GET → envia os dados pela URL, sendo adequado para consultas/pesquisas.
+POST → envia os dados no corpo da requisição, sem exibi-los na URL.
+
+O material apresenta o POST como mais seguro, mas é importante lembrar que POST sozinho não criptografa os dados; para segurança em trânsito é necessário HTTPS.
+
+<input>
+
+É usado para criar campos de entrada de dados.
+
+Principais tipos:
+
+Tipo: Função
+text: Texto
+password:	Senha
+radio:	Escolher uma opção
+checkbox:	Escolher várias opções
+color:	Selecionar cor
+date:	Selecionar data
+datetime-local:	Data e hora
+email:	E-mail
+month:	Mês e ano
+number:	Números
+range:	Controle deslizante
+search:	Campo de pesquisa
+tel:	Telefone
+time:	Horário
+url:	Endereço URL
+week:	Semana do ano
+file:	Selecionar arquivo
+button:	Botão sem ação automática
+reset:	Limpar formulário
+submit:	Enviar formulário
+
+Exemplo:
+
+<input type="text" name="login">
+<input type="password" name="senha">
+<input type="submit" value="Enviar">
+
+Atributos importantes
+name: identifica o campo e permite que seu valor seja enviado.
+value: define o valor do campo.
+maxlength: limita a quantidade de caracteres.
+checked: deixa checkbox/radio previamente selecionado.
+min / max: define valores mínimo e máximo.
+step: define o intervalo de alteração de números.
+required: torna o preenchimento obrigatório.
+pattern: define um padrão que o usuário precisa seguir.
+placeholder: mostra uma dica dentro do campo.
+multiple: permite selecionar vários arquivos/e-mails.
+
+textarea
+
+Usado para textos maiores:
+
+<textarea name="recado" rows="10" cols="40"></textarea>
+rows: altura.
+cols: largura.
+
+select, option e optgroup
+
+Criam listas suspensas.
+
+<select name="estado">
+    <option value="SP">São Paulo</option>
+    <option value="RJ">Rio de Janeiro</option>
+</select>
+
+optgroup permite organizar as opções em grupos:
+
+<select>
+    <optgroup label="Frutas">
+        <option>Banana</option>
+        <option>Maçã</option>
+    </optgroup>
+</select>
+
+datalist
+
+Cria sugestões pré-definidas para um campo:
+
+<input list="carros">
+
+<datalist id="carros">
+    <option value="Ford">
+    <option value="BMW">
+    <option value="Fiat">
+</datalist>
+
+output
+
+Exibe um resultado calculado, normalmente utilizando JavaScript.
+
+Exemplo do material: somar valores de dois campos e mostrar o resultado no <output>.
+
+fieldset e legend
+
+Servem para agrupar campos relacionados.
+
+<fieldset>
+    <legend>Login</legend>
+
+    <input type="text" name="login">
+    <input type="password" name="senha">
+</fieldset>
+fieldset → cria o grupo.
+legend → dá um título ao grupo.
+
+Validação HTML5
+
+A validação pode ocorrer no cliente ou no servidor.
+
+O HTML5 possui recursos próprios para validação, como:
+
+<input type="email" required>
+
+Principais recursos:
+
+required
+→ campo obrigatório.
+
+min, max e step
+→ controlam valores numéricos.
+
+<input type="number" min="0" max="100" step="10">
+
+pattern
+→ exige determinado padrão usando expressão regular.
+
+<input type="text" pattern="[0-9]+$">
+
+placeholder
+→ fornece uma orientação:
+
+<input type="text" placeholder="Digite apenas números">
+
+multiple
+→ permite múltiplos valores:
+
+<input type="file" multiple>
+
+CSS em formulários
+
+Formulários podem ser estilizados com CSS, alterando:
+
+cores;
+bordas;
+tamanho da fonte;
+espaçamento;
+fundo;
+alinhamento;
+aparência dos campos.
+
+Exemplo:
+
+input {
+    background: #ccc;
+    color: #600;
+    font-weight: bold;
+}
+
+Exemplo Formulário Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin-bottom: 300px;
+            text-align: center;
+            background-color: rgb(231, 121, 121);
+        }
+        #image{
+            width: 40px;
+        }
+        h1{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            font-weight: 100;
+            color: white;
+        }
+        #login{
+            width: 300px;
+            height: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.764);
+        }
+        #senha{
+            width: 300px;
+            height: 30px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.764);
+        }
+        form{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 13px;
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            margin-left: 50px;
+            color: white;
+        }
+        #botao{
+            width: 300px;
+            height: 30px;
+            margin-top: 30px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.764);
+        }
+    </style>
+    <title>Criando um formulario</title>
+</head>
+<body>
+    <img src="imagem/user-371.png" alt="user" id="image">
+    <h1>User Login</h1>
+    <form action="teste.exercio" method="post" name="primeirologin">
+        <input type="text" name="login" maxlength="50" required placeholder="Email ID" id="login">
+        <br>
+        <input type="password" name="senha" maxlength="10" required placeholder="Password" id="senha">
+        <br>
+        <input id="lembra" type="checkbox" name="remember" checked >Remember-Me
+        <a href="###">Forget Password ?</a>
+        <br>
+        <input type="submit" name="acessar" value="LOGIN" id="botao">
+    </form>
+</body>
+</html>
