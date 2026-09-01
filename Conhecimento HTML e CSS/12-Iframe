@@ -1,0 +1,164 @@
+Adicionando Iframe
+
+Iframe — Resumo
+
+O <iframe> significa internal frame (quadro interno). Ele permite exibir outro conteúdo dentro de uma página HTML, como:
+
+Vídeos do YouTube;
+Mapas do Google Maps;
+Banners;
+Outra página HTML;
+Conteúdos de aplicações externas.
+
+Criando um iframe
+
+A estrutura básica é:
+
+<iframe></iframe>
+
+Para colocar um conteúdo dentro dele, usamos o atributo src:
+
+<iframe src="pagina.html"></iframe>
+
+Importante
+Alguns sites não permitem ser carregados dentro de um iframe. No caso do YouTube, normalmente deve-se utilizar o endereço de 
+incorporação (embed), e não o endereço normal do vídeo.
+
+Formatando o iframe
+
+Podemos controlar seu tamanho e borda:
+
+<iframe
+    src="pagina.html"
+    width="500"
+    height="400"
+    style="border:none;">
+</iframe>
+
+Principais propriedades:
+
+Propriedade	Função
+width: Largura
+height: Altura
+border: Borda
+
+Barras de rolagem
+
+O material apresenta o atributo scrolling:
+
+<iframe scrolling="no"></iframe>
+
+Valores:
+
+scrolling="no": não mostra barras;
+scrolling="yes": mostra sempre;
+scrolling="auto": mostra quando necessário.
+
+Importante: o próprio material informa que scrolling não é mais suportado no HTML5 e apresenta overflow: hidden como alternativa em CSS.
+
+Tela cheia
+
+O atributo:
+
+allowfullscreen
+
+permite que conteúdos incorporados possam utilizar o modo de tela cheia, quando o conteúdo e o navegador oferecem suporte.
+
+Exemplo:
+
+<iframe
+    src="video.html"
+    allowfullscreen>
+</iframe>
+
+Abrindo links dentro do iframe
+
+Podemos fazer um link abrir seu conteúdo dentro de um iframe.
+
+Primeiro, damos um nome ao iframe:
+
+<iframe name="meu_iframe"></iframe>
+
+Depois colocamos esse nome no target do link:
+
+<a href="pagina.html" target="meu_iframe">
+    Abrir página
+</a>
+
+Dica: name do iframe = target do link
+
+Segurança — sandbox
+
+O atributo:
+
+sandbox
+
+é utilizado para restringir ações do conteúdo carregado dentro do iframe.
+
+Quando usamos:
+
+<iframe src="pagina.html" sandbox=""></iframe>
+
+as restrições são aplicadas.
+
+Entre as restrições apresentadas no material estão:
+
+Scripts;
+Formulários;
+Plugins;
+Links fora do iframe;
+Cookies;
+Armazenamento local;
+Acesso a outras páginas da mesma origem.
+
+É possível liberar determinadas funcionalidades com valores como:
+
+allow-forms
+allow-scripts
+allow-same-origin
+allow-popups
+allow-top-navigation
+allow-pointer-lock
+
+srcdoc
+
+O atributo srcdoc permite colocar o conteúdo diretamente no iframe.
+
+Exemplo:
+
+<iframe srcdoc="Olá, mundo!"></iframe>
+
+Quando srcdoc é utilizado, o conteúdo definido nele é exibido e o src é ignorado, conforme o material.
+
+seamless
+
+O material também apresenta o atributo:
+
+seamless
+
+A ideia é fazer o conteúdo do iframe parecer integrado à página, sem bordas e barras de rolagem, além de outras integrações descritas no material.
+
+Para estudar pela prática atual, trate esse item como conceito histórico do material, pois seamless não é um recurso moderno de uso geral.
+
+Exemplo Iframe no Codigo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        iframe{
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+    <title>Criando Iframes</title>
+</head>
+<body>
+    <h1>Criando Meus Iframes</h1>
+
+    <iframe src="http://www.uninove.br"sandbox="" seamless></iframe>
+
+</body>
+</html>
