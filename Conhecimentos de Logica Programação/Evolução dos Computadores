@@ -1,0 +1,135 @@
+Origem da computação
+
+Desde a Antiguidade, o ser humano buscava formas de realizar cálculos. Primeiro usava os dedos, depois pedras e instrumentos como o ábaco.
+
+Com o aumento da complexidade dos cálculos surgiram:
+
+Ábaco;
+Réguas de cálculo;
+Calculadoras mecânicas;
+Computadores.
+
+O que é um computador?
+
+É uma máquina capaz de receber, armazenar, processar e produzir informações automaticamente, com rapidez e precisão.
+
+Modelo de Von Neumann
+
+Criado por volta de 1940, é a base da arquitetura de muitos computadores modernos.
+
+O computador possui:
+
+Processador (CPU): executa instruções;
+Memória: armazena dados e programas;
+Entrada: recebe informações;
+Saída: apresenta resultados.
+
+A evolução desse modelo levou à utilização de barramentos, que permitem a comunicação entre os componentes.
+
+Gerações dos computadores
+Geração Zero — Precursores
+
+Antes dos computadores eletrônicos.
+
+Principais exemplos:
+
+Dedos;
+Ábaco;
+Calculadoras mecânicas;
+Máquina de Charles Babbage;
+Máquina de Herman Hollerith.
+
+Hollerith criou uma máquina que utilizava cartões perfurados para processar dados do censo americano de 1890.
+
+Sua empresa evoluiu até se tornar a IBM.
+
+Primeira geração — 1930/1958
+
+Utilizava válvulas eletrônicas.
+
+Características:
+
+Muito grandes;
+Alto consumo de energia;
+Muito calor;
+Válvulas queimavam frequentemente;
+Baixa confiabilidade.
+
+ENIAC: um dos principais computadores dessa geração, construído em 1948, possuía aproximadamente 19 mil válvulas.
+
+Segunda geração — 1955/1965
+
+Principal mudança: transistor.
+
+O transistor substituiu as válvulas.
+
+Vantagens:
+
+Menor tamanho;
+Menor consumo de energia;
+Maior confiabilidade;
+Menor custo;
+Maior velocidade.
+
+O transistor representa os estados 0 e 1, fundamentais para a computação digital.
+
+Terceira geração — 1965/1980
+
+Principal mudança: Circuito Integrado (CI).
+
+Vários transistores passaram a ser colocados em um único chip.
+
+Resultado:
+
+Computadores menores;
+Mais rápidos;
+Mais confiáveis;
+Mais eficientes.
+
+Exemplo citado no material: IBM 1130, que chegou à Unicamp em 1968.
+
+Quarta geração — 1980 até atual
+
+Caracterizada pelo desenvolvimento dos microprocessadores e pela alta integração dos componentes.
+
+Tecnologias:
+
+LSI — Large Scale Integration;
+VLSI — Very Large Scale Integration.
+
+Possibilitou:
+
+Milhares e milhões de transistores em um chip;
+Computadores menores;
+Maior poder de processamento;
+Redução dos preços;
+Popularização dos computadores pessoais (PCs).
+
+Intel 4004: primeiro microprocessador da Intel, com 4 bits e cerca de 2.250 transistores.
+
+Popularização dos PCs
+Apple I: desenvolvido por Steve Jobs e Steve Wozniak;
+Apple II: primeiro grande sucesso comercial da Apple;
+IBM PC: lançado em 1981 e tornou-se um padrão de computadores pessoais;
+Pentium: lançado em 1993, trouxe maior desempenho para computadores pessoais.
+
+Quinta geração — década de 1990
+
+Foco principalmente em maior desempenho e multimídia.
+
+Pentium MMX
+
+Possuía instruções específicas para:
+
+Gráficos;
+Imagens;
+Sons;
+Aplicações multimídia.
+Pentium II
+Processamento de 32 bits;
+Melhor desempenho;
+Clock de até 300 MHz;
+Utilizava cache para melhorar o desempenho.
+Pentium II Celeron
+
+Versão mais barata do Pentium II, com menor custo e sem a mesma quantidade de recursos de cache.
