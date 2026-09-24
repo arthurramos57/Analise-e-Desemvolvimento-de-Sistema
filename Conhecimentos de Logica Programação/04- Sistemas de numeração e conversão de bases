@@ -1,0 +1,25 @@
+Conversões; bit e byte (conceituação)
+
+Conversão Direta: Binário para Hexadecimal
+A relação direta entre esses sistemas existe porque $1$ dígito hexadecimal equivale exatamente a $4$ bits ($2^4 = 16$).
+Binário para Hexadecimal Agrupam-se os bits de 4 em 4 (da direita para a esquerda). Se o último grupo à esquerda ficar incompleto, preenche-se com zeros. 
+Em seguida, substitui-se cada quadra pelo seu valor hexadecimal correspondente.
+Exemplo ($11101_2$):Separação em grupos de 4 bits: 1 e 1101$1101_2 = 13_{10} = \mathbf{D}_{16}$$0001_2 = 1_{10} = \mathbf{1}_{16}$Resultado: $\text{1D}_{16}$B. 
+Hexadecimal para BinárioSubstitui-se cada dígito hexadecimal individualmente pelo seu equivalente de 4 bits.
+Exemplo ($\text{CDF}_{16}$):$\text{F}_{16} = 15_{10} = \mathbf{1111}_2$$\text{D}_{16} = 13_{10} = \mathbf{1101}_2$$\text{C}_{16} = 12_{10} = \mathbf{1100}_2$Resultado: $110011011111_2$
+
+Conceitos de Unidades de Informação 
+Bit (Binary Digit): É a menor unidade de informação no computador, representando dois estados elétricos ($0\text{ V} = 0$ e $+\text{V} = 1$).
+
+Byte: É um agrupamento de 8 bits ($1\text{ byte} = 8\text{ bits}$). É a unidade necessária para representar um caractere (letra, número ou símbolo).
+
+Tabela ASCII: Código padrão internacional que associa um conjunto de bits/hexadecimal a cada caractere para garantir a compatibilidade entre sistemas.
+
+Múltiplos do Byte 
+Na computação, os múltiplos do byte crescem em fatores de $1024$ ($2^{10}$)
+Unidade    Abreviação     Equivalência  
+Kilobyte       KB         $1024\text{ bytes}$ ($2^{10}$)
+Megabyte       MB         $1024\text{ KB}$ ($2^{20}$)
+Gigabyte       GB         $1024\text{ MB}$ ($2^{30}$)
+Terabyte       TB         $1024\text{ GB}$ ($2^{40}$)
+Petabyte       PB         $1024\text{ TB}$ ($2^{50}$)
