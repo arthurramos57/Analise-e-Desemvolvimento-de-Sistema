@@ -1,0 +1,21 @@
+Decimal e binário
+
+O que é um Sistema de Numeração?
+É uma forma organizada de representar quantidades por meio de regras, símbolos e posições.
+O valor de cada símbolo depende da posição que ele ocupa.
+O Sistema Decimal (Base 10) utiliza 10 símbolos ($0$ a $9$).Cada posição à esquerda representa uma potência de $10$ ($10^0, 10^1, 10^2\dots$).
+A base ($r$) indica a quantidade de símbolos distintos de um sistema. O texto exemplifica um sistema de base 7 com os símbolos $\{0, 1, 2, 3, \text{C}, \%, \}\}$ para 
+demonstrar como qualquer conjunto de símbolos pode compor uma contagem posicional.
+
+O Sistema Binário (Base 2)Essencial para a computação e controle de máquinas por representar dois estados físicos (ex.: ligado/desligado, com/sem tensão).
+Utiliza apenas 0 e 1 (cada dígito é chamado de bit).
+Lê-se dígito por dígito para não confundir com o sistema decimal (ex.: $110_2$ lê-se "um, um, zero").
+Para números negativos, pode-se adicionar um bit à esquerda ($0$ para positivo, $1$ para negativo)
+
+Métodos de Conversão 
+Binário para Decimal (Soma de Potências de 2)Multiplica-se cada dígito pela potência de $2$ correspondente à sua posição e somam-se os resultados.
+Posições da direita para a esquerda recebem expoentes inteiros positivos ($2^0, 2^1, 2^2\dots$).
+Posições após a vírgula utilizam expoentes negativos ($2^{-1}, 2^{-2}, 2^{-3}\dots$).
+Exemplo: $110010_2 = (1 \times 2^5) + (1 \times 2^4) + (0 \times 2^3) + (0 \times 2^2) + (1 \times 2^1) + (0 \times 2^0) = 32 + 16 + 0 + 0 + 2 + 0 = 50_{10}$.B. 
+Decimal para Binário (Divisões Sucessivas)Divide-se o número decimal sucessivamente por $2$ até que o quociente seja menor que $2$.
+O número binário é formado pelo último quociente seguido de todos os restos organizados na ordem inversa (do último para o primeiro).Exemplo: $1029_{10} = 10000000101_2$.
