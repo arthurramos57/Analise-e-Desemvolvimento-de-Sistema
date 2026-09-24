@@ -1,0 +1,30 @@
+Subtração
+
+Subtração Binária Direta (Método do Empréstimo)
+Assim como na subtração decimal, opera-se coluna por coluna a partir da direita. 
+Quando o subtraendo é maior que o minuendo, empresta-se $1$ da coluna de ordem superior, 
+o qual equivale a $2_{10}$ (o valor da base).
+As 4 Regras Básicas:$0 - 0 = 0$$1 - 1 = 0$$1 - 0 = 1$$0 - 1 = 1$ (com empréstimo/borrow de 
+$1$ da coluna seguinte, valendo $2_{10}$)Mecanismo de Empréstimo Encadeado: 
+Ao pedir emprestado de uma coluna distante que possui $1$, esse $1$ vira $0$, 
+e todas as colunas zeradas no caminho pelo qual o empréstimo passou passam a valer $1$.
+
+O Conceito e Obtenção do Complemento de 2O Complemento de 2 é uma técnica utilizada para representar números negativos e 
+simplificar operações em circuitos digitais.Como calcular o Complemento de 2 em 2 passos:
+Obter o Complemento de 1: Invertem-se todos os bits do número ($0$ vira $1$, e $1$ vira $0$).
+Somar $1$: Adiciona-se o valor $1$ ao bit menos significativo (LSD) do resultado.
+
+Exemplo: Obter o Complemento de 2 do número $101101_2$ ($45_{10}$):Original: $101101_2$Complemento de 1 (inversão): $010010_2$Somando 1: $010010_2 + 1 = \mathbf{010011_2}$
+
+Subtração Utilizando Complemento de 2Em vez de projetar um circuito de subtração complexo e dispendioso, 
+a ALU realiza a subtração convertendo-a em uma adição.Passo a Passo para Subtrair $A - B$:
+Mantém-se o minuendo ($A$).Calcula-se o Complemento de 2 do subtraendo ($B$).
+Soma-se o minuendo ($A$) com o Complemento de 2 de $B$.Descarta-se o bit de transporte (carryout) 
+que ultrapassar a largura de bits definida para a operação (ex.: o bit extra após somar números de 8 bits).
+
+Vantagem Arquitetural na ALU
+Circuito Único: A ALU utiliza o mesmo circuito somador para realizar tanto somas quanto subtrações.
+
+Transparência: O circuito somador trata todas as entradas como padrões binários sem sinal. 
+A distinção entre números com sinal ou sem sinal é apenas uma questão de interpretação do 
+programador ou do sistema, poupando espaço de silício e custo de fabricação no microprocessador.
