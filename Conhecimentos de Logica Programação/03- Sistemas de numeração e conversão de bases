@@ -1,0 +1,56 @@
+Octal e hexadecimal
+
+O Conceito de Sistema Posicional e BaseUm 
+sistema de numeração posicional é uma regra de organização onde o valor de cada dígito depende da posição que ele ocupa no número.
+Base ($r$): É a quantidade total de símbolos (dígitos) diferentes que o sistema utiliza.
+Notação Polinomial (Pesos): Em qualquer base, cada posição da direita para a esquerda vale uma potência da base ($r^0, r^1, r^2, \dots$).
+O Sistema Decimal (Base 10): Utiliza 10 símbolos ($0$ a $9$).
+Exemplo: $3004 = 3 \times 10^3 + 0 \times 10^2 + 0 \times 10^1 + 4 \times 10^0 = 3000 + 0 + 0 + 4$
+
+Os Sistemas no Mundo Digital
+Sistema      Base    (r)Símbolos Utilizados     Relação com Bits 
+Binário       2               0, 1              Base nativa dos computadores 
+                                                (1 bit = 1 dígito)
+Octal         8       0, 1, 2, 3, 4, 5, 6, 7    Agrupa 3 bits ($2^3 = 8$)
+Hexadecimal   16      0–9 e A, B, C, D, E, F 
+                      (onde A=10, B=11, C=12, 
+                      D=13, E=14, F=15)         Agrupa 4 bits ($2^4 = 16$)
+
+Conversões de Base para Decimal (Soma de Potências)
+Para converter qualquer base para o sistema decimal, multiplica-se cada dígito pela sua respectiva potência da base e soma-se tudo. 
+
+Binário para Decimal Converter $110010_2$ para decimal:$$\begin{aligned} 110010_2 &= (1 \times 2^5) + (1 \times 2^4) + (0 \times 2^3) + (0 \times 2^2) + (1 \times 2^1) 
++ (0 \times 2^0) \\ &= (1 \times 32) + (1 \times 16) + 0 + 0 + (1 \times 2) + 0 \\ &= 32 + 16 + 2 = \mathbf{50_{10}} \end{aligned}$$B. 
+
+Hexadecimal para DecimalConverter $\text{A01}_{16}$ e $\text{BF20}_{16}$ para decimal:
+
+Exemplo 1 ($\text{A01}_{16}$):Lembrando que $\text{A} = 10$:$$\text{A01}_{16} = (10 \times 16^2) + (0 \times 16^1) + (1 \times 16^0)$$$$\text{A01}_{16} = (10 \times 256) + 0 + 
+(1 \times 1) = 2560 + 1 = \mathbf{2561_{10}}$$Exemplo 2 ($\text{BF20}_{16}$):Lembrando que $\text{B} = 11$ e $\text{F} = 15$:$$\text{BF20}_{16} = (11 \times 16^3) + (15 \times 16^2) + 
+(2 \times 16^1) + (0 \times 16^0)$$$$\text{BF20}_{16} = (11 \times 4096) + (15 \times 256) + (2 \times 16) + 0$$$$\text{BF20}_{16} = 45056 + 3840 + 32 = \mathbf{48928_{10}}$$
+
+Conversões de Decimal para Outras Bases (Divisões Sucessivas)
+Para converter um número decimal para outra base, divide-se sucessivamente o número pela base desejada até que o quociente seja $0$. 
+O resultado final é formado pelo último quociente/resto e os restos lidos de baixo para cima (da última divisão para a primeira)
+Decimal para BinárioConverter $1029_{10}$ para binário:$1029 \div 2 = 514$ com resto 1$514 \div 2 = 257$ com resto 0$257 \div 2 = 128$ com resto 1$128 \div 2 = 64$ com resto 0$64 \div 2 = 32$ 
+com resto 0$32 \div 2 = 16$ com resto 0$16 \div 2 = 8$ com resto 0$8 \div 2 = 4$ com resto 0$4 \div 2 = 2$ com resto 0$2 \div 2 = 1$ com resto 0$1 \div 2 = 0$ com resto 1O 
+organizando os restos de baixo para cima: $10000000101_2$B. Decimal para HexadecimalConverter $3748_{10}$ para hexadecimal:$3748 \div 16 = 234$ com resto 4$234 \div 16 = 14$ com resto 10 
+($\text{A}_{16}$)$14 \div 16 = 0$ com resto 14 ($\text{E}_{16}$)Organizando os restos de baixo para cima: $\text{EA4}_{16}$
+
+Tabela Comparativa de Equivalência
+Decimal (Base 10)        Binário (Base 2)         Octal (Base 8)        Hexadecimal (Base 16)
+       0                      0000                     0                           0 
+       1                      0001                     1                           1 
+       2                      0010                     2                           2 
+       3                      0011                     3                           3 
+       4                      0100                     4                           4 
+       5                      0101                     5                           5   
+       6                      0110                     6                           6    
+       7                      0111                     7                           7 
+       8                      1000                     10                          8 
+       9                      1001                     11                          9 
+       10                     1010                     12                          A 
+       11                     1011                     13                          B 
+       12                     1100                     14                          C 
+       13                     1101                     15                          D 
+       14                     1110                     16                          E 
+       15                     1111                     17                          F
