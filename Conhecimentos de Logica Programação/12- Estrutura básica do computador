@@ -1,0 +1,48 @@
+Busca e execução de instruções, interrupções e barramentos
+
+Barramentos
+
+Os barramentos são meios de comunicação que permitem ao processador trocar dados com outros componentes do computador, como memória, placas de vídeo e periféricos.
+
+Cada barramento possui características próprias de velocidade, capacidade e finalidade.
+
+Principais barramentos antigos
+
+ISA: foi utilizado em computadores antigos e trabalhava com 8 ou 16 bits. Era suficiente para periféricos mais lentos, como placas de som e modems.
+
+MCA: criado pela IBM para oferecer maior velocidade que o ISA. Trabalhava com 32 bits, mas não se popularizou devido ao alto custo e à incompatibilidade com o ISA.
+
+EISA: surgiu como uma alternativa ao MCA. Trabalhava com 32 bits e mantinha compatibilidade com placas ISA.
+
+VLB: criado principalmente para dispositivos que precisavam de maior velocidade, como placas de vídeo e controladoras de disco. Era mais rápido que ISA e EISA, 
+mas possuía limitações e dependia bastante do processador.
+
+PCMCIA: desenvolvido principalmente para notebooks, permitindo conectar placas de expansão pequenas, como modems, placas de rede e cartões de memória.
+
+AMR: utilizado para modems e placas de som de baixo custo. Esses dispositivos utilizavam o processador para realizar parte de suas funções.
+
+ACR: semelhante ao AMR, mas permitia uma variedade maior de dispositivos de comunicação e expansão.
+
+AGP: desenvolvido especificamente para placas de vídeo. Permitia maior velocidade de transferência e acesso da placa de vídeo à memória RAM para armazenar texturas.
+
+Barramentos mais recentes
+
+PCI: criado pela Intel, tornou-se um barramento muito mais versátil que os antigos. Permitia conectar diversos tipos de periféricos e utilizava uma controladora 
+própria, reduzindo a utilização do processador.
+
+USB: criado para conectar periféricos externos. É fácil de utilizar, suporta vários dispositivos e permite conectar ou desconectar equipamentos com o computador ligado. 
+É um exemplo de tecnologia Plug and Play.
+
+IEEE 1394 (FireWire): interface de alta velocidade utilizada principalmente para transferência de dados entre computadores e equipamentos digitais, especialmente áudio e vídeo.
+
+Pedido de interrupção — IRQ
+
+O IRQ (Interrupt Request) é um mecanismo que permite que os dispositivos solicitem a atenção do processador.
+
+Quando um dispositivo precisa ser atendido, ele envia uma interrupção. O processador interrompe temporariamente sua tarefa, atende ao dispositivo e depois continua o que estava fazendo.
+
+Os IRQs funcionam como canais de comunicação entre os dispositivos e o processador.
+
+Um ponto importante é que, no modelo descrito no material, dois dispositivos não devem utilizar o mesmo IRQ, pois isso pode causar conflitos de hardware e mau funcionamento.
+
+Caso um dispositivo não esteja instalado, seu IRQ pode ficar disponível para outro dispositivo. Também é possível alterar a configuração de IRQ de determinados periféricos.
