@@ -1,0 +1,36 @@
+Circuitos Lógicos, Tabelas da Verdade e Expressões Booleanas
+
+A tabela da verdade é utilizada para analisar uma função booleana e mostrar todas as possíveis combinações das variáveis de entrada e seus respectivos resultados.
+
+Tabela da verdade a partir de uma expressão
+
+Para montar uma tabela da verdade a partir de uma expressão booleana, deve-se:
+
+Identificar o número de variáveis.
+Montar todas as combinações possíveis de 0 e 1.
+Criar colunas auxiliares para cada parte da expressão.
+Calcular os resultados de cada parte.
+Criar a coluna final com o resultado da expressão.
+
+O número de combinações é calculado por:
+
+2ᴺ
+
+onde N é o número de variáveis.
+
+Por exemplo, uma expressão com 4 variáveis terá:
+
+2⁴ = 16 possibilidades.
+
+Expressão booleana a partir de uma tabela da verdade
+
+Também é possível fazer o caminho inverso: partir de uma tabela da verdade e encontrar a expressão booleana correspondente.
+
+Para isso, deve-se:
+
+Procurar as linhas em que a saída S = 1.
+Observar os valores das entradas nessas linhas.
+Montar um termo booleano para cada linha em que S = 1.
+Fazer a soma booleana (OU) entre todos esses termos.
+
+Esse método produz uma expressão na forma de soma de produtos.
