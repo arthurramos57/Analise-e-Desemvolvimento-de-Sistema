@@ -1,1 +1,1 @@
-Meu aprendizado e projetos do dia a dia.
+Meu aprendizado do dia a dia.
