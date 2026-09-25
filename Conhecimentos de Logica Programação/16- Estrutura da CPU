@@ -1,0 +1,59 @@
+Organização de registradores e Ciclo de instrução
+
+O que é a CPU?
+
+A CPU (processador) é o componente responsável por:
+
+Executar instruções;
+Realizar cálculos;
+Processar dados;
+Controlar o funcionamento dos demais componentes.
+
+Um programa é formado por várias instruções em linguagem de máquina, armazenadas na memória principal.
+
+A CPU executa essas instruções seguindo o ciclo de instrução:
+
+Busca → Decodificação → Execução
+
+Ciclo de instrução
+
+Busca (Fetch)
+
+A CPU procura na memória a próxima instrução.
+
+O PC (Program Counter) contém o endereço da próxima instrução.
+
+De forma simplificada:
+
+PC → REM → Memória → RDM → RI
+
+PC: indica onde está a próxima instrução.
+REM: recebe o endereço da memória.
+RDM: recebe o conteúdo lido da memória.
+RI: armazena a instrução que será executada.
+
+Depois disso, o PC é atualizado para apontar para a próxima instrução.
+
+Decodificação
+
+A instrução armazenada no RI é interpretada.
+
+O decodificador de instruções identifica qual operação deve ser realizada.
+
+Exemplo:
+
+"Somar A + B"
+
+A CPU identifica que precisa realizar uma operação de soma.
+
+Execução
+
+A CPU realiza efetivamente a operação.
+
+Pode envolver:
+
+ULA;
+Registradores;
+Memória;
+Entrada/saída;
+Cálculos de endereço.
