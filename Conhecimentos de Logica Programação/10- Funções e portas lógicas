@@ -1,0 +1,38 @@
+Aplicações de Circuitos Lógicos
+
+O projeto de um circuito lógico começa com a análise de um problema. Primeiro, são identificadas as possíveis situações do evento. 
+Depois, é criada a tabela da verdade, que mostra as entradas e o resultado desejado. A partir dela, pode-se obter a expressão booleana e, finalmente, montar o circuito lógico.
+
+Exemplo: sistema de alarme
+
+Imagine um alarme que deve ser acionado quando alguém forçar a porta ou a janela de uma casa.
+
+A = porta
+B = janela
+S = alarme
+
+O alarme deve ser acionado quando:
+
+Somente a janela for forçada.
+Somente a porta for forçada.
+A porta e a janela forem forçadas.
+
+A única situação em que o alarme não deve ser acionado é quando nenhuma das duas for forçada.
+
+Montagem da expressão
+
+A partir das situações em que S = 1, são criados os termos da expressão booleana.
+
+Cada situação é representada por uma combinação das entradas usando AND (·). Depois, como qualquer uma das situações pode acionar o alarme, os termos são unidos usando OR (+).
+
+A expressão final representa o comportamento do alarme.
+
+Montagem do circuito
+
+Para transformar a expressão em circuito:
+
+AND (·) representa a multiplicação entre variáveis.
+OR (+) representa a soma entre os termos.
+NOT é utilizado quando uma variável precisa ser invertida.
+
+Assim, cada termo da expressão é montado com suas respectivas portas AND e NOT, e depois os resultados são ligados a uma porta OR.
