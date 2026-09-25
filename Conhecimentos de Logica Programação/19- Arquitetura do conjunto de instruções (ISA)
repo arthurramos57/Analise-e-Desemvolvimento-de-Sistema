@@ -1,0 +1,256 @@
+Características de instruções de máquina, tipos de operandos
+
+Arquitetura de computadores
+
+O estudo da arquitetura de computadores utiliza abstrações, pois um computador pode ser analisado em diferentes níveis.
+
+Usuário: enxerga principalmente as aplicações e os resultados.
+Arquitetura de computadores: analisa como o computador/processador funciona internamente e logicamente.
+
+Para memorizar:
+
+Usuário → aplicações
+Arquitetura → funcionamento do computador
+
+ISA — Instruction Set Architecture
+
+A ISA é a interface entre o software e o hardware.
+
+Ela descreve o processador do ponto de vista lógico, especificando:
+
+Quais instruções o processador executa.
+Como os dados são representados.
+Quais tipos de dados são suportados.
+Quais modos de endereçamento existem.
+Como os operandos podem ser acessados.
+Exemplo
+
+A IA-32, arquitetura Intel de 32 bits, pode possuir diferentes processadores implementando a mesma ISA, como:
+
+Pentium
+Celeron
+Xeon
+
+Ou seja:
+
+Uma mesma ISA pode ter várias implementações de hardware.
+
+ISA = conjunto de regras que define como o processador funciona logicamente.
+
+Exemplos de ISA
+
+Alguns exemplos:
+
+MIPS
+SPARC
+IA-32
+JVM
+.NET/CLI
+
+No caso da JVM e de plataformas semelhantes, a ISA pode ser entendida como uma espécie de processador virtual implementado por software.
+
+Isso permite que programas sejam executados em diferentes computadores sem depender diretamente do hardware físico.
+
+Modos de endereçamento
+
+Os modos de endereçamento determinam como o processador encontra os operandos necessários para executar uma instrução.
+
+Principais:
+
+Registro
+
+O operando está armazenado em um registrador.
+
+Imediato
+
+O próprio valor está dentro da instrução.
+
+Exemplo conceitual:
+
+ADD R1, 5
+
+O número 5 é um valor imediato.
+
+Direto/absoluto
+
+A instrução indica diretamente o endereço onde está o dado.
+
+Registro indireto
+
+Um registrador contém o endereço do dado.
+
+Autoincremento
+
+Acesso ao endereço e depois incremento automático.
+
+Autodecremento
+
+O registrador é decrementado antes/durante o acesso.
+
+Deslocamento
+
+O endereço é calculado utilizando um deslocamento.
+
+Indexado
+
+Utiliza um índice para calcular o endereço.
+
+PC relativo
+
+O endereço é calculado em relação ao PC (Program Counter).
+
+Para memorizar:
+Modo de endereçamento = forma de localizar/acessar o operando.
+
+Tipos de instruções
+
+A ISA define quais instruções o processador pode executar.
+
+Transferência de dados
+
+Movem dados entre diferentes locais.
+
+Exemplos conceituais:
+
+Memória → registrador
+Registrador → memória
+Registrador → registrador
+
+Também podem incluir operações de I/O e acesso à pilha.
+
+Aritméticas e lógicas inteiras
+
+Realizam operações como:
+
+Soma
+Subtração
+AND
+OR
+XOR
+Comparações
+Vírgula flutuante
+
+Realizam operações com números de ponto/vírgula flutuante.
+
+Deslocamento e rotação
+
+Movem bits para:
+
+Esquerda
+Direita
+
+Também podem realizar rotações dos bits.
+
+Manipulação de bits
+
+Operam diretamente sobre determinados bits dos operandos.
+
+Podem afetar flags do processador.
+
+Controle de fluxo
+
+Alteram a sequência normal de execução.
+
+Exemplos:
+
+Saltos condicionais.
+Saltos incondicionais.
+Desvios.
+Controle do sistema
+
+Incluem operações relacionadas a:
+
+Rotinas.
+Interrupções.
+Exceções.
+Funções especiais
+
+Instruções específicas para determinadas unidades funcionais do processador.
+
+Instruções configuráveis
+
+Permitem customizações específicas em processadores que oferecem esse recurso.
+
+CISC e RISC
+
+No nível da ISA, duas classificações importantes são:
+
+CISC
+
+Complex Instruction Set Computer
+
+Conjunto de instruções mais complexo.
+Instruções podem realizar operações mais elaboradas.
+RISC
+
+Reduced Instruction Set Computer
+
+Conjunto de instruções reduzido.
+Instruções geralmente mais simples.
+Favorece execução eficiente e pipeline.
+
+Macete:
+
+CISC = Complex
+RISC = Reduced
+
+Assembly e linguagem de máquina
+Assembly
+
+É uma linguagem de baixo nível que utiliza mnemônicos para representar instruções.
+
+Exemplo conceitual:
+
+ADD R1, R2
+
+Em vez de trabalhar diretamente com códigos binários.
+
+Linguagem de máquina
+
+É a linguagem nativa do processador, representada por códigos que o hardware consegue executar.
+
+Relação
+
+Existe uma relação muito próxima entre Assembly e linguagem de máquina:
+
+1 instrução Assembly ≈ 1 instrução de máquina
+
+Por isso, Assembly é bastante dependente da arquitetura.
+
+Consequência
+
+Um programa Assembly tende a:
+
+Ser maior.
+Ser eficiente.
+Ter pouca ou nenhuma portabilidade entre diferentes arquiteturas.
+
+Assembly = baixo nível + próximo do hardware + pouca portabilidade.
+
+Linguagens de alto nível
+
+São linguagens mais próximas da forma como os seres humanos estruturam problemas.
+
+Características:
+
+Possuem estruturas de controle.
+Permitem criar programas mais complexos com menos código.
+São mais fáceis de desenvolver e manter.
+Possuem maior portabilidade.
+
+Exemplos:
+
+C
+Java
+Python
+C#
+
+Alto nível = mais abstração + maior facilidade + maior portabilidade.
+
+CLI — Common Language Infrastructure
+
+A CLI permite que aplicações desenvolvidas em diferentes linguagens de alto nível possam ser executadas em diferentes ambientes.
+
+A ideia principal é criar uma camada intermediária, evitando que o código precise ser totalmente reescrito para cada ambiente.
+
+Isso aumenta a portabilidade.
