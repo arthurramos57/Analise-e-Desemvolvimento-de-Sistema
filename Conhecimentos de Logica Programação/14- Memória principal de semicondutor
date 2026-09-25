@@ -1,0 +1,309 @@
+Memória cachê, memórias magnéticas e memórias ópticas
+
+Célula de memória
+
+A célula de memória é o circuito básico capaz de armazenar um dado.
+
+Ela pode assumir dois estados:
+
+0
+1
+
+E permanece nesse estado até receber uma ação externa para alterá-lo.
+
+RAM
+
+RAM (Random Access Memory) permite leitura e escrita e possui acesso aleatório aos endereços.
+
+É usada principalmente para armazenar temporariamente programas e dados em execução.
+
+É uma memória volátil, ou seja, perde os dados quando a alimentação é desligada.
+
+Existem dois tipos principais:
+
+SRAM
+Memória estática.
+Utiliza circuitos semelhantes a latches.
+Não precisa de atualização constante enquanto houver energia.
+É muito rápida e cara.
+Usada principalmente em memória cache.
+DRAM
+Memória dinâmica.
+Utiliza pequenos capacitores para armazenar os bits.
+Precisa de refresh periódico para não perder os dados.
+É mais lenta que SRAM.
+Possui maior capacidade e menor custo.
+É utilizada principalmente na memória RAM principal.
+
+Para memorizar:
+
+SRAM → rápida, cara, cache
+DRAM → maior, barata, RAM principal, precisa de refresh
+
+ROM
+
+ROM (Read Only Memory) é uma memória não volátil.
+
+Ou seja, mantém os dados mesmo quando o computador é desligado.
+
+É utilizada para armazenar:
+
+Programas;
+Firmware;
+Instruções que não precisam ser alteradas frequentemente.
+
+Exemplos de aplicação:
+
+Eletrodomésticos;
+Sistemas de segurança;
+Caixas registradoras;
+Equipamentos controlados por microprocessadores.
+
+Tipos de ROM
+PROM
+Pode ser programada pelo usuário.
+Só pode ser programada uma vez.
+Depois da programação, não pode ser apagada.
+
+PROM = programa uma vez.
+
+EPROM
+Pode ser programada.
+Pode ser apagada e reprogramada.
+O apagamento é feito com luz ultravioleta.
+Precisa ficar exposta à luz UV por aproximadamente 15 a 30 minutos.
+
+EPROM = apaga com luz UV.
+
+EEPROM
+Pode ser apagada e reprogramada eletricamente.
+Pode apagar partes específicas, como palavras individuais.
+Não precisa ser retirada do circuito para ser apagada.
+
+EEPROM = apaga eletricamente.
+
+EAROM
+Semelhante à EEPROM.
+Permite alterações parciais nos dados.
+É usada quando apenas pequenas partes precisam ser regravadas.
+Flash
+É um tipo de EEPROM.
+Possui gravação e regravação mais rápidas.
+É durável e permite armazenar grandes quantidades de dados.
+
+Exemplos:
+
+Pendrive;
+Cartão de memória;
+SSD.
+CD-ROM / DVD-ROM
+
+São mídias ópticas que podem ter os dados gravados apenas uma vez.
+
+Já:
+
+CD-R / DVD-R → graváveis uma vez.
+CD-RW / DVD-RW → podem ser regravados.
+5. Evolução das memórias RAM
+FPM
+
+Uma das primeiras tecnologias de RAM.
+
+A primeira leitura é mais lenta e as seguintes são mais rápidas.
+
+Exemplo:
+
+3-2-2-2
+
+A primeira operação demora mais e as três seguintes são mais rápidas.
+
+EDO
+
+Evolução da FPM.
+
+Permite iniciar um novo acesso enquanto uma solicitação anterior ainda está em andamento.
+
+Foi utilizada principalmente em módulos SIMM.
+
+SDRAM
+
+Synchronous DRAM
+
+A principal diferença é que trabalha sincronizada com o clock do processador.
+
+Exemplos:
+
+PC66
+PC100
+PC133
+DDR SDRAM
+
+Double Data Rate
+
+Consegue transferir dados duas vezes por ciclo de clock.
+
+Por isso, uma memória de 100 MHz pode atingir uma taxa efetiva de 200 MHz.
+
+DDR = 2 operações por ciclo.
+
+DDR2
+
+Evolução da DDR.
+
+Realiza 4 operações por ciclo.
+
+DDR2 = 4 operações.
+
+DDR3
+
+Evolução da DDR2.
+
+Realiza 8 operações por ciclo.
+
+Também trouxe suporte a tecnologias como Triple-Channel.
+
+Sequência para memorizar:
+
+DDR → 2
+DDR2 → 4
+DDR3 → 8
+
+Rambus
+
+Tecnologia criada pela empresa Rambus.
+
+Características:
+
+16 bits por vez;
+Frequência de 400 MHz;
+2 operações por ciclo;
+Alta latência;
+Maior aquecimento;
+Custo elevado.
+
+Não teve grande aceitação e acabou perdendo espaço para a DDR.
+
+Módulos de memória
+
+O módulo, ou "pente", é a placa onde ficam instalados os chips de memória.
+
+SIPP
+Um dos primeiros módulos.
+Utilizava chips DIP.
+Geralmente era soldado à placa-mãe.
+SIMM
+Era encaixado na placa-mãe.
+Existiam versões de 30 e 72 vias.
+SIMM 30 → 8 bits.
+SIMM 72 → 32 bits.
+DIMM
+Possui contatos nos dois lados.
+Pode transferir 64 bits por vez.
+Foi utilizado em SDR SDRAM, DDR, DDR2 e DDR3, com diferentes quantidades de pinos.
+
+SODIMM é uma versão menor do DIMM, muito usada em notebooks.
+
+RIMM
+Utilizado pelas memórias Rambus.
+Possuía 168 vias.
+Precisava de um módulo vazio (C-RIMM) para manter a continuidade do circuito.
+
+Memória Cache
+
+A cache foi criada para diminuir a diferença de velocidade entre o processador e a memória RAM.
+
+O processador é muito mais rápido que a RAM. Sem cache, ele frequentemente precisaria esperar pelos dados.
+
+A cache guarda os dados e instruções usados com maior frequência, permitindo que a CPU os acesse rapidamente.
+
+L1
+Cache primária.
+Muito rápida.
+Pequena.
+Integrada ao processador.
+L2
+Cache secundária.
+Maior que a L1.
+Um pouco mais lenta.
+Mais barata que a L1.
+
+Para memorizar:
+
+L1 → menor e mais rápida
+L2 → maior e um pouco mais lenta
+
+Memória magnética — HD
+
+O HD (Hard Disk) é uma memória de armazenamento permanente.
+
+Os dados são armazenados magneticamente em discos chamados platters.
+
+Principais componentes:
+
+Platters: discos magnéticos;
+Heads: cabeças de leitura/escrita;
+Braço: movimenta as cabeças;
+Atuador: movimenta o braço;
+Motor: gira os discos.
+RPM
+
+Indica a velocidade de rotação dos discos.
+
+Exemplos:
+
+5.400 RPM;
+7.200 RPM;
+10.000 RPM.
+
+Quanto maior a rotação, geralmente menor o tempo necessário para encontrar os dados.
+
+Principais tempos do HD
+
+Seek time: tempo para posicionar a cabeça na trilha desejada.
+
+Atraso rotacional: tempo necessário para o setor desejado chegar até a cabeça.
+
+Tempo de acesso: combinação do tempo de busca com o atraso rotacional.
+
+Tempo de acesso ≈ busca + atraso rotacional
+
+Fragmentação
+
+Quando partes de um arquivo ficam espalhadas pelo disco, o HD precisa movimentar mais a cabeça de leitura.
+
+Por isso, a desfragmentação reorganiza os arquivos para deixá-los em setores mais próximos/sequenciais.
+
+Memória óptica
+
+Utiliza laser para ler e/ou gravar informações.
+
+Exemplos:
+
+CD;
+DVD;
+Blu-ray.
+
+Características:
+
+Boa capacidade;
+Baixo custo por bit;
+Boa durabilidade.
+
+Os dados são representados por diferenças na reflexão do laser, permitindo interpretar os estados como 0 e 1.
+
+Existem mídias:
+
+Somente leitura
+
+CD-ROM
+DVD-ROM
+
+Graváveis uma vez
+
+CD-R
+DVD-R
+
+Regraváveis
+
+CD-RW
+DVD-RW
