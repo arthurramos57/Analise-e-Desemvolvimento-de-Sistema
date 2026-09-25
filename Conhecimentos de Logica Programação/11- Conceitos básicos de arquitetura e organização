@@ -1,0 +1,65 @@
+Conceitos básicos de arquitetura e organização
+
+Arquitetura x Organização
+
+Arquitetura de computadores é aquilo que é visível para o programador e influencia diretamente a execução dos programas.
+
+Exemplos:
+
+Conjunto de instruções.
+Quantidade de bits utilizada para representar dados.
+Mecanismos de entrada e saída (E/S).
+
+Organização de computadores é a forma como o hardware implementa a arquitetura.
+
+Exemplos:
+
+Sinais de controle.
+Tecnologia utilizada na memória.
+Forma como as unidades internas são conectadas.
+
+Exemplo: definir que um processador terá uma instrução de multiplicação é uma decisão de arquitetura. Decidir como essa multiplicação será realizada internamente é uma decisão de organização.
+
+Arquitetura = o que o computador faz.
+Organização = como ele faz.
+
+Processadores da família x86 da Intel podem manter uma arquitetura compatível, mas apresentar diferentes organizações internas.
+
+Estrutura x Função
+
+Estrutura é a maneira como os componentes do computador estão relacionados e conectados.
+
+Função é a operação que cada componente realiza dentro do computador.
+
+Estrutura = como os componentes estão organizados.
+Função = o que cada componente faz.
+
+Funções básicas de um computador
+
+Um computador realiza quatro funções principais:
+
+Processamento de dados — realiza operações sobre os dados.
+Armazenamento de dados — guarda dados e instruções.
+Transferência de dados — movimenta dados entre o computador e o ambiente externo.
+Controle — coordena o funcionamento dos componentes.
+Principais componentes
+
+CPU (Unidade Central de Processamento): controla o funcionamento do computador e realiza o processamento dos dados.
+
+Memória principal: armazena dados e instruções que estão sendo utilizados.
+
+E/S (Entrada e Saída): permite a comunicação e transferência de dados entre o computador e o ambiente externo.
+
+Sistema de interconexão: permite a comunicação entre a CPU, a memória e os dispositivos de entrada e saída.
+
+Componentes da CPU
+
+A CPU possui quatro componentes principais:
+
+Unidade de Controle (UC): controla e coordena as operações da CPU e do computador.
+
+Unidade Lógica e Aritmética (ULA): realiza operações aritméticas e lógicas sobre os dados.
+
+Registradores: são pequenas áreas de armazenamento internas à CPU, utilizadas para guardar temporariamente dados e informações.
+
+Interconexão da CPU: permite a comunicação entre a UC, ULA e registradores.
