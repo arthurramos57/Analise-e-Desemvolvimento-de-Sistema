@@ -1,0 +1,192 @@
+Pipeline, RISC e CISC
+
+1. RISC
+
+RISC (Reduced Instruction Set Computer) significa computador com conjunto reduzido de instruções.
+
+A ideia principal é utilizar um conjunto pequeno, simples e regular de instruções, facilitando a execução pelo hardware.
+
+Características:
+
+Poucas instruções;
+Instruções simples;
+Formatos regulares;
+Operandos principalmente em registradores;
+Modos simples de endereçamento;
+Uma operação elementar por ciclo;
+Uso intenso de pipeline;
+Execução diretamente pelo hardware, sem depender de microprogramação tradicional.
+
+🧠 RISC = menos instruções + instruções simples + execução rápida
+
+2. CISC
+
+CISC (Complex Instruction Set Computer) significa computador com conjunto complexo de instruções.
+
+Possui um conjunto grande de instruções, incluindo instruções mais complexas.
+
+Características:
+
+Muitas instruções;
+Instruções complexas;
+Diversos modos de endereçamento;
+Instruções podem realizar várias operações;
+Uso tradicional de microprogramação/microcódigo;
+Pode gerar programas com menos instruções.
+
+A principal vantagem é que uma única instrução CISC pode realizar uma tarefa que exigiria várias instruções RISC.
+
+🧠 CISC = muitas instruções + instruções complexas
+
+3. Principal diferença entre RISC e CISC
+
+A ideia pode ser resumida assim:
+
+RISC:
+
+Faça cada instrução ser simples e rápida.
+
+CISC:
+
+Faça cada instrução realizar mais trabalho.
+
+Por isso, um programa RISC pode precisar de mais instruções para realizar determinada tarefa, enquanto um programa CISC pode fazer a mesma tarefa com menos instruções mais complexas.
+
+4. RISC e registradores
+
+Uma característica importante do RISC é o uso intenso de registradores.
+
+As operações normalmente trabalham com dados que já estão nos registradores, reduzindo acessos à memória.
+
+Isso ajuda no desempenho porque acessar registradores é muito mais rápido do que acessar a memória principal.
+
+5. LOAD/STORE
+
+Em arquiteturas RISC, é comum existir uma separação entre:
+
+LOAD → carrega dados da memória para registradores.
+
+STORE → envia dados dos registradores para a memória.
+
+As demais instruções trabalham principalmente com os dados armazenados nos registradores.
+
+🧠 LOAD = memória → registrador
+
+STORE = registrador → memória
+
+6. Modos de endereçamento
+
+O CISC normalmente possui diversos modos de endereçamento.
+
+Uma operação como soma pode utilizar:
+
+Dois registradores;
+Um registrador e uma posição de memória;
+Dados armazenados na memória.
+
+No RISC, busca-se simplificar isso, utilizando principalmente instruções de LOAD/STORE para acessar a memória.
+
+Isso simplifica o projeto do processador.
+
+7. RISC × CISC na prática
+
+RISC pode gerar programas mais longos, pois utiliza mais instruções simples.
+
+CISC pode gerar programas mais compactos, pois uma instrução pode realizar uma tarefa mais complexa.
+
+Existe, portanto, um equilíbrio entre:
+
+Tamanho do código × complexidade/desempenho da execução
+
+8. Processadores modernos
+
+A diferença entre RISC e CISC atualmente não é tão simples quanto antigamente.
+
+Muitos processadores modernos combinam características das duas filosofias.
+
+Por exemplo, processadores x86 recebem instruções complexas e internamente podem convertê-las em operações mais simples para execução.
+
+Por isso, não é correto pensar que todos os processadores atuais são exclusivamente RISC ou exclusivamente CISC.
+
+🧠 Atualmente, as arquiteturas misturam técnicas.
+
+9. Pipeline
+
+Pipeline é uma técnica utilizada para aumentar o desempenho do processador.
+
+A ideia é dividir a execução de uma instrução em vários estágios.
+
+Por exemplo:
+
+Instrução 1:
+Estágio 1 → Estágio 2 → Estágio 3 → Estágio 4 → Estágio 5
+
+Enquanto a instrução 1 está no estágio 2, uma nova instrução pode começar no estágio 1.
+
+Assim:
+
+Ciclo 1: I1
+Ciclo 2: I1 → I2
+Ciclo 3: I1 → I2 → I3
+Ciclo 4: I1 → I2 → I3 → I4
+
+Dessa forma, várias instruções podem estar sendo processadas simultaneamente em diferentes estágios.
+
+🧠 Pipeline = linha de montagem de instruções.
+
+Importante: isso não significa necessariamente que uma única instrução ficou mais rápida. O principal ganho é aumentar a quantidade de instruções concluídas ao longo do tempo.
+
+10. RISC e Pipeline
+
+O pipeline combina muito bem com RISC porque as instruções RISC tendem a ser:
+
+Simples;
+Regulares;
+Com operações bem definidas;
+Mais previsíveis.
+
+Por isso, o pipeline foi muito utilizado em arquiteturas RISC e posteriormente também passou a ser utilizado em arquiteturas CISC.
+
+11. MIPS e RISC × CISC
+
+MIPS = milhões de instruções por segundo.
+
+Porém, MIPS não é uma boa medida isolada para comparar RISC e CISC.
+
+Por quê?
+
+Porque:
+
+RISC usa muitas instruções simples;
+CISC pode realizar uma tarefa com menos instruções complexas;
+Uma instrução RISC e uma instrução CISC não necessariamente realizam a mesma quantidade de trabalho.
+
+Então, um número maior de MIPS não significa automaticamente maior desempenho geral.
+
+12. EPIC
+
+EPIC (Explicit Parallel Instruction Computing) é uma proposta de arquitetura voltada à execução de várias instruções em paralelo.
+
+A ideia combina conceitos de diferentes abordagens para aumentar o paralelismo.
+
+O material cita o projeto MERCED / IA-64, desenvolvido pela Intel e HP, como exemplo histórico dessa proposta.
+
+13. Evolução das arquiteturas
+
+A evolução ocorreu aproximadamente assim:
+
+Processadores simples
+↓
+Mais instruções e microprogramação
+↓
+CISC
+↓
+Busca por simplificação
+↓
+RISC
+↓
+Integração de técnicas
+↓
+Processadores modernos híbridos
+
+Atualmente, características originalmente associadas a RISC e CISC podem aparecer juntas.
