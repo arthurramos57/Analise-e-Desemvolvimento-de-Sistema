@@ -1,0 +1,159 @@
+Armazenamento e Hierarquia de Memória
+
+O que é memória?
+
+Memória é o componente usado para armazenar informações que o computador precisa utilizar.
+
+Pode armazenar:
+
+Instruções;
+Dados;
+Resultados intermediários;
+Resultados finais.
+
+Como nenhuma tecnologia consegue ser, ao mesmo tempo, muito rápida, muito grande e barata, os computadores utilizam uma hierarquia de memórias.
+
+Memória interna × externa
+
+Memória interna (primária):
+
+É usada diretamente durante o processamento.
+É essencial para o funcionamento do computador.
+Inclui:
+Registradores;
+Cache;
+Memória principal (RAM).
+
+Memória externa (secundária):
+
+Usada para armazenamento permanente ou não volátil.
+Possui maior capacidade, porém é mais lenta.
+Exemplos:
+HD;
+SSD;
+CD-ROM;
+Fitas etc.
+
+Para memorizar:
+Interna = processamento rápido.
+Externa = armazenamento permanente.
+
+Bit e Byte
+
+Os computadores digitais trabalham com dois valores:
+
+0 → aproximadamente 0 V
+1 → aproximadamente +3 V
+
+Bit: menor unidade de informação, podendo ser 0 ou 1.
+
+Byte: conjunto de 8 bits.
+
+Como existem 8 posições e cada uma pode ser 0 ou 1:
+
+2⁸ = 256 combinações
+
+Portanto, 1 byte pode representar 256 valores diferentes.
+
+Unidades de capacidade
+
+Na computação, normalmente:
+
+1 KB = 1.024 bytes
+1 MB = 1.024 KB
+1 GB = 1.024 MB
+1 TB = 1.024 GB
+1 PB = 1.024 TB
+
+Em potência de 2:
+
+Kilo → 2¹⁰
+Mega → 2²⁰
+Giga → 2³⁰
+Tera → 2⁴⁰
+Peta → 2⁵⁰
+
+b = bit
+B = Byte
+
+Exemplo:
+1 kb = 1.024 bits
+1 kB = 1.024 bytes
+
+Palavra e célula
+
+Palavra (word):
+
+É a quantidade de bits que a CPU consegue processar/manipular em uma operação.
+Está relacionada à CPU, ULA, registradores e transferência de dados.
+
+Exemplo: computador de 64 bits.
+
+Célula:
+
+É uma unidade de armazenamento da memória.
+
+Não confunda:
+
+Célula = armazenamento
+Palavra = processamento/transferência
+
+Unidades de transferência
+
+Nas memórias primárias, a unidade de transferência é a quantidade de bits que podem ser lidos ou escritos de uma vez, chamada palavra.
+
+Nas memórias secundárias, a transferência normalmente ocorre em blocos de dados.
+
+Hierarquia de memória
+
+A hierarquia existe porque há um conflito entre:
+
+Capacidade
+Velocidade
+Custo
+
+De forma geral:
+
+Mais rápida → mais cara por bit → menor capacidade
+
+Mais lenta → mais barata por bit → maior capacidade
+
+A hierarquia permite combinar diferentes tecnologias para obter um equilíbrio entre velocidade, capacidade e custo.
+
+Ordem simplificada:
+
+CPU → Cache → Memória principal → Memória virtual/armazenamento
+
+Quanto mais próximo do processador:
+
+Menor capacidade;
+Maior velocidade;
+Maior custo por bit.
+
+Quanto mais distante:
+
+Maior capacidade;
+Menor custo por bit;
+Maior tempo de acesso.
+
+Cache, RAM e memória virtual
+
+Cache:
+
+Muito rápida;
+Pequena capacidade;
+Próxima da CPU;
+Geralmente utiliza SRAM;
+Guarda dados frequentemente utilizados.
+
+Memória principal (RAM):
+
+Maior que a cache;
+Mais lenta que a cache;
+Geralmente utiliza DRAM;
+É utilizada durante a execução dos programas.
+
+Memória virtual:
+
+Utiliza armazenamento, como discos, para ampliar virtualmente o espaço disponível para a memória.
+É muito mais lenta que RAM e cache.
