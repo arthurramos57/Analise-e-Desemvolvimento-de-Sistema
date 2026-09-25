@@ -1,0 +1,431 @@
+Linguagem de montagem (assembly) e Modos de endereçamento
+
+Importância do conjunto de instruções
+
+O conjunto de instruções (ISA) é um dos elementos centrais da arquitetura do processador.
+
+Ele influencia diretamente:
+
+A ULA/ALU e suas operações.
+A quantidade e função dos registradores.
+A comunicação entre os componentes internos.
+A unidade de controle.
+A forma como as instruções são executadas.
+
+Para memorizar:
+
+O conjunto de instruções influencia praticamente toda a organização da parte de processamento e controle do processador.
+
+Do programa até a execução
+
+O caminho básico é:
+
+Linguagem de alto nível → Compilador → Assembly → Montador → Código objeto → Ligador → Executável → Memória → CPU
+
+Linguagem de alto nível
+
+Exemplos:
+
+C
+Pascal
+FORTRAN
+
+O programador escreve o código nessa linguagem.
+
+Compilador
+
+Traduz o programa de alto nível para uma sequência de instruções do processador, normalmente representada em Assembly ou diretamente em código de máquina.
+
+Assembly
+
+Representação textual das instruções do processador.
+
+Utiliza mnemônicos, como:
+
+ADD → soma
+SUB → subtração
+
+Cada arquitetura possui seu próprio conjunto de instruções/Assembly.
+
+Montador — Assembler
+
+Converte Assembly em código objeto, ou seja, código binário.
+
+Ligador — Linker
+
+Quando o programa possui vários módulos:
+
+Módulo 1 + Módulo 2 + Módulo 3 → Linker → Programa executável
+
+O executável finalmente pode ser carregado na memória.
+
+Macete:
+
+Compilador → traduz
+Assembler → monta/converte Assembly
+Linker → junta os módulos
+
+Principais características de uma ISA
+
+Um conjunto de instruções é definido principalmente por:
+
+Tipos de instruções.
+Tipos de operandos.
+Número de operandos.
+Localização dos operandos.
+Modos de endereçamento.
+Formato das instruções.
+
+Tipos de instruções
+Aritméticas e lógicas
+
+Realizam operações como:
+
+Soma.
+Subtração.
+AND.
+OR.
+
+Exemplo:
+
+ADD R1, R2, R3
+
+Movimentação de dados
+
+Transferem dados entre:
+
+Registradores.
+Registradores e memória.
+
+Exemplos:
+
+LOAD → memória → registrador
+STORE → registrador → memória
+
+Transferência de controle
+
+Alteram o fluxo normal do programa.
+
+Exemplos:
+
+Saltos.
+Desvios.
+Chamadas de rotinas.
+Outras instruções
+
+Algumas arquiteturas também possuem:
+
+Ponto flutuante → cálculos com números reais.
+Decimais/BCD → operações com números decimais codificados.
+Manipulação de bits → testar ou alterar bits.
+Strings → copiar, comparar ou pesquisar caracteres.
+
+Arquiteturas especializadas também podem possuir instruções específicas para determinadas aplicações, como processamento gráfico.
+
+Tipos de operandos
+Inteiros
+
+Podem ser:
+
+Com sinal
+Sem sinal
+
+Em uma representação com sinal, normalmente o bit mais significativo participa da representação do sinal.
+
+Exemplo em C:
+
+int → inteiro com sinal
+unsigned int → inteiro sem sinal
+
+Ponto flutuante
+
+Utilizado para representar números reais.
+
+Existem diferentes precisões, como:
+
+Precisão simples.
+Precisão dupla.
+
+O padrão IEEE 754 define formatos e operações para números de ponto flutuante.
+
+BCD
+
+BCD = Binary Coded Decimal
+
+Cada dígito decimal é representado por 4 bits.
+
+Em um byte:
+
+4 bits + 4 bits = 2 dígitos decimais
+
+Strings
+
+Uma sequência de bytes pode representar uma sequência de caracteres.
+
+Um exemplo de padrão de representação é o ASCII.
+
+Principais operandos:
+
+Inteiros → números
+Float → números reais
+BCD → números decimais codificados
+Strings → caracteres
+
+Número de operandos
+
+Uma instrução pode trabalhar com diferentes quantidades de operandos.
+
+Três operandos
+
+Exemplo:
+
+ADD R1, R2, R3
+
+R1 → fonte
+R2 → fonte
+R3 → destino
+
+Ou seja:
+
+R3 = R1 + R2
+
+Dois operandos
+
+Exemplo:
+
+ADD R1, R2
+
+Nesse caso, um dos operandos também funciona como destino.
+
+Conceitualmente:
+
+R2 = R1 + R2
+
+Importante:
+Com 3 operandos, normalmente temos 2 fontes + 1 destino.
+
+Localização dos operandos
+
+Os operandos podem estar:
+
+Na memória.
+Nos registradores.
+Em alguns casos, na própria instrução.
+
+Isso permite classificar arquiteturas.
+
+Arquitetura memória-memória
+
+Os operandos podem estar diretamente na memória.
+
+Exemplo:
+
+ADD M1, M2, M3
+
+Conceitualmente:
+
+M3 = M1 + M2
+
+Vantagem
+Menor quantidade de instruções necessárias.
+Desvantagem
+Hardware e instruções mais complexos.
+
+Exemplo citado no material: DEC VAX 11.
+
+Arquitetura registrador-memória
+
+Uma instrução pode utilizar operandos em registradores e memória.
+
+Exemplo:
+
+ADD M1, R1, R2
+
+Um dos operandos está na memória.
+
+Exemplos citados:
+
+Intel 80x86.
+Motorola MC680x0.
+
+Arquitetura registrador-registrador
+
+Os operandos das operações aritméticas ficam nos registradores.
+
+Exemplo:
+
+ADD R1, R2, R3
+
+A memória é acessada principalmente através de:
+
+LOAD
+
+Memória → Registrador
+
+STORE
+
+Registrador → Memória
+
+Esse modelo é muito associado às arquiteturas RISC.
+
+Macete:
+
+LOAD = traz da memória
+STORE = manda para a memória
+
+Comparação conceitual
+Memória-memória
+
+Operandos podem estar na memória.
+
+→ Menos instruções
+→ Maior complexidade
+
+Registrador-memória
+
+Operandos podem estar em registradores e memória.
+
+→ Equilíbrio entre quantidade de instruções e complexidade.
+
+Registrador-registrador
+
+Operações aritméticas trabalham nos registradores.
+
+→ Mais instruções podem ser necessárias
+→ Hardware mais simples
+→ LOAD/STORE fazem acesso à memória
+
+Modos de endereçamento
+
+O modo de endereçamento determina como a instrução encontra seus operandos.
+
+Os três básicos apresentados são:
+
+Registrador
+
+O operando está em um registrador.
+
+Imediato
+
+O valor está dentro da própria instrução.
+
+Exemplo:
+
+ADD R1, 10
+
+O 10 é o valor imediato.
+
+Implícito
+
+O operando não aparece explicitamente na instrução.
+
+Um exemplo é uma arquitetura com acumulador, em que o acumulador é usado automaticamente.
+
+Endereçamento = como encontrar o operando.
+
+Endereço efetivo
+
+Quando o operando está na memória, precisamos descobrir qual endereço da memória deve ser acessado.
+
+Esse endereço é chamado de:
+
+Endereço efetivo
+
+Diferentes modos utilizam diferentes formas para calcular esse endereço.
+
+Endereçamento direto
+
+O endereço da memória está diretamente na instrução.
+
+Exemplo:
+
+ADD (100), R1
+
+O processador acessa a posição de memória 100.
+
+É bastante utilizado para acessar variáveis estáticas, cujo endereço pode ser conhecido durante a compilação.
+
+Direto = endereço está na instrução.
+
+Endereçamento indireto
+
+O endereço efetivo está em um registrador.
+
+Exemplo:
+
+ADD (R1), R2
+
+Se:
+
+R1 = 500
+
+Então o processador acessa:
+
+Memória[500]
+
+É muito útil para acessar variáveis dinâmicas.
+
+Um ponteiro contém justamente o endereço de uma variável.
+
+Indireto = registrador guarda o endereço.
+
+Endereçamento relativo à base
+
+O endereço efetivo é:
+
+Endereço-base + deslocamento
+
+Exemplo:
+
+ADD 100(R1), R2
+
+Se:
+
+R1 = 1000
+
+Então:
+
+Endereço efetivo = 1000 + 100 = 1100
+
+É muito utilizado para acessar campos de estruturas.
+
+Exemplo em C:
+
+struct Pessoa {
+    ...
+};
+
+O endereço inicial da estrutura pode variar, mas a posição de cada campo dentro dela é conhecida.
+
+Base + deslocamento = acesso a campos de estruturas.
+
+Endereçamento indexado
+
+O endereço efetivo é calculado usando:
+
+Endereço-base + índice
+
+Exemplo:
+
+ADD (R1 + R2), R3
+
+Onde:
+
+R1 → endereço-base.
+R2 → índice.
+R3 → destino.
+
+É muito utilizado para acessar elementos de vetores/arrays.
+
+Exemplo
+
+Imagine:
+
+V[0]
+V[1]
+V[2]
+V[3]
+
+O endereço de cada elemento pode ser calculado usando o endereço-base do vetor e um índice.
+
+Indexado = base + índice → vetores.
