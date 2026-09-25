@@ -1,0 +1,32 @@
+Expressões booleanas obtidas de circuitos lógicos e circuitos lógicos obtidos de expressões booleanas
+
+Todo circuito lógico executa uma função booleana. Mesmo circuitos complexos são formados pela combinação de portas lógicas básicas, como AND, OR e NOT.
+
+Expressões booleanas obtidas de circuitos
+
+É possível analisar um circuito lógico e descobrir qual expressão booleana ele executa.
+
+Para isso, deve-se observar as portas lógicas e suas ligações, identificando as operações realizadas até chegar à saída.
+
+Também é importante prestar atenção ao símbolo de negação, representado por uma pequena bolinha na entrada ou saída de uma porta. Essa bolinha indica que o sinal será invertido.
+
+Circuitos obtidos de expressões booleanas
+
+Também é possível fazer o contrário: partir de uma expressão booleana e montar o circuito lógico correspondente.
+
+Para isso, deve-se:
+
+Identificar as operações presentes na expressão.
+Começar pelos parênteses.
+Transformar cada operação em sua respectiva porta lógica.
+Fazer as ligações entre as portas seguindo a ordem da expressão.
+Obter a saída final do circuito.
+
+Por exemplo:
+
+S = (A + B) · C · (B + D)
+
+A + B → porta OU.
+B + D → outra porta OU.
+A multiplicação entre os resultados e C → porta E (AND).
+Por fim, as portas são conectadas para produzir a saída S.
