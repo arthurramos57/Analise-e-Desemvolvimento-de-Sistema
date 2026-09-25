@@ -1,0 +1,73 @@
+Definição, representação, tabela verdade e expressões booleanas
+
+A Álgebra de Boole, criada por George Boole em 1854, é utilizada para representar operações lógicas com valores 0 e 1. 
+Ela é a base dos sistemas digitais, que utilizam portas lógicas para realizar operações.
+
+Função E (AND)
+
+A função E realiza uma multiplicação lógica, representada por:
+
+S = A · B
+
+A saída será 1 somente quando todas as entradas forem 1.
+
+Exemplo:
+A = 1 e B = 1 → S = 1.
+
+Função OU (OR)
+
+A função OU realiza uma soma lógica, representada por:
+
+S = A + B
+
+A saída será 1 quando pelo menos uma das entradas for 1.
+
+Exemplo:
+A = 1 ou B = 0 → S = 1.
+
+Função NÃO (NOT)
+
+A função NÃO inverte o valor da entrada.
+
+Se a entrada for 0, a saída será 1.
+Se a entrada for 1, a saída será 0.
+
+É representada por:
+
+S = Ā
+
+Função NÃO E (NAND)
+
+A função NAND é a combinação da função E com a função NÃO.
+
+Ela é o inverso da função AND. A saída será 0 somente quando todas as entradas forem 1.
+
+Palavra-chave: AND invertido.
+
+Função NÃO OU (NOR)
+
+A função NOR é a combinação da função OU com a função NÃO.
+
+Ela é o inverso da função OR. A saída será 1 somente quando todas as entradas forem 0.
+
+Palavra-chave: OR invertido.
+
+Função OU EXCLUSIVO (XOR)
+
+A função XOR apresenta saída 1 quando as entradas são diferentes.
+
+Se as entradas forem iguais, a saída será 0.
+
+Exemplo:
+A = 0 e B = 1 → S = 1.
+A = 1 e B = 1 → S = 0.
+
+Função COINCIDÊNCIA (XNOR)
+
+A função XNOR é o inverso da XOR.
+
+A saída será 1 quando as entradas forem iguais e 0 quando forem diferentes.
+
+Exemplo:
+A = 0 e B = 0 → S = 1.
+A = 1 e B = 0 → S = 0.
