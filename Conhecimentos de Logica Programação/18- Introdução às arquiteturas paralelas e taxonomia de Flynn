@@ -1,0 +1,209 @@
+Introdução às arquiteturas paralelas e taxonomia de Flynn
+
+O que é computação paralela?
+
+Computadores sequenciais executam instruções uma após a outra, limitando o aumento de desempenho.
+
+A computação paralela utiliza vários processadores ou unidades de processamento para executar partes de um problema simultaneamente.
+
+Um problema pode ser dividido em tarefas menores, que são executadas ao mesmo tempo e coordenadas entre si.
+
+Para memorizar:
+Paralelo = dividir o problema + executar várias partes ao mesmo tempo.
+
+Taxonomia de Flynn
+
+A classificação de Flynn divide arquiteturas em 4 categorias:
+
+SISD → 1 instrução + 1 dado
+SIMD → 1 instrução + vários dados
+MISD → várias instruções + 1 dado
+MIMD → várias instruções + vários dados
+
+Macete:
+
+S = Single → único
+M = Multiple → múltiplo
+I = Instruction → instrução
+D = Data → dados
+
+SISD — Single Instruction Single Data
+
+É o processamento sequencial tradicional.
+
+Uma instrução trabalha sobre um único conjunto de dados.
+Possui uma única unidade de controle.
+Pode possuir várias unidades funcionais.
+É típico de computadores pessoais convencionais.
+Pode utilizar pipeline, sobrepondo diferentes etapas das instruções.
+
+Exemplo: computador pessoal com processador convencional.
+
+SISD = 1 instrução → 1 dado.
+
+SIMD — Single Instruction Multiple Data
+
+Uma única instrução é aplicada sobre vários dados simultaneamente.
+
+Características:
+
+Uma unidade de controle.
+Várias unidades funcionais.
+Trabalha com vários dados ao mesmo tempo.
+Utilizada em processamento vetorial e matricial.
+GPUs podem ser enquadradas nessa classificação.
+
+Existem estruturas como:
+
+Processor Array
+Vector Pipeline
+
+Exemplo simples: aplicar a mesma operação matemática sobre milhares de valores ao mesmo tempo.
+
+SIMD = mesma instrução, vários dados.
+
+MISD — Multiple Instruction Single Data
+
+Aqui temos:
+
+Várias instruções
+Trabalhando sobre um único conjunto de dados.
+Cada unidade de processamento executa instruções de forma independente.
+
+Exemplos de possíveis aplicações:
+
+Vários filtros de frequência sobre o mesmo sinal.
+Diferentes algoritmos de criptografia trabalhando sobre uma mesma mensagem.
+
+É uma arquitetura rara e não há grande presença de máquinas comerciais nessa classificação.
+
+MISD = várias instruções → 1 dado.
+
+MIMD — Multiple Instruction Multiple Data
+
+É uma arquitetura bastante geral de processamento paralelo.
+
+Várias instruções.
+Vários conjuntos de dados.
+Várias unidades de controle.
+Várias unidades funcionais.
+Pode utilizar vários módulos de memória.
+
+Exemplos:
+
+Servidores multiprocessados.
+Redes de estações de trabalho.
+Arquiteturas massivamente paralelas.
+
+MIMD = várias instruções + vários dados.
+
+Processamento vetorial
+
+Processamento vetorial aplica operações matemáticas ou lógicas sobre vetores inteiros, em vez de trabalhar apenas com valores individuais.
+
+Vantagens:
+
+Reduz estruturas de controle de loops.
+Pode reduzir conflitos de acesso à memória.
+Pode utilizar pipeline.
+Pode aumentar bastante o desempenho.
+
+Desvantagens:
+
+Maior custo de hardware.
+Maior custo de compilação devido à vetorização.
+
+Vetorial = operação sobre vários elementos de um vetor.
+
+Multiprocessadores Simétricos — SMP
+
+SMP (Symmetric Multiprocessing) utiliza vários processadores que compartilham os mesmos recursos.
+
+Características:
+
+Vários processadores.
+Uma memória principal compartilhada.
+Um único sistema operacional.
+Os processadores possuem acesso equivalente à memória.
+Pode ser encontrado em servidores e sistemas modernos.
+Problema principal: escalabilidade
+
+Quando aumentamos muito o número de processadores, aumenta também a disputa pelo acesso à memória.
+
+Por isso, são necessárias técnicas como memórias cache para reduzir conflitos.
+
+SMP = vários processadores + memória compartilhada + mesmo SO.
+
+Máquinas maciçamente paralelas — MPP
+
+MPP (Massively Parallel Processing) utiliza um grande número de processadores.
+
+Características:
+
+Muitos processadores.
+Cada nó possui sua memória local.
+Cada nó possui seu próprio espaço de endereçamento.
+A comunicação ocorre por troca de mensagens.
+Busca alto desempenho utilizando muitos processadores.
+
+Como cada processador acessa principalmente sua própria memória, a arquitetura é classificada como NORMA.
+
+MPP = muitos processadores + memória local + troca de mensagens.
+
+Memória compartilhada distribuída
+
+Nesse modelo:
+
+As memórias estão fisicamente separadas.
+Porém, todos os processadores conseguem acessar as memórias dos diferentes nós.
+Existe um espaço único de endereçamento.
+Esse espaço pode ser implementado por hardware ou software.
+
+Fisicamente separada, mas logicamente compartilhada.
+
+Rede de estações de trabalho — NOW
+
+NOW (Network of Workstations) utiliza computadores comuns conectados por uma rede local para executar aplicações paralelas.
+
+Imagine:
+
+PC + PC + PC + PC → rede → processamento paralelo
+
+Cada estação possui:
+
+Seu próprio processador.
+Sua própria memória.
+Seu próprio disco.
+
+A rede conecta todas as máquinas.
+
+Por isso, é uma arquitetura do tipo NORMA.
+
+Problema
+
+Redes convencionais, como Ethernet, não foram originalmente projetadas para processamento paralelo.
+
+Isso pode gerar alta latência, prejudicando o desempenho.
+
+NOW = vários computadores comuns conectados em rede trabalhando juntos.
+
+Cluster
+
+Um cluster é um conjunto de computadores conectados para trabalhar como se fossem uma única máquina.
+
+Normalmente:
+
+Utiliza vários computadores convencionais.
+Os computadores são conectados em rede.
+Existe um sistema distribuído coordenando os recursos.
+Pode aumentar a capacidade de processamento.
+
+Um exemplo conhecido é o Beowulf, formado por vários nós de processamento gerenciados por um computador.
+
+Cuidado com outro significado de "cluster"
+
+No armazenamento de discos, cluster também pode significar uma unidade de armazenamento formada pela combinação de trilhas e setores.
+
+Portanto:
+
+Cluster de computadores ≠ cluster de disco.
