@@ -1,0 +1,183 @@
+Processos
+
+Com a evolução dos computadores, os sistemas operacionais passaram a executar várias tarefas de forma concorrente. Para controlar cada tarefa, 
+o SO transforma o programa em um processo e atribui a ele recursos como CPU, memória e dispositivos de entrada/saída.
+
+O que é um processo?
+
+Um processo pode ser entendido como um programa em execução.
+
+Porém, não é apenas o programa: ele inclui todas as informações e recursos necessários para que o programa seja executado.
+
+Um processo possui:
+
+Contexto de hardware
+Contexto de software
+Espaço de endereçamento
+
+Contexto de Hardware
+
+Armazena informações dos registradores da CPU utilizadas pelo processo.
+
+Inclui, por exemplo:
+
+Registradores gerais;
+PC (Program Counter);
+SP (Stack Pointer);
+Registrador de status.
+
+É importante porque permite que o SO interrompa um processo e depois continue sua execução de onde parou.
+
+Exemplo:
+
+Você está ouvindo música e navegando na internet.
+
+A CPU executa uma tarefa por vez, mas alterna rapidamente entre elas:
+
+Internet → música → internet → música → ...
+
+Quando troca de tarefa, o SO salva o contexto do processo atual e depois restaura quando ele volta a executar.
+
+Para decorar:
+
+Contexto de hardware = informações dos registradores da CPU.
+
+Contexto de Software
+
+Define as características e limites dos recursos que podem ser utilizados pelo processo.
+
+É dividido em:
+
+Identificação
+
+Cada processo possui identificadores.
+
+PID: identifica o processo.
+UID: identifica o usuário relacionado ao processo.
+Quotas
+
+Definem limites de utilização dos recursos.
+
+Exemplos:
+
+Quantidade máxima de arquivos abertos;
+Quantidade máxima de memória;
+Número máximo de operações de I/O;
+Número máximo de processos e threads.
+Privilégios
+
+Determinam o que o processo pode ou não fazer no sistema.
+
+Para decorar:
+
+Contexto de software = identificação + quotas + privilégios.
+
+Espaço de Endereçamento
+
+É a região da memória utilizada pelo processo para armazenar:
+
+Instruções;
+Dados;
+Informações necessárias à execução.
+
+Cada processo possui seu próprio espaço de endereçamento, que deve ser protegido contra outros processos.
+
+Para decorar:
+
+Espaço de endereçamento = memória utilizada pelo processo.
+
+PCB — Process Control Block
+
+O PCB (Bloco de Controle do Processo) é a estrutura usada pelo Sistema Operacional para controlar e armazenar as informações de cada processo.
+
+Ele contém informações relacionadas a:
+
+Contexto de hardware;
+Contexto de software;
+Espaço de endereçamento;
+Estado do processo;
+Recursos utilizados.
+
+Os PCBs ficam na memória principal, em uma área reservada ao SO.
+
+Pense assim:
+
+Processo = programa em execução
+PCB = ficha de informações desse processo
+
+Estados dos Processos
+
+Durante sua execução, um processo pode passar por diferentes estados:
+
+1- Novo
+
+O processo acabou de ser criado.
+
+2- Pronto
+
+O processo está preparado para executar, mas está esperando a CPU.
+
+3- Em execução
+
+O processo está utilizando a CPU.
+
+4- Em espera
+
+O processo está esperando algum evento ou recurso, como:
+
+Entrada/saída;
+Leitura de arquivo;
+Tecla;
+Clique;
+Dispositivo.
+
+5- Encerrado
+
+O processo terminou sua execução e foi finalizado pelo SO.
+
+Mudanças de Estado
+
+As principais mudanças são:
+
+Pronto → Execução
+
+O SO escolhe o processo para utilizar a CPU.
+
+Execução → Espera
+
+O processo precisa aguardar algum evento ou recurso.
+
+Espera → Pronto
+
+O evento esperado aconteceu ou o recurso foi liberado.
+
+Execução → Pronto
+
+O processo perde a CPU, por exemplo, porque seu tempo de execução terminou.
+
+Fluxo para decorar:
+
+NOVO → PRONTO → EXECUÇÃO → ENCERRADO
+
+E durante a execução:
+
+EXECUÇÃO → ESPERA → PRONTO → EXECUÇÃO
+
+ou
+
+EXECUÇÃO → PRONTO → EXECUÇÃO
+
+Criação e Eliminação de Processos Criação
+
+Quando um processo é criado, o SO:
+
+Cria um PCB;
+Reserva um espaço de endereçamento;
+Passa a gerenciar o processo.
+Eliminação
+
+Quando o processo termina, o SO:
+
+Libera os recursos utilizados;
+Remove o PCB;
+Finaliza o processo.
