@@ -1,0 +1,142 @@
+Escalonamento
+
+Escalonamento é o processo de decidir qual processo vai utilizar a CPU e em qual momento.
+
+O responsável por essa decisão é o escalonador (scheduler).
+
+Funções do escalonamento:
+Manter a CPU ocupada.
+Balancear o uso da CPU entre os processos.
+Priorizar aplicações críticas.
+Aumentar o throughput.
+Melhorar o tempo de resposta.
+
+Decore:
+Scheduler = escolhe quem usa a CPU.
+
+Dispatcher
+
+Depois que o escalonador escolhe um processo, o dispatcher realiza a troca de contexto e entrega a CPU para o processo escolhido.
+
+Latência do dispatcher é o tempo gasto para substituir um processo em execução por outro.
+
+Scheduler escolhe → Dispatcher troca.
+
+Critérios de escalonamento
+
+Utilização da CPU: percentual de tempo em que a CPU está ocupada.
+
+Throughput: quantidade de processos executados em determinado período. Quanto maior, melhor.
+
+Tempo de CPU: tempo em que o processo realmente está utilizando o processador.
+
+Tempo de espera: tempo que o processo permanece esperando na fila de pronto.
+
+Turnaround: tempo total desde a criação do processo até seu término.
+
+Tempo de resposta: tempo entre uma solicitação e o início da resposta.
+
+Mais importantes para decorar:
+
+Throughput = quantidade de processos por tempo.
+
+Espera = tempo esperando.
+
+Turnaround = criação até término.
+
+Resposta = solicitação até resposta.
+
+Preemptivo × Não Preemptivo
+Preemptivo
+
+O SO pode interromper um processo que está executando para colocar outro processo na CPU.
+
+Isso permite:
+
+Priorizar processos.
+Melhor distribuir a CPU.
+Melhorar o tempo de resposta.
+Atender aplicações críticas ou de tempo real.
+
+Preemptivo = pode interromper.
+
+Não Preemptivo
+
+O SO não interrompe o processo em execução.
+
+O processo continua usando a CPU até:
+
+terminar sua execução; ou
+realizar alguma ação que provoque mudança de estado.
+
+Não preemptivo = começou, continua até liberar.
+
+FCFS / FIFO
+
+FCFS = First-Come, First-Served.
+
+Também conhecido como FIFO.
+
+Funciona como uma fila:
+
+Quem chega primeiro, é atendido primeiro.
+
+O primeiro processo a chegar na fila de pronto será executado primeiro.
+
+Características:
+Simples.
+Utiliza uma fila.
+É não preemptivo.
+Pode causar muito tempo de espera.
+
+Exemplo:
+
+P1 → P2 → P3
+
+Se P1 chegar primeiro, será executado primeiro.
+
+FCFS = primeiro que chega, primeiro que executa.
+
+SJF
+
+SJF = Shortest Job First.
+
+Significa menor trabalho primeiro.
+
+O processo que precisa de menos tempo de CPU é escolhido primeiro.
+
+Exemplo:
+
+P1 = 10 segundos
+P2 = 3 segundos
+P3 = 5 segundos
+
+Ordem:
+
+P2 → P3 → P1
+
+O SJF pode ser preemptivo ou não preemptivo.
+
+SJF = menor processo primeiro.
+
+SJF Não Preemptivo
+
+Quando um processo começa a usar a CPU, não pode ser interrompido.
+
+Ele executa até terminar.
+
+Depois disso, o SO escolhe o menor processo disponível na fila.
+
+SJF não preemptivo = começou → termina → escolhe o menor.
+
+SJF Preemptivo
+
+O processo pode ser interrompido.
+
+Se chegar um processo que precisa de menos tempo de CPU que o processo atual, o processo atual é interrompido.
+
+Exemplo:
+
+P1 está executando → chega P2 menor → P1 é interrompido → P2 executa.
+
+SJF preemptivo = chegou um menor → interrompe o atual.
