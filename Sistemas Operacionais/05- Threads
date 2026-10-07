@@ -1,0 +1,103 @@
+Threads
+
+O que é Thread?
+
+Thread é uma divisão de um processo, formada por uma sequência de instruções que pode ser executada de forma concorrente.
+
+Processo = programa em execução
+Thread = linha/fluxo de execução dentro do processo
+
+Um processo pode possuir uma ou várias threads.
+
+Monothread
+
+No ambiente monothread, cada processo possui apenas uma thread de execução.
+
+Um processo executa uma única sequência de instruções.
+Para executar tarefas concorrentemente, é necessário utilizar processos diferentes.
+Há maior utilização de recursos quando comparado às threads.
+Exemplos: MS-DOS e primeiras versões do Windows.
+
+Importancia: Monothread = 1 processo → 1 fluxo de execução.
+
+Multithread
+
+No ambiente multithread, um processo pode possuir várias threads executando de forma concorrente.
+
+As threads de um mesmo processo:
+
+Compartilham o espaço de endereçamento (memória).
+Compartilham o contexto de software.
+Cada thread possui seu próprio contexto de hardware.
+Podem executar diferentes partes do mesmo programa.
+Vantagens
+Menor consumo de recursos.
+Criação e troca de threads são mais rápidas.
+Comunicação entre threads é mais rápida.
+Aproveita melhor sistemas com múltiplos processadores.
+Permite executar várias tarefas simultaneamente dentro de um processo.
+
+Como as threads compartilham a mesma memória, uma thread pode alterar dados utilizados por outra. Por isso, são necessários mecanismos de sincronização e comunicação.
+
+Importante: Multithread = 1 processo → várias threads → mesma memória.
+
+Monothread × Multithread
+Monothread	Multithread
+Uma thread	Várias threads
+Um fluxo de execução	Vários fluxos
+Concorrência usando processos	Concorrência dentro do processo
+Maior overhead	Menor overhead
+Compartilhamento mais limitado	Compartilha memória
+MS-DOS	Sistemas modernos
+
+Thread de Usuário
+
+É gerenciada fora do núcleo do SO, normalmente por uma biblioteca.
+
+O sistema operacional não gerencia diretamente essas threads.
+
+Vantagens
+Mais rápidas.
+Não precisam ficar fazendo chamadas ao kernel.
+Não precisam realizar constantemente a mudança usuário → kernel → usuário.
+Podem existir mesmo que o SO não ofereça suporte direto a threads.
+Desvantagem importante
+
+O SO enxerga apenas o processo, e não as threads individualmente.
+
+Consequentemente:
+
+Mesmo em um computador com vários processadores, várias threads do mesmo processo não conseguem ser executadas simultaneamente em processadores diferentes.
+
+Importante: Thread de usuário = mais rápida, mas com menor paralelismo.
+
+Thread de Kernel
+
+É gerenciada diretamente pelo kernel do sistema operacional.
+
+Utiliza System Calls para criação, gerenciamento e comunicação.
+
+Vantagem
+
+O SO reconhece e gerencia cada thread individualmente.
+Permite melhor aproveitamento de múltiplos processadores.
+Desvantagem
+Mais lenta que thread de usuário.
+Existem várias mudanças entre modo usuário ↔ modo kernel.
+O uso de System Calls gera maior overhead.
+
+Importante: Thread de kernel = mais controle e paralelismo, porém maior overhead.
+
+Thread Híbrida
+
+Combina características das threads de usuário e kernel.
+
+Um processo pode ter várias threads de usuário.
+Threads de usuário são associadas às threads de kernel.
+O kernel consegue escalonar as threads de kernel individualmente.
+Busca combinar desempenho + flexibilidade + paralelismo.
+Problemas
+
+Se uma thread de kernel fizer uma chamada bloqueante, todas as threads de usuário associadas podem entrar em espera.
+
+Para utilizar vários processadores, podem ser necessárias várias threads de kernel, aumentando a complexidade e podendo afetar o desempenho.
