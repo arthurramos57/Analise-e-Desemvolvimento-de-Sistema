@@ -1,0 +1,196 @@
+Estrutura e Arquitetura dos Sistemas Operacionais
+
+O Sistema Operacional (SO) é formado por várias rotinas que oferecem serviços para os usuários e programas. Ele faz a ligação entre software e hardware.
+
+Kernel (Núcleo)
+
+O Kernel é o núcleo do Sistema Operacional e é responsável por gerenciar os recursos e a execução dos processos.
+
+Principais funções:
+
+Gerenciar processos e threads;
+Gerenciar memória;
+Gerenciar arquivos;
+Gerenciar dispositivos de entrada e saída;
+Controlar interrupções e exceções;
+Fazer comunicação entre processos;
+Gerenciar redes;
+Controlar segurança e auditoria;
+Fazer o escalonamento dos processos.
+
+Para decorar:
+
+Kernel = núcleo que controla e gerencia o funcionamento do SO.
+
+Modos de acesso ao Kernel
+
+Existem dois principais modos:
+
+Modo Usuário
+
+É utilizado pelos programas comuns.
+
+Possui acesso limitado;
+Não pode executar instruções privilegiadas;
+Maior segurança.
+Modo Kernel
+
+É utilizado pelo núcleo do SO.
+
+Possui acesso privilegiado ao hardware;
+Pode executar instruções que podem alterar recursos importantes;
+É necessário para operações críticas.
+
+Para decorar:
+
+Usuário = limitado
+Kernel = privilegiado
+
+Shell — Interpretador de Comandos
+
+O Shell interpreta as solicitações feitas pelo usuário e permite a comunicação com o sistema operacional.
+
+Pode ser:
+
+Texto
+
+Utiliza comandos digitados pelo usuário.
+
+Exemplo: MS-DOS, Bash/terminal Linux.
+
+Gráfico (GUI)
+
+Utiliza elementos visuais como:
+
+Janelas;
+Ícones;
+Menus;
+Mouse;
+Teclado;
+Touchscreen.
+
+System Calls — Chamadas de Sistema
+
+As System Calls são mecanismos utilizados pelos programas para solicitar serviços ao Sistema Operacional.
+
+Por exemplo, um programa precisa acessar um arquivo. Ele não deve acessar diretamente o hardware; solicita ao SO por meio de uma System Call.
+
+Fluxo simplificado:
+
+Aplicação → System Call → Kernel → Hardware
+
+O SO verifica se o programa possui permissão.
+
+Se tiver:
+
+Modo usuário → Modo kernel → executa operação → Modo usuário
+
+Se não tiver, a operação é bloqueada.
+
+Para decorar:
+
+System Call = programa pedindo um serviço ao SO.
+
+Serviços do Sistema Operacional
+
+O SO oferece diversos serviços:
+
+Interface do usuário: permite interação com o computador.
+Execução de programas: carrega e executa programas.
+Entrada e saída (I/O): controla teclado, mouse, impressora etc.
+Sistema de arquivos: criar, ler, gravar, excluir e organizar arquivos.
+Comunicação: permite comunicação entre processos.
+Detecção de erros: identifica e trata erros de CPU, memória, dispositivos e programas.
+Alocação de recursos: distribui CPU, memória e dispositivos.
+Contabilidade: registra o uso dos recursos.
+Proteção e segurança: controla o acesso aos recursos e usuários.
+
+Arquiteturas do Kernel
+
+Existem diferentes formas de organizar o núcleo do SO:
+
+Sistema Monolítico
+
+O SO é formado por vários módulos que funcionam juntos como um grande programa.
+
+Os módulos podem interagir livremente.
+
+Exemplos:
+
+MS-DOS;
+Primeiros sistemas Unix.
+
+Vantagem: comunicação rápida entre os componentes.
+
+Ideia principal:
+
+Tudo concentrado em um grande núcleo.
+
+Sistema em Camadas
+
+O SO é dividido em camadas, e cada camada possui determinadas funções.
+
+As camadas se comunicam seguindo uma hierarquia.
+
+Vantagens:
+
+Facilita manutenção;
+Facilita encontrar erros;
+Melhora a organização;
+Aumenta a proteção.
+
+Desvantagem:
+
+Pode diminuir o desempenho, pois uma camada precisa se comunicar através das camadas permitidas.
+
+Ideia principal:
+
+SO organizado em níveis/camadas.
+
+Microkernel / Cliente-Servidor
+
+No Microkernel, o núcleo é mantido pequeno e simples.
+
+As funções são divididas em processos/servidores específicos.
+
+Exemplo:
+
+Servidor de arquivos;
+Servidor de impressão;
+Servidor de rede.
+
+O usuário/programa é o cliente, que solicita algo a um servidor.
+
+A comunicação acontece por troca de mensagens.
+
+Vantagens
+Kernel menor;
+Maior organização;
+Maior facilidade de manutenção;
+Maior confiabilidade;
+Se um serviço parar, não necessariamente todo o sistema para.
+Desvantagens
+Implementação mais complexa;
+Muitas trocas entre modo usuário e modo kernel podem diminuir o desempenho.
+
+Ideia principal:
+
+Microkernel = núcleo pequeno + serviços separados.
+
+Máquina Virtual (Virtual Machine)
+
+A Máquina Virtual (VM) cria computadores virtuais dentro de um computador físico.
+
+Cada máquina virtual pode possuir:
+
+Seu próprio sistema operacional;
+Seus próprios programas;
+Seus próprios recursos virtuais.
+
+Assim, vários sistemas podem funcionar independentemente no mesmo hardware físico.
+
+Exemplo conceitual:
+
+Computador físico → Hypervisor/virtualização → VM 1 + VM 2 + VM 3
+
+Cada VM funciona como se tivesse seu próprio computador.
