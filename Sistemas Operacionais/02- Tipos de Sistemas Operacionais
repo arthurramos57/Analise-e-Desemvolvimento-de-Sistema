@@ -1,0 +1,165 @@
+Tipos de Sistemas Operacionais
+
+Os Sistemas Operacionais (SO) evoluíram junto com os computadores para atender às novas tecnologias e necessidades dos usuários. 
+Atualmente, muitos sistemas possuem características de diferentes tipos, sendo considerados híbridos.
+
+Monoprogramável / Monotarefa
+
+Executa apenas uma tarefa por vez. É necessário terminar uma tarefa para iniciar outra.
+
+Exemplo: B31 → termina → Z65 → termina → J88.
+
+Vantagem: não existe concorrência pelos recursos.
+Desvantagem: desperdiça processamento. Enquanto uma tarefa espera por entrada/saída (I/O), o processador pode ficar parado.
+
+Palavra-chave: uma tarefa por vez.
+
+Multiprogramável / Multitarefa
+
+Permite que várias tarefas compartilhem os recursos do computador.
+
+Enquanto uma tarefa espera por I/O, outra pode utilizar o processador.
+
+Vantagem: melhor aproveitamento do processador e dos recursos.
+Desvantagem: o SO precisa gerenciar os recursos compartilhados.
+
+Os principais tipos são:
+
+Batch → Tempo Compartilhado → Tempo Real
+
+Sistema Batch (Processamento em Lote)
+
+Os dados são armazenados e processados posteriormente, geralmente sem interação direta do usuário.
+
+Exemplo: uma atualização feita hoje é processada durante a madrugada e só aparece no sistema no dia seguinte.
+
+Usado em:
+
+Cálculos;
+Compilações;
+Ordenações;
+Backups.
+
+Vantagem: aproveita melhor o processamento, deixando tarefas não urgentes para depois.
+
+Desvantagem: erros podem atrasar a atualização das informações.
+
+Palavra-chave: processamento posterior/em lote.
+
+Sistema de Tempo Compartilhado (Time Sharing)
+
+O processador divide seu tempo em pequenas fatias de tempo, atendendo cada tarefa por um período.
+
+Exemplo:
+
+A → B → C → D → A → B → C → D...
+
+Dessa forma, várias tarefas parecem estar sendo executadas ao mesmo tempo.
+
+Permite interação com o usuário.
+Utiliza teclado, mouse, monitor etc.
+Vantagem: melhor utilização do processador.
+Desvantagem: pode ocorrer concorrência e filas para dispositivos de I/O.
+
+Palavra-chave: fatias de tempo.
+
+Sistema de Tempo Real (Real Time)
+
+Precisa processar as informações dentro de um tempo determinado, muitas vezes imediatamente.
+
+Não utiliza necessariamente fatias de tempo; a execução depende principalmente da prioridade das tarefas.
+
+Exemplos:
+
+Aviões;
+Torres de controle;
+Robótica;
+Usinas nucleares;
+Refinarias;
+Controle de metrôs;
+Sistemas espaciais.
+Vantagem: informações atualizadas e alta confiabilidade.
+Desvantagem: alto custo e necessidade de mecanismos de segurança e contingência.
+
+Palavra-chave: tempo rígido/prioridade.
+
+Sistemas de Computadores Pessoais
+
+São sistemas desenvolvidos para atender às diversas necessidades do usuário, como:
+
+Games;
+Música;
+Filmes;
+Internet;
+Computação gráfica;
+Trabalho.
+
+Vantagem: usuário possui grande liberdade para utilizar recursos do computador.
+
+Desvantagem: erros do usuário podem comprometer informações e segurança.
+
+Sistemas com Múltiplos Processadores
+
+Possuem dois ou mais processadores trabalhando em conjunto.
+
+São divididos em:
+
+Fortemente acoplados
+
+Os processadores compartilham recursos, como:
+
+Memória;
+Barramento;
+Clock;
+I/O.
+
+São gerenciados por um sistema operacional.
+
+Assimétrico
+
+Existe um processador mestre e outros escravos.
+
+O mestre controla e distribui as tarefas.
+
+Problema: se o mestre falhar, todo o sistema pode ser comprometido.
+
+Palavra-chave: mestre/escravo.
+
+Simétrico
+
+Não existe hierarquia entre os processadores.
+
+Cada processador pode participar do gerenciamento e, caso um falhe, os outros podem assumir suas tarefas.
+
+Palavra-chave: sem hierarquia/balanceamento.
+
+Fracamente acoplados
+
+São dois ou mais sistemas independentes conectados por uma rede.
+
+Cada sistema possui:
+
+Seu próprio processador;
+Sua própria memória;
+Seus dispositivos;
+Seu próprio sistema operacional.
+
+Dividem-se em:
+
+Sistema Operacional de Rede
+
+Cada computador é independente, mas conectado aos outros por uma rede.
+
+Os sistemas podem até utilizar SO diferentes, desde que utilizem protocolos compatíveis.
+
+Exemplo: comunicação através do TCP/IP.
+
+Palavra-chave: computadores independentes conectados em rede.
+
+Sistema Operacional Distribuído
+
+Vários computadores independentes trabalham de forma integrada, parecendo para o usuário um único sistema.
+
+Uma aplicação pode ser dividida em partes e cada parte pode ser executada em diferentes computadores/processadores.
+
+Palavra-chave: vários computadores funcionando como um sistema.
