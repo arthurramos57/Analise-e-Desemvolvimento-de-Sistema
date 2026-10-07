@@ -1,0 +1,121 @@
+Introdução à Computação e Sistemas Operacionais
+
+A evolução da tecnologia surgiu da necessidade do ser humano de facilitar suas atividades. A eletrônica e a informática evoluíram juntas, dando origem aos computadores.
+
+Entre os primeiros computadores, destacam-se:
+
+Mark I (1944): computador eletromecânico desenvolvido em parceria entre Harvard e IBM. Pesava cerca de 5 toneladas e era utilizado principalmente para cálculos.
+ENIAC (1946): considerado o primeiro computador eletrônico digital de grande escala. Pesava aproximadamente 30 toneladas, possuía cerca de 17.500 válvulas e 
+realizava cerca de 5.000 operações por segundo.
+Alan Turing: considerado um dos pais da Ciência da Computação. Desenvolveu conceitos fundamentais de algoritmos e computação e trabalhou na quebra dos 
+códigos da máquina Enigma durante a Segunda Guerra Mundial.
+
+Evolução dos computadores
+
+Os computadores evoluíram de grandes máquinas para equipamentos cada vez menores e mais rápidos:
+
+Mainframes → Microcomputadores → Servidores → Celulares → Tablets
+
+Também surgiram as workstations, computadores mais potentes utilizados para tarefas profissionais.
+
+A velocidade dos computadores pode ser medida em MIPS (Millions of Instructions Per Second), que representa milhões de instruções executadas por segundo.
+
+Hardware
+
+Hardware é a parte física do computador, formada pelos componentes eletrônicos.
+
+Os principais elementos são:
+
+Processador (CPU/UCP)
+Memória principal
+Dispositivos de entrada e saída (I/O)
+Processador
+
+O processador é responsável por controlar e executar as instruções do computador.
+
+Ele possui principalmente:
+
+UC (Unidade de Controle): controla e coordena as atividades do computador.
+ULA (Unidade Lógica e Aritmética): realiza operações matemáticas e lógicas.
+Registradores: armazenam temporariamente informações utilizadas pelo processador.
+
+Alguns registradores importantes:
+
+PC/CI: indica o endereço da próxima instrução.
+SP/AP: aponta para o topo da pilha.
+PSW: armazena informações sobre o estado da execução.
+Memória principal
+
+A memória é dividida em células, cada uma armazenando bits (0 e 1). Cada célula possui um endereço, usado para localizar seus dados.
+
+O MAR (Memory Address Register) armazena o endereço da célula de memória que será acessada.
+
+Memória Cache
+
+A cache é uma memória:
+
+Muito rápida;
+De pequena capacidade;
+Volátil;
+Localizada próxima ao processador.
+
+Quando o dado está na cache ocorre um cache hit. Quando não está, ocorre um cache miss, sendo necessário buscar o dado na memória principal.
+
+Normalmente existem vários níveis de cache, como L1, L2 e L3.
+
+Dispositivos de Entrada e Saída
+
+São responsáveis pela comunicação entre o computador e o usuário ou o ambiente externo.
+
+Exemplos:
+
+Teclado;
+Mouse;
+Impressora;
+Monitor.
+Software
+
+Software é o conjunto de programas que permite ao usuário utilizar os recursos do hardware.
+
+Um dos softwares mais importantes é o Sistema Operacional (SO).
+
+Sistema Operacional
+
+O Sistema Operacional funciona como uma ponte entre o hardware, os softwares e o usuário.
+
+Suas principais funções são:
+
+Gerenciar o hardware;
+Gerenciar os programas;
+Controlar a memória;
+Gerenciar dispositivos de entrada e saída;
+Permitir que vários programas sejam executados;
+Compartilhar recursos do computador.
+História dos Sistemas Operacionais
+
+Décadas de 40, 50 e 60:
+
+Os primeiros computadores não possuíam sistemas operacionais.
+A programação era feita diretamente em linguagem de máquina (0 e 1).
+Na década de 1950 surgiram os transistores, tornando os computadores menores, mais rápidos e confiáveis.
+Surgiram linguagens como FORTRAN, ALGOL e COBOL.
+Na década de 1960 surgiu a multiprogramação, permitindo executar vários programas e utilizar melhor o processador.
+A IBM lançou o System/360 e o sistema operacional OS/360.
+Surgiu também o conceito de time-sharing, que dividia o tempo do processador entre diferentes programas/usuários.
+
+Décadas de 70, 80 e 90:
+
+Surgiram as redes distribuídas (WAN).
+Os computadores pessoais começaram a se popularizar.
+A IBM lançou o IBM PC, com processador Intel 8088 e sistema DOS.
+Surgiram sistemas multitarefa e interfaces gráficas.
+Destacaram-se sistemas como Windows, OS/2 e Novell NetWare.
+Com a expansão da Internet, o TCP/IP tornou-se um padrão importante para comunicação em redes.
+
+Década de 2000 em diante:
+
+Sistemas operacionais passaram a possuir mecanismos melhores de detecção e correção de erros.
+Surgiram os clusters, que agrupam computadores para funcionar como um sistema.
+O processamento distribuído passou a utilizar vários computadores/processadores.
+O Windows continuou evoluindo.
+O Linux ganhou grande importância como sistema operacional de código aberto e gratuito.
