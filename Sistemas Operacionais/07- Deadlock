@@ -1,0 +1,66 @@
+O que é Deadlock?
+
+Deadlock é uma situação de travamento em que dois ou mais processos ficam esperando uns pelos outros indefinidamente, sem conseguir continuar a execução.
+Isso acontece quando cada processo mantém um recurso necessário para outro processo e não o libera.
+
+Exemplo:
+- O processo P1 possui o recurso A e espera pelo recurso B.
+- O processo P2 possui o recurso B e espera pelo recurso A.
+- Nenhum libera seu recurso, e os dois ficam travados.
+
+Macete: Deadlock = processos esperando uns pelos outros sem conseguir avançar.
+
+As 4 condições do Deadlock
+Para ocorrer deadlock, as quatro condições abaixo precisam estar presentes ao mesmo tempo.
+
+Exclusão mútua
+Um recurso só pode ser utilizado por um processo de cada vez.
+Exemplo: uma impressora que só pode atender a um processo por vez.
+
+Posse e espera
+Um processo mantém um recurso que já possui enquanto espera por outro recurso.
+Exemplo: P1 segura A e espera por B.
+
+Não-preempção
+O sistema não pode retirar à força um recurso de um processo; o processo precisa liberá-lo voluntariamente.
+
+Espera circular
+Existe uma cadeia circular de processos, em que cada um espera por um recurso mantido pelo próximo.
+Exemplo: P1 espera por P2, P2 espera por P3 e P3 espera por P1.
+
+Macete:
+- Exclusão mútua = um por vez.
+- Posse e espera = segura um e espera outro.
+- Não-preempção = não pode retirar à força.
+- Espera circular = um espera pelo outro em círculo.
+
+Soluções para Deadlock
+Existem quatro abordagens principais.
+
+Prevenção
+Impede que o deadlock aconteça, eliminando pelo menos uma das quatro condições necessárias.
+A exclusão mútua nem sempre pode ser eliminada, pois alguns recursos só podem ser utilizados por um processo de cada vez.
+
+Evitação
+O sistema analisa a alocação de recursos antes de concedê-los, procurando evitar situações que possam levar ao deadlock.
+Uma estratégia relacionada é solicitar todos os recursos necessários de uma vez. Isso reduz a condição de posse e espera, mas pode desperdiçar recursos.
+Outras estratégias incluem permitir a retirada de recursos em situações adequadas ou estabelecer uma ordem para solicitá-los, evitando a espera circular.
+
+Detecção
+O sistema permite que o deadlock possa acontecer e depois verifica se ocorreu.
+- Identifica os processos envolvidos.
+- Identifica os recursos envolvidos.
+- Pode exigir processamento adicional.
+
+Recuperação
+Depois de detectar o deadlock, o sistema toma medidas para liberar os processos.
+Pode:
+- Suspender e retomar processos.
+- Reverter um processo para um estado anterior.
+- Liberar recursos para permitir que a execução continue.
+ 
+Macete: Prevenir, evitar, detectar e recuperar.
+
+Preemptivo × Não preemptivo
+Escalonamento não preemptivo: o processo não é interrompido à força para entregar a CPU a outro. Ele pode liberar a CPU ao terminar ou ao ficar bloqueado.
+Escalonamento preemptivo: o sistema pode interromper um processo antes que ele termine, por exemplo, para executar outro processo prioritário.
