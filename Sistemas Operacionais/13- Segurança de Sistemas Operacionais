@@ -1,0 +1,61 @@
+Introdução à segurança
+A segurança da informação busca proteger os dados contra roubo, alteração, destruição e acesso não autorizado.
+O sistema operacional (SO) tem papel fundamental na segurança, pois gerencia o hardware, os programas e o acesso aos recursos do computador.
+Suas funções incluem:
+- Controlar a comunicação entre hardware e aplicações.
+- Gerenciar permissões e acessos.
+- Proteger os dados e os processos.
+- Receber atualizações para corrigir vulnerabilidades.
+Importante: nenhum sistema operacional é 100% seguro.
+
+Segurança nos principais sistemas operacionais
+- Windows: muito utilizado em computadores domésticos e corporativos. Sua popularidade o torna um alvo frequente de ataques, mas isso não significa que seja necessariamente menos seguro.
+- macOS: desenvolvido pela Apple. Possui mecanismos próprios de segurança, mas também pode apresentar vulnerabilidades e sofrer ataques.
+- Linux: possui código aberto, permitindo que seu código seja analisado e modificado. É muito utilizado em servidores e no desenvolvimento de software, mas também está sujeito a ataques.
+A segurança depende de fatores como atualizações, configurações, permissões e comportamento dos usuários — não apenas da popularidade do sistema.
+
+Vírus de computador
+Um vírus é um tipo de malware que infecta arquivos ou programas e pode se replicar quando esses arquivos ou programas são executados.
+Um vírus pode:
+- Roubar informações.
+- Espionar atividades.
+- Modificar ou apagar arquivos.
+- Danificar o funcionamento do sistema.
+- Infectar outros programas ou computadores.
+Em geral, pode tentar se esconder, se propagar e executar as ações maliciosas para as quais foi desenvolvido.
+
+Tipos de vírus
+Vírus de programas executáveis
+Infecta arquivos executáveis ou modifica seu funcionamento para executar código malicioso quando o programa é aberto.
+Pode se espalhar por programas infectados, inclusive versões adulteradas de softwares.
+Vírus de memória
+Permanece residente na memória RAM e pode continuar atuando durante o funcionamento do computador.
+Pode interferir em processos e mecanismos do sistema operacional.
+Vírus de setor de boot
+Infecta estruturas relacionadas à inicialização do computador, podendo impedir o carregamento correto do sistema operacional ou executar código malicioso durante a inicialização.
+Observação: o setor de boot é diferente da BIOS/UEFI, embora ambos estejam relacionados ao processo de inicialização.
+Vírus de drivers de dispositivo
+Infecta ou altera drivers, que são programas responsáveis pela comunicação entre o sistema operacional e os dispositivos de hardware.
+Como alguns drivers operam em modo kernel, uma infecção pode comprometer partes importantes do sistema.
+Vírus de macro
+Utiliza macros presentes em documentos ou planilhas, como arquivos do Word e Excel, para executar comandos maliciosos.
+Pode apagar arquivos, alterar dados ou realizar outras ações prejudiciais.
+Prevenção: não habilite macros de arquivos desconhecidos ou não confiáveis.
+Vírus de código-fonte
+Altera arquivos que contêm código-fonte, inserindo instruções maliciosas. Quando o código é compilado, essas instruções podem ser incorporadas ao programa resultante.
+
+Hacker e cracker
+De acordo com a distinção apresentada no material:
+- Hacker: pessoa com conhecimentos técnicos avançados, que pode trabalhar na identificação de falhas e no aprimoramento da segurança.
+- Cracker: pessoa que utiliza conhecimentos técnicos para quebrar proteções ou realizar atividades ilícitas, como invadir sistemas e roubar dados.
+Atenção: no uso atual, a palavra hacker também pode designar alguém envolvido em atividades criminosas. O termo, isoladamente, não determina se a atuação é legal ou ilegal. O contexto e a autorização são fundamentais.
+
+Boas práticas de segurança
+A segurança não depende apenas do sistema operacional ou de um antivírus. Algumas medidas importantes são:
+- Manter o sistema operacional e os programas atualizados.
+- Utilizar senhas fortes e autenticação multifator.
+- Evitar downloads e anexos suspeitos.
+- Instalar programas de fontes confiáveis.
+- Controlar as permissões de acesso.
+- Fazer backups regulares.
+- Não executar macros desconhecidas.
