@@ -1,0 +1,75 @@
+O que é sincronização?
+A sincronização é o controle da execução de processos e threads para garantir que eles acessem recursos compartilhados na ordem correta, evitando conflitos e problemas como o deadlock.
+É importante em sistemas multitarefa, multithread e distribuídos.
+Exemplo: dois processos utilizam o mesmo buffer. A sincronização organiza o acesso para evitar que um sobrescreva os dados do outro.
+
+Buffer
+Buffer é uma área temporária da memória RAM utilizada para armazenar dados durante uma transferência ou processamento.
+Sua função é facilitar a transferência de informações e ajudar a otimizar a execução das tarefas.
+
+Para decorar: Buffer = armazenamento temporário de dados.
+
+Sincronização em ambientes multithread
+Em um ambiente multithread, uma thread pode aguardar uma resposta de um serviço remoto enquanto outras threads continuam executando tarefas.
+Isso permite:
+- Atender várias solicitações de forma concorrente.
+- Aproveitar melhor os recursos.
+- Organizar o acesso aos dados compartilhados.
+- Evitar conflitos entre processos e threads.
+
+Pthreads
+Pthreads é um padrão baseado em POSIX que define funções para criar, eliminar e sincronizar threads, sendo muito utilizado em sistemas Unix e programas escritos em C.
+Os principais mecanismos de sincronização são:
+
+Mutex
+É utilizado para garantir a exclusão mútua, permitindo que apenas uma thread por vez acesse determinada região crítica protegida pelo mutex.
+Ajuda a evitar race conditions, que ocorrem quando o resultado depende da ordem imprevisível de execução de threads concorrentes.
+
+Mutex = um por vez.
+
+Variáveis condicionais
+Permitem que uma thread espere até que determinada condição ou evento aconteça.
+Exemplo: uma thread aguarda até que existam dados disponíveis em um buffer.
+
+Variável condicional = espera por uma condição.
+
+Semáforos
+Controlam o acesso a recursos por meio de um contador.
+Diferentemente do mutex, que normalmente controla a posse exclusiva de um recurso, um semáforo pode permitir o acesso de várias threads, conforme o valor do contador.
+Exemplo: controlar o acesso a três recursos disponíveis.
+
+Semáforo = contador de permissões.
+
+Diferença importante
+- Mutex: protege uma região crítica, normalmente permitindo uma thread por vez.
+- Semáforo: controla permissões de acesso por meio de um contador.
+- Variável condicional: permite esperar até que uma condição seja satisfeita.
+
+Ordenação de eventos em sistemas distribuídos
+Em sistemas distribuídos, os processos executam em computadores diferentes e a comunicação pela rede pode sofrer atrasos. Por isso, nem sempre é possível saber exatamente qual evento aconteceu primeiro.
+Existem duas formas importantes de ordenação:
+
+Ordenação causal
+Respeita a relação de causa e consequência entre eventos.
+Se um evento depende de outro, ele deve ocorrer depois do evento do qual depende.
+Exemplo: uma mensagem precisa ser enviada antes de ser recebida.
+A relação acontece-antes segue três regras:
+- Mesmo processo: se A acontece antes de B, então A → B.
+- Envio e recebimento: o envio de uma mensagem acontece antes do recebimento.
+- Transitividade: se A → B e B → C, então A → C.
+A ordenação causal é parcial, porque alguns eventos concorrentes não possuem uma ordem definida entre si.
+
+Causal = respeita causa e consequência.
+
+Ordenação total
+Estabelece uma ordem para todos os eventos, inclusive aqueles que são concorrentes.
+Pode utilizar relógios lógicos e timestamps para atribuir marcas de tempo aos eventos.
+A ordenação total deve respeitar a causalidade: se A aconteceu antes de B por uma relação causal, B não pode ser ordenado antes de A.
+
+Ordenação causal = nem todos os eventos precisam ter ordem definida.
+
+Ordenação total = todos os eventos recebem uma ordem comum.
+
+Métodos de sincronização em sistemas distribuídos
+Passagem de mensagens: os processos coordenam suas atividades enviando e recebendo mensagens.
+Algoritmo de Ricart e Agrawala: utiliza troca de mensagens e permissões para coordenar o acesso exclusivo a um recurso compartilhado entre processos distribuídos.
