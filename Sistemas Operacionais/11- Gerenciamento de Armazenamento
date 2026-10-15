@@ -1,0 +1,55 @@
+Gerenciamento de Armazenamento
+O armazenamento secundário é utilizado para guardar dados e programas de forma permanente, mesmo quando o computador é desligado.
+Exemplos: HD, SSD, CD-ROM, DVD, cartões de memória, fitas e pendrives.
+Principais características:
+- Grande capacidade de armazenamento.
+- Custo por quantidade de dados geralmente menor que o da RAM.
+- Dados não são perdidos quando o computador é desligado.
+- Acesso geralmente mais lento que à memória principal.
+
+Organização do HD
+Um HD tradicional possui discos chamados pratos, nos quais os dados são gravados magneticamente.
+- Pratos: discos onde os dados são armazenados.
+- Superfícies: lados dos pratos utilizados para gravação.
+- Trilhas: círculos concêntricos nas superfícies.
+- Setores: divisões das trilhas onde os dados são armazenados.
+- Cilindro: conjunto de trilhas que ocupam a mesma posição em diferentes superfícies dos pratos.
+- Cabeças de leitura e gravação: acessam os dados nos pratos.
+Por que o HD é mais lento que a RAM?
+Principalmente por causa de:
+- Movimento do cabeçote: deslocamento até a trilha desejada.
+- Latência rotacional: tempo de espera até o setor desejado passar pela cabeça.
+- Tempo de transferência: tempo necessário para transferir os dados.
+
+Armazenamento removível
+São dispositivos que podem ser conectados ou retirados para transportar e guardar dados.
+Exemplos: HD externo, pendrive, cartão de memória, CD, DVD e fita.
+Uma utilização importante é o backup, que consiste em criar cópias de segurança para evitar a perda de informações.
+
+Gerenciamento do armazenamento secundário
+O sistema operacional gerencia os arquivos e organiza seu armazenamento por meio do sistema de arquivos.
+Os arquivos podem ser organizados em estruturas hierárquicas, como diretórios e subdiretórios, formando uma árvore.
+Operações com arquivos
+- Criação: cria um arquivo.
+- Abertura: prepara o arquivo para operações.
+- Fechamento: encerra seu uso e libera as referências mantidas na memória.
+- Leitura: acessa o conteúdo.
+- Atualização: modifica ou insere dados.
+- Concatenação: acrescenta dados ao final de um arquivo ou une arquivos sequencialmente.
+- Busca: procura informações dentro do arquivo.
+- Visualização de atributos: consulta características, como permissões e localização.
+- Definição de atributos: altera características do arquivo.
+- Renomeação: modifica o nome.
+- Destruição: exclui o arquivo e permite liberar o espaço ocupado.
+
+Caminho ou Path
+O path é o caminho utilizado para localizar um arquivo no sistema de arquivos.
+Ele indica a sequência de diretórios e subdiretórios até chegar ao arquivo desejado.
+Exemplo: /home/usuario/Documentos/trabalho.txt
+
+Responsabilidades do sistema operacional
+- Gerenciamento de espaço livre: controla quanto espaço está disponível no armazenamento.
+- Alocação de armazenamento: registra onde os arquivos estão localizados.
+- Escalonamento de disco: organiza a ordem das operações de leitura e gravação.
+- Backup e Restore: oferece recursos para cópia de segurança e restauração.
+- Segurança: controla permissões de acesso e manipulação dos arquivos.
