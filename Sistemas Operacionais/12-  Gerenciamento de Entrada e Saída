@@ -1,0 +1,54 @@
+Introdução aos dispositivos de E/S
+Os dispositivos de Entrada e Saída (E/S), também chamados de Input/Output (I/O) ou periféricos, permitem a comunicação entre o computador, o usuário e outros dispositivos.
+- Entrada: envia dados para o computador.
+- Saída: apresenta ou envia dados processados.
+- Entrada e saída: permite receber e enviar dados.
+Exemplos:
+- Entrada: teclado, mouse, microfone, câmera e scanner.
+- Saída: monitor, impressora e alto-falantes.
+- Entrada e saída: HD, SSD, pendrive e modem.
+
+Fluxo de dados
+A comunicação pode ocorrer de três maneiras:
+- Usuário → computador: digitação pelo teclado ou movimentação do mouse.
+- Computador → usuário: exibição de imagens no monitor ou impressão de documentos.
+- Computador → computador: transferência de dados por arquivos ou pela rede.
+Um arquivo gerado por um programa pode ser utilizado como entrada por outro programa. Por exemplo, um sistema gera um arquivo de folha de pagamento, que depois é utilizado para emitir os holerites.
+
+Controladores de dispositivos
+Cada dispositivo de E/S utiliza um controlador, que intermedeia a comunicação entre o sistema operacional e o hardware.
+Principais funções:
+- Receber e encaminhar solicitações de leitura e gravação.
+- Converter dados para o formato utilizado pelo dispositivo.
+- Gerar os comandos necessários para operar o hardware.
+- Detectar e, quando possível, corrigir erros.
+Exemplo: leitura de um HD
+1. A CPU solicita a leitura de um dado.
+2. O controlador de disco encaminha a solicitação ao HD.
+3. O HD realiza a operação e retorna os dados.
+4. O controlador e os mecanismos de comunicação sinalizam a conclusão.
+5. A CPU recebe os dados e o processamento pode continuar.
+
+Interrupções
+Uma interrupção é um sinal que informa ao processador que algum evento precisa de atenção.
+Exemplo: um dispositivo termina uma operação de leitura e sinaliza que os dados estão disponíveis.
+O funcionamento básico é:
+1. Um dispositivo gera um sinal de interrupção.
+2. O controlador de interrupções identifica e organiza os sinais, considerando as prioridades configuradas.
+3. A CPU identifica qual rotina deve tratar o evento.
+4. A rotina de tratamento da interrupção é executada.
+5. A CPU pode retomar o processamento anterior.
+O vetor de interrupções contém referências para as rotinas responsáveis por tratar diferentes interrupções.
+
+Gerenciamento dos dispositivos de E/S
+O sistema operacional gerencia a comunicação com os dispositivos para que os programas possam utilizá-los de maneira organizada e segura.
+Seus principais objetivos são:
+- Independência dos dispositivos: permitir que programas utilizem dispositivos sem precisar conhecer todos os detalhes de seu funcionamento.
+- Acesso uniforme: oferecer formas padronizadas de acessar diferentes dispositivos.
+- Nomeação uniforme: organizar nomes e caminhos de arquivos e dispositivos.
+- Tratamento de erros: identificar e tratar falhas nas operações de E/S.
+- Uso de buffers: armazenar temporariamente dados antes de serem processados ou transferidos.
+- Controle de compartilhamento: organizar o uso de dispositivos compartilhados ou dedicados.
+O que é buffer?
+É uma área temporária de memória utilizada para armazenar dados durante uma transferência.
+Exemplo: pacotes recebidos pela rede podem ser armazenados em um buffer antes de serem processados.
