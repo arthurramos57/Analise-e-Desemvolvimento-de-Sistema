@@ -1,0 +1,64 @@
+Introdução à memória virtual
+A memória virtual é uma técnica de gerenciamento de memória que permite ao sistema operacional dar aos processos a impressão de que existe mais memória disponível do que a RAM física instalada.
+- Alocar: reservar espaço na memória.
+- Desalocar: liberar espaço utilizado.
+- A memória virtual utiliza o armazenamento secundário, como o HD ou SSD, como apoio à memória principal.
+Existem dois tipos de endereços:
+- Endereço virtual: utilizado pelos processos.
+- Endereço físico ou real: corresponde à posição efetiva na memória RAM.
+
+Espaço de endereçamento virtual
+É o conjunto de endereços virtuais que um processo pode utilizar.
+O programa não precisa conhecer a posição física onde seus dados estão armazenados. O sistema operacional e o hardware cuidam dessa tradução.
+Vantagens:
+- Permite executar programas maiores que a memória física disponível.
+- Aumenta o compartilhamento da RAM entre processos.
+- Favorece a multiprogramação, permitindo que mais processos compartilhem os recursos.
+
+Mapeamento
+O mapeamento é o mecanismo que transforma um endereço virtual em um endereço físico.
+O sistema utiliza uma tabela de mapeamento para encontrar a posição correta na memória RAM.
+Na paginação, essa tarefa é realizada por meio da tabela de páginas.
+
+Memória virtual por paginação
+A paginação divide os endereços virtuais e a memória física em blocos de tamanho fixo.
+- Página virtual: bloco do espaço de endereçamento virtual.
+- Frame ou quadro: bloco correspondente na memória física.
+- Tabela de páginas: relaciona páginas virtuais aos frames físicos.
+- ETP: entrada da tabela de páginas, com informações sobre a página.
+O endereço virtual possui duas partes:
+- NPV (Número da Página Virtual): identifica a página e permite localizar sua entrada na tabela.
+- Deslocamento: indica a posição dentro da página.
+O endereço físico é obtido combinando o frame correspondente com o deslocamento.
+
+Bit de validade e Page Fault
+O bit de validade indica se a página está presente na memória principal, conforme a convenção apresentada no material:
+- 0: página não está na RAM.
+- 1: página está na RAM.
+Quando um processo tenta acessar uma página que não está na memória principal, ocorre um Page Fault (falha de página).
+O sistema operacional precisa:
+1. Interromper temporariamente a execução do processo.
+2. Localizar a página no armazenamento secundário.
+3. Carregar a página na RAM — operação chamada page in.
+4. Atualizar as informações de mapeamento.
+5. Colocar o processo novamente na fila de prontos para continuar a execução.
+A taxa de paginação representa a frequência de falhas de página de um processo em determinado intervalo de tempo.
+Atenção: um Page Fault não significa necessariamente um erro fatal. É um evento normal da memória virtual quando uma página precisa ser carregada.
+
+Swapping em memória virtual
+O swapping permite retirar processos da RAM para liberar espaço para outros processos.
+- Swap out: processo ou suas páginas são transferidos para o armazenamento secundário.
+- Swap in: processo ou suas páginas retornam à memória principal.
+Isso permite aumentar a quantidade de processos que podem compartilhar a RAM, mas o uso excessivo pode prejudicar o desempenho.
+
+Thrashing
+O thrashing acontece quando o sistema realiza transferências excessivas entre a RAM e o armazenamento secundário, gastando mais tempo movendo páginas ou segmentos do que executando processos.
+Thrashing no nível do processo
+- Um processo gera muitos Page Faults.
+- Passa muito tempo esperando páginas serem carregadas.
+- Seu tempo efetivo de execução diminui.
+Thrashing no nível do sistema
+- Muitos processos competem pela memória RAM disponível.
+- O sistema passa a realizar swapping frequentemente.
+- O desempenho geral e a produtividade caem.
+Na segmentação, o problema também pode ocorrer pela transferência excessiva de segmentos, especialmente quando o programa é dividido em partes muito pequenas ou numerosas.
