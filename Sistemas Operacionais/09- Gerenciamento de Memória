@@ -1,0 +1,64 @@
+Introdução à gerência de memória
+A gerência de memória é uma função do sistema operacional responsável por controlar o uso da memória pelos processos.
+- Alocar: reservar espaço na memória.
+- Desalocar: liberar o espaço utilizado.
+- A memória RAM é volátil, ou seja, perde os dados quando o computador é desligado.
+- O sistema operacional precisa distribuir a memória entre os processos e proteger as áreas utilizadas por cada um.
+
+Hierarquia de memória
+- Memória principal (RAM): armazena programas em execução e seus dados. É rápida e volátil.
+- Armazenamento secundário (HD/SSD): guarda arquivos e programas permanentemente. É não volátil e geralmente tem maior capacidade.
+- Memória cache: memória muito rápida, geralmente próxima ou dentro do processador, que guarda dados utilizados frequentemente para acelerar o processamento.
+Importante: o processador executa instruções que estão na memória principal. Por isso, um programa armazenado no HD ou SSD precisa ser carregado na RAM antes de ser executado.
+Memória virtual
+É uma técnica que permite ao sistema operacional utilizar parte do armazenamento secundário como extensão da memória principal.
+Ela ajuda a executar programas quando a RAM disponível é insuficiente, embora seja mais lenta que a RAM.
+
+Alocação de memória
+A alocação define como os programas ocupam os espaços disponíveis na memória.
+Alocação contígua
+- O programa ocupa um único bloco contínuo de memória.
+- Tem baixa sobrecarga e é simples.
+- Pode ser difícil encontrar um espaço livre grande o suficiente.
+Alocação não contígua
+- O programa pode ser dividido em partes armazenadas em locais diferentes da memória.
+- Facilita o aproveitamento dos espaços livres.
+- Permite manter mais processos na memória, mas exige mecanismos adicionais de gerenciamento.
+
+Swapping
+O swapping é uma técnica usada para liberar espaço na memória principal, transferindo processos entre a RAM e o armazenamento secundário.
+- Swap out: processo sai da RAM e vai para o armazenamento secundário.
+- Swap in: processo retorna do armazenamento secundário para a RAM.
+O sistema operacional pode retirar temporariamente um processo que está esperando ou que tem pouca chance de ser executado em breve.
+Objetivo: liberar espaço na RAM para permitir a execução de outros processos.
+Atenção: o swapping pode reduzir o desempenho porque o armazenamento secundário é mais lento que a RAM.
+
+Paginação
+A paginação divide a memória lógica do processo e a memória física em blocos de tamanho fixo.
+- Blocos do processo são chamados de páginas.
+- Blocos da memória física são chamados de quadros de página (frames).
+- Cada página pode ocupar um quadro diferente.
+- Os quadros não precisam estar em posições consecutivas na memória física.
+- Uma tabela de páginas relaciona as páginas lógicas aos quadros físicos.
+O endereço lógico é dividido em:
+- Número da página: identifica qual página será acessada.
+- Deslocamento: indica a posição dentro da página.
+Vantagem: facilita a alocação de memória sem exigir um bloco contínuo para todo o processo.
+
+Segmentação
+A segmentação divide o programa em partes de tamanhos variáveis, conforme sua lógica e estrutura.
+Exemplos de segmentos: código, dados e pilha.
+O endereço é composto por:
+- Número do segmento: identifica o segmento.
+- Deslocamento: indica a posição dentro dele.
+A tabela de segmentos pode armazenar o endereço físico, o tamanho, a presença na memória e as permissões de acesso de cada segmento.
+
+Diferença entre paginação e segmentação
+- Paginação: divide a memória em blocos de tamanho fixo, independentemente da estrutura lógica do programa.
+- Segmentação: divide o programa em partes de tamanhos variáveis, de acordo com sua organização lógica.
+Essa é uma das diferenças mais importantes para a prova.
+
+Overlay (sobreposição)
+O overlay permite executar programas maiores que a memória principal disponível, carregando apenas as partes necessárias em cada momento.
+Quando uma seção deixa de ser necessária, ela pode ser substituída por outra seção do programa.
+Objetivo: aproveitar melhor uma memória RAM limitada.
