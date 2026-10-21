@@ -9,6 +9,9 @@ altura = 1.75
 estudante = True
 Regras para nomear variáveis:
 
+print (nome)
+print (idade
+
 Podem conter letras, números e sublinhados (_), mas não começar com números.
 
 Diferenciam maiúsculas de minúsculas (nome e Nome são diferentes).
