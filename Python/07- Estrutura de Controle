@@ -1,0 +1,52 @@
+Estruturas de controle em Python
+
+As estruturas de controle permitem controlar a execução de um programa, tomando decisões e repetindo instruções conforme determinadas condições.
+
+Estruturas condicionais
+
+São utilizadas para executar diferentes blocos de código de acordo com uma condição.
+
+if: executa um bloco de código se a condição for verdadeira.
+
+if-else: executa um bloco se a condição for verdadeira e outro se for falsa.
+
+if-elif-else: permite verificar várias condições em sequência. O else é executado se nenhuma das condições anteriores for verdadeira.
+
+Exemplo de if:
+
+
+python
+idade = 18
+
+if idade >= 18:
+    print("Maior de idade")
+
+Exemplo de if-else:
+
+python
+idade = 15
+
+if idade >= 18:
+    print("Maior de idade")
+else:
+    print("Menor de idade")
+
+Exemplo de if-elif-else:
+
+python
+nota = 85
+
+if nota >= 90:
+    print("Excelente")
+elif nota >= 80:
+    print("Muito bom")
+elif nota >= 70:
+    print("Bom")
+else:
+    print("Precisa melhorar")
+
+Nesse último exemplo, o programa verifica a nota em ordem e executa apenas o primeiro bloco cuja condição seja verdadeira.
+
+Importante: em Python, a indentação (espaços no início da linha) é essencial para indicar quais instruções pertencem a cada estrutura.
+
+As estruturas de controle tornam os programas mais dinâmicos, permitindo que tomem decisões de acordo com os dados recebidos.
