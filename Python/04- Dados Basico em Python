@@ -1,0 +1,16 @@
+Tipos de dados básicos em Python
+
+Em Python, os tipos de dados são usados para classificar os valores armazenados nas variáveis. Os principais são:
+
+Inteiros (int): representam números sem casas decimais, como 25, 100 e -5. São utilizados em cálculos e para representar quantidades.
+
+Flutuantes (float): representam números com casas decimais, utilizando ponto para separar a parte inteira da decimal, como 9.99 e 1.75. 
+São usados em cálculos que envolvem valores decimais.
+
+Strings (str): representam textos formados por caracteres, escritos entre aspas simples ou duplas, como "Olá, mundo!" e 'Maria'. 
+Também permitem utilizar caracteres especiais e textos com várias linhas.
+
+Booleanos (bool): representam valores lógicos: True (verdadeiro) e False (falso). São utilizados em condições e operações lógicas 
+para verificar situações e controlar a execução do programa.
+
+Esses tipos de dados são fundamentais para criar variáveis, armazenar informações e realizar diferentes operações em Python.
