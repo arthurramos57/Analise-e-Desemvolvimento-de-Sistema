@@ -1,0 +1,23 @@
+O que é Python ?
+
+Python é uma linguagem de programação criada por Guido van Rossum, um programador holandês, no final dos anos 80 e início dos anos 90. Sua primeira versão foi lançada em 1991, 
+e seu nome foi inspirado no grupo de comédia britânico Monty Python. A linguagem foi desenvolvida com o objetivo de tornar a programação mais simples, facilitando a escrita, 
+a leitura e a compreensão dos códigos. Com o passar dos anos, Python ganhou popularidade e se tornou uma das linguagens mais utilizadas no mundo.
+
+Uma das principais características do Python é sua sintaxe simples e organizada, que facilita o aprendizado, principalmente para iniciantes. 
+Ele utiliza a indentação, ou seja, espaços no início das linhas, para organizar os blocos de código. Além disso, possui tipagem dinâmica, 
+o que significa que não é necessário declarar explicitamente o tipo de uma variável, pois a linguagem identifica o tipo de dado de acordo 
+com o valor atribuído. Python também é considerado uma linguagem interpretada, permitindo executar programas de maneira prática e facilitando 
+a identificação de erros durante o desenvolvimento. Outra vantagem é ser multiplataforma, podendo funcionar em sistemas operacionais como Windows, 
+macOS e Linux. Também possui uma biblioteca padrão ampla, com recursos que ajudam a realizar diversas tarefas, além de contar com uma grande comunidade 
+que desenvolve ferramentas, bibliotecas e oferece suporte aos programadores.
+
+Python pode ser utilizado em diferentes áreas da tecnologia. No desenvolvimento web, permite criar sites e sistemas utilizando ferramentas como Django e Flask. 
+Na ciência de dados, é usado para organizar, analisar e representar informações por meio de bibliotecas como NumPy, Pandas e Matplotlib. Também é muito importante 
+na inteligência artificial e no aprendizado de máquina, áreas que envolvem a criação de sistemas capazes de identificar padrões, aprender com dados e realizar previsões. 
+Além disso, Python é utilizado para automatizar tarefas repetitivas, como organizar arquivos, processar informações e realizar testes de software. No desenvolvimento de 
+jogos, pode ser usado para criar jogos simples com bibliotecas como Pygame.
+
+Portanto, Python é uma linguagem versátil, prática e acessível, indicada tanto para quem está começando a aprender programação quanto para profissionais experientes. 
+Sua facilidade de uso, variedade de aplicações e grande quantidade de recursos fazem dela uma ferramenta importante para o desenvolvimento de soluções tecnológicas 
+em diferentes áreas.
