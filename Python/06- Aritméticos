@@ -1,0 +1,87 @@
+Operadores em Python
+
+Os operadores são símbolos ou palavras utilizados para realizar cálculos matemáticos, comparar valores e combinar condições em um programa. Eles são divididos em três tipos principais:
+
+Operadores aritméticos
+
+São utilizados para realizar operações matemáticas.
+
++ Soma: soma dois valores.
+
+- Subtração: subtrai um valor de outro.
+
+* Multiplicação: multiplica dois valores.
+
+/ Divisão: divide dois valores e retorna um resultado decimal.
+
+// Divisão inteira: retorna o quociente sem a parte decimal.
+
+% Módulo: retorna o resto da divisão.
+
+** Exponenciação: eleva um número a uma potência.
+
+Exemplo:
+
+
+python
+a = 10
+b = 3
+
+print(a + b)   # 13
+print(a / b)   # 3.333...
+print(a // b)  # 3
+print(a % b)   # 1
+print(a ** b)  # 1000
+
+Operadores de comparação
+
+São utilizados para comparar dois valores e retornam um resultado booleano: True (verdadeiro) ou False (falso).
+
+== Igual: verifica se dois valores são iguais.
+
+!= Diferente: verifica se os valores são diferentes.
+
+> Maior que: verifica se um valor é maior que outro.
+
+< Menor que: verifica se um valor é menor que outro.
+
+>= Maior ou igual: verifica se um valor é maior ou igual ao outro.
+
+<= Menor ou igual: verifica se um valor é menor ou igual ao outro.
+
+Exemplo:
+
+
+python
+a = 10
+b = 3
+
+print(a == b)  # False
+print(a != b)  # True
+print(a > b)   # True
+print(a < b)   # False
+print(a >= b)  # True
+print(a <= b)  # False
+
+Operadores lógicos
+
+São utilizados para combinar condições ou inverter seus resultados.
+
+and (E): retorna True quando as duas condições são verdadeiras.
+
+or (OU): retorna True quando pelo menos uma condição é verdadeira.
+
+not (NÃO): inverte o resultado da condição.
+
+Exemplo:
+
+
+python
+a = 10
+b = 3
+
+print((a > 5) and (b < 5))   # True
+print((a > 15) or (b < 5))   # True
+print(not (a > 5))            # False
+
+Os operadores são fundamentais em Python, pois permitem fazer cálculos, comparar informações e criar condições para que o programa tome decisões de acordo com os valores recebidos.
