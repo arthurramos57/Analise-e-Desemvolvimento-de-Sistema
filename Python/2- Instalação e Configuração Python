@@ -1,0 +1,16 @@
+Como instalar e configurar o python
+
+Para começar a programar em Python, é necessário baixar e instalar a linguagem no computador por meio do site oficial, escolhendo a versão adequada para o 
+sistema operacional utilizado, como Windows, macOS ou Linux. Durante a instalação no Windows, é importante marcar a opção “Add Python to PATH”, pois ela 
+permite executar Python diretamente pelo terminal ou prompt de comando.
+
+Depois de instalar Python, é recomendado configurar um ambiente de desenvolvimento para facilitar a escrita, a execução e a correção de códigos. Existem 
+ferramentas como o PyCharm, o Visual Studio Code e o Sublime Text, que oferecem recursos para tornar a programação mais prática. O Visual Studio Code é 
+uma boa opção para iniciantes, pois é leve, versátil e permite adicionar extensões específicas para Python.
+
+Outra ferramenta bastante utilizada é o Jupyter Notebook, que permite escrever e executar códigos em pequenos blocos, além de adicionar textos explicativos e 
+gráficos. Para utilizá-lo, é necessário instalá-lo pelo terminal com o comando pip install notebook e iniciá-lo com jupyter notebook. Em seguida, uma página 
+será aberta no navegador, permitindo criar um novo documento para programar em Python.
+
+Assim, após instalar Python e configurar um ambiente de desenvolvimento, o computador estará preparado para criar, executar e testar programas. Essas ferramentas 
+facilitam o aprendizado, a organização dos códigos e o desenvolvimento de projetos em diferentes áreas da programação.
