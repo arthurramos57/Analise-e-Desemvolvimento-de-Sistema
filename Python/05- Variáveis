@@ -1,0 +1,20 @@
+As variáveis são usadas para armazenar e manipular dados em Python. O operador = atribui um valor a uma variável, e o Python identifica automaticamente o tipo de dado.
+
+Exemplo:
+
+python
+nome = "Juan"
+idade = 25
+altura = 1.75
+estudante = True
+Regras para nomear variáveis:
+
+Podem conter letras, números e sublinhados (_), mas não começar com números.
+
+Diferenciam maiúsculas de minúsculas (nome e Nome são diferentes).
+
+Não podem usar palavras reservadas, como if, else e for.
+
+É recomendado usar nomes claros e descritivos, como nome_completo e total_vendas.
+
+Também é possível atribuir o mesmo valor a várias variáveis: a = b = c = 10.
