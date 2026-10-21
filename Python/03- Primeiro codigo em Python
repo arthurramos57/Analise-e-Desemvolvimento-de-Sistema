@@ -1,0 +1,66 @@
+Escrevendo o primeiro codigo em python
+
+O primeiro programa desenvolvido em Python geralmente é o “Olá, Mundo!”, uma forma simples de aprender como escrever e executar um código. 
+Esse programa tem a função de exibir uma mensagem na tela e utiliza o comando print(). Para criá-lo, basta abrir um editor de código, criar 
+um arquivo chamado ola_mundo.py, escrever print("Olá, Mundo!"), salvar e executar o programa. Como resultado, a mensagem aparecerá na tela. 
+Esse exercício permite compreender como funciona a execução de instruções em Python e serve como introdução à programação.
+
+Para escrever programas corretamente, é importante conhecer os conceitos básicos da sintaxe do Python. Um deles é a indentação, que consiste no 
+uso de espaços no início das linhas para organizar o código e definir blocos de instruções. Ela é utilizada em estruturas condicionais, como if e 
+else, que permitem executar diferentes comandos dependendo de uma condição. A indentação deve ser consistente, pois erros na organização dos espaços 
+podem impedir a execução do programa.
+
+Outro conceito importante são os comentários, utilizados para explicar o funcionamento do código e facilitar sua compreensão. Em Python, os comentários 
+de uma linha começam com o símbolo # e são ignorados durante a execução. Por exemplo, # Este é um comentário. Para documentações que ocupam várias linhas, 
+é comum utilizar aspas triplas ("""), embora elas também sejam usadas para criar docstrings, que documentam funções, classes e módulos.
+
+Python também diferencia letras maiúsculas de minúsculas, característica conhecida como sensibilidade a maiúsculas e minúsculas. Isso significa que os nomes 
+variavel, Variavel e VARIAVEL são considerados diferentes pelo programa. Por esse motivo, é importante manter um padrão na escrita dos nomes utilizados no código.
+
+Diferentemente de outras linguagens de programação, Python não exige o uso de ponto e vírgula ao final de cada instrução, pois normalmente cada comando é 
+escrito em uma linha separada. Embora seja possível separar várias instruções com ponto e vírgula, essa prática não é recomendada para quem está começando, 
+já que escrever cada comando em uma linha facilita a leitura e a organização do código.
+
+Os parênteses também são bastante utilizados em Python. Eles servem para chamar funções, agrupar expressões matemáticas e determinar a ordem de execução dos cálculos. 
+Por exemplo, em resultado = (a + b) * c, os valores de a e b são somados primeiro, e o resultado é multiplicado pelo valor de c. Já no comando print("Olá, Mundo!"), 
+os parênteses são utilizados para passar a mensagem que será exibida na tela para a função print().
+
+Portanto, aprender a criar o primeiro programa e compreender os elementos básicos da sintaxe é fundamental para desenvolver habilidades em Python. 
+Esses conhecimentos ajudam a escrever códigos mais claros e organizados, identificar erros e compreender estruturas mais avançadas, como variáveis, 
+operadores, condições, repetições e funções. Com a prática, torna-se mais fácil criar programas capazes de realizar cálculos, processar informações 
+e automatizar tarefas.
+
+Codigo abaixo:
+
+print("Olá Mundo!")
+
+"""
+if condition: 
+    # Bloco de codigo se a condiçao for verdadeira
+    instrucao1
+    instrucao2
+
+else:
+    # Bloco de código se a condição for falsa
+    instrucao3
+    instrucao4
+"""
+
+#Este é um comentario de uma unica linha
+
+"""
+Este é um comentario
+de varias linhas
+"""
+"""
+O python tem sensibilidade de letras maiuscula e minuscula,
+então uma variavel com letra maiscula é diferente da varialvel
+com letra minuscula
+"""
+"""
+python não requer (;) no final das instruções, mas caso queira
+separar as instruções, utiliza o (;)
+instrucao1; instrucao2; instrucao3;
+"""
+#Parentese usamos para agrupar expressões, definir função e realizar chamadas de funções
+#resultado = (a + b) * c
