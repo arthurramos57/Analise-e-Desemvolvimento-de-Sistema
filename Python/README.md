@@ -1,0 +1,1 @@
+Meus conhecimentos de python
