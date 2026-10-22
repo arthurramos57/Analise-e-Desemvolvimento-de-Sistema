@@ -1,0 +1,187 @@
+Estruturas de dados em Python
+
+As estruturas de dados permitem organizar, armazenar e manipular informações dentro de um programa. Python possui diferentes tipos de estruturas, como listas, tuplas, dicionários e conjuntos.
+
+Cada estrutura tem características próprias. Neste conteúdo, vamos focar nas listas, seus métodos e listas de compreensão.
+
+- Listas (list)
+
+Uma lista é uma estrutura de dados ordenada e mutável que permite armazenar vários elementos em uma única variável.
+
+Ordenada: mantém a ordem dos elementos.
+
+Mutável: permite adicionar, remover ou modificar elementos.
+
+Aceita diferentes tipos: pode armazenar números, textos e outros tipos de dados.
+
+Permite duplicados: o mesmo elemento pode aparecer várias vezes.
+
+Exemplo:
+
+
+python
+
+frutas = ["maçã", "banana", "laranja"]
+print(frutas)
+Resultado:
+
+
+text
+
+['maçã', 'banana', 'laranja']
+As listas são criadas utilizando colchetes [], e seus elementos são separados por vírgulas.
+
+- Criação e acesso aos elementos
+
+Cada elemento de uma lista possui uma posição chamada índice. Em Python, os índices começam em zero.
+
+
+python
+
+frutas = ["maçã", "banana", "laranja"]
+
+print(frutas[0])  # maçã
+print(frutas[1])  # banana
+print(frutas[2])  # laranja
+Também é possível acessar os elementos utilizando índices negativos:
+
+
+python
+
+print(frutas[-1])  # laranja
+print(frutas[-2])  # banana
+print(frutas[-3])  # maçã
+O índice 0 representa o primeiro elemento.
+
+O índice 1 representa o segundo elemento.
+
+O índice -1 representa o último elemento.
+
+O índice -2 representa o penúltimo elemento.
+
+Dica: se uma lista possui três elementos, seus índices positivos são 0, 1 e 2.
+
+3. Métodos de listas
+Os métodos são comandos que permitem modificar ou manipular uma lista.
+
+append() — Adicionar ao final
+Adiciona um elemento no final da lista.
+
+
+python
+frutas = ["maçã", "banana"]
+frutas.append("pera")
+
+print(frutas)
+Resultado: ['maçã', 'banana', 'pera']
+
+insert() — Inserir em uma posição
+Adiciona um elemento na posição indicada.
+
+
+python
+frutas = ["maçã", "banana", "laranja"]
+frutas.insert(1, "uva")
+
+print(frutas)
+Resultado: ['maçã', 'uva', 'banana', 'laranja']
+
+O número 1 indica a posição em que a uva será inserida. Os outros elementos são deslocados.
+
+remove() — Remover pelo valor
+Remove a primeira ocorrência do elemento indicado.
+
+
+python
+frutas = ["maçã", "banana", "laranja"]
+frutas.remove("banana")
+
+print(frutas)
+Resultado: ['maçã', 'laranja']
+
+pop() — Remover pela posição
+Remove um elemento de uma posição específica e também devolve o valor removido.
+
+
+python
+frutas = ["maçã", "banana", "laranja"]
+
+fruta_removida = frutas.pop(1)
+
+print(frutas)
+print(fruta_removida)
+Resultado:
+
+
+text
+['maçã', 'laranja']
+banana
+Se você usar pop() sem indicar um índice, ele remove o último elemento da lista.
+
+sort() — Ordenar os elementos
+Organiza os elementos em ordem crescente ou alfabética, conforme o tipo de dado.
+
+
+python
+numeros = [5, 2, 8, 1]
+numeros.sort()
+
+print(numeros)
+Resultado: [1, 2, 5, 8]
+
+reverse() — Inverter a ordem
+Inverte a ordem atual dos elementos.
+
+
+python
+frutas = ["maçã", "banana", "laranja"]
+frutas.reverse()
+
+print(frutas)
+Resultado: ['laranja', 'banana', 'maçã']
+
+Atenção: reverse() apenas inverte a ordem. Ele não ordena alfabeticamente.
+
+- Listas de compreensão (list comprehension)
+
+As listas de compreensão permitem criar uma nova lista de maneira mais curta, utilizando uma sequência e, opcionalmente, uma condição.
+
+Sintaxe:
+
+
+python
+nova_lista = [expressão for elemento in sequência if condição]
+Exemplo: criar os quadrados dos números pares
+
+
+python
+numeros = [1, 2, 3, 4, 5]
+
+quadrados = [x ** 2 for x in numeros if x % 2 == 0]
+
+print(quadrados)
+Resultado: [4, 16]
+
+Como funciona?
+
+for x in numeros: percorre os números da lista.
+
+if x % 2 == 0: seleciona apenas os números pares.
+
+x ** 2: eleva cada número ao quadrado.
+
+quadrados: recebe a nova lista criada.
+
+O resultado contém 4 e 16 porque são os quadrados de 2 e 4.
+
+Outro exemplo: dobrar os números
+
+python
+numeros = [1, 2, 3, 4]
+
+dobrados = [x * 2 for x in numeros]
+
+print(dobrados)
+Resultado: [2, 4, 6, 8]
+
+Nesse caso, não existe condição if, então todos os elementos são utilizados.
