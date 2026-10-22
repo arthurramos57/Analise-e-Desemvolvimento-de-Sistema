@@ -1,0 +1,170 @@
+Dicionários em Python
+
+Os dicionários (dict) são estruturas de dados que permitem armazenar informações em pares de chave e valor. Cada chave identifica um valor específico, facilitando a organização e a consulta dos dados.
+
+Criação de dicionários
+
+Os dicionários são criados utilizando chaves {}, com dois pontos : separando cada chave do seu valor.
+
+Exemplo:
+
+
+python
+pessoa = {
+    "nome": "João",
+    "idade": 25,
+    "cidade": "Madri"
+}
+Nesse exemplo:
+
+"nome" é uma chave e "João" é o seu valor.
+
+"idade" é uma chave e 25 é o seu valor.
+
+"cidade" é uma chave e "Madri" é o seu valor.
+
+As chaves devem ser únicas. Se uma chave for repetida na criação do dicionário, o último valor atribuído a ela prevalecerá.
+
+Acesso aos valores
+
+Para acessar um valor, utilizamos sua chave entre colchetes [].
+
+
+python
+pessoa = {"nome": "João", "idade": 25, "cidade": "Madri"}
+
+print(pessoa["nome"])
+print(pessoa["idade"])
+print(pessoa["cidade"])
+Resultado:
+
+
+text
+João
+25
+Madri
+Também podemos utilizar o método get():
+
+
+python
+print(pessoa.get("nome"))
+print(pessoa.get("profissao"))
+Resultado:
+
+
+text
+João
+None
+A diferença é que, se a chave não existir, get() retorna None por padrão, enquanto o acesso com pessoa["profissao"] gera um erro (KeyError).
+
+Você também pode definir um valor padrão:
+
+
+python
+print(pessoa.get("profissao", "Não informada"))
+Resultado: Não informada
+
+Características dos dicionários
+
+Mutáveis: permitem adicionar, remover e modificar pares de chave e valor.
+
+Chaves únicas: não podem existir duas chaves iguais no mesmo dicionário.
+
+Acesso por chave: os valores são encontrados por suas chaves, e não por índices numéricos.
+
+Ordem de inserção preservada: nas versões modernas do Python, os dicionários mantêm a ordem em que os elementos foram inseridos.
+
+Valores variados: podem armazenar textos, números, listas e até outros dicionários.
+
+Métodos de dicionários
+
+keys() — Obter as chaves
+Retorna uma visualização de todas as chaves do dicionário.
+
+
+python
+pessoa = {"nome": "João", "idade": 25, "cidade": "Madri"}
+
+print(pessoa.keys())
+Resultado:
+
+
+text
+dict_keys(['nome', 'idade', 'cidade'])
+values() — Obter os valores
+Retorna uma visualização de todos os valores.
+
+
+python
+print(pessoa.values())
+Resultado:
+
+
+text
+dict_values(['João', 25, 'Madri'])
+items() — Obter chaves e valores
+Retorna uma visualização dos pares de chave e valor.
+
+
+python
+print(pessoa.items())
+Resultado:
+
+
+text
+dict_items([('nome', 'João'), ('idade', 25), ('cidade', 'Madri')])
+Esse método é especialmente útil quando queremos percorrer um dicionário com um loop for.
+
+
+python
+for chave, valor in pessoa.items():
+    print(chave, valor)
+Resultado:
+
+
+text
+nome João
+idade 25
+cidade Madri
+update() — Atualizar o dicionário
+Permite adicionar novos pares ou atualizar valores de chaves existentes.
+
+
+python
+pessoa.update({"profissao": "Engenheiro"})
+
+print(pessoa)
+Resultado:
+
+
+python
+{'nome': 'João', 'idade': 25, 'cidade': 'Madri',
+ 'profissao': 'Engenheiro'}
+Se a chave já existir, seu valor será atualizado:
+
+
+python
+pessoa.update({"idade": 26})
+print(pessoa["idade"])
+Resultado: 26
+
+Como adicionar, modificar e remover dados
+
+Além dos métodos anteriores, podemos manipular diretamente os elementos do dicionário.
+
+Adicionar um elemento:
+
+
+python
+pessoa["profissao"] = "Professor"
+Modificar um valor:
+
+
+python
+pessoa["idade"] = 30
+Remover um elemento com pop():
+
+
+python
+pessoa.pop("cidade")
+O método pop() remove a chave indicada e retorna o valor que estava associado a ela.
