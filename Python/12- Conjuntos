@@ -1,0 +1,157 @@
+Conjuntos (set) em Python
+
+Os conjuntos (set) são estruturas de dados utilizadas para armazenar vários elementos únicos, ou seja, não permitem valores duplicados.
+
+Os conjuntos são mutáveis, mas não mantêm uma ordem fixa dos elementos. Por isso, não podemos acessar seus elementos por índices, como fazemos nas listas e tuplas.
+
+Criação de conjuntos
+
+Podemos criar conjuntos utilizando chaves {} ou a função set().
+
+Exemplo com chaves:
+
+
+python
+frutas = {"maçã", "banana", "laranja"}
+
+print(frutas)
+Exemplo com set():
+
+
+python
+numeros = set([1, 2, 3, 4, 5])
+
+print(numeros)
+Os elementos são separados por vírgulas.
+
+Conjuntos não permitem duplicados
+
+python
+numeros = {1, 2, 2, 3, 3, 4}
+
+print(numeros)
+Resultado: {1, 2, 3, 4}
+
+Mesmo que o número 2 ou o número 3 apareça mais de uma vez, cada um será armazenado apenas uma vez.
+
+Atenção: para criar um conjunto vazio, utilize set(). Escrever {} cria um dicionário vazio, e não um conjunto.
+
+Operações entre conjuntos
+
+Python permite realizar operações matemáticas entre conjuntos, comparando seus elementos.
+
+Vamos utilizar estes exemplos:
+
+
+python
+conjunto1 = {1, 2, 3}
+conjunto2 = {3, 4, 5}
+União (|)
+A união reúne todos os elementos dos dois conjuntos, sem repetir os valores.
+
+
+python
+print(conjunto1 | conjunto2)
+Resultado: {1, 2, 3, 4, 5}
+
+Para memorizar: união = juntar todos os elementos.
+
+Interseção (&)
+A interseção retorna apenas os elementos que aparecem nos dois conjuntos.
+
+
+python
+print(conjunto1 & conjunto2)
+Resultado: {3}
+
+Para memorizar: interseção = elementos em comum.
+
+Diferença (-)
+A diferença retorna os elementos que estão no primeiro conjunto, mas não estão no segundo.
+
+
+python
+print(conjunto1 - conjunto2)
+Resultado: {1, 2}
+
+Se invertermos a ordem:
+
+
+python
+print(conjunto2 - conjunto1)
+Resultado: {4, 5}
+
+Para memorizar: diferença = elementos exclusivos do primeiro conjunto.
+
+Diferença simétrica (^)
+Retorna os elementos que estão em apenas um dos conjuntos, excluindo os que aparecem nos dois.
+
+
+python
+print(conjunto1 ^ conjunto2)
+Resultado: {1, 2, 4, 5}
+
+Para memorizar: diferença simétrica = juntar os elementos exclusivos de cada conjunto.
+
+Métodos de conjuntos
+
+Os métodos permitem adicionar, remover e limpar elementos de um conjunto.
+
+add() — Adicionar um elemento
+Adiciona um elemento ao conjunto. Se ele já existir, o conjunto permanece sem duplicados.
+
+
+python
+frutas = {"maçã", "banana"}
+
+frutas.add("pera")
+
+print(frutas)
+Resultado: conjunto contendo maçã, banana e pera.
+
+remove() — Remover um elemento
+Remove o elemento indicado. Se ele não existir, o Python gera um erro (KeyError).
+
+
+python
+frutas = {"maçã", "banana", "laranja"}
+
+frutas.remove("banana")
+
+print(frutas)
+Resultado: conjunto contendo maçã e laranja.
+
+discard() — Remover sem gerar erro
+Também remove um elemento, mas não gera erro se ele não existir.
+
+
+python
+frutas = {"maçã", "banana", "laranja"}
+
+frutas.discard("uva")
+
+print(frutas)
+O conjunto continua igual, pois "uva" não estava presente.
+
+Diferença importante:
+
+remove(): gera erro se o elemento não existir.
+
+discard(): não gera erro se o elemento não existir.
+
+clear() — Remover todos os elementos
+Esvazia completamente o conjunto.
+
+
+python
+frutas = {"maçã", "banana", "laranja"}
+
+frutas.clear()
+
+print(frutas)
+Resultado:
+
+
+python
+set()
+O conjunto continua existindo, mas fica vazio.
