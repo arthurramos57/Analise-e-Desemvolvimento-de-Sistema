@@ -1,0 +1,125 @@
+Loops em Python
+
+Os loops (laços de repetição) permitem repetir um bloco de código várias vezes sem precisar escrever as mesmas instruções repetidamente.
+
+Em Python, os principais loops são for e while. Também existem comandos que controlam a execução: break, continue e pass.
+
+- for — Percorrer uma sequência
+
+O for é utilizado para percorrer elementos de uma sequência, como listas, strings ou intervalos de números.
+
+Exemplo:
+
+
+python
+frutas = ["maçã", "banana", "laranja"]
+
+for fruta in frutas:
+    print(fruta)
+Resultado:
+
+
+text
+maçã
+banana
+laranja
+Como funciona?
+
+for inicia o loop.
+
+fruta é a variável que recebe um elemento de cada vez.
+
+in frutas indica a sequência que será percorrida.
+
+print(fruta) imprime cada elemento.
+
+Função range()
+A função range() permite repetir um código utilizando uma sequência de números.
+
+
+python
+for i in range(5):
+    print(i)
+Resultado: 0, 1, 2, 3, 4.
+
+Atenção: range(5) começa no zero e termina em quatro, pois o limite final não é incluído.
+
+- while — Repetir enquanto uma condição for verdadeira
+
+O while repete um bloco de código enquanto determinada condição for verdadeira (True).
+
+Exemplo:
+
+
+python
+contador = 0
+
+while contador < 5:
+    print(contador)
+    contador += 1
+Resultado: 0, 1, 2, 3, 4.
+
+- Como funciona?
+
+O contador começa em zero.
+
+O Python verifica se contador < 5.
+
+Se a condição for verdadeira, imprime o valor.
+
+contador += 1 aumenta o contador em um.
+
+Quando o contador chega a cinco, a condição fica falsa e o loop termina.
+
+Importante: se a condição nunca se tornar falsa, ocorrerá um loop infinito. Por isso, é necessário garantir que o loop possa terminar.
+
+- Comandos de controle dos loops
+break — Interromper o loop
+O break encerra o loop imediatamente, mesmo que ainda existam repetições a realizar.
+
+
+python
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+Resultado: 0, 1, 2, 3, 4.
+
+Quando i chega a cinco, o loop é encerrado.
+
+- continue — Pular uma iteração
+O continue interrompe a iteração atual e passa para a próxima, sem executar o restante do código daquela repetição.
+
+
+python
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)
+Resultado: 1, 3, 5, 7, 9.
+
+O operador % calcula o resto da divisão. Se i % 2 == 0, o número é par e o continue faz com que ele não seja impresso. Assim, aparecem apenas os números ímpares.
+
+- pass — Não fazer nada
+O pass é utilizado quando precisamos escrever uma instrução, mas ainda não queremos executar nenhuma ação.
+
+
+python
+
+for i in range(5):
+    pass
+Nesse exemplo, o loop percorre os números de zero a quatro, mas nenhuma ação é realizada.
+
+O pass funciona como um espaço reservado para implementar o código posteriormente.
+
+- Diferenças entre os comandos
+
+for: percorre uma sequência ou um intervalo de valores.
+
+while: repete enquanto uma condição for verdadeira.
+
+break: encerra o loop imediatamente.
+
+continue: pula para a próxima iteração.
+
+pass: não faz nada; serve como espaço reservado.
