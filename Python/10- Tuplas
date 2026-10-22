@@ -1,0 +1,158 @@
+Tuplas em Python
+
+As tuplas (tuple) são estruturas de dados que permitem armazenar vários elementos em uma única variável. São semelhantes às listas, mas possuem uma diferença fundamental: as tuplas são imutáveis, ou seja, não podem ser modificadas depois de criadas.
+
+- Criação de tuplas
+
+As tuplas geralmente são criadas utilizando parênteses (), com os elementos separados por vírgulas.
+
+Exemplo:
+
+
+python
+ponto = (3, 4)
+
+print(ponto)
+Resultado:
+
+
+text
+(3, 4)
+Uma tupla pode armazenar números, textos e outros tipos de dados.
+
+
+python
+dados = ("Ana", 20, 1.65)
+Nesse exemplo, a tupla armazena um nome, uma idade e uma altura.
+
+- Acesso aos elementos
+
+Assim como nas listas, os elementos das tuplas são acessados por meio de índices, que começam em zero.
+
+
+python
+ponto = (3, 4)
+
+print(ponto[0])
+print(ponto[1])
+Resultado:
+
+
+text
+3
+4
+ponto[0]: acessa o primeiro elemento.
+
+ponto[1]: acessa o segundo elemento.
+
+Também podemos utilizar índices negativos:
+
+
+python
+ponto = (3, 4)
+
+print(ponto[-1])  # 4
+print(ponto[-2])  # 3
+O índice -1 representa o último elemento, enquanto -2 representa o penúltimo.
+
+- Imutabilidade das tuplas
+
+A principal característica das tuplas é a imutabilidade. Depois de criadas, não podemos adicionar, remover ou substituir elementos diretamente.
+
+Exemplo:
+
+
+python
+numeros = (1, 2, 3)
+
+numeros[0] = 10
+Esse código gera um erro, pois estamos tentando modificar um elemento da tupla.
+
+As tuplas são úteis quando queremos manter informações fixas, como:
+
+Coordenadas geográficas ou pontos (x, y).
+
+Dias da semana.
+
+Configurações que não devem ser alteradas.
+
+Dados que precisam permanecer constantes durante a execução do programa.
+
+- Métodos e funções das tuplas
+
+Embora sejam imutáveis, as tuplas possuem recursos para consultar seus elementos.
+
+count() — Contar ocorrências
+Conta quantas vezes determinado elemento aparece na tupla.
+
+
+python
+minha_tupla = (1, 2, 3, 2, 4, 2)
+
+print(minha_tupla.count(2))
+Resultado: 3
+
+O número 2 aparece três vezes na tupla.
+
+index() — Encontrar a posição
+Retorna o índice da primeira ocorrência de um elemento encontrado.
+
+
+python
+minha_tupla = (1, 2, 3, 2, 4, 2)
+
+print(minha_tupla.index(2))
+Resultado: 1
+
+Isso acontece porque o primeiro número 2 está no índice 1.
+
+O método index() também permite definir onde a busca começa e termina.
+
+
+python
+minha_tupla = (1, 2, 3, 2, 4, 2)
+
+print(minha_tupla.index(2, 2))
+Resultado: 3
+
+Nesse caso, a busca começa no índice 2. O primeiro número 2 encontrado a partir dessa posição está no índice 3.
+
+Outro exemplo:
+
+
+python
+print(minha_tupla.index(2, 2, 4))
+Resultado: 3
+
+Aqui, a busca considera os índices a partir de 2 até antes do índice 4.
+
+Atenção: se o elemento não for encontrado no intervalo pesquisado, o Python gera um ValueError.
+
+len() — Contar a quantidade de elementos
+A função len() retorna o tamanho da tupla, ou seja, quantos elementos ela contém.
+
+
+python
+minha_tupla = (1, 2, 3, 2, 4, 2)
+
+print(len(minha_tupla))
+Resultado: 6
+
+A tupla possui seis elementos. A função len() não é um método da tupla, mas uma função incorporada do Python.
+
+- Diferença entre listas e tuplas
+
+Lista: utiliza colchetes [] e permite modificar seus elementos.
+
+Tupla: geralmente utiliza parênteses () e não permite modificar seus elementos depois de criada.
+
+Exemplos:
+
+
+python
+lista = [1, 2, 3]
+lista[0] = 10  # Funciona
+
+tupla = (1, 2, 3)
+# tupla[0] = 10  # Gera erro
+Use listas quando precisar alterar os dados e tuplas quando precisar manter uma coleção fixa.
