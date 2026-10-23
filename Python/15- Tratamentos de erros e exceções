@@ -1,0 +1,126 @@
+Tratamento de erros e exceções
+
+Quando programamos, podemos cometer erros ou encontrar situações inesperadas durante a execução do código. O Python possui mecanismos para identificar esses problemas e, em muitos casos, tratá-los sem que o programa seja interrompido inesperadamente.
+
+1. Erros comuns em Python
+1. SyntaxError — erro de sintaxe
+Acontece quando escrevemos o código desrespeitando as regras da linguagem Python.
+
+Exemplo:
+
+
+python
+def minha_funcao()
+    print("Olá")
+O erro está na falta dos dois-pontos (:) depois dos parênteses.
+
+Forma correta:
+
+
+python
+def minha_funcao():
+    print("Olá")
+Para lembrar: é como escrever uma frase com uma regra gramatical obrigatória faltando. O Python não consegue interpretar corretamente o código.
+
+- NameError — erro de nome
+
+Acontece quando tentamos utilizar uma variável ou função que não foi definida ou não está disponível naquele escopo.
+
+Exemplo:
+
+
+python
+print(idade)
+Se a variável idade não tiver sido definida, o Python apresentará um NameError.
+
+Forma correta:
+
+
+python
+idade = 20
+print(idade)
+
+- TypeError — erro de tipo
+
+Acontece quando tentamos realizar uma operação incompatível com os tipos de dados envolvidos.
+
+Exemplo:
+
+
+python
+resultado = 5 + "10"
+O Python não pode somar diretamente um número inteiro (int) com um texto (str).
+
+Uma forma de corrigir, caso você queira somar números, é converter o texto:
+
+
+python
+resultado = 5 + int("10")
+print(resultado)
+Resultado: 15.
+
+- IndexError — erro de índice
+
+Acontece quando tentamos acessar uma posição que não existe em uma lista ou sequência.
+
+Exemplo:
+
+
+python
+lista = [1, 2, 3]
+print(lista[3])
+O erro acontece porque os índices começam em zero:
+
+Lista: [1, 2, 3]
+
+1
+Índice 0
+2
+Índice 1
+3
+Índice 2
+O índice 3 não existe nessa lista, pois ela possui apenas três elementos.
+
+Forma correta:
+
+
+python
+lista = [1, 2, 3]
+print(lista[2])
+Resultado: 3.
+
+- O que é uma exceção?
+
+Uma exceção é um problema detectado durante a execução do programa que interrompe o fluxo normal do código, caso não seja tratado.
+
+Por exemplo, dividir um número por zero provoca um ZeroDivisionError.
+
+
+python
+resultado = 10 / 0
+Sem tratamento, o programa gera uma mensagem de erro e não continua executando as instruções seguintes daquele fluxo.
+
+- Como tratar exceções com try e except
+
+Podemos utilizar try e except para tentar executar um código e definir o que fazer caso ocorra um erro específico.
+
+Exemplo:
+
+
+python
+try:
+    numero = int(input("Digite um número: "))
+    print(10 / numero)
+except ValueError:
+    print("Digite um número inteiro válido.")
+except ZeroDivisionError:
+    print("Não é possível dividir por zero.")
+Como funciona:
+
+try: contém o código que queremos tentar executar.
+
+except ValueError: trata o erro que ocorre quando o texto digitado não pode ser convertido em um número inteiro.
+
+except ZeroDivisionError: trata a tentativa de divisão por zero.
+
+Assim, podemos apresentar uma mensagem adequada em vez de deixar esses erros interromperem o programa sem explicação amigável.
