@@ -1,0 +1,140 @@
+Funções
+
+As funções são blocos de código reutilizáveis que realizam tarefas específicas. Elas permitem organizar melhor o programa, evitar repetições e facilitar a manutenção do código.
+
+- Definição e chamada de funções
+
+Para criar uma função em Python, utilizamos a palavra-chave def, seguida do nome da função, parênteses e dois-pontos (:). O código que pertence à função deve estar indentado.
+
+Exemplo:
+
+
+python
+def saudacao():
+    print("Olá, mundo!")
+
+saudacao()
+def é a palavra usada para definir uma função.
+
+saudacao é o nome da função.
+
+print() exibe a mensagem na tela.
+
+saudacao() chama a função, fazendo com que seu código seja executado.
+
+Importante: definir uma função não significa executá-la. Para executar seu código, precisamos chamá-la.
+
+- Parâmetros e argumentos
+
+Os parâmetros são variáveis que recebem valores dentro da função. Os argumentos são os valores que fornecemos quando chamamos essa função.
+
+Exemplo:
+
+
+python
+def saudacao(nome):
+    print(f"Olá, {nome}!")
+
+saudacao("João")
+saudacao("Maria")
+Resultado:
+
+
+text
+Olá, João!
+Olá, Maria!
+Nesse exemplo, nome é o parâmetro, enquanto "João" e "Maria" são os argumentos.
+
+Isso permite utilizar a mesma função com diferentes valores, sem precisar escrever o mesmo código várias vezes.
+
+- Valores de retorno (return)
+
+A palavra-chave return serve para devolver um resultado da função para o restante do programa.
+
+Exemplo:
+
+
+python
+def soma(a, b):
+    return a + b
+
+resultado = soma(3, 4)
+print(resultado)
+Resultado:
+
+
+text
+7
+A função recebe os números 3 e 4, soma os dois e retorna o resultado. Esse valor é armazenado na variável resultado e depois exibido na tela.
+
+A diferença é que print() mostra algo na tela, enquanto return devolve um valor que pode ser utilizado em outras operações.
+
+- Funções anônimas (lambda)
+
+As funções lambda são funções pequenas, escritas em uma única expressão e sem utilizar def para definir um nome de função.
+
+Exemplo:
+
+
+python
+quadrado = lambda x: x ** 2
+
+print(quadrado(5))
+Resultado:
+
+
+text
+25
+Nesse exemplo:
+
+lambda cria uma função anônima.
+x é o parâmetro.
+x ** 2 calcula o quadrado do número.
+quadrado(5) executa a função com o valor 5.
+
+As funções lambda são úteis para operações simples. Para funções maiores, geralmente é melhor utilizar def, pois facilita a leitura do código.
+
+Escopo das variáveis: local e global
+
+O escopo determina onde uma variável pode ser acessada dentro do programa.
+
+- Variável local
+
+É criada dentro de uma função e normalmente só pode ser utilizada dentro dela.
+
+
+python
+def funcao():
+    variavel_local = 10
+    print(variavel_local)
+
+funcao()
+Resultado:
+
+
+text
+10
+Se tentarmos utilizar variavel_local fora da função, ocorrerá um erro, pois ela não está disponível nesse escopo.
+
+- Variável global
+
+É definida fora das funções e pode ser acessada dentro delas, desde que não exista alguma regra de escopo que impeça isso.
+
+
+python
+variavel_global = 20
+
+def funcao():
+    print(variavel_global)
+
+funcao()
+print(variavel_global)
+Resultado:
+
+
+text
+20
+20
+A variável global pode ser lida tanto dentro da função quanto fora dela.
+
+Atenção: acessar uma variável global é diferente de modificá-la. Para modificar uma variável global dentro de uma função, podemos precisar utilizar a palavra-chave global.
