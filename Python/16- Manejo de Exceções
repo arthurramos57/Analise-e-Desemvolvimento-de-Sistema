@@ -1,0 +1,93 @@
+Manejo de exceções
+
+O manejo de exceções é uma forma de lidar com erros durante a execução de um programa, evitando que ele seja interrompido inesperadamente quando ocorre um problema que podemos tratar.
+
+Em Python, utilizamos principalmente três palavras-chave: try, except e finally.
+
+- try — tentar executar o código
+
+O bloco try contém o código que pode gerar um erro. O Python tenta executar as instruções desse bloco normalmente.
+
+Exemplo:
+
+
+python
+try:
+    resultado = 10 / 0
+    print(resultado)
+except ZeroDivisionError:
+    print("Erro: divisão por zero")
+O resultado será:
+
+
+text
+Erro: divisão por zero
+Isso acontece porque não é possível dividir um número por zero. Quando o erro ocorre, o Python interrompe o restante do bloco try e procura um except compatível.
+
+- except — tratar o erro
+
+O bloco except define o que o programa deve fazer quando ocorre uma exceção específica.
+
+Podemos utilizar vários blocos except para tratar erros diferentes.
+
+Exemplo:
+
+
+python
+try:
+    numero = int(input("Digite um número: "))
+    resultado = 10 / numero
+    print(resultado)
+except ZeroDivisionError:
+    print("Erro: não é possível dividir por zero")
+except ValueError:
+    print("Erro: digite um número inteiro válido")
+Nesse exemplo:
+
+Se o usuário digitar 0, ocorre ZeroDivisionError.
+
+Se digitar um texto como abc, ocorre ValueError.
+
+Se digitar 2, o resultado será 5.0.
+
+Importante: o except permite que o programa apresente uma mensagem adequada para cada erro tratado.
+
+- finally — executar sempre
+
+O bloco finally é opcional e executa seu código ao final do tratamento, independentemente de ter ocorrido uma exceção ou não, desde que o fluxo de execução alcance esse bloco.
+
+É utilizado principalmente para liberar recursos, como fechar arquivos.
+
+Exemplo:
+
+
+python
+try:
+    print("Executando o programa")
+except Exception:
+    print("Ocorreu um erro")
+finally:
+    print("Finalizando o processo")
+Resultado:
+
+
+text
+Executando o programa
+Finalizando o processo
+Mesmo que ocorra um erro tratado pelo except, o bloco finally será executado antes de o fluxo sair dessa estrutura.
+
+Exemplo com arquivo
+
+python
+arquivo = None
+
+try:
+    arquivo = open("arquivo.txt", "r")
+    conteudo = arquivo.read()
+    print(conteudo)
+except FileNotFoundError:
+    print("Arquivo não encontrado")
+finally:
+    if arquivo is not None:
+        arquivo.close()
+Nesse caso, se o arquivo existir, ele será lido e fechado. Se não existir, será exibida uma mensagem e o código verificará se há um arquivo aberto para fechar.
