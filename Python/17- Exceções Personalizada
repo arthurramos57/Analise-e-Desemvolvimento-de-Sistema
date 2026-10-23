@@ -1,0 +1,99 @@
+Exceções personalizadas
+
+As exceções personalizadas são erros que nós mesmos criamos para situações específicas do nosso programa. Elas permitem identificar problemas de acordo com as regras que definimos.
+
+Por exemplo, podemos criar uma exceção para avisar que uma idade é inválida, que um saldo é insuficiente ou que uma nota está fora do intervalo permitido.
+
+- Criando uma exceção com raise
+
+A palavra-chave raise é utilizada para lançar uma exceção manualmente, quando determinada condição acontece.
+
+Exemplo:
+
+
+python
+def verificar_idade(idade):
+    if idade < 0:
+        raise Exception("A idade não pode ser negativa.")
+
+    print("Idade válida!")
+
+try:
+    verificar_idade(-5)
+except Exception as e:
+    print(f"Erro: {e}")
+Resultado:
+
+
+text
+Erro: A idade não pode ser negativa.
+Entenda o código:
+
+if idade < 0: verifica se a idade é negativa.
+
+raise Exception(...): provoca uma exceção com a mensagem indicada.
+
+try: tenta executar a função.
+
+except Exception as e: captura a exceção e guarda sua informação na variável e.
+
+print(f"Erro: {e}"): exibe a mensagem do erro.
+
+Se chamarmos verificar_idade(20), a condição será falsa e o programa exibirá Idade válida!.
+
+- Criando uma classe de exceção personalizada
+
+Também podemos criar uma exceção com um nome próprio, utilizando uma classe que herda de Exception.
+
+Exemplo:
+
+
+python
+class IdadeInvalidaError(Exception):
+    pass
+
+def verificar_idade(idade):
+    if idade < 0:
+        raise IdadeInvalidaError(
+            "A idade não pode ser negativa."
+        )
+
+    print("Idade válida!")
+
+try:
+    verificar_idade(-5)
+except IdadeInvalidaError as e:
+    print(f"Erro: {e}")
+O resultado será:
+
+
+text
+Erro: A idade não pode ser negativa.
+Nesse exemplo:
+
+class cria uma classe.
+
+IdadeInvalidaError é o nome da exceção criada.
+
+(Exception) indica que ela herda da classe base de exceções do Python.
+
+pass indica que a classe não precisa de instruções adicionais por enquanto.
+
+raise lança a exceção quando a idade é negativa.
+
+except IdadeInvalidaError captura especificamente esse tipo de erro.
+
+Qual é a vantagem? Podemos identificar exatamente qual problema aconteceu, em vez de tratar todos os erros da mesma maneira.
+
+- Diferença entre raise e except
+
+raise: provoca ou lança uma exceção.
+
+except: captura e trata uma exceção que aconteceu.
+
+as e: permite acessar a informação da exceção por meio da variável e.
+
+finally: executa o código de finalização ao sair da estrutura, tenha ocorrido uma exceção ou não.
+
+Pense em um sistema de banco: se alguém tentar sacar mais dinheiro do que possui, o programa pode lançar uma exceção personalizada chamada SaldoInsuficienteError 
+e tratar essa situação com uma mensagem apropriada.
