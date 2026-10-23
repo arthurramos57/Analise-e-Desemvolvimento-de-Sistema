@@ -1,0 +1,130 @@
+Funções definidas pelo usuário
+
+As funções definidas pelo usuário são funções criadas pelo próprio programador para realizar tarefas específicas. Elas permitem reutilizar código, organizar o programa e evitar repetições.
+
+- Documentação de funções (docstrings)
+
+As docstrings são textos que explicam o que uma função faz, quais parâmetros recebe e qual resultado retorna.
+
+São escritas logo no início da função, utilizando três aspas duplas (""").
+
+Exemplo:
+
+
+python
+def area_retangulo(base, altura):
+    """
+    Calcula a área de um retângulo.
+
+    Args:
+        base: base do retângulo.
+        altura: altura do retângulo.
+
+    Returns:
+        A área do retângulo.
+    """
+    return base * altura
+
+print(area_retangulo(5, 3))
+Resultado: 15
+
+Nesse exemplo:
+
+area_retangulo é o nome da função.
+
+base e altura são os parâmetros.
+
+A docstring explica a finalidade da função.
+
+return base * altura devolve o resultado do cálculo.
+
+A docstring não executa o cálculo nem altera o resultado. Ela serve para documentar e facilitar a compreensão do código.
+
+- Funções com número variável de argumentos (*args)
+
+Em Python, podemos criar funções que recebem uma quantidade variável de argumentos usando * antes do nome do parâmetro.
+
+Exemplo:
+
+
+python
+def soma_variavel(*numeros):
+    total = 0
+
+    for numero in numeros:
+        total += numero
+
+    return total
+
+print(soma_variavel(1, 2, 3))
+print(soma_variavel(4, 5, 6, 7))
+Resultado:
+
+
+text
+6
+22
+Entenda como funciona:
+
+*numeros permite receber vários argumentos.
+
+total = 0 inicia a soma em zero.
+
+for numero in numeros percorre cada número recebido.
+
+total += numero adiciona cada número ao total.
+
+return total devolve a soma final.
+
+O nome numeros poderia ser outro, pois o importante é o asterisco (*). Por convenção, é comum utilizar o nome *args.
+
+Exemplo visual da soma
+
+1
+Primeiro
+2
+Segundo
+3
+Terceiro
+Total = 6
+A função recebe os números, soma cada um e retorna o total.
+
+A principal vantagem é que não precisamos criar uma função diferente para cada quantidade de números.
+
+- Funções incorporadas do Python
+
+Além das funções criadas pelo programador, Python possui funções prontas, chamadas funções incorporadas (built-in functions).
+
+Alguns exemplos importantes:
+
+print(): exibe informações na tela.
+
+len(): informa a quantidade de elementos de uma sequência.
+
+range(): gera uma sequência de números, frequentemente utilizada em laços de repetição.
+
+sum(): calcula a soma dos valores de um conjunto de números.
+
+max(): retorna o maior valor.
+
+min(): retorna o menor valor.
+
+Exemplo:
+
+
+python
+numeros = [10, 20, 30]
+
+print(len(numeros))
+print(sum(numeros))
+print(max(numeros))
+print(min(numeros))
+Resultado:
+
+
+text
+3
+60
+30
+10
+Essas funções podem ser utilizadas diretamente, sem precisar defini-las com def.
