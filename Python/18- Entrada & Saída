@@ -1,0 +1,153 @@
+Entrada e saída de dados em Python
+
+Em Python, a entrada e a saída de dados permitem que um programa interaja com o usuário. A entrada serve para receber informações, enquanto a saída serve para mostrar mensagens e resultados na tela.
+
+- Entrada de dados — input()
+
+A função input() é utilizada para receber informações digitadas pelo usuário durante a execução do programa.
+
+Quando o Python encontra essa função, ele pode exibir uma mensagem, esperar que o usuário digite uma resposta e continuar a execução depois que ele pressionar Enter.
+
+Exemplo:
+
+
+python
+nome = input("Digite seu nome: ")
+print(nome)
+Nesse exemplo, o programa pede o nome do usuário e armazena a resposta na variável nome. Em seguida, utiliza print() para mostrar o nome digitado.
+
+Por que o input() é importante?
+Ele permite criar programas interativos, ou seja, programas que recebem informações de acordo com o que o usuário digita.
+
+Porém, existe um detalhe muito importante: o input() sempre retorna o valor como texto (str), mesmo quando o usuário digita um número.
+
+Por exemplo:
+
+
+python
+idade = input("Digite sua idade: ")
+Se o usuário digitar 20, o Python armazenará "20" como texto, e não como um número inteiro.
+
+Conversão de tipos
+Para realizar cálculos matemáticos, precisamos converter o texto recebido para um tipo numérico.
+
+As principais funções de conversão são:
+
+int(): converte um valor para número inteiro, como 10, 20 ou 35.
+
+float(): converte um valor para número decimal, como 1.5, 7.8 ou 10.5.
+
+Exemplo com int():
+
+
+python
+idade = int(input("Digite sua idade: "))
+print(idade + 1)
+Se o usuário digitar 20, o resultado será 21, porque o valor foi convertido para um número inteiro antes da soma.
+
+Exemplo com float():
+
+
+python
+altura = float(input("Digite sua altura: "))
+print(altura)
+Se o usuário digitar 1.75, o programa armazenará esse valor como um número decimal.
+
+Atenção: em Python, normalmente utilizamos o ponto (.) para separar as casas decimais, como em 1.75, e não a vírgula.
+
+- Saída de dados — print()
+
+A função print() é utilizada para exibir informações na tela, como mensagens, valores de variáveis e resultados de operações matemáticas.
+
+Exemplo:
+
+
+python
+print("Olá, mundo!")
+Resultado:
+
+
+text
+Olá, mundo!
+Também podemos exibir o conteúdo de uma variável:
+
+
+python
+nome = "Ana"
+print(nome)
+Resultado:
+
+
+text
+Ana
+Além disso, podemos mostrar resultados de cálculos:
+
+
+python
+print(10 + 5)
+Resultado:
+
+
+text
+15
+Portanto, a função print() é essencial para apresentar informações ao usuário e mostrar os resultados produzidos pelo programa.
+
+- F-strings: como mostrar variáveis em textos
+
+As f-strings são uma maneira prática de inserir variáveis e expressões diretamente dentro de um texto.
+
+Para utilizá-las, basta colocar a letra f antes das aspas e escrever as variáveis entre chaves {}.
+
+Exemplo:
+
+
+python
+nome = "Carlos"
+idade = 18
+
+print(f"Meu nome é {nome} e tenho {idade} anos.")
+Resultado:
+
+
+text
+Meu nome é Carlos e tenho 18 anos.
+Observe que o Python substitui {nome} pelo valor da variável nome e {idade} pelo valor da variável idade.
+
+Por que utilizar f-strings?
+
+Sem f-strings, combinar textos e variáveis pode deixar o código mais complicado. Com elas, o código fica mais organizado, legível e fácil de entender.
+
+Também podemos realizar operações dentro das chaves:
+
+
+python
+a = 10
+b = 5
+
+print(f"A soma é {a + b}.")
+Resultado:
+
+
+text
+A soma é 15.
+Nesse caso, o Python calcula a + b e coloca o resultado diretamente na mensagem.
+
+- Exemplo completo: entrada, processamento e saída
+
+Veja como essas funções trabalham juntas em um programa:
+
+
+python
+nome = input("Digite seu nome: ")
+idade = int(input("Digite sua idade: "))
+
+print(f"Olá, {nome}!")
+print(f"No próximo ano, você terá {idade + 1} anos.")
+Se o usuário digitar o nome Mariana e a idade 17, o resultado será:
+
+
+text
+Digite seu nome: Mariana
+Digite sua idade: 17
+Olá, Mariana!
+No próximo ano, você terá 18 anos.
