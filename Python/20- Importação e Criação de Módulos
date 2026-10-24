@@ -1,0 +1,177 @@
+Importação e criação de módulos em Python
+
+Em Python, um módulo é um arquivo que contém código reutilizável, como funções, classes e variáveis, que podem ser utilizadas em outros programas.
+
+Os módulos ajudam a organizar o código, evitar repetições e facilitar a manutenção dos programas. Em vez de escrever todas as funcionalidades em um único arquivo, podemos separá-las em arquivos menores e importá-las quando necessário.
+
+- O que são módulos?
+
+Um módulo é, geralmente, um arquivo Python com a extensão .py.
+
+Por exemplo, podemos ter um arquivo chamado calculadora.py que contém funções para realizar cálculos. Outro arquivo, chamado principal.py, pode importar essas funções e utilizá-las.
+
+Os módulos permitem:
+
+Reutilizar código: utilizar funções que já foram criadas sem precisar escrevê-las novamente.
+
+Organizar o programa: separar funcionalidades em arquivos diferentes.
+
+Facilitar a manutenção: corrigir ou modificar uma parte do código sem precisar alterar todo o programa.
+
+Python também possui uma biblioteca padrão com diversos módulos prontos para uso, sem necessidade de instalá-los separadamente.
+
+- Importando módulos com import
+
+A palavra-chave import permite importar um módulo completo para utilizarmos suas funcionalidades.
+
+Exemplo:
+
+
+python
+import math
+
+resultado = math.sqrt(25)
+print(resultado)
+Resultado:
+
+
+text
+5.0
+Entenda o código:
+
+import math importa o módulo math, que oferece funções matemáticas.
+
+math.sqrt(25) utiliza a função sqrt() para calcular a raiz quadrada de 25.
+
+print(resultado) exibe o resultado na tela.
+
+Observe que escrevemos math.sqrt() porque estamos acessando uma função que pertence ao módulo math.
+
+Importante: a raiz quadrada de 25 é 5, mas o resultado é apresentado como 5.0, pois a função sqrt() retorna um número do tipo float.
+
+- Importando funções específicas com from ... import
+
+Também podemos importar apenas uma função de um módulo, sem precisar escrever o nome do módulo toda vez que formos utilizá-la.
+
+Exemplo:
+
+
+python
+from math import sqrt
+
+resultado = sqrt(25)
+print(resultado)
+Resultado:
+
+
+text
+5.0
+Nesse caso, from math import sqrt importa diretamente a função sqrt() do módulo math.
+
+A principal diferença é:
+
+Com import math, utilizamos math.sqrt(25).
+
+Com from math import sqrt, utilizamos sqrt(25).
+
+As duas formas funcionam. A escolha depende da organização e da clareza que desejamos para o código.
+
+- Módulos da biblioteca padrão do Python
+
+A biblioteca padrão contém vários módulos que oferecem funcionalidades úteis para diferentes situações.
+
+Dois exemplos importantes são random e datetime.
+
+Módulo random
+
+O módulo random permite gerar valores aleatórios.
+
+Exemplo:
+
+
+python
+import random
+
+numero_aleatorio = random.randint(1, 10)
+print(numero_aleatorio)
+O programa exibirá um número inteiro entre 1 e 10, incluindo os dois limites.
+
+Por exemplo, o resultado pode ser 3, 7 ou 10.
+
+A função randint(1, 10) escolhe um número inteiro aleatório nesse intervalo.
+
+Módulo datetime
+
+O módulo datetime permite trabalhar com datas e horários.
+
+Exemplo:
+
+
+python
+import datetime
+
+data_atual = datetime.datetime.now()
+print(data_atual)
+A função datetime.datetime.now() obtém a data e a hora locais atuais do sistema em que o programa está sendo executado.
+
+O resultado será semelhante a:
+
+
+text
+2026-10-24 13:30:00.123456
+Esse valor é apenas ilustrativo. A data e a hora exibidas dependem do momento da execução e das configurações do sistema.
+
+Esses exemplos mostram como os módulos prontos ajudam a realizar tarefas sem precisar desenvolver tudo do zero.
+
+- Como criar seu próprio módulo
+
+Além de utilizar módulos existentes, podemos criar os nossos próprios módulos.
+
+Para isso, basta criar um arquivo Python com funções, classes ou variáveis que desejamos reutilizar.
+
+Imagine que criamos um arquivo chamado operacoes.py com o seguinte conteúdo:
+
+
+python
+def somar(a, b):
+    return a + b
+
+def multiplicar(a, b):
+    return a * b
+Esse arquivo é um módulo chamado operacoes.
+
+Agora, criamos outro arquivo chamado principal.py, no mesmo diretório:
+
+
+python
+import operacoes
+
+print(operacoes.somar(10, 5))
+print(operacoes.multiplicar(10, 5))
+Resultado:
+
+
+text
+15
+50
+
+Veja o que acontece:
+
+O arquivo operacoes.py define as funções somar() e multiplicar().
+
+O arquivo principal.py importa o módulo usando import operacoes.
+
+As funções são chamadas utilizando operacoes.somar() e operacoes.multiplicar().
+
+Os resultados são exibidos com print().
+
+Dessa forma, podemos utilizar as funções em diferentes programas sem precisar reescrevê-las.
+
+Também poderíamos importar somente a função somar():
+
+
+python
+from operacoes import somar
+
+print(somar(10, 5))
+Nesse caso, podemos chamar somar() diretamente, sem o prefixo operacoes..
