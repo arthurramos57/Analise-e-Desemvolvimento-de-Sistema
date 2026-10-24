@@ -1,6 +1,7 @@
 Leitura e escrita de arquivos em Python
 
-Python permite ler, criar e modificar arquivos externos, como arquivos de texto. Isso é útil para guardar informações, consultar dados posteriormente e evitar que as informações sejam perdidas quando o programa termina.
+Python permite ler, criar e modificar arquivos externos, como arquivos de texto. Isso é útil para guardar informações, consultar dados posteriormente e evitar
+que as informações sejam perdidas quando o programa termina.
 
 Para trabalhar com arquivos, utilizamos principalmente a função open(), os métodos de leitura e escrita e a declaração with.
 
