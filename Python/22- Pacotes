@@ -1,0 +1,108 @@
+Pacotes em Python
+
+Em Python, um pacote é uma forma de organizar vários módulos relacionados dentro de um diretório. Ele permite estruturar melhor os programas, 
+agrupar funcionalidades semelhantes e facilitar a reutilização do código.
+
+Para entender a diferença, lembre-se:
+
+Módulo: é um arquivo Python (.py) que contém funções, classes ou variáveis.
+
+Pacote: é uma estrutura de diretórios que agrupa módulos relacionados.
+
+Por exemplo, em um programa de matemática, podemos ter um pacote chamado matematica que reúne módulos de soma, subtração, multiplicação e divisão.
+
+- Como criar um pacote
+
+Para criar um pacote tradicional, precisamos criar um diretório com o nome desejado e adicionar um arquivo chamado __init__.py dentro dele.
+
+Observe esta estrutura:
+
+
+text
+meu_pacote/
+    __init__.py
+    modulo1.py
+    modulo2.py
+Entenda a função de cada elemento:
+
+meu_pacote/: é o diretório que representa o pacote.
+
+__init__.py: é um arquivo especial que permite inicializar o pacote e, se necessário, definir configurações ou disponibilizar funcionalidades.
+
+modulo1.py e modulo2.py: são módulos Python que contêm o código do pacote.
+
+O arquivo __init__.py pode estar vazio ou conter código. Nas versões modernas do Python, também existem pacotes sem esse arquivo, 
+chamados namespace packages, mas a estrutura apresentada é uma forma tradicional e comum de organizar pacotes.
+
+- Como criar módulos dentro de um pacote
+
+Imagine que queremos criar dois módulos com funções diferentes.
+
+No arquivo modulo1.py, escrevemos:
+
+
+python
+def funcao1():
+    print("Função do módulo 1")
+No arquivo modulo2.py, escrevemos:
+
+
+python
+def funcao2():
+    print("Função do módulo 2")
+Agora, nosso pacote contém dois módulos, e cada um possui sua própria função.
+
+Essa organização permite separar funcionalidades relacionadas em arquivos diferentes, tornando o código mais fácil de compreender e modificar.
+
+- Como importar módulos de um pacote
+
+Para utilizar os módulos de um pacote em outro arquivo Python, podemos usar a instrução from ... import.
+
+Exemplo:
+
+
+python
+from meu_pacote import modulo1, modulo2
+
+modulo1.funcao1()
+modulo2.funcao2()
+Resultado:
+
+
+text
+Função do módulo 1
+Função do módulo 2
+Veja como funciona:
+
+from meu_pacote import modulo1, modulo2 importa os dois módulos do pacote.
+
+modulo1.funcao1() executa a função definida em modulo1.py.
+
+modulo2.funcao2() executa a função definida em modulo2.py.
+
+Para que esse exemplo funcione, a estrutura dos arquivos deve estar organizada corretamente e o pacote precisa estar acessível ao Python.
+
+- Diferença entre módulos e pacotes
+
+Imagine que estamos construindo um sistema de uma escola.
+
+Podemos organizar o projeto da seguinte maneira:
+
+
+text
+escola/
+    __init__.py
+    alunos.py
+    professores.py
+    notas.py
+Nesse exemplo:
+
+escola é o pacote.
+
+alunos.py é um módulo para funcionalidades relacionadas aos alunos.
+
+professores.py é um módulo para funcionalidades relacionadas aos professores.
+
+notas.py é um módulo para funcionalidades relacionadas às notas.
+
+Assim, cada módulo cuida de uma parte do sistema, enquanto o pacote reúne todos eles em uma estrutura organizada.
