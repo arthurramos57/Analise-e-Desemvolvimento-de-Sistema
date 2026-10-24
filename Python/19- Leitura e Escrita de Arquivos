@@ -1,0 +1,207 @@
+Leitura e escrita de arquivos em Python
+
+Python permite ler, criar e modificar arquivos externos, como arquivos de texto. Isso é útil para guardar informações, consultar dados posteriormente e evitar que as informações sejam perdidas quando o programa termina.
+
+Para trabalhar com arquivos, utilizamos principalmente a função open(), os métodos de leitura e escrita e a declaração with.
+
+- Abrindo arquivos com open()
+
+A função open() serve para abrir um arquivo e definir o que queremos fazer com ele.
+
+Sua estrutura básica é:
+
+
+python
+open("dados.txt", "r")
+Nesse exemplo, "dados.txt" é o nome do arquivo e "r" indica que ele será aberto para leitura.
+
+Existem três modos principais de abertura:
+
+"r" — leitura: permite ler o conteúdo de um arquivo existente. Se o arquivo não existir, ocorrerá um erro.
+
+"w" — escrita: permite escrever no arquivo. Se ele não existir, será criado. Se já existir, seu conteúdo anterior será apagado e substituído.
+
+"a" — anexar: permite adicionar informações ao final de um arquivo existente. Se ele não existir, será criado.
+
+É importante escolher o modo correto, principalmente porque o modo "w" pode apagar dados que já estavam salvos.
+
+- Leitura de arquivos
+
+Para ler um arquivo, utilizamos open() no modo "r" e métodos como read() ou readlines().
+
+Método read()
+O método read() lê todo o conteúdo do arquivo e retorna esse conteúdo como uma string (texto).
+
+Exemplo:
+
+
+python
+arquivo = open("dados.txt", "r")
+conteudo = arquivo.read()
+
+print(conteudo)
+
+arquivo.close()
+Entenda cada etapa:
+
+open() abre o arquivo dados.txt para leitura.
+
+read() lê todo o conteúdo do arquivo.
+
+A variável conteudo armazena o texto lido.
+
+print() exibe o conteúdo na tela.
+
+close() fecha o arquivo após a utilização.
+
+Se o arquivo contiver Olá, mundo!, esse texto será exibido na tela.
+
+Método readlines()
+O método readlines() lê as linhas do arquivo e as retorna em uma lista, na qual cada elemento representa uma linha.
+
+Exemplo:
+
+
+python
+arquivo = open("dados.txt", "r")
+linhas = arquivo.readlines()
+
+print(linhas)
+
+arquivo.close()
+Se o arquivo tiver três linhas, o resultado será uma lista com três elementos. Quando existem quebras de linha no arquivo, elas geralmente são preservadas como \n nos elementos da lista.
+
+Diferença importante: read() lê todo o conteúdo como uma única string, enquanto readlines() retorna uma lista de linhas.
+
+- Escrita de arquivos
+
+Para escrever informações em um arquivo, utilizamos o modo "w" e o método write().
+
+Exemplo:
+
+
+python
+arquivo = open("dados.txt", "w")
+
+arquivo.write("Olá, mundo!")
+
+arquivo.close()
+Nesse código:
+
+open() abre o arquivo no modo de escrita.
+
+write() grava o texto "Olá, mundo!" no arquivo.
+
+close() fecha o arquivo.
+
+Se dados.txt não existir, o Python o criará. Se já existir, o conteúdo anterior será substituído.
+
+Um detalhe importante: write() não adiciona uma quebra de linha automaticamente. Para escrever o texto em uma linha e permitir que o próximo conteúdo comece na seguinte, podemos utilizar \n.
+
+
+python
+arquivo = open("dados.txt", "w")
+
+arquivo.write("Primeira linha\n")
+arquivo.write("Segunda linha")
+
+arquivo.close()
+O arquivo ficará assim:
+
+
+text
+Primeira linha
+Segunda linha
+
+- Adicionando informações com o modo "a"
+
+Quando queremos adicionar informações sem apagar o conteúdo existente, utilizamos o modo "a", de append (anexar).
+
+Exemplo:
+
+
+python
+arquivo = open("dados.txt", "a")
+
+arquivo.write("\nNova informação")
+
+arquivo.close()
+Nesse caso, o texto será acrescentado ao final do arquivo, preservando o conteúdo anterior.
+
+A diferença entre "w" e "a" é fundamental:
+
+"w" substitui o conteúdo anterior.
+
+"a" mantém o conteúdo anterior e acrescenta novas informações ao final.
+
+- Utilizando with para abrir arquivos
+
+Embora seja possível abrir um arquivo com open() e fechá-lo com close(), Python oferece uma maneira mais segura e prática: a declaração with.
+
+Exemplo:
+
+
+python
+with open("dados.txt", "r") as arquivo:
+    conteudo = arquivo.read()
+    print(conteudo)
+Nesse código, o arquivo é aberto para leitura, seu conteúdo é armazenado na variável conteudo e depois exibido na tela.
+
+A principal vantagem é que o arquivo é fechado automaticamente quando o bloco with termina, mesmo que ocorra uma exceção durante sua execução.
+
+Por isso, o uso de with é geralmente recomendado, pois reduz a possibilidade de esquecer de fechar um arquivo.
+
+A mesma estrutura funciona para escrita:
+
+
+python
+with open("dados.txt", "w") as arquivo:
+    arquivo.write("Informação salva!")
+Ao terminar o bloco, o arquivo será fechado automaticamente.
+
+- Cuidados ao trabalhar com arquivos
+
+Ao manipular arquivos, precisamos ter alguns cuidados:
+
+Fechar os arquivos: quando usamos open() sem with, devemos fechá-los com close().
+
+Evitar perda de dados: o modo "w" apaga o conteúdo anterior do arquivo.
+
+Verificar a existência do arquivo: tentar ler um arquivo inexistente normalmente provoca um erro.
+
+Considerar exceções: operações de entrada e saída podem falhar, por exemplo, por falta de permissão ou porque o arquivo não foi encontrado.
+
+Podemos tratar alguns desses erros com try e except:
+
+
+python
+try:
+    with open("dados.txt", "r") as arquivo:
+        conteudo = arquivo.read()
+        print(conteudo)
+
+except FileNotFoundError:
+    print("O arquivo não foi encontrado.")
+Assim, se o arquivo não existir, o programa exibirá uma mensagem em vez de encerrar a execução com esse erro não tratado.
+
+- Exemplo completo
+
+O exemplo abaixo mostra como gravar informações e depois ler o conteúdo salvo.
+
+
+python
+# Escrevendo no arquivo
+with open("dados.txt", "w") as arquivo:
+    arquivo.write("Nome: Ana\n")
+    arquivo.write("Idade: 20\n")
+
+# Lendo o arquivo
+with open("dados.txt", "r") as arquivo:
+    conteudo = arquivo.read()
+    print(conteudo)
+Resultado exibido:
+
+
+text
+Nome: Ana
+Idade: 20
