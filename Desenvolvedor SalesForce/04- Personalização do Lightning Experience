@@ -589,7 +589,8 @@ Se houver mais de uma guia chamada Início na lista de itens disponíveis, escol
 
 Por que a ordem é importante?
 
-Porque os itens mais relevantes devem estar em posições fáceis de encontrar. Neste exemplo, a página inicial aparece primeiro, enquanto os objetos e as ferramentas de trabalho ficam organizados logo depois.
+Porque os itens mais relevantes devem estar em posições fáceis de encontrar. Neste exemplo, a página inicial aparece primeiro, enquanto os objetos e as ferramentas de trabalho 
+ficam organizados logo depois.
 
 Observe também que Auditorias de Energia é o objeto personalizado criado na unidade anterior. Adicioná-lo ao aplicativo permite que os usuários acessem as auditorias diretamente pela barra de navegação.
 
@@ -698,13 +699,16 @@ Editar registros diretamente em uma visualização de lista, quando permitido.
 
 Criar gráficos para analisar os dados de uma lista.
 
-O exemplo utiliza a Ursa Major Solar. Erin Donaghue, uma nova representante de vendas, deseja visualizar somente os clientes de canal localizados na costa oeste dos Estados Unidos. Ela também quer organizar as informações e visualizar os valores das oportunidades de vendas por conta.
+O exemplo utiliza a Ursa Major Solar. Erin Donaghue, uma nova representante de vendas, deseja visualizar somente os clientes de canal localizados na costa oeste dos Estados Unidos. 
+Ela também quer organizar as informações e visualizar os valores das oportunidades de vendas por conta.
 
 - O que é uma visualização de lista?
 
 Uma visualização de lista (List View) é uma maneira de exibir um conjunto de registros de um objeto do Salesforce, aplicando filtros e escolhendo quais informações serão mostradas.
 
-Por exemplo, o objeto Contas pode conter centenas de empresas. Em vez de consultar todas elas, um representante de vendas pode criar uma visualização que mostre somente as contas do tipo Cliente - Canal.
+Por exemplo, o objeto Contas pode conter centenas de empresas. Em vez de consultar todas elas, um representante de vendas pode criar uma visualização que mostre somente as 
+
+contas do tipo Cliente - Canal.
 
 As visualizações de lista ajudam a:
 
@@ -956,7 +960,8 @@ Neste exercício, a opção correta é Soma, porque o objetivo é calcular o val
 Uma observação importante
 Quando você cria um gráfico de visualização de lista para um objeto, como Oportunidades ou Leads, ele fica associado a esse objeto.
 
-Isso significa que o gráfico pode ser utilizado em outras visualizações de lista do mesmo objeto às quais o usuário tenha acesso, com exceção da visualização Visualizados Recentemente (Recently Viewed).
+Isso significa que o gráfico pode ser utilizado em outras visualizações de lista do mesmo objeto às quais o usuário tenha acesso, com exceção da 
+visualização Visualizados Recentemente (Recently Viewed).
 
 Portanto, o gráfico não fica necessariamente limitado à lista utilizada no momento de sua criação.
 
@@ -974,7 +979,8 @@ Edição em linha: permite modificar campos diretamente na lista, quando autoriz
 
 Gráficos: apresentam visualmente os dados agrupados ou agregados.
 
-Por exemplo, você pode filtrar as contas para mostrar apenas clientes de canal, exibir os campos Setor e Prioridade do cliente, ordenar as contas pelo nome e utilizar um gráfico para analisar valores relacionados às oportunidades.
+Por exemplo, você pode filtrar as contas para mostrar apenas clientes de canal, exibir os campos Setor e Prioridade do cliente, ordenar as contas pelo 
+nome e utilizar um gráfico para analisar valores relacionados às oportunidades.
 
 Essas funcionalidades podem ser combinadas para tornar a análise dos dados mais eficiente.
 
@@ -995,7 +1001,8 @@ Escolher os campos que serão destacados em um registro.
 
 Definir um layout compacto como principal para um objeto.
 
-O exemplo continua com a Ursa Major Solar. Maria Jimenez deseja facilitar o trabalho dos consultores de energia, permitindo que eles visualizem rapidamente as principais informações de cada Auditoria Energética, sem precisar procurar os dados pelo restante da página.
+O exemplo continua com a Ursa Major Solar. Maria Jimenez deseja facilitar o trabalho dos consultores de energia, permitindo que eles visualizem 
+rapidamente as principais informações de cada Auditoria Energética, sem precisar procurar os dados pelo restante da página.
 
 - O que são layouts compactos?
 
@@ -1040,7 +1047,8 @@ Por exemplo, ao visualizar um link para uma conta, o cartão pode apresentar inf
 Aplicativo móvel do Salesforce
 Os layouts compactos também influenciam a apresentação das informações nos registros do aplicativo móvel.
 
-Isso é especialmente importante porque as telas dos celulares são menores. Portanto, destacar os campos mais relevantes ajuda os usuários a identificar registros rapidamente sem precisar navegar por muitas seções.
+Isso é especialmente importante porque as telas dos celulares são menores. Portanto, destacar os campos mais relevantes ajuda os usuários a identificar 
+registros rapidamente sem precisar navegar por muitas seções.
 
 - Como funciona a ordem dos campos?
 
@@ -1138,7 +1146,8 @@ Clique em Salvar.
 
 Essa configuração define qual layout compacto será utilizado como principal para o objeto personalizado.
 
-Atenção: criar o layout e atribuí-lo como principal são etapas diferentes. Se você criar o layout, mas não alterar a atribuição, o Salesforce poderá continuar utilizando o layout compacto padrão anterior.
+Atenção: criar o layout e atribuí-lo como principal são etapas diferentes. Se você criar o layout, mas não alterar a atribuição, o Salesforce 
+poderá continuar utilizando o layout compacto padrão anterior.
 
 - Como verificar se funcionou?
 
@@ -1161,7 +1170,8 @@ Também vale conferir se o layout compacto personalizado foi realmente definido 
 
 - Objetivos da unidade
 
-Nesta unidade do Trailhead, você aprende a personalizar as páginas de registro do Salesforce usando o Construtor de Aplicativos Lightning (Lightning App Builder) e o Editor de Layout de Página (Page Layout Editor).
+Nesta unidade do Trailhead, você aprende a personalizar as páginas de registro do Salesforce usando o Construtor de Aplicativos Lightning (Lightning App Builder) e 
+o Editor de Layout de Página (Page Layout Editor).
 
 Ao concluir a unidade, você deverá ser capaz de:
 
@@ -1175,7 +1185,8 @@ Adicionar listas relacionadas.
 
 Ativar uma página Lightning e atribuí-la a aplicativos, tipos de registro e perfis de usuários.
 
-O exemplo continua com a Ursa Major Solar. Maria Jimenez quer criar uma página de Auditoria Energética específica para a equipe de vendas, com campos organizados de maneira mais prática e uma lista relacionada que permita anexar e consultar arquivos.
+O exemplo continua com a Ursa Major Solar. Maria Jimenez quer criar uma página de Auditoria Energética específica para a equipe de vendas, com campos organizados 
+de maneira mais prática e uma lista relacionada que permita anexar e consultar arquivos.
 
 - O que são páginas Lightning?
 
@@ -1183,7 +1194,8 @@ As páginas Lightning são páginas da interface do Salesforce compostas por com
 
 Elas podem ser personalizadas para apresentar informações e ferramentas conforme as necessidades dos usuários.
 
-Por exemplo, uma página de Auditoria Energética pode apresentar o nome da auditoria, a conta relacionada, o consumo de energia, o custo de eletricidade, as notas da auditoria e os arquivos associados.
+Por exemplo, uma página de Auditoria Energética pode apresentar o nome da auditoria, a conta relacionada, o consumo de energia, o custo de eletricidade, 
+as notas da auditoria e os arquivos associados.
 
 A ideia é organizar esses elementos de modo que os usuários encontrem rapidamente as informações necessárias para executar seu trabalho.
 
@@ -1333,7 +1345,8 @@ A página ainda não será disponibilizada aos usuários nesse momento. Antes, M
 
 A aba Relacionados permite que os usuários consultem registros associados àquele que estão visualizando.
 
-Como a Auditoria Energética é um objeto personalizado, Maria precisa configurar uma lista relacionada para permitir que os representantes de vendas adicionem arquivos e consultem os documentos associados às auditorias.
+Como a Auditoria Energética é um objeto personalizado, Maria precisa configurar uma lista relacionada para permitir que os representantes 
+de vendas adicionem arquivos e consultem os documentos associados às auditorias.
 
 Como adicionar a lista relacionada Arquivos
 Volte do Construtor de Aplicativos Lightning.
@@ -1444,3 +1457,434 @@ Na aba Relacionados, deverá aparecer a lista de Arquivos, pronta para que os us
 Se a página não aparecer como esperado, verifique se a ativação foi salva e se o aplicativo, o tipo de registro, o perfil e o formato de dispositivo correspondem às configurações utilizadas.
 
 
+5- Criar botões e links personalizados no Salesforce
+
+- O que são botões e links personalizados?
+
+Os botões e links personalizados permitem adicionar atalhos diretamente às páginas de registros do Salesforce, facilitando o acesso a informações, documentos, sites externos e outras aplicações.
+
+Por exemplo, uma empresa pode criar:
+
+Um botão para abrir um PDF com orientações de auditoria.
+
+Um link para pesquisar o nome de uma conta no Google.
+
+Um botão para visualizar o endereço de uma empresa no Google Maps.
+
+O principal objetivo é aumentar a produtividade dos usuários, permitindo que realizem tarefas com menos cliques e sem precisar procurar informações em outros lugares.
+
+- O que podemos fazer com eles?
+
+Os links e botões personalizados podem direcionar os usuários para diferentes destinos, como:
+
+URLs externas: Google, Google Maps ou outros sites.
+
+Documentos: arquivos PDF e outros documentos compartilhados.
+
+Páginas do Salesforce: páginas específicas ou páginas do Visualforce.
+
+Sistemas internos: intranet da empresa ou aplicações administrativas.
+
+Também é possível configurar como o destino será exibido, por exemplo, em uma nova janela ou guia do navegador, conforme as opções disponíveis.
+
+Além disso, podemos utilizar campos de mesclagem, que inserem automaticamente informações do registro atual na URL.
+
+Exemplo:
+
+https://www.google.com/search?q={!Account.Name}
+
+Nesse caso, {!Account.Name} representa o nome da conta no Salesforce. Ao clicar no link, o Google pesquisa o nome da conta que o usuário está visualizando.
+
+Assim, não é necessário criar um link diferente para cada empresa: o mesmo link funciona para vários registros.
+
+- Quais são os três tipos principais?
+
+Existem três tipos de botões e links personalizados. A principal diferença está no local em que aparecem e na finalidade de cada um.
+
+- Botão de lista (List Button)
+
+É um botão adicionado a uma lista relacionada de um registro.
+
+Uma lista relacionada exibe registros associados a outro registro. Por exemplo, uma conta pode ter várias auditorias energéticas relacionadas.
+
+Exemplo prático: a administradora Maria deseja disponibilizar um PDF com as diretrizes de auditoria energética para os usuários.
+
+Como funciona:
+
+Acessa a Configuração do Salesforce.
+
+Entra no Gerenciador de Objetos e seleciona o objeto Auditoria Energética.
+
+Acessa Botões, Links e Ações.
+
+Clica em Novo Botão ou Link.
+
+Define o nome do botão, como Audit Guidelines.
+
+Seleciona o tipo Botão de lista.
+
+Insere a URL do arquivo PDF.
+
+Salva o botão.
+
+Acessa o layout de página do objeto Conta.
+
+Edita a lista relacionada de Auditorias Energéticas e adiciona o novo botão à seção de botões selecionados.
+
+Salva o layout.
+
+Depois disso, o botão aparece na lista relacionada de Auditorias Energéticas, permitindo acessar o documento diretamente.
+
+Importante: criar o botão não é suficiente. É necessário adicioná-lo à lista relacionada no layout para que ele fique disponível aos usuários.
+
+- Link para a página de detalhes (Detail Page Link)
+
+É um link exibido na seção Links personalizados dos detalhes de um registro.
+
+Ele é útil quando queremos oferecer acesso rápido a um site externo ou a uma pesquisa relacionada ao registro.
+
+Exemplo prático: Maria deseja que os usuários possam pesquisar uma conta no Google.
+
+Como funciona:
+
+Acessa a Configuração.
+
+Abre o Gerenciador de Objetos e seleciona Conta.
+
+Entra em Botões, Links e Ações.
+
+Clica em Novo Botão ou Link.
+
+Define o nome Google This Account.
+
+Seleciona Link da página de detalhes.
+
+Insere a seguinte URL no editor de fórmulas:
+
+https://www.google.com/search?q={!Account.Name}
+
+Salva o link.
+
+Acessa Layouts de página e abre o layout da Conta.
+
+Arrasta o link da categoria Links personalizados para a seção correspondente do layout.
+
+Configura as propriedades da seção para exibir os links na página de detalhes, quando aplicável.
+
+Salva o layout.
+
+Ao abrir uma conta, o usuário poderá encontrar o link na aba Detalhes, na seção de links personalizados.
+
+Atenção: links personalizados para páginas de detalhes são compatíveis apenas com páginas de registro que não utilizam Formulários Dinâmicos.
+
+- Botão da página de detalhes (Detail Page Button)
+
+É um botão que aparece no menu de ações do painel de destaques da página de um registro.
+
+Ele permite executar uma ação ou abrir uma página externa diretamente a partir do registro.
+
+Exemplo prático: Maria deseja abrir a localização de uma conta no Google Maps.
+
+Como funciona:
+
+Acessa a Configuração.
+
+Abre o Gerenciador de Objetos e seleciona Conta.
+
+Entra em Botões, Links e Ações.
+
+Clica em Novo Botão ou Link.
+
+Define o nome Map Location.
+
+Seleciona Botão da página de detalhes.
+
+Insere a URL abaixo no editor de fórmulas:
+
+http://maps.google.com/maps?q={!Account_BillingStreet}%20{!Account_BillingCity}%20{!Account_BillingState}%20{!Account_BillingPostalCode}
+
+Salva o botão.
+
+Acessa o layout de página da Conta.
+
+Arrasta o botão para a área de botões personalizados.
+
+Salva o layout.
+
+Abre um registro de conta e procura a ação Localização no mapa no menu de ações.
+
+Ao clicar no botão, o navegador abre o Google Maps com o endereço da conta.
+
+Nesse exemplo, os campos de mesclagem inserem automaticamente o endereço de cobrança, a cidade, o estado e o CEP da conta selecionada.
+
+Atenção: se o botão não aparecer no menu de ações, verifique a seção Ações do Salesforce Mobile e Lightning Experience no layout.
+Pode ser necessário adicionar o botão também nessa seção, arrastando-o da categoria de ações correspondente.
+
+- O que são campos de mesclagem?
+
+Os campos de mesclagem são expressões que permitem utilizar dados do Salesforce dentro de URLs ou fórmulas.
+
+Em vez de escrever informações fixas, você usa campos do registro atual.
+
+Exemplos:
+
+{!Account.Name} — nome da conta.
+
+{!Account_BillingStreet} — rua do endereço de cobrança.
+
+{!Account_BillingCity} — cidade do endereço de cobrança.
+
+{!Account_BillingState} — estado do endereço de cobrança.
+
+{!Account_BillingPostalCode} — CEP do endereço de cobrança.
+
+Eles tornam os links e botões dinâmicos, pois o destino é construído com base nas informações do registro em que o usuário está trabalhando.
+
+Por exemplo, ao abrir uma conta de nome GenePoint, o link de pesquisa utiliza esse nome. Ao abrir outra conta, utiliza automaticamente o nome da nova conta.
+
+- Qual é a diferença entre um botão personalizado e um link personalizado?
+
+A diferença principal está na forma de apresentação e no local em que o recurso aparece.
+
+Botão personalizado: aparece como uma ação que o usuário pode executar, por exemplo, no menu de ações de um registro ou em uma lista relacionada.
+
+Link personalizado: aparece como um hiperlink, geralmente na seção Links personalizados dos detalhes do registro.
+
+Ambos podem direcionar o usuário para páginas externas ou utilizar informações do Salesforce. A escolha depende de onde você deseja disponibilizar o acesso e de como ele deve ser apresentado.
+
+
+6- Capacite seus usuários com ações rápidas no Salesforce
+
+O que são ações rápidas?
+
+As ações rápidas (Quick Actions) permitem que os usuários realizem tarefas diretamente no Salesforce, sem precisar navegar por várias páginas ou sair do registro em que estão trabalhando.
+
+Com elas, os usuários podem:
+
+Criar registros.
+
+Atualizar informações existentes.
+
+Registrar chamadas e interações.
+
+Enviar e-mails.
+
+Executar processos personalizados.
+
+Por exemplo, um vendedor que está visualizando uma conta pode criar uma auditoria energética diretamente naquela conta, sem precisar acessar a guia do objeto
+Auditoria Energética e iniciar o cadastro por lá.
+
+O objetivo das ações rápidas é simplificar o trabalho, economizar tempo e facilitar a utilização do Salesforce.
+
+- Quais são os dois tipos de ações rápidas?
+
+Existem dois tipos principais: ações específicas de um objeto e ações globais.
+
+- Ações específicas de um objeto
+
+São ações relacionadas a um objeto específico, como Conta, Contato ou Oportunidade.
+
+Elas aparecem nas páginas de registro desse objeto e podem aproveitar o contexto do registro atual para criar ou atualizar informações relacionadas.
+
+Exemplo: Maria deseja permitir que os usuários criem auditorias energéticas diretamente nos registros de contas.
+
+Se um usuário estiver visualizando a conta Acme e utilizar a ação para criar uma auditoria energética, o novo registro será associado automaticamente à conta Acme.
+
+Isso acontece porque a ação específica de objeto mantém o relacionamento com o registro de origem.
+
+Os principais tipos de ações específicas de objeto são:
+
+Criar um registro: cria um novo registro relacionado ao registro atual.
+
+Atualizar um registro: permite editar campos de um registro.
+
+Registrar uma chamada: permite registrar anotações sobre chamadas, reuniões e outras interações.
+
+Ação personalizada: executa componentes Lightning, fluxos, páginas Visualforce ou aplicativos de tela.
+
+Enviar e-mail: disponibiliza uma ação específica para casos, com as limitações descritas no módulo.
+
+Essas ações são configuradas no Gerenciador de Objetos, dentro das configurações do objeto correspondente.
+
+- Ações globais
+
+As ações globais permitem que os usuários executem tarefas sem depender de um registro específico ou sair da página em que estão.
+
+Elas podem ser disponibilizadas em diferentes locais que oferecem suporte a ações globais.
+
+Exemplo: a equipe de vendas deseja criar campanhas de marketing independentemente da página que estiver utilizando no Salesforce.
+
+Maria pode criar uma ação global chamada New Campaign. Assim, os usuários conseguem iniciar a criação de uma campanha pelo menu de ações globais, sem precisar acessar primeiro a guia Campanhas.
+
+As ações globais podem permitir que os usuários:
+
+Criem registros.
+
+Registrem chamadas.
+
+Enviem e-mails.
+
+Executem outras tarefas compatíveis com o tipo de ação.
+
+Elas são criadas na área Ações globais da Configuração e disponibilizadas por meio do Layout Global do Editor (Global Publisher Layout).
+
+- Qual é a diferença entre ações específicas de objeto e ações globais?
+
+A diferença mais importante é o contexto em que a ação funciona.
+
+Ação específica de objeto: está associada a um objeto e pode aproveitar o registro atual para criar ou atualizar informações relacionadas.
+
+Ação global: pode ser utilizada independentemente de um registro específico e fica disponível nos locais que oferecem suporte a ações globais.
+
+Por exemplo, criar uma auditoria energética a partir de uma conta é um caso ideal para uma ação específica de objeto, pois a auditoria precisa ficar associada àquela conta.
+
+Já criar uma campanha de marketing a partir de qualquer página é um caso ideal para uma ação global, pois a tarefa não depende de uma conta ou de outro registro de origem.
+
+Dica para memorizar: se a ação depende do registro que você está visualizando, pense em ação específica de objeto. Se você quer executar a tarefa de qualquer lugar compatível com ações globais, pense em ação global.
+
+- Como criar uma ação específica de objeto?
+
+No exemplo do Trailhead, Maria cria uma ação para permitir o cadastro de auditorias energéticas a partir de contas.
+
+Passo a passo
+
+Acesse a Configuração do Salesforce.
+
+Abra o Gerenciador de Objetos.
+
+Selecione o objeto Conta.
+
+Clique em Botões, Links e Ações.
+
+Clique em Nova Ação.
+
+No tipo de ação, selecione Criar um registro.
+
+Escolha Auditoria Energética como objeto de destino.
+
+Defina o rótulo New Energy Audit.
+
+Clique em Salvar.
+
+Nesse momento, a ação foi criada, mas ainda é necessário configurar os campos exibidos ao usuário.
+
+Personalizar o layout da ação
+Após criar a ação, o Salesforce abre o editor de layout da ação.
+
+Esse editor permite escolher quais campos o usuário verá ao executar a ação e quais informações deverá preencher.
+
+Os campos obrigatórios são adicionados ao layout por padrão. Se um campo obrigatório for removido, o usuário poderá não conseguir concluir a criação do registro.
+
+No exemplo, Maria mantém os campos obrigatórios e deixa campos como Notas de Auditoria e Tipo de Instalação para preenchimento posterior.
+
+Adicionar a ação ao layout da página
+Para disponibilizar a ação aos usuários:
+
+Acesse Layouts de página no objeto Conta.
+
+Abra o Layout da Conta.
+
+Localize a seção Ações do Salesforce Mobile e do Lightning Experience.
+
+Se necessário, clique na opção para substituir os valores padrão do layout global do editor.
+
+Na paleta, selecione Ações para dispositivos móveis e Lightning.
+
+Arraste a ação New Energy Audit para a seção de ações.
+
+Ajuste sua posição, se necessário.
+
+Clique em Salvar.
+
+Depois disso, os usuários poderão encontrar a ação no menu de ações da página da conta.
+
+Atenção à substituição dos valores padrão
+Quando você personaliza a seção de ações do layout, passa a controlar quais ações serão exibidas nessa seção.
+
+Isso significa que não basta adicionar uma nova ação: também é importante verificar se as ações padrão que você deseja manter continuam presentes no layout.
+
+Além disso, algumas ações relacionadas a atividades, como Registrar uma chamada, Nova tarefa e Novo evento, aparecem na guia Atividade. Ações do Chatter, como Publicar 
+e Enquete, aparecem na guia Chatter.
+
+- Como criar uma ação global?
+
+Agora, Maria deseja permitir que qualquer usuário crie campanhas de marketing sem precisar navegar até o objeto Campanha.
+
+Passo a passo
+Acesse a Configuração.
+
+Na Busca rápida, procure Ações globais.
+
+Clique em Nova Ação.
+
+Selecione Criar um registro como tipo de ação.
+
+Escolha Campanha como objeto de destino.
+
+Defina o rótulo New Campaign.
+
+Clique em Salvar.
+
+Personalizar o layout da ação global
+No editor de layout da ação, Maria ajusta os campos apresentados ao usuário.
+
+No exemplo, ela:
+
+Remove o campo Campanha Principal.
+
+Adiciona Receita Esperada na Campanha.
+
+Adiciona Proprietário da Campanha.
+
+Em seguida, salva o layout.
+
+Adicionar a ação ao menu global
+
+Criar a ação global também não é suficiente para disponibilizá-la no menu.
+
+É necessário adicioná-la ao layout global:
+
+Na Configuração, procure Layouts do Publisher.
+
+Clique em Editar ao lado de Layout Global.
+
+Se necessário, substitua os valores padrão da seção de ações.
+
+Na paleta, selecione Ações para dispositivos móveis e Lightning.
+
+Arraste New Campaign para a seção Ações do Salesforce Mobile e do Lightning Experience.
+
+Salve o layout.
+
+Atualize o navegador e abra o menu de ações globais para testar.
+
+Agora, os usuários poderão iniciar a criação de campanhas a partir do menu global, nos locais em que ele estiver disponível.
+
+- O que são os layouts de ação?
+
+O layout de ação determina quais campos aparecem quando o usuário executa uma ação rápida.
+
+Ele é semelhante ao layout de página, mas tem uma finalidade diferente.
+
+Layout de página: organiza as informações e os componentes apresentados na página do registro.
+
+Layout de ação: define os campos apresentados na interface de criação ou atualização aberta pela ação.
+
+Por exemplo, uma ação para criar uma campanha pode apresentar somente o nome da campanha, o proprietário e a receita esperada. Assim, o usuário preenche rapidamente as 
+informações necessárias, sem lidar com todos os campos do objeto.
+
+É importante manter no layout os campos obrigatórios necessários para que a operação seja concluída com sucesso.
+
+- Como as ações aparecem para os usuários?
+
+As ações podem aparecer em diferentes áreas da interface, dependendo do tipo e da configuração.
+
+Menu de ações do registro: pode exibir ações específicas do objeto no painel de destaques.
+
+Menu de ações globais: permite acessar ações globais pelo cabeçalho do Salesforce.
+
+Guia Atividade: apresenta ações relacionadas a atividades, como chamadas, tarefas e eventos.
+
+Guia Chatter: apresenta ações relacionadas à publicação e à interação no Chatter.
+
+A posição e a disponibilidade das ações dependem do layout, do tipo de ação e da interface utilizada.
