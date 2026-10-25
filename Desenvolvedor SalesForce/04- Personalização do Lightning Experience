@@ -2,11 +2,13 @@
 
 - Objetivo da unidade
 
-Nesta unidade do Trailhead, você aprende a personalizar o Salesforce para atender às necessidades específicas de uma empresa, utilizando objetos personalizados, campos personalizados, abas personalizadas, registros e rastreamento de feeds.
+Nesta unidade do Trailhead, você aprende a personalizar o Salesforce para atender às necessidades específicas de uma empresa, utilizando objetos personalizados, campos personalizados, 
+abas personalizadas, registros e rastreamento de feeds.
 
 O exemplo utilizado é o da Ursa Major Solar, uma empresa que fornece componentes e sistemas de energia solar e deseja expandir seus serviços de consultoria energética.
 
-Maria Jimenez, administradora do Salesforce, precisa criar uma estrutura para registrar as avaliações energéticas dos clientes, armazenar informações sobre o consumo de energia e recomendar os melhores locais para instalar painéis solares.
+Maria Jimenez, administradora do Salesforce, precisa criar uma estrutura para registrar as avaliações energéticas dos clientes, armazenar informações sobre o consumo de energia 
+e recomendar os melhores locais para instalar painéis solares.
 
 O objetivo é substituir o controle feito em planilhas por informações organizadas dentro do Salesforce.
 
