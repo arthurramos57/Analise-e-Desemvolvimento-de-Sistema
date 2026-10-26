@@ -1,0 +1,210 @@
+1- Conheça os relatórios e painéis do Lightning
+
+- Por que usar relatórios e painéis no Salesforce?
+
+As empresas possuem perguntas sobre seus negócios, e os dados armazenados no Salesforce podem ajudar a respondê-las.
+
+Exemplos de perguntas empresariais:
+
+Quais são os produtos mais vendidos?
+
+Quais clientes potenciais têm maior valor?
+
+Quais campanhas de marketing tiveram melhores resultados?
+
+Qual é o nível de satisfação dos clientes?
+
+Quais cidades possuem mais leads?
+
+O objetivo dos relatórios e painéis é transformar dados em informações úteis para tomar decisões e melhorar os resultados da empresa.
+
+Antes de criar um relatório, é importante entender a pergunta, esclarecer as necessidades de quem solicitou e transformar essas necessidades em critérios de pesquisa.
+
+- Como transformar uma pergunta em um relatório?
+
+Imagine que a CEO de uma empresa queira saber quais produtos são os mais vendidos.
+
+Antes de criar o relatório, você precisa esclarecer alguns pontos:
+
+O que significa “mais vendidos”? Maior quantidade de unidades ou maior receita?
+
+Como os dados devem ser organizados? Por família de produtos, por exemplo.
+
+Qual período deve ser analisado? Este mês, este ano ou outro intervalo?
+
+Quais registros devem aparecer? Todos os produtos ou somente os ativos?
+
+Quais condições as oportunidades devem atender? Por exemplo, somente negócios fechados e ganhos.
+
+Depois, transforme as respostas em requisitos e critérios.
+
+No exemplo do conteúdo, o relatório deve mostrar a quantidade de produtos vendidos, agrupados por família, considerando oportunidades fechadas e ganhas no ano fiscal atual e produtos ativos.
+
+Os critérios correspondentes são:
+
+Tipo de relatório: Oportunidades com produtos.
+
+Formato: Resumo.
+
+Agrupamento: Família de produtos.
+
+Campo de data: Data de fechamento.
+
+Período: Ano fiscal atual.
+
+Filtros: produto ativo e oportunidade fechada e ganha.
+
+A lógica 1 E 2 significa que as duas condições precisam ser verdadeiras para que o registro seja incluído.
+
+Regra importante: não comece construindo o relatório imediatamente. Primeiro, entenda a pergunta e defina os critérios necessários.
+
+- O que é um relatório (Report)?
+
+Um relatório é uma lista de registros do Salesforce que atendem a determinados critérios.
+
+Ele pode apresentar informações de objetos como contas, leads, contatos e oportunidades.
+
+Além de listar registros, um relatório permite:
+
+Filtrar dados para mostrar somente o que interessa.
+
+Agrupar registros por categorias.
+
+Realizar cálculos e somas.
+
+Comparar resultados.
+
+Apresentar informações em gráficos.
+
+Por exemplo, para descobrir os produtos mais vendidos, você pode filtrar as oportunidades fechadas e ganhas, agrupar os resultados por família de produtos e somar as unidades vendidas.
+
+Os resultados podem ser apresentados em um gráfico de barras para facilitar a interpretação.
+
+Pastas de relatórios
+Os relatórios são armazenados em pastas, que controlam sua organização e seu acesso.
+
+Conforme as permissões configuradas, as pastas podem ser:
+
+Públicas: disponibilizadas para os usuários autorizados da organização.
+
+Compartilhadas: acessíveis aos usuários ou grupos com os quais foram compartilhadas.
+
+Privadas: restritas ao proprietário ou aos usuários que tenham acesso autorizado.
+
+O acesso pode ser controlado por funções, permissões, grupos públicos, territórios e tipos de licença.
+
+- O que é um tipo de relatório (Report Type)?
+
+Um tipo de relatório funciona como um modelo que define quais objetos, registros e campos estarão disponíveis para a criação do relatório.
+
+Escolher o tipo correto é fundamental porque ele determina quais dados podem ser utilizados.
+
+O Salesforce oferece tipos de relatório padrão baseados em objetos individuais ou em objetos relacionados.
+
+Exemplos:
+
+Contas.
+
+Leads.
+
+Produtos.
+
+Oportunidades com produtos.
+
+Campanhas com contatos.
+
+Tipos de relatório personalizados
+Quando os tipos padrão não oferecem a combinação de dados necessária, é possível criar um tipo de relatório personalizado.
+
+Imagine que uma representante de vendas queira visualizar somente leads que tenham atividades associadas.
+
+O tipo padrão “Leads” pode apresentar todos os leads, inclusive aqueles sem atividades relacionadas.
+
+Para atender à necessidade, pode ser criado um tipo personalizado chamado “Leads com Atividades”, utilizando Leads como objeto principal e 
+Atividades como objeto relacionado, com a configuração adequada para exigir registros relacionados.
+
+Assim, a representante consegue gerar um relatório específico para sua necessidade.
+
+Para memorizar: o tipo de relatório define quais dados podem ser selecionados; o relatório determina como esses dados serão filtrados, organizados e apresentados.
+
+- O que é um painel de controle (Dashboard)?
+
+Um painel de controle é uma representação visual das principais métricas, indicadores e tendências da organização.
+
+Enquanto o relatório apresenta registros e permite analisar os dados detalhadamente, o painel facilita a visualização rápida dos resultados por meio de componentes gráficos.
+
+Um painel pode conter:
+
+Gráficos de barras.
+
+Gráficos de pizza.
+
+Indicadores numéricos.
+
+Comparações entre resultados.
+
+Métricas de vendas ou atendimento.
+
+Cada componente do painel utiliza um relatório de origem. Um mesmo relatório pode alimentar mais de um componente, como um gráfico de barras e um gráfico de pizza.
+
+Por exemplo, um painel de vendas pode reunir informações sobre receita, oportunidades ganhas e desempenho da equipe em uma única página.
+
+Segurança dos painéis
+Cada painel possui um usuário responsável, também chamado de usuário executor ou running user.
+
+As configurações de segurança desse usuário determinam quais dados serão apresentados no painel.
+
+Quando o responsável é um usuário específico, os visualizadores podem ver os dados de acordo com as permissões desse responsável, mesmo que suas próprias permissões sejam diferentes.
+
+Por isso, é importante escolher o responsável com cuidado para não expor informações indevidas.
+
+Painéis dinâmicos (Dynamic Dashboards)
+Nos painéis dinâmicos, o usuário conectado é quem determina o contexto de acesso aos dados.
+
+Assim, cada pessoa visualiza as informações de acordo com suas próprias permissões.
+
+Exemplo: cada gerente pode visualizar os dados aos quais tem acesso, sem necessariamente visualizar os dados de outras equipes.
+
+Os painéis dinâmicos são úteis quando é importante respeitar as permissões individuais dos usuários.
+
+- Diferença entre relatório, tipo de relatório e painel
+
+Para a prova, entenda a função de cada conceito:
+
+Tipo de relatório: define quais objetos, registros e campos podem ser utilizados.
+
+Relatório: seleciona, filtra, agrupa e calcula os dados para responder a uma pergunta.
+
+Painel de controle: apresenta visualmente os resultados de um ou mais relatórios por meio de componentes gráficos.
+
+Exemplo prático:
+
+A empresa quer saber quais produtos vendem mais.
+
+O tipo de relatório disponibiliza os dados de oportunidades e produtos.
+
+O relatório filtra os negócios fechados e ganhos, agrupa os produtos e calcula as quantidades vendidas.
+
+O painel transforma os resultados em gráficos para que a liderança compare rapidamente o desempenho.
+
+- Como organizar relatórios e painéis
+
+Relatórios e painéis são armazenados em pastas. Essas pastas ajudam a organizar os conteúdos e controlar quem pode acessá-los.
+
+Ao organizar os dados, considere:
+
+Quem precisa visualizar o relatório ou painel.
+
+Quem pode editar ou gerenciar o conteúdo.
+
+Quais permissões são necessárias.
+
+Se os dados apresentados são adequados para todos os usuários autorizados.
+
+Se o painel precisa utilizar um usuário responsável específico ou ser dinâmico.
+
+Lembre-se de que ter acesso à pasta do painel não significa necessariamente ter acesso aos relatórios que alimentam seus componentes.
+
+Para visualizar os componentes, o usuário também precisa ter acesso aos relatórios de origem correspondentes.
+
+
