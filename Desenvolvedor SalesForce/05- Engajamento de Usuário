@@ -1,0 +1,265 @@
+1- Engajamento do Usuário no Salesforce
+
+- O que é engajamento do usuário?
+
+O engajamento do usuário (User Engagement) é o processo de orientar, integrar, capacitar, ajudar e ensinar os usuários dentro do próprio aplicativo Salesforce.
+
+O objetivo é fazer com que os usuários entendam como utilizar as funcionalidades do sistema, realizem suas tarefas com mais facilidade e aproveitem ao máximo os recursos disponíveis.
+
+Isso acontece por meio de orientações dentro do aplicativo, como mensagens de boas-vindas, dicas, avisos, tutoriais e informações de ajuda.
+
+Exemplo: quando uma empresa ativa uma nova funcionalidade no Salesforce, ela pode exibir uma mensagem explicando como utilizá-la, sem que o usuário precise procurar essa informação em outro lugar.
+
+O engajamento do usuário é uma parte fundamental da experiência do usuário (UX), pois torna o sistema mais intuitivo, reduz dúvidas e facilita o aprendizado.
+
+- Os quatro principais cenários de engajamento do usuário
+
+Existem quatro cenários principais no Salesforce. Cada um atende a uma necessidade diferente do usuário.
+
+- Integração (Onboarding)
+
+A integração ajuda os usuários a começarem a utilizar o sistema ou uma funcionalidade nova.
+
+Seu objetivo é mostrar por onde começar, explicar o que mudou e ajudar o usuário a alcançar seus primeiros resultados rapidamente.
+
+Quando utilizar:
+
+Quando um usuário acessa o Salesforce pela primeira vez.
+
+Quando uma nova funcionalidade é disponibilizada.
+
+Quando há uma atualização importante no sistema.
+
+Quando o usuário precisa configurar um recurso.
+
+Exemplo: ao entrar no Salesforce pela primeira vez, o usuário recebe uma tela de boas-vindas com orientações sobre as principais áreas do sistema.
+
+- Descoberta e adoção de funcionalidades (Feature Discovery and Adoption)
+
+Esse cenário tem como objetivo apresentar funcionalidades úteis que os usuários talvez não conheçam ou não estejam utilizando.
+
+A ideia é incentivar o uso dos recursos disponíveis e ensinar boas práticas, ajudando os usuários iniciantes a evoluírem e os experientes a descobrirem novas possibilidades.
+
+Quando utilizar:
+
+Quando uma nova funcionalidade é ativada.
+
+Quando os usuários não conhecem um recurso importante.
+
+Quando a empresa deseja incentivar boas práticas.
+
+Quando uma funcionalidade pode melhorar a produtividade.
+
+Exemplo: o Salesforce exibe uma mensagem informando que existe um novo recurso para automatizar uma tarefa que o usuário realiza manualmente.
+
+- Ajuda para solução de problemas (Troubleshooting)
+
+Esse cenário oferece orientações rápidas para ajudar o usuário a resolver dúvidas e dificuldades durante a execução de uma tarefa.
+
+O objetivo é evitar interrupções desnecessárias e permitir que o usuário continue trabalhando sem precisar recorrer constantemente a outras pessoas ou ao suporte técnico.
+
+Quando utilizar:
+
+Quando o usuário não sabe como realizar uma ação.
+
+Quando existe uma dúvida sobre uma funcionalidade.
+
+Quando uma tarefa exige uma orientação específica.
+
+Quando é necessário fornecer acesso rápido à ajuda.
+
+Exemplo: ao preencher um formulário, o usuário recebe uma dica explicando como corrigir uma informação ou concluir determinada etapa.
+
+- Aprendizado mais aprofundado (Deeper Learning)
+
+Esse cenário oferece conteúdos mais completos para que o usuário compreenda melhor uma funcionalidade, um processo ou um conceito.
+
+Diferentemente de uma dica rápida, o aprendizado aprofundado busca desenvolver conhecimento e habilidades para que o usuário aproveite melhor o Salesforce.
+
+Quando utilizar:
+
+Quando o usuário precisa compreender uma funcionalidade complexa.
+
+Quando é necessário aprender um processo de negócio.
+
+Quando a empresa deseja desenvolver habilidades específicas.
+
+Quando uma explicação curta não é suficiente.
+
+Exemplo: disponibilizar um tutorial ou módulo de treinamento que ensine como utilizar os recursos de automação do Salesforce.
+
+Para memorizar os quatro cenários:
+
+Integração: ensinar a começar.
+
+Descoberta e adoção: mostrar o que existe e incentivar o uso.
+
+Solução de problemas: ajudar a resolver dificuldades.
+
+Aprendizado aprofundado: ensinar com mais detalhes.
+
+- Componentes de engajamento do usuário no Salesforce
+O Salesforce disponibiliza diferentes componentes para apresentar orientações aos usuários. Alguns podem ser configurados declarativamente, 
+ou seja, com cliques e configurações, enquanto outros exigem desenvolvimento programático, com código.
+
+Tapete de boas-vindas (Welcome Mat)
+É uma tela de boas-vindas apresentada quando o usuário acessa o Lightning Experience pela primeira vez.
+
+Pode destacar novidades, apresentar recursos importantes e indicar os primeiros passos.
+
+Principal aplicação: integração.
+
+Tipo de desenvolvimento: programático.
+
+Centro de Orientação (Guidance Center)
+É um menu acessado pelo ícone do Trailhead no cabeçalho, que oferece conteúdos de ajuda contextual, módulos de aprendizagem e outros recursos de orientação.
+
+Ajuda os usuários a encontrar informações úteis enquanto trabalham.
+
+Principais aplicações: integração, solução de problemas e aprendizado aprofundado.
+
+Tipo de desenvolvimento: declarativo.
+
+Instruções (Prompts)
+São mensagens exibidas na interface para chamar a atenção do usuário para informações importantes, novidades ou orientações relacionadas à página atual.
+
+Podem ser flutuantes, direcionadas a um elemento específico ou fixas.
+
+Principais aplicações: integração, descoberta e adoção, solução de problemas e aprendizado aprofundado.
+
+Tipo de desenvolvimento: declarativo.
+
+Exemplo: exibir uma mensagem na página de contas explicando uma nova funcionalidade.
+
+Popovers
+São janelas ou balões de orientação que direcionam a atenção do usuário para um componente ou elemento específico da página.
+
+São úteis para explicar como uma funcionalidade funciona e apresentar dicas ou boas práticas.
+
+Principais aplicações: integração, descoberta e adoção, solução de problemas e aprendizado aprofundado.
+
+Tipo de desenvolvimento: programático.
+
+Exemplo: destacar um botão e explicar como utilizá-lo corretamente.
+
+Estado vazio (Empty State)
+É uma mensagem exibida em uma área que ainda não contém dados ou registros. Em vez de deixar o espaço vazio, o Salesforce pode apresentar instruções sobre o que fazer em seguida.
+
+Principais aplicações: descoberta e adoção, solução de problemas e aprendizado aprofundado.
+
+Tipo de desenvolvimento: programático.
+
+Exemplo: em uma lista sem registros, mostrar uma mensagem explicando como criar o primeiro registro.
+
+Ajuda em nível de campo (Field-Level Help)
+É uma explicação associada a um campo específico, que esclarece sua finalidade ou como preenchê-lo.
+
+Ajuda o usuário a compreender o significado de um campo sem precisar procurar instruções externas.
+
+Principais aplicações: descoberta e adoção e solução de problemas.
+
+Tipo de desenvolvimento: declarativo.
+
+Exemplo: ao lado do campo “Receita anual”, apresentar uma explicação sobre qual valor deve ser informado.
+
+Assistente de Configuração (Setup Assistant)
+É uma lista centralizada de tarefas criada para orientar os usuários durante a configuração de uma organização, nuvem ou funcionalidade.
+
+Ajuda a organizar as etapas necessárias para concluir uma configuração.
+
+Principal aplicação: orientar processos de configuração e integração.
+
+Tipo de desenvolvimento: programático.
+
+Passo a passo (Walkthrough)
+É uma visita guiada interativa que conduz o usuário por uma sequência de etapas dentro do aplicativo.
+
+Em vez de apenas apresentar uma explicação, mostra o caminho que deve ser seguido para executar uma tarefa.
+
+Principais aplicações: integração, descoberta e adoção e aprendizado aprofundado.
+
+Tipo de desenvolvimento: declarativo.
+
+Exemplo: orientar o usuário, passo a passo, durante a criação de uma oportunidade de vendas.
+
+- Método Push versus método Pull
+
+Outra parte importante do engajamento do usuário é decidir como a orientação será apresentada.
+
+Existem dois métodos: Push (envio) e Pull (atração).
+
+Método Push — a informação vai até o usuário
+No método Push, o sistema apresenta a orientação mesmo quando o usuário não solicitou ajuda.
+
+É indicado quando o usuário provavelmente não perceberia uma funcionalidade ou não saberia que precisa de orientação.
+
+Exemplos:
+
+Tela de boas-vindas no primeiro acesso.
+
+Aviso sobre uma nova funcionalidade.
+
+Pop-up explicando uma ação importante.
+
+Tutorial que conduz o usuário por etapas.
+
+Mensagem de estado vazio.
+
+Ajuda em nível de campo.
+
+Observe que a mensagem de estado vazio e a ajuda em nível de campo também são consideradas Push, porque aparecem na interface sem que o usuário precise procurar especificamente por ajuda.
+
+Método Pull — o usuário busca a informação
+No método Pull, o usuário toma a iniciativa de procurar uma orientação quando precisa dela.
+
+É indicado quando a pessoa já está trabalhando e deseja consultar uma informação específica.
+
+Exemplos:
+
+Passar o cursor sobre um ícone para visualizar uma dica de ferramenta.
+
+Abrir um menu de ajuda para consultar um conteúdo.
+
+Procurar um módulo de treinamento no Centro de Orientação.
+
+Qual é a diferença principal?
+
+A diferença está em quem inicia o contato com a informação.
+
+Push: o sistema apresenta a orientação ao usuário.
+
+Pull: o usuário procura a orientação no sistema.
+
+Uma boa estratégia de engajamento combina os dois métodos. O Push ajuda a apresentar novidades e prevenir dúvidas; o Pull permite que o usuário encontre ajuda quando sentir necessidade.
+
+- Outras opções de engajamento no Salesforce
+
+Além dos componentes principais, existem outros recursos que também podem melhorar a experiência dos usuários.
+
+Notas da Barra de Utilitários: disponibilizam ferramentas de produtividade em um rodapé fixo, com acesso por painéis acopláveis.
+
+Componente de texto rico: permite adicionar textos e formatação às páginas Lightning para explicar processos ou apresentar informações.
+
+Orientação para o Sucesso no Caminho (Path): fornece dicas, links e informações específicas para cada etapa de um processo, ajudando o usuário a executar as ações corretamente.
+
+Notificações personalizadas a partir de um fluxo (Flow): enviam alertas quando eventos importantes acontecem. Por exemplo, avisar o responsável por uma conta quando um novo caso de suporte é registrado.
+
+Vídeos nos painéis do Einstein Analytics: ajudam a explicar gráficos, métricas e funcionalidades por meio de conteúdo educativo.
+
+Esses recursos ampliam as possibilidades de orientar os usuários no momento e no contexto mais adequados.
+
+- Como escolher o componente correto?
+
+A escolha depende de três fatores principais:
+
+1. O objetivo da orientação: você quer ensinar o usuário a começar, divulgar uma funcionalidade, resolver uma dúvida ou aprofundar o conhecimento?
+
+2. A quantidade de informação: uma dica curta pode ser apresentada em um campo ou popover, enquanto uma explicação extensa exige um recurso mais apropriado, como um tutorial ou conteúdo de treinamento.
+
+3. O comportamento esperado do usuário: se ele provavelmente não buscará ajuda, considere o Push. Se ele quiser consultar informações por iniciativa própria, considere o Pull.
+
+Por exemplo, se a empresa quiser anunciar um novo recurso, uma instrução pode ser suficiente. Se quiser ensinar a executar um processo completo, um passo a passo pode ser mais adequado.
+
+A estratégia deve combinar componentes e métodos de acordo com as necessidades dos usuários, evitando excesso de mensagens e interrupções desnecessárias.
+
+
