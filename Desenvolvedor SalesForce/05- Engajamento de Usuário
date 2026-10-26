@@ -263,3 +263,660 @@ Por exemplo, se a empresa quiser anunciar um novo recurso, uma instrução pode 
 A estratégia deve combinar componentes e métodos de acordo com as necessidades dos usuários, evitando excesso de mensagens e interrupções desnecessárias.
 
 
+2- Promover a adoção e a descoberta de funcionalidades no Salesforce
+
+- Objetivo da unidade
+
+O objetivo é aprender a utilizar prompts (avisos) e tutoriais passo a passo para apresentar funcionalidades, incentivar sua utilização e ajudar os usuários a aprenderem dentro do Salesforce.
+
+Essas orientações devem ser úteis, objetivas e apresentadas no momento adequado, sem interromper desnecessariamente o trabalho.
+
+- Quando utilizar prompts e tutoriais?
+
+Casos adequados
+São indicados para:
+
+Funcionalidades fáceis de aprender e utilizar.
+
+Recursos que não exigem configuração ou personalização.
+
+Melhorias em funcionalidades existentes.
+
+Lembretes sobre recursos pouco utilizados.
+
+Dicas para aumentar a produtividade.
+
+Divulgação de novidades importantes.
+
+Exemplo: mostrar uma mensagem explicando como fixar uma lista favorita para acessá-la mais rapidamente.
+
+Casos inadequados
+Não são a melhor opção quando a funcionalidade:
+
+É muito complexa.
+
+Exige muitas etapas ou pré-requisitos.
+
+Possui uma curva de aprendizado acentuada.
+
+É altamente personalizável.
+
+Precisa de explicações extensas.
+
+Nesses casos, pode ser melhor utilizar documentação ou treinamentos mais completos.
+
+- Considere o público-alvo
+
+Os usuários possuem diferentes níveis de experiência e necessidades. Por isso, as orientações devem ser relevantes e práticas.
+
+Em geral, os usuários:
+
+Não querem interrupções sem necessidade.
+
+Preferem informações objetivas.
+
+Querem conhecer atualizações e recursos que aumentem sua produtividade.
+
+Não gostam de mensagens promocionais genéricas que não atendam às suas necessidades.
+
+Regra importante: explique o valor da funcionalidade para o usuário, em vez de apenas anunciar que ela existe.
+
+4. Diferença entre prompt e passo a passo
+Prompt (aviso): é uma pequena janela que chama a atenção para uma funcionalidade, novidade ou ação. Transmite uma mensagem curta e exige pouco tempo do usuário.
+
+Exemplo: “Fixe suas listas favoritas para acessá-las rapidamente.”
+
+Passo a passo (Walkthrough): é uma sequência de instruções conectadas que conduz o usuário por várias etapas, em uma ou mais páginas.
+
+É indicado para:
+
+Ensinar procedimentos com várias etapas.
+
+Integrar novos funcionários.
+
+Apresentar a navegação do sistema.
+
+Orientar a adoção de funcionalidades relacionadas.
+
+Exemplo: guiar um usuário durante a criação de uma oportunidade de vendas.
+
+Para memorizar:
+
+Prompt = mensagem rápida.
+
+Passo a passo = orientação prática em etapas.
+
+5. Os três tipos de prompts
+1. Prompt flutuante (Floating Prompt)
+É uma mensagem curta exibida em uma janela que pode ser posicionada em diferentes áreas da página.
+
+Características:
+
+Possui nove posições disponíveis.
+
+Pode conter texto, imagem opcional e botão de ação.
+
+Pode direcionar o usuário para um URL.
+
+É indicado para anunciar novidades e apresentar dicas rápidas.
+
+Exemplo: exibir um aviso no canto superior direito ensinando a fixar uma lista favorita.
+
+Palavra-chave: posição flexível.
+
+- Prompt direcionado (Targeted Prompt)
+
+É um aviso associado a um elemento específico da interface, mostrando exatamente qual funcionalidade está sendo explicada.
+
+Características:
+
+Aponta para um componente específico da página.
+
+Oferece orientação contextual.
+
+Ajuda o usuário a identificar o botão ou recurso correto.
+
+Exemplo: mostrar uma dica apontando diretamente para o botão de criação de uma oportunidade.
+
+Palavra-chave: elemento específico.
+
+- Prompt ancorado ou fixo (Docked Prompt)
+
+É um aviso que permanece em uma posição fixa enquanto o usuário navega pelo aplicativo.
+
+Características:
+
+Permanece disponível para consulta.
+
+Suporta mais opções de formatação de texto.
+
+Pode incluir links, listas, cores e vídeos incorporados.
+
+É adequado para mensagens mais longas e instruções detalhadas.
+
+Exemplo: exibir um painel com um vídeo e uma lista explicando as mudanças em uma página de contas.
+
+Palavra-chave: informação persistente.
+
+- Como escolher o prompt correto?
+
+Flutuante: quando você precisa apresentar uma mensagem curta e pode escolher sua posição na página.
+
+Direcionado: quando precisa apontar para um elemento específico da interface.
+
+Ancorado: quando o usuário precisa consultar informações detalhadas enquanto trabalha.
+
+Exemplo de uma nova funcionalidade de vendas:
+
+O flutuante anuncia a novidade.
+
+O direcionado aponta para o botão da funcionalidade.
+
+O ancorado apresenta instruções detalhadas e um vídeo explicativo.
+
+- Boas práticas
+
+Seja objetivo e evite textos desnecessariamente longos.
+
+Explique os benefícios da funcionalidade.
+
+Não interrompa o usuário sem motivo relevante.
+
+Escolha o componente conforme a quantidade de informações.
+
+Considere o nível de experiência do público.
+
+Utilize tutoriais para tarefas que exigem várias etapas.
+
+O objetivo é melhorar a adoção das funcionalidades e a produtividade, não exibir mensagens em excesso.
+
+- Outros recursos de orientação
+
+O Salesforce oferece pacotes gerenciados com exemplos de orientações para usuários de vendas e serviços no Lightning Experience.
+
+Segundo o conteúdo estudado, para instalar esses pacotes, a organização deve ter o Console de Vendas ou o Console de Serviços instalado.
+
+A próxima etapa é aprender a criar prompts utilizando o Construtor de Orientações no Aplicativo.
+
+
+3- Criar prompts na plataforma Agentforce 360
+
+- Objetivo da unidade
+
+Nesta unidade, você aprende a criar e configurar prompts no Salesforce Lightning Experience, visualizar orientações existentes e acompanhar o engajamento dos usuários.
+
+Os principais objetivos são:
+
+Visualizar prompts e tutoriais passo a passo existentes na organização.
+
+Criar um prompt direcionado.
+
+Criar um prompt ancorado.
+
+Configurar horários e condições de exibição.
+
+Monitorar visualizações e interações dos usuários.
+
+- Preparar o ambiente de testes (Trailhead Playground)
+
+Para praticar os exercícios, é necessário preparar um ambiente de testes do Trailhead e instalar os pacotes de orientação.
+
+Instalação dos pacotes
+Abra seu Trailhead Playground clicando em Iniciar.
+
+Abra o Iniciador de aplicativos (App Launcher).
+
+Pesquise por Playground Starter e abra o aplicativo.
+
+Acesse a guia Instalar um pacote.
+
+Insira o ID do pacote Prompts for the Sales: 04t3k000000bHJEAA2.
+
+Clique em Instalar, selecione Instalar para todos os usuários e confirme.
+
+Repita o processo para o pacote Prompts for the Service, utilizando o ID 04t6g000002RSR7AAO.
+
+Após a instalação, você poderá visualizar os exemplos e utilizá-los como referência para criar suas próprias orientações.
+
+- Como visualizar prompts existentes
+
+O Salesforce permite consultar os prompts já instalados na organização.
+
+Siga este caminho:
+
+Abra Configuração (Setup).
+
+Na caixa Busca rápida, pesquise por Orientações no aplicativo (In-App Guidance).
+
+Abra a página correspondente.
+
+Localize o prompt chamado Obter ajuda em qualquer lugar no aplicativo ou Lista de casos: Obter ajuda em qualquer lugar no aplicativo.
+
+No menu de ações da linha, selecione Visualizar.
+
+Uma nova guia será aberta para mostrar como o prompt aparece para os usuários.
+
+Essa função é útil para verificar a aparência e o comportamento de uma orientação antes de criar ou modificar outras.
+
+- Criar um prompt direcionado no Lightning Experience
+
+O exemplo da unidade consiste em adicionar uma orientação ao aplicativo Console de Vendas, para que seus usuários também possam acessar a ajuda.
+
+Etapa 1 — Abrir o Construtor de Orientações no Aplicativo
+Acesse o aplicativo Console de Vendas.
+
+Abra Configuração e pesquise por Orientações no aplicativo.
+
+Clique em Adicionar para abrir o Construtor de Orientações no Aplicativo em uma nova guia.
+
+No Iniciador de aplicativos, abra o Console de Vendas.
+
+Na barra do construtor, clique em Adicionar.
+
+Etapa 2 — Escolher o tipo de orientação
+Selecione Solicitação Única e clique em Avançar.
+
+Em tipo de prompt, escolha Prompt direcionado.
+
+Na seção de posição, clique em Modo de Mira.
+
+Clique no ícone de ajuda do Salesforce, representado pelo ponto de interrogação no cabeçalho global.
+
+Se desejar, configure uma cor personalizada e escolha o tema claro ou escuro.
+
+Clique em Avançar.
+
+O Modo de Mira permite selecionar o elemento da interface ao qual o prompt ficará associado.
+
+Etapa 3 — Configurar o conteúdo
+Preencha os campos com os valores do exercício:
+
+Título: Get Help Anywhere in the Console App
+
+Corpo: To open the Help Menu, click the question mark.
+
+Rótulo do botão Fechar: Got It
+
+Esses campos definem o título, a mensagem exibida e o texto do botão utilizado para fechar o aviso.
+
+Etapa 4 — Configurar o botão de ação
+Configure os seguintes valores:
+
+Rótulo do botão de ação: Tell Me More
+
+URL do botão de ação: https://help.salesforce.com/s/articleView?id=xcloud.lex_find_help.htm
+
+Esse botão direciona o usuário para uma página de ajuda com informações adicionais.
+
+Etapa 5 — Configurar a programação de exibição
+Configure as opções solicitadas no exercício:
+
+Data de término: três meses a partir da data atual.
+
+Ative Mostrar quando a página carregar.
+
+Número de exibições: 2.
+
+Número de dias entre exibições: 5.
+
+Essas configurações controlam quando o prompt aparece e a frequência com que pode ser apresentado.
+
+Etapa 6 — Configurar as restrições
+Para o exercício, mantenha as opções:
+
+Sem restrições de perfil.
+
+Sem restrições de permissão.
+
+Isso significa que o prompt não será limitado a perfis ou permissões específicos por essas configurações.
+
+Etapa 7 — Salvar o prompt
+Preencha os dados internos:
+
+Nome: Get Help Anywhere in the Console App
+
+Nome da API: GetHelpAnywhereintheConsoleApp
+
+Descrição: Tell users how to get help from anywhere in the console app
+
+Clique em Salvar e depois em Concluído.
+
+Você poderá visualizar o novo prompt pela lista Nesta Página, na barra do construtor.
+
+O que memorizar: criar um prompt envolve selecionar o tipo, definir a posição, configurar o conteúdo, ajustar a exibição, definir as restrições e salvar os dados internos.
+
+- Configurar URLs confiáveis para imagens
+
+Quando um prompt contém uma imagem hospedada externamente, a organização precisa confiar no local de onde essa imagem será carregada.
+
+No exemplo, a unidade utiliza o domínio da Ajuda do Salesforce.
+
+Siga estas etapas:
+
+Abra Configuração.
+
+Na Busca rápida, procure URLs confiáveis.
+
+Clique em Novo URL confiável.
+
+Preencha os campos:
+
+Nome da API: help_salesforce_com
+
+URL: help.salesforce.com
+
+Descrição: Allow images from Salesforce Help
+
+Verifique se a diretiva img-src (imagens) está ativada.
+
+Clique em Salvar.
+
+Essa configuração autoriza o carregamento de imagens daquele domínio de acordo com a política de segurança de conteúdo (CSP).
+
+Atenção: o exercício informa que são necessárias as permissões Personalizar Aplicativo e Modificar Todos os Dados para realizar essas configurações na organização.
+
+- Orientações em sites da Experience Cloud
+
+O Salesforce também permite utilizar determinados prompts e tutoriais em páginas de sites da Experience Cloud.
+
+Segundo a unidade, esse recurso depende de condições específicas, incluindo a aquisição do Enablement, do Partner Relationship Management (PRM) 
+e a utilização de um site Experience Cloud com modelos Aura compatíveis.
+
+Os formatos mencionados são:
+
+Prompts flutuantes individuais.
+
+Tutoriais passo a passo compostos apenas por prompts flutuantes.
+
+Portanto, a disponibilidade depende dos produtos contratados e da configuração do site.
+
+- Como monitorar o engajamento dos usuários
+
+Depois de publicar os prompts e tutoriais, é importante verificar se os usuários estão interagindo com as orientações.
+
+A página Orientações no aplicativo, em Configuração, disponibiliza métricas predefinidas.
+
+Visualizações (Views)
+Indica o número de usuários únicos que visualizaram a mensagem ou o tutorial.
+
+Essa métrica ajuda a avaliar o alcance da orientação.
+
+Conclusões (Completes)
+Representa a porcentagem de espectadores que realizaram a ação considerada como conclusão:
+
+Em um prompt, clicaram no botão de ação.
+
+Em um tutorial, clicaram no link de ação.
+
+Na última etapa de um tutorial, clicaram em Concluir.
+
+Essa métrica ajuda a avaliar a interação com o conteúdo, mas não garante, por si só, que o usuário aprendeu a utilizar a funcionalidade.
+
+Relatórios personalizados
+É possível criar um tipo de relatório personalizado utilizando o objeto Ações de Solicitação (Prompt Actions).
+
+A unidade sugere incluir campos como:
+
+Número da etapa.
+
+Data da última visualização.
+
+Último resultado, incluindo o valor de erro quando aplicável.
+
+Nome.
+
+Nome completo do usuário.
+
+Também é possível utilizar pacotes gratuitos do Salesforce Labs disponíveis no AgentExchange para obter relatórios e painéis personalizáveis.
+
+- Como interpretar as métricas
+
+Os dados permitem identificar oportunidades para melhorar os prompts e tutoriais.
+
+Por exemplo, você pode investigar:
+
+Qual tipo de prompt recebe mais visualizações e cliques.
+
+Quais títulos e rótulos de botões geram mais interações.
+
+Se mensagens longas apresentam menos cliques.
+
+Se o engajamento diminui ao longo do tempo.
+
+Se tutoriais com mais de cinco etapas apresentam maior abandono.
+
+Essas análises podem ajudar a ajustar o conteúdo, a posição, a frequência e a duração das orientações.
+
+
+4- Projetar uma jornada de engajamento do usuário no Salesforce
+
+- O que é o momento “Eureka!”?
+
+O momento Eureka!, também chamado de momento “Aha!”, acontece quando o usuário percebe pela primeira vez o valor de uma funcionalidade ou solução e entende como ela pode facilitar seu trabalho.
+
+O objetivo do engajamento do usuário é fazer com que ele compreenda a informação, reconheça sua utilidade e consiga aplicá-la imediatamente.
+
+Para alcançar esse momento, o conteúdo deve ser:
+
+Prático e relevante.
+
+Fácil de entender.
+
+Útil para aumentar a produtividade.
+
+Apresentado sem interromper desnecessariamente o trabalho.
+
+Educativo, sem parecer uma propaganda.
+
+Exemplo: um vendedor descobre que pode utilizar a visualização Kanban para acompanhar oportunidades de vendas de maneira visual. 
+Quando percebe que isso facilita seu acompanhamento diário, ele tem um momento Eureka!
+
+Esse momento costuma acontecer durante a integração, mas pode se repetir conforme o usuário aprende novas funcionalidades.
+
+- As quatro fases da jornada de engajamento
+
+A jornada de engajamento é composta por quatro fases. Elas não são necessariamente lineares: o usuário pode passar por elas diversas vezes durante sua experiência com o Salesforce.
+
+- Integração (Onboarding)
+
+Receber os usuários, apresentar o sistema e ajudá-los a começar.
+
+Exemplos:
+
+Ensinar a utilizar a pesquisa e os favoritos.
+
+Mostrar como alternar entre aplicativos.
+
+Explicar como personalizar a barra de navegação.
+
+Apresentar recursos como tarefas, notas, calendário e relatórios.
+
+- Adoção e descoberta de funcionalidades
+
+Incentivar os usuários a descobrir e utilizar recursos novos ou pouco conhecidos.
+
+Exemplos:
+
+Mostrar como utilizar o Kanban.
+
+Incentivar o uso de favoritos.
+
+Apresentar melhorias que aumentem a produtividade.
+
+Divulgar novas funcionalidades.
+
+- Ajuda e resolução de problemas
+
+Oferecer suporte contextual para que o usuário resolva dúvidas sem interromper muito seu trabalho.
+
+Exemplos:
+
+Explicar como executar uma ação.
+
+Apresentar dicas sobre campos.
+
+Disponibilizar links para a documentação.
+
+Orientar o usuário quando ele encontrar dificuldades.
+
+- Aprendizado mais aprofundado (Deeper Learning)
+
+Ajudar o usuário a compreender conceitos complexos ou dominar procedimentos mais elaborados.
+
+Exemplos:
+
+Disponibilizar tutoriais completos.
+
+Ensinar processos com várias etapas.
+
+Apresentar vídeos educativos.
+
+Explicar funcionalidades avançadas.
+
+Para memorizar: integrar, incentivar a adoção, ajudar a resolver problemas e aprofundar o conhecimento.
+
+- Como planejar a jornada de engajamento
+
+Antes de criar prompts ou tutoriais, é necessário entender o que os usuários precisam aprender e quais informações são mais importantes para eles.
+
+Faça três perguntas:
+
+Qual informação é mais útil? Identifique os principais casos de uso e os momentos em que uma orientação pode gerar valor.
+
+Quais mudanças afetam os usuários? Destaque atualizações e novidades importantes.
+
+Usuários diferentes precisam de orientações diferentes? Considere experiência, função, motivação e necessidades individuais.
+
+Também é importante reconhecer que cada público exige uma abordagem diferente.
+
+Por exemplo:
+
+Um iniciante precisa aprender os conceitos básicos.
+
+Um usuário experiente pode precisar conhecer uma nova funcionalidade.
+
+Um usuário inativo pode precisar de orientações para retomar o uso do sistema.
+
+- Defina mensagem, público e propósito
+
+Antes de criar qualquer conteúdo de engajamento, defina três elementos fundamentais.
+
+Mensagem — O quê?
+É aquilo que você deseja comunicar ao usuário.
+
+Exemplo: “Aprenda a fixar, alternar e personalizar visualizações de lista.”
+
+Público-alvo — Quem?
+É o grupo de pessoas que receberá a orientação.
+
+Exemplo: todos os usuários do Salesforce ou somente os usuários da equipe de vendas.
+
+Propósito — Por quê?
+É o objetivo que justifica a criação da orientação.
+
+Exemplo: ensinar habilidades básicas de visualização de listas para aumentar a produtividade.
+
+Outro exemplo:
+
+Mensagem: mantenha os negócios em andamento com Path e Kanban.
+
+Público: usuários de vendas.
+
+Propósito: incentivar a utilização do Path e do Kanban para acompanhar e atualizar registros.
+
+O propósito também deve estar relacionado à fase da jornada: integração, adoção de funcionalidades, resolução de problemas ou aprendizado aprofundado.
+
+- Como escrever conteúdo eficaz: método MAP e princípios FACE
+
+O conteúdo da unidade apresenta dois conceitos importantes: o planejamento da mensagem usando MAP e a criação de conteúdo seguindo os princípios FACE.
+
+MAP — planeje antes de escrever
+Utilize o MAP para estruturar a orientação considerando:
+
+Mensagem: o que será comunicado.
+
+Audiência (público): para quem será comunicado.
+
+Propósito: por que a orientação será apresentada.
+
+O MAP ajuda a garantir que a mensagem tenha um objetivo claro e seja adequada ao público.
+
+FACE — como deve ser o conteúdo?
+O conteúdo precisa ser:
+
+Simpático: otimista, acolhedor e envolvente.
+
+Preciso: correto, claro e confiável.
+
+Conciso: curto e direto, sem informações desnecessárias.
+
+Educacional: ensina o usuário a trabalhar de maneira mais eficiente e produtiva.
+
+O título deve destacar o benefício para o usuário desde o início. As instruções devem ser fáceis de lembrar e aplicar posteriormente.
+
+Exemplo de mensagem eficaz:
+
+“Organize suas oportunidades com o Kanban. Visualize seus negócios por etapa e atualize os registros com mais facilidade.”
+
+Essa mensagem explica o benefício e utiliza uma linguagem simples.
+
+- A importância da chamada para ação (CTA)
+
+A chamada para ação, ou Call to Action (CTA), indica o que o usuário pode ou deve fazer depois de ler a orientação.
+
+Exemplos:
+
+Abrir um PDF ou uma página de ajuda.
+
+Experimentar uma nova funcionalidade.
+
+Seguir etapas para configurar um recurso.
+
+Assistir a um vídeo explicativo.
+
+Clicar em “Entendi” ou “OK” para confirmar que leu a mensagem.
+
+A chamada para ação deve ser escolhida com cuidado. Como os usuários não querem interromper suas tarefas sem motivo, ela precisa oferecer valor e ser adequada ao contexto.
+
+Quando possível, disponibilize uma fonte de consulta para que o usuário possa aprender mais depois.
+
+- O que é um storyboard?
+
+Um storyboard é um esboço visual da jornada de engajamento do usuário.
+
+Ele representa os componentes e as etapas da orientação, mostrando como o usuário encontrará cada mensagem ao longo do trabalho.
+
+Não é necessário saber desenhar profissionalmente. Um esboço simples com caixas, setas e textos já é suficiente.
+
+Como criar um storyboard
+Defina o objetivo de aprendizagem.
+
+Identifique o público-alvo.
+
+Escreva a mensagem e o propósito de cada orientação.
+
+Desenhe um wireframe básico de cada componente.
+
+Organize as etapas conforme a sequência em que o usuário as encontrará.
+
+Conecte os componentes com setas.
+
+Verifique se a jornada conduz o usuário a momentos de descoberta e aprendizado.
+
+O storyboard ajuda a visualizar toda a experiência antes de implementar os componentes no Construtor de Orientações no Aplicativo.
+
+Importante: planeje uma jornada completa, em vez de criar mensagens isoladas sem conexão entre si.
+
+- Exemplo de jornada de engajamento
+
+Imagine uma empresa que deseja melhorar a produtividade de sua equipe de vendas.
+
+Integração: apresenta uma tela de boas-vindas com os principais recursos do Salesforce.
+
+Descoberta: exibe um prompt explicando como salvar registros nos favoritos.
+
+Ajuda: oferece uma dica contextual para orientar o usuário durante a atualização de uma oportunidade.
+
+Aprendizado aprofundado: disponibiliza um tutorial que ensina a utilizar Path e Kanban para acompanhar as vendas.
+
+Essa jornada apresenta informações progressivamente, de acordo com as necessidades do usuário. Cada orientação tem uma finalidade e pode contribuir para um momento Eureka!
