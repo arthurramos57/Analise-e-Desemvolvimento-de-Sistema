@@ -208,3 +208,120 @@ Lembre-se de que ter acesso à pasta do painel não significa necessariamente te
 Para visualizar os componentes, o usuário também precisa ter acesso aos relatórios de origem correspondentes.
 
 
+2- Criar relatórios com o Construtor de Relatórios (Salesforce)
+
+- Objetivo da unidade
+
+O Construtor de Relatórios do Salesforce permite criar relatórios para visualizar, organizar e analisar informações dos registros 
+da organização, como contas, contatos e oportunidades.
+
+Ao concluir essa unidade, você deverá saber:
+
+Utilizar o construtor de relatórios com o recurso de arrastar e soltar.
+
+Entender as funções das guias Estrutura de tópicos e Filtros, além do painel Campos.
+
+Salvar, executar e visualizar um relatório.
+
+- Criando um relatório de contas
+
+O exemplo apresentado utiliza a empresa fictícia Ursa Major Solar. O representante de vendas Lance Park deseja obter mais 
+informações sobre as contas da empresa.
+
+Para ajudá-lo, você criará um relatório de contas seguindo estas etapas:
+
+Crie um Trailhead Playground: utilize um ambiente de testes novo para acompanhar as atividades e evitar problemas nos desafios práticos.
+
+Acesse os relatórios: na página inicial do aplicativo Salesforce, selecione Relatórios e depois Novo relatório. Também é possível 
+acessar a opção por outras áreas do aplicativo.
+
+Escolha o tipo de relatório: selecione Contas. O tipo de relatório determina quais registros e campos estarão disponíveis.
+
+Inicie o relatório: clique em Iniciar Relatório para abrir o Construtor de Relatórios.
+
+Confira a pré-visualização: observe os dados apresentados à direita. Se nenhum registro aparecer, clique em Todo o Período para aplicar 
+o filtro de período padrão. Se necessário, atualize manualmente a pré-visualização.
+
+Salve o relatório: clique em Salvar, mantenha o nome exclusivo gerado automaticamente, que no exemplo é Direct Customer AccountsCopy, e 
+adicione uma descrição explicando a finalidade e o conteúdo do relatório.
+
+Execute o relatório: clique em Executar para visualizar o resultado na página de execução.
+
+Importante: o nome do relatório pode variar conforme o ambiente. O essencial é salvá-lo com um nome identificável e uma descrição clara.
+
+- Conhecendo o Construtor de Relatórios
+
+O construtor apresenta as configurações à esquerda e a pré-visualização dos dados à direita. O painel esquerdo contém três áreas 
+fundamentais.
+
+A) Guia Estrutura de tópicos
+
+A guia Estrutura de tópicos permite organizar as informações do relatório, principalmente por meio de agrupamentos.
+
+Relatório tabular: apresenta os dados em linhas e colunas, sem agrupamentos.
+
+Relatório resumido: permite agrupar os registros por linhas, facilitando a análise por categorias.
+
+Relatório matricial: permite agrupar os dados por linhas e colunas, possibilitando comparar informações em duas dimensões.
+
+Por exemplo, você pode agrupar contas por setor para visualizar quais pertencem a cada categoria.
+
+Essa guia também permite adicionar campos que serão utilizados para estruturar e organizar o relatório.
+
+B) Guia Filtros
+
+A guia Filtros permite definir quais registros serão exibidos. Em vez de mostrar todos os dados disponíveis, você pode restringir 
+os resultados conforme suas necessidades.
+
+Entre as opções estão:
+
+Filtros padrão: definem critérios básicos, como o período dos registros.
+
+Filtros de campo: selecionam registros com base em valores específicos de um campo, como o estado ou o setor de uma conta.
+
+Lógica de filtro: combina condições para controlar quais critérios precisam ser atendidos.
+
+Filtros cruzados: permitem incluir ou excluir registros de um objeto com base na existência de registros relacionados de outro objeto.
+
+Filtros de limite de linha: limitam a quantidade de linhas exibidas, conforme os critérios de ordenação e seleção disponíveis.
+
+O número exibido ao lado do nome da guia indica a quantidade de restrições de filtragem aplicadas ao relatório.
+
+Exemplo prático: se você quiser visualizar apenas contas de um determinado estado, poderá adicionar um filtro para o campo Estado.
+
+C) Painel Campos
+
+O painel Campos apresenta os campos disponíveis para o tipo de relatório escolhido.
+
+Esses campos variam de acordo com o objeto e o tipo de relatório. Em um relatório de contas, por exemplo, você pode encontrar 
+campos como nome da conta, setor e cidade, dependendo da configuração da organização.
+
+Para adicionar um campo ao relatório, você pode:
+
+Abrir o painel Campos clicando na seta apontando para a direita.
+
+Pesquisar o nome do campo desejado.
+
+Selecionar o campo na lista ou arrastá-lo para a área desejada.
+
+Soltar o campo na guia Estrutura de tópicos, na guia Filtros ou diretamente na pré-visualização, conforme a finalidade.
+
+Para ocultar o painel Campos, clique no X.
+
+O recurso de arrastar e soltar torna a criação de relatórios mais prática, pois permite configurar os dados visualmente, 
+sem precisar programar.
+
+- Salvando e executando o relatório
+
+Depois de configurar o relatório, é importante distinguir duas ações:
+
+Salvar: guarda o relatório e suas configurações para que você possa acessá-lo novamente.
+
+Executar: processa o relatório e apresenta os resultados na página de execução.
+
+Antes de executar, verifique se os campos e filtros estão corretos e se a pré-visualização mostra os dados esperados.
+
+A descrição adicionada ao salvar também é útil, pois permite que outros usuários entendam rapidamente para que serve aquele relatório.
+
+
+3- 
