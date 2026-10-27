@@ -324,4 +324,524 @@ Antes de executar, verifique se os campos e filtros estão corretos e se a pré-
 A descrição adicionada ao salvar também é útil, pois permite que outros usuários entendam rapidamente para que serve aquele relatório.
 
 
-3- 
+3- Filtros de relatório no Salesforce
+
+Os filtros de relatório servem para selecionar e organizar os dados que aparecem em um relatório no Salesforce. Eles 
+permitem visualizar somente os registros que atendem a determinadas condições, facilitando a análise e a tomada de decisões.
+
+- Tipos de filtros
+
+Existem cinco tipos principais de filtros:
+
+- Filtro padrão
+
+São filtros que já vêm disponíveis no relatório. Os mais comuns são:
+
+Mostrar-me: define quais registros serão exibidos, como Minhas contas ou Todas as contas.
+
+Campo de data: determina o período dos registros, como Todo o período, Último mês ou Últimos 30 dias.
+
+Exemplo: mostrar apenas as contas do usuário atual criadas em qualquer período.
+
+- Filtro de campo
+
+Permite filtrar os registros usando um campo específico, um operador e um valor.
+
+Todo filtro de campo possui três elementos:
+
+Campo: a informação que será analisada, como Tipo, Valor ou Etapa.
+
+Operador: a condição aplicada, como igual a, diferente de, maior que ou contém.
+
+Valor: a informação que o registro precisa atender, como Cliente - Direto ou 100.000.
+
+Exemplo: exibir somente contas cujo campo Tipo seja igual a Cliente - Direto.
+
+- Lógica de filtro
+
+Permite combinar dois ou mais filtros de campo utilizando condições lógicas, para controlar quais registros serão exibidos.
+
+Ela utiliza três operadores principais:
+
+AND (E): o registro precisa atender a todas as condições conectadas por esse operador.
+
+OR (OU): o registro precisa atender a pelo menos uma das condições conectadas por esse operador.
+
+NOT (NÃO): exclui os registros que correspondem à condição especificada.
+
+Exemplo: exibir oportunidades cujo valor seja superior a 100.000 OU cuja probabilidade de fechamento seja superior a 50%.
+
+Importante: a lógica de filtro só se aplica aos filtros de campo, não aos filtros padrão. Portanto, se quiser usar 
+a probabilidade em uma lógica de filtro, você precisa adicioná-la como um filtro de campo separado.
+
+- Filtro cruzado
+
+Permite filtrar registros com base na existência ou ausência de registros relacionados, sem precisar escrever código ou criar fórmulas.
+
+Os operadores principais são:
+
+Com: exibe registros que possuem registros relacionados.
+
+Sem: exibe registros que não possuem registros relacionados.
+
+Exemplos:
+
+Contas com oportunidades: mostra contas que possuem oportunidades.
+
+Contatos sem contas: identifica contatos que não estão associados a nenhuma conta.
+
+Oportunidades sem atividades recentes: ajuda a localizar oportunidades que precisam de atenção.
+
+Também é possível adicionar subfiltros, que refinam os resultados usando campos do objeto relacionado.
+
+Exemplo: encontrar contas com oportunidades cuja etapa seja Prospecção, Qualificação, Análise de Necessidades ou Proposta de Valor.
+
+- Limite de linhas
+
+Permite definir o número máximo de registros exibidos em um relatório tabular, além de escolher o campo e a ordem de classificação.
+
+Exemplo: exibir somente as 10 oportunidades de maior valor.
+
+Esse recurso é útil quando você deseja mostrar apenas os principais registros em um painel.
+
+- Como adicionar um filtro de campo
+
+Para adicionar um filtro a um relatório existente:
+
+Acesse Relatórios e abra o relatório desejado.
+
+Clique em Editar.
+
+Acesse a guia Filtros.
+
+Clique em Adicionar filtro.
+
+Escolha o campo que deseja filtrar.
+
+Selecione o operador.
+
+Defina o valor desejado.
+
+Clique em Aplicar.
+
+Clique em Salvar e Executar.
+
+Exemplo: para visualizar somente clientes diretos, selecione o campo Tipo, escolha o operador igual a e defina o valor Cliente - Direto.
+
+Atenção: o operador diferente de pode prejudicar o desempenho de relatórios em determinadas situações, tornando sua execução lenta ou causando tempo limite.
+
+- Como utilizar filtros cruzados
+
+Para criar um filtro cruzado:
+
+Acesse Relatórios e clique em Novo Relatório.
+
+Escolha o tipo de relatório, por exemplo, Contas.
+
+Defina os filtros padrão necessários.
+
+Na guia Filtros, abra o menu de mais ações.
+
+Selecione Adicionar filtro cruzado.
+
+Escolha o objeto principal, como Contas.
+
+Selecione o operador Com ou Sem.
+
+Escolha o objeto relacionado, como Oportunidades.
+
+Se necessário, adicione subfiltros para restringir os resultados.
+
+Aplique e salve o relatório.
+
+Exemplo prático: se a equipe comercial quiser identificar contas com oportunidades em estágios iniciais, 
+poderá criar um filtro cruzado de Contas com Oportunidades e adicionar um subfiltro para selecionar as etapas desejadas.
+
+A principal vantagem é identificar registros relacionados que atendem a condições específicas sem precisar criar fórmulas ou escrever código.
+
+- Como funciona a lógica de filtro
+
+Imagine que uma vendedora queira encontrar oportunidades que mereçam atenção especial. Ela cria dois filtros:
+
+Filtro 1: Valor maior que 100.000.
+
+Filtro 2: Probabilidade maior que 50%.
+
+Por padrão, os filtros são combinados com AND (E). Assim, uma oportunidade precisa atender às duas condições para aparecer no relatório.
+
+Se ela alterar a lógica para 1 OR 2, serão exibidas as oportunidades que atendam a pelo menos uma das condições.
+
+Depois, ela adiciona um terceiro filtro:
+
+- Filtro 3: Etapa contém "Fechado".
+
+Para excluir as oportunidades que correspondem ao terceiro filtro, utiliza a seguinte lógica:
+
+(1 OR 2) AND NOT 3
+
+Isso significa:
+
+A oportunidade deve ter valor superior a 100.000 ou probabilidade superior a 50%.
+
+Além disso, não pode corresponder ao filtro 3, que identifica as etapas que contêm "Fechado".
+
+Os parênteses são importantes porque determinam como as condições são agrupadas e avaliadas.
+
+Dica: os números representam os filtros de campo na ordem em que aparecem no construtor do relatório. Se você adicionar ou reorganizar filtros, 
+confira se a lógica continua correspondendo à sua intenção.
+
+- Como bloquear filtros
+
+Normalmente, quem visualiza um relatório pode alterar os valores dos filtros na página de execução. Entretanto, é possível bloquear 
+um filtro para impedir que seu valor seja alterado por quem está visualizando o relatório.
+
+Para fazer isso:
+
+Abra o relatório e clique em Editar.
+
+Acesse a guia Filtros.
+
+Configure o filtro desejado.
+
+Marque a opção Bloqueado.
+
+Clique em Aplicar.
+
+Salve o relatório.
+
+Exemplo: uma gerente deseja compartilhar um relatório com a equipe de vendas indiretas, mostrando apenas oportunidades de parceiros. 
+Ela configura o filtro Origem do Lead para identificar parceiros e bloqueia esse filtro.
+
+Assim, os usuários poderão visualizar os resultados definidos, mas não poderão modificar o valor daquele filtro na página de execução.
+
+O bloqueio é especialmente útil para garantir que relatórios compartilhados respeitem critérios definidos pelo responsável.
+
+
+4- Formate seu relatório no Salesforce
+
+Os relatórios do Salesforce possuem três formatos principais: Tabular, Resumido e Matricial. Cada formato organiza os 
+dados de uma maneira diferente, dependendo do tipo de análise que você deseja realizar.
+
+- Relatório Tabular
+
+O relatório tabular é o formato mais simples e vem definido como padrão no Salesforce.
+
+Ele funciona como uma planilha: cada registro aparece em uma linha e cada informação aparece em uma coluna.
+
+Quando utilizar: quando você precisa de uma lista de registros, sem agrupamentos ou subtotais.
+
+Exemplos:
+
+Listar todas as oportunidades em aberto.
+
+Consultar nomes de clientes e responsáveis pelas oportunidades.
+
+Criar uma lista de contatos para mala direta.
+
+Como criar:
+
+Acesse Relatórios e clique em Novo Relatório.
+
+Escolha o tipo de relatório, como Oportunidades.
+
+Configure os filtros desejados, como Todas as oportunidades e status Aberto.
+
+Selecione o período de datas.
+
+Confira as colunas que deseja exibir.
+
+Salve e execute o relatório.
+
+Característica importante: o formato tabular é ideal para visualizar registros individualmente. Para ser utilizado como fonte de um 
+componente de painel, precisa ter um limite de linhas definido.
+
+- Relatório Resumido
+
+O relatório resumido é semelhante ao tabular, mas permite agrupar registros por um campo, calcular subtotais e criar gráficos.
+
+Em vez de apenas listar os registros, ele organiza as informações em grupos para facilitar a análise.
+
+Quando utilizar: quando você deseja comparar categorias, contar registros ou visualizar totais por grupo.
+
+Exemplos:
+
+Contar casos de clientes por prioridade: Alta, Média e Baixa.
+
+Agrupar oportunidades por responsável.
+
+Analisar vendas por região ou por etapa.
+
+Como criar:
+
+Crie um novo relatório e escolha o tipo de registro desejado.
+
+Configure os filtros necessários.
+
+Na opção Estrutura de tópicos, localize Agrupar linhas.
+
+Selecione o campo que será utilizado para agrupar os registros, como Prioridade.
+
+Se necessário, oculte as linhas de detalhes para visualizar somente os grupos e seus totais.
+
+Salve e execute o relatório.
+
+Característica importante: o agrupamento por linhas é o que transforma uma lista simples em um relatório resumido. Esse formato 
+também é muito utilizado em painéis (dashboards).
+
+- Relatório Matricial
+
+O relatório matricial permite agrupar registros por linhas e por colunas ao mesmo tempo.
+
+É o formato mais indicado quando você precisa comparar duas dimensões dos dados, formando uma estrutura semelhante a uma tabela dinâmica.
+
+Quando utilizar: quando deseja analisar tendências, comparar categorias ou visualizar valores distribuídos em duas dimensões.
+
+Exemplos:
+
+Analisar vendas por mês e por tipo de oportunidade.
+
+Comparar receita por região e por produto.
+
+Verificar o desempenho de vendas ao longo do tempo para diferentes categorias.
+
+Como criar:
+
+Acesse Relatórios e clique em Novo Relatório.
+
+Escolha o tipo de relatório Oportunidades.
+
+Configure os filtros para mostrar todas as oportunidades com status Fechada e Ganha.
+
+Defina o campo de data como Data de Fechamento e selecione o período desejado.
+
+No campo Valor, selecione Resumir e depois Soma.
+
+Acesse Estrutura de tópicos.
+
+Em Agrupar linhas, selecione Mês de Fechamento.
+
+Em Agrupar colunas, selecione Tipo.
+
+Se desejar uma visualização mais limpa, desative Linhas de detalhes.
+
+Salve e execute o relatório.
+
+Nesse exemplo, você visualizará a soma dos valores das oportunidades ganhas, organizadas por mês de fechamento e por tipo de oportunidade.
+
+Característica importante: o relatório matricial oferece uma visão mais detalhada para comparar dados em duas dimensões.
+
+- Diferenças entre os três formatos
+
+A principal diferença está na maneira como os dados são organizados:
+
+Tabular: apresenta uma lista de registros em linhas e colunas.
+
+Resumido: agrupa registros por linhas e permite visualizar subtotais.
+
+Matricial: agrupa registros por linhas e colunas, permitindo comparar diferentes categorias.
+
+Os três formatos podem ser usados para criar gráficos de relatório. Os formatos resumido e matricial também oferecem
+suporte a recursos como campos de agrupamento e fórmulas, conforme as funcionalidades disponíveis no Salesforce.
+
+- Dicas importantes para a prática
+
+Agrupar linhas: organiza os registros em categorias verticais.
+
+Agrupar colunas: cria categorias horizontais adicionais, sendo especialmente importante no formato matricial.
+
+Resumir por Soma: calcula o total de um campo numérico, como o valor das oportunidades.
+
+Linhas de detalhes: permite mostrar ou ocultar os registros individuais que compõem os totais.
+
+Filtros de data: períodos menores podem ajudar o relatório a executar mais rapidamente, principalmente em organizações com muitos registros.
+
+
+5- Visualize seus dados com o Construtor de Painéis do Lightning
+
+No Salesforce, os painéis de controle (Dashboards) permitem visualizar informações de vários relatórios em uma única página,
+usando gráficos, tabelas e indicadores. Eles ajudam a acompanhar resultados, identificar tendências e tomar decisões com mais rapidez.
+
+- Diferença entre relatórios, gráficos e painéis
+
+Relatórios: apresentam os dados detalhados, organizados em linhas, colunas, grupos e totais. São utilizados para consultar registros e analisar informações específicas.
+
+Gráficos de relatório: exibem uma representação visual dos dados de um único relatório. O gráfico aparece no próprio relatório, facilitando a interpretação dos resultados.
+
+Painéis de controle (Dashboards): reúnem informações de vários relatórios em uma única página, usando diferentes componentes visuais.
+
+Exemplo prático:
+
+Relatório: lista os leads e suas respectivas origens.
+
+Gráfico de relatório: mostra a quantidade de leads por origem em um gráfico de rosca.
+
+Painel: reúne esse gráfico com outros componentes, como total de oportunidades, receita e atividades comerciais.
+
+Para memorizar: relatório = dados detalhados; gráfico de relatório = visualização de um relatório; painel = visão geral de vários indicadores.
+
+- O Construtor de Painéis do Lightning
+
+O Construtor de Painéis é a ferramenta utilizada para criar e personalizar painéis no Salesforce.
+
+Com ele, você pode:
+
+Adicionar componentes visuais.
+
+Escolher os relatórios que fornecerão os dados.
+
+Alterar o tamanho dos componentes.
+
+Arrastar e posicionar os componentes na página.
+
+Modificar títulos e descrições.
+
+Adicionar filtros ao painel, quando aplicável.
+
+Cada componente do painel é chamado de widget ou componente do painel e pode exibir informações de um relatório ou conteúdo formatado.
+
+Principais tipos de componentes
+Gráficos: representam dados visualmente, usando formatos como barras, linhas, rosca, funil e dispersão.
+
+Medidor: mostra um valor dentro de um intervalo definido, sendo útil para acompanhar metas.
+
+Métrica: destaca um único valor importante, como o total de vendas.
+
+Tabela: apresenta um conjunto de dados em linhas e colunas.
+
+Texto ou imagem: permite adicionar conteúdo complementar ao painel.
+
+Exemplos de uso:
+
+Para mostrar a receita total, utilize uma métrica.
+
+Para acompanhar o progresso em relação a uma meta, utilize um medidor.
+
+Para comparar leads por origem, utilize um gráfico de rosca.
+
+Para consultar registros detalhados, utilize uma tabela.
+
+Importante: os relatórios combinados e os relatórios de tendências históricas não podem ser selecionados como fonte de dados de um componente do painel.
+
+- Como criar um relatório para utilizar no painel
+
+Antes de criar o painel, você precisa ter um relatório que forneça os dados necessários.
+
+Exemplo: criar um relatório de leads por origem.
+
+Acesse a guia Relatórios e clique em Novo Relatório.
+
+Selecione o tipo de relatório Leads.
+
+Configure o filtro Mostrar para Todos os leads.
+
+Defina o campo de data como Data de Criação e o período como Todo o Período.
+
+Na opção Estrutura de tópicos, agrupe as linhas por Origem do lead.
+
+Confira as colunas desejadas, como responsável, nome, empresa e e-mail.
+
+Clique em Salvar, informe o nome do relatório e confirme.
+
+Execute o relatório para verificar os resultados.
+
+O agrupamento por origem permite comparar quantos leads vêm de cada fonte, tornando os dados adequados para um gráfico.
+
+- Como criar um painel de controle
+
+Depois de criar o relatório, você pode utilizá-lo como fonte de um componente do painel.
+
+Acesse a guia Painéis.
+
+Clique em Novo Painel.
+
+Informe o nome e, opcionalmente, uma descrição.
+
+Clique em Criar.
+
+No Construtor de Painéis, clique em + Widget.
+
+Escolha Gráfico ou Tabela.
+
+Selecione o relatório criado anteriormente, como Leads por Origem do Lead.
+
+Escolha o tipo de gráfico desejado, por exemplo, gráfico de rosca.
+
+Configure o título e, opcionalmente, o subtítulo e o rodapé.
+
+Clique em Adicionar.
+
+Ajuste o tamanho e a posição do componente, se necessário.
+
+Clique em Salvar e depois em Concluído.
+
+O resultado será um painel que apresenta visualmente a distribuição dos leads por origem.
+
+Dica: o relatório é a fonte dos dados. O componente do painel é a maneira como esses dados serão apresentados.
+
+- Painéis dinâmicos (Dynamic Dashboards)
+
+Os painéis dinâmicos permitem que diferentes usuários visualizem os dados aos quais têm acesso, de acordo com suas permissões e regras de compartilhamento.
+
+Isso evita a necessidade de criar um painel separado para cada funcionário.
+
+Imagine uma equipe com:
+
+40 representantes de vendas.
+
+4 gerentes de vendas.
+
+1 vice-presidente de vendas.
+
+Cada representante deve visualizar seus próprios dados, cada gerente deve visualizar os dados da equipe que 
+gerencia e o vice-presidente deve visualizar os dados de toda a equipe, conforme suas permissões.
+
+Sem painéis dinâmicos, seria necessário criar até 45 painéis separados. Com eles, é possível utilizar apenas dois painéis para atender às necessidades descritas no exemplo.
+
+Como funciona
+Representante de vendas: visualiza os próprios dados.
+
+Gerente de vendas: visualiza os dados aos quais tem acesso, incluindo os de sua equipe conforme a hierarquia e as permissões.
+
+Vice-presidente: pode visualizar os dados de toda a equipe, desde que tenha as permissões necessárias.
+
+O painel dinâmico não concede acesso automaticamente a todos os dados. A visibilidade continua dependendo das permissões e das regras de compartilhamento do Salesforce.
+
+Como configurar um painel dinâmico
+Crie as pastas necessárias para armazenar o painel e seus relatórios de origem.
+
+Compartilhe as pastas com os usuários ou grupos apropriados.
+
+Crie um painel ou edite um existente.
+
+Abra as propriedades do painel.
+
+Em Exibir painel como, selecione O visualizador de painel.
+
+Se desejar, habilite a opção para permitir que os visualizadores escolham como visualizar o painel.
+
+Salve as propriedades e depois salve o painel.
+
+A partir daí, cada usuário poderá visualizar os dados permitidos para sua situação de acesso.
+
+Atenção: um painel dinâmico não pode ser salvo em uma pasta privada.
+
+Além disso, gerentes que possuam permissões específicas, como Visualizar os painéis da minha equipe ou Visualizar todos os dados, 
+podem ter opções para visualizar o painel conforme outros usuários da hierarquia.
+
+- Como adicionar um gráfico diretamente a um relatório
+
+Se você não precisa de um painel completo e deseja apenas visualizar os dados graficamente, pode adicionar um gráfico ao próprio relatório.
+
+Passos:
+
+Acesse Relatórios.
+
+Abra o relatório desejado.
+
+Clique em Adicionar gráfico, caso nenhum gráfico esteja visível.
+
+Configure o tipo de gráfico conforme necessário.
+
+O gráfico aparecerá na parte superior do relatório, permitindo visualizar a representação gráfica e os dados do relatório na mesma tela.
+
+Você também pode mostrar ou ocultar o gráfico utilizando o ícone correspondente.
