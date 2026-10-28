@@ -414,4 +414,546 @@ O objetivo não é eliminar completamente a programação, mas utilizar a aborda
 Essa divisão também permite que administradores cuidem de diversas configurações e automações, enquanto os desenvolvedores concentram seus esforços nas partes mais complexas dos projetos.
 
 
-3- 
+3- Codifique com as linguagens Salesforce
+
+- Objetivo da unidade
+
+A plataforma Salesforce permite desenvolver e personalizar aplicações de diferentes maneiras. É possível utilizar ferramentas visuais, 
+automações com pouco código (low-code) ou linguagens de programação para criar funcionalidades mais avançadas.
+
+Nesta unidade, você aprende sobre três tecnologias importantes para o desenvolvimento no Salesforce:
+
+Lightning Web Components (LWC): criação de interfaces visuais.
+
+Apex: implementação de regras de negócio e lógica de programação no Salesforce.
+
+Node.js: execução de ferramentas que auxiliam o desenvolvimento e os testes.
+
+Cada tecnologia tem uma função específica e pode trabalhar em conjunto com as demais para criar aplicações completas.
+
+- Lightning Web Components (LWC)
+
+O Lightning Web Components (LWC) é um framework utilizado para desenvolver interfaces de usuário para computadores e dispositivos móveis dentro do Salesforce.
+
+Ele funciona com base em componentes, ou seja, partes independentes da interface que podem ser reutilizadas em diferentes telas e aplicações.
+
+Por exemplo, em um sistema imobiliário, você pode criar componentes para exibir:
+
+Informações de um imóvel.
+
+Endereço e localização da propriedade.
+
+Um mapa interativo.
+
+Botões para executar ações.
+
+Formulários para cadastrar novos imóveis.
+
+O LWC utiliza principalmente HTML, JavaScript e, quando necessário, CSS.
+
+Como funciona a estrutura de um componente LWC?
+Um componente pode conter diferentes arquivos, cada um com uma responsabilidade específica.
+
+HTML (.html): define a estrutura visual do componente, incluindo os elementos que aparecem na tela. Geralmente utiliza a tag <template>.
+
+JavaScript (.js): contém a lógica do componente, como métodos, tratamento de eventos e interação com dados.
+
+CSS (.css): define a aparência visual, como cores, fontes, espaçamentos e estilos.
+
+XML (.js-meta.xml): contém metadados e configurações que determinam, entre outras coisas, onde o componente pode ser utilizado no Salesforce.
+
+Testes: permitem verificar se o componente funciona conforme o esperado.
+
+Nem todo componente precisa ter um arquivo CSS separado, pois pode utilizar estilos existentes.
+
+Quais são os benefícios do LWC?
+Reutilização: um componente pode ser utilizado em diferentes páginas.
+
+Organização: separa a estrutura visual, a lógica e os estilos.
+
+Desempenho: utiliza recursos modernos da plataforma web.
+
+Responsividade: permite criar interfaces adaptadas a diferentes tamanhos de tela.
+
+Integração com Salesforce: facilita a criação de interfaces conectadas aos dados e recursos da plataforma.
+
+O LWC é semelhante, em alguns aspectos, a frameworks como React e Angular, mas foi desenvolvido para trabalhar diretamente com o ecossistema Salesforce.
+
+Exemplo prático: imagine que você deseja exibir um mapa com a localização de um imóvel. O LWC cria o componente visual do mapa, enquanto o JavaScript controla seu 
+comportamento e os dados necessários para exibir a localização.
+
+- Apex
+
+O Apex é uma linguagem de programação proprietária do Salesforce, fortemente tipada e orientada a objetos. Sua sintaxe é semelhante à linguagem Java.
+
+Enquanto o LWC está mais relacionado à interface que o usuário vê, o Apex é utilizado principalmente para implementar regras de negócio e executar operações no servidor.
+
+Com Apex, você pode:
+
+Criar regras de negócio personalizadas.
+
+Validar informações antes de salvar registros.
+
+Executar operações em registros do Salesforce.
+
+Responder a eventos e alterações nos dados.
+
+Integrar o Salesforce a serviços externos por meio de chamadas HTTP.
+
+Ampliar as funcionalidades de automações criadas no Flow Builder.
+
+O que significa ser fortemente tipado?
+Significa que os tipos de dados são definidos e verificados. Por exemplo, uma variável pode armazenar um número inteiro, um texto ou uma data, conforme seu tipo declarado.
+
+Isso ajuda a identificar erros e torna o código mais organizado.
+
+O que significa ser orientado a objetos?
+É um modelo de programação que organiza o código em classes e objetos.
+
+Classe: define uma estrutura que pode conter dados e métodos.
+
+Objeto: é uma instância de uma classe.
+
+Método: representa uma operação que pode ser executada.
+
+Propriedade: representa um dado ou atributo associado a uma classe ou objeto.
+
+Essa organização facilita a manutenção e a reutilização do código.
+
+Como o Apex trabalha com o Flow Builder?
+
+O Flow Builder permite criar automações utilizando ferramentas visuais e pouco código. Quando a automação precisa executar uma lógica que não é atendida 
+adequadamente pelos recursos disponíveis no Flow, é possível utilizar Apex.
+
+Por exemplo, em um sistema imobiliário, um fluxo pode coletar o endereço de uma propriedade. Uma classe Apex pode receber esse endereço, consultar um 
+serviço externo de geocodificação e retornar as coordenadas geográficas — latitude e longitude — para localizar o imóvel no mapa.
+
+Nesse cenário:
+
+O Flow coleta o endereço informado pelo usuário.
+
+O Apex recebe os dados.
+
+O Apex realiza uma chamada HTTP para o serviço de geocodificação.
+
+O serviço retorna as coordenadas.
+
+O Apex disponibiliza o resultado para o Flow continuar a automação.
+
+Anotações importantes do Apex
+No conteúdo apresentado, aparecem anotações que permitem integrar o Apex ao Flow.
+
+@InvocableMethod: identifica um método que pode ser disponibilizado como uma ação invocável, por exemplo, em um Flow.
+
+@InvocableVariable: identifica uma variável de uma classe que pode ser utilizada para receber ou disponibilizar dados em ações invocáveis.
+
+Essas anotações ajudam a conectar a lógica programada em Apex às automações visuais.
+
+Quais são os benefícios do Apex?
+Permite criar regras de negócio complexas.
+
+Possibilita maior controle sobre operações com dados.
+
+Integra-se ao Salesforce e ao Flow Builder.
+
+Permite realizar chamadas a serviços externos.
+
+Ajuda a automatizar processos que exigem lógica personalizada.
+
+Atenção: o Apex está sujeito a limites de execução da plataforma, conhecidos como governor limits. Eles controlam o consumo de recursos, como consultas ao banco de dados e 
+operações de processamento, para preservar o desempenho e a estabilidade do ambiente compartilhado do Salesforce.
+
+- Node.js
+
+O Node.js é um ambiente de execução JavaScript que permite executar código JavaScript fora do navegador. Seu modelo de execução é orientado a eventos e oferece recursos para operações assíncronas.
+
+No contexto desta unidade, existe uma diferença importante: o Node.js é utilizado principalmente para ferramentas de desenvolvimento, e não como linguagem de programação 
+executada diretamente na plataforma Salesforce.
+
+Ele ajuda os desenvolvedores a criar, organizar, verificar e testar seus projetos.
+
+Para que serve no desenvolvimento Salesforce?
+Ao criar um projeto Salesforce por meio da CLI ou do Code Builder, você pode utilizar ferramentas baseadas em Node.js para realizar diversas tarefas.
+
+Salesforce CLI: ajuda a criar projetos e executar comandos para trabalhar com organizações Salesforce.
+
+Prettier: formata o código automaticamente, mantendo um padrão de organização.
+
+ESLint: analisa o código JavaScript e identifica possíveis problemas e práticas inadequadas.
+
+Jest: permite executar testes automatizados, especialmente para verificar o comportamento dos componentes Lightning Web Components.
+
+Qual é a vantagem do Node.js?
+Ele melhora o processo de desenvolvimento, pois facilita a automação de tarefas, a padronização do código e a identificação antecipada de erros.
+
+Exemplo prático: depois de desenvolver um componente LWC, você pode utilizar o Prettier para formatar o código, o ESLint para identificar problemas e o Jest para executar testes automatizados.
+
+Assim, o Node.js contribui para a qualidade do projeto, mesmo que não seja responsável diretamente pelas regras de negócio executadas na organização Salesforce.
+
+- Code Builder: ambiente de desenvolvimento
+
+O Code Builder é um ambiente de desenvolvimento integrado (IDE) baseado na nuvem, utilizado para escrever, depurar e testar código relacionado ao Salesforce.
+
+Ele permite trabalhar com arquivos de componentes LWC, classes Apex e outros recursos do projeto.
+
+Em conjunto com ferramentas como a Salesforce CLI, o Code Builder ajuda a organizar o código, executar comandos, testar funcionalidades e desenvolver aplicações personalizadas.
+
+Sua principal vantagem é reunir ferramentas de desenvolvimento em um ambiente integrado à plataforma Salesforce.
+
+- Diferenças entre LWC, Apex e Node.js
+
+Embora as três tecnologias participem do processo de desenvolvimento, elas não possuem a mesma finalidade.
+
+LWC: cuida principalmente da interface com a qual o usuário interage. Utiliza HTML, JavaScript e, opcionalmente, CSS.
+
+Apex: implementa regras de negócio, processa informações no Salesforce e executa operações personalizadas no servidor.
+
+Node.js: oferece suporte às ferramentas utilizadas durante o desenvolvimento, como formatação, análise de código e testes.
+
+Uma forma simples de memorizar é:
+
+LWC = interface.
+
+Apex = lógica de negócio.
+
+Node.js = ferramentas de desenvolvimento.
+
+- Como as três tecnologias trabalham juntas?
+
+Imagine que você esteja desenvolvendo uma aplicação imobiliária chamada Dreamhouse.
+
+O usuário abre a página de um imóvel e deseja consultar sua localização.
+
+LWC: apresenta os dados do imóvel e o mapa na interface.
+
+Apex: pode processar o endereço e consultar um serviço externo para obter as coordenadas geográficas.
+
+Flow Builder: pode coordenar as etapas da automação e chamar o Apex quando necessário.
+
+Node.js: ajuda o desenvolvedor a formatar, analisar e testar o código criado para a aplicação.
+
+Essas tecnologias se complementam: a interface apresenta as informações, a lógica executa as operações necessárias e as ferramentas auxiliam na criação e na manutenção do projeto.
+
+
+4- Amplie a plataforma Salesforce
+
+- Objetivos da unidade
+
+Esta unidade explica como ampliar as funcionalidades do Salesforce para conectar sistemas externos, desenvolver aplicações web e utilizar agentes de inteligência artificial.
+
+Os três principais assuntos são:
+
+APIs: permitem integrar o Salesforce a outros sistemas e acessar dados.
+
+Heroku: permite desenvolver, publicar e dimensionar aplicações web externas ao Salesforce.
+
+Agentforce: permite criar e personalizar agentes de inteligência artificial para automatizar tarefas e atender às necessidades do negócio.
+
+A ideia principal é compreender que o Salesforce não precisa funcionar isoladamente. Ele pode se conectar a outras plataformas e combinar dados, automações, 
+aplicações e inteligência artificial para criar soluções mais completas.
+
+- APIs da plataforma Salesforce
+
+Uma API (Application Programming Interface) é uma interface que permite que sistemas diferentes se comuniquem e troquem informações de maneira estruturada.
+
+No Salesforce, as APIs possibilitam acessar registros, consultar informações, atualizar dados, administrar configurações e integrar aplicações externas.
+
+Por exemplo, uma imobiliária utiliza o Salesforce para armazenar informações de imóveis e clientes. Ao integrar o sistema com uma plataforma de 
+assinatura digital, pode enviar contratos para assinatura sem precisar transferir manualmente todas as informações.
+
+O que é um nome de API?
+Os objetos e campos do Salesforce possuem nomes de API que permitem identificá-los durante o desenvolvimento.
+
+Por exemplo:
+
+Account: objeto padrão que representa contas, como empresas ou clientes.
+
+Contact: objeto padrão que armazena informações de contatos.
+
+Property__c: exemplo de nome de um objeto personalizado para armazenar imóveis.
+
+Status__c: exemplo de nome de um campo personalizado.
+
+O sufixo __c indica, normalmente, um objeto ou campo personalizado criado na organização Salesforce. Ele ajuda a diferenciar esses elementos dos recursos padrão da plataforma.
+
+No desenvolvimento com Lightning Web Components, Apex e APIs, esses nomes são utilizados para identificar os dados com os quais o código precisa trabalhar.
+
+- Principais APIs do Salesforce
+
+Cada API possui uma finalidade específica. Conhecer suas diferenças ajuda a escolher a ferramenta adequada para cada necessidade.
+
+API SOAP
+A API SOAP permite integrar sistemas por meio do protocolo SOAP, utilizando mensagens estruturadas em XML.
+
+É útil em integrações corporativas que utilizam serviços baseados nesse padrão.
+
+Exemplo: conectar o Salesforce a um sistema empresarial de folha de pagamento que utiliza SOAP para trocar informações sobre funcionários.
+
+API REST
+A API REST permite acessar e manipular dados do Salesforce por meio de requisições HTTP.
+
+Ela é bastante utilizada em aplicações web, aplicativos móveis e integrações entre sistemas.
+
+Pode permitir operações como consultar, criar, atualizar e excluir registros, conforme os recursos e as permissões disponíveis.
+
+Exemplo: um site externo consulta os imóveis disponíveis no Salesforce e apresenta os resultados aos visitantes.
+
+API de Metadados (Metadata API)
+A Metadata API permite trabalhar com as configurações e personalizações de uma organização Salesforce.
+
+Ela é utilizada para implantar componentes e gerenciar elementos como objetos, campos, layouts e outras configurações compatíveis.
+
+Exemplo: transferir configurações e componentes desenvolvidos em um ambiente de testes para um ambiente de produção.
+
+API de Ferramentas (Tooling API)
+A Tooling API é direcionada a ferramentas de desenvolvimento e permite acessar informações sobre determinados componentes e recursos de programação.
+
+Ela pode ajudar a criar ferramentas personalizadas para desenvolver, inspecionar e depurar aplicações Salesforce.
+
+Exemplo: desenvolver uma ferramenta que auxilia programadores a analisar classes Apex e outros componentes da organização.
+
+API do Marketing Cloud
+As APIs do Marketing Cloud permitem integrar aplicações às funcionalidades de marketing digital da plataforma, incluindo recursos de campanhas e comunicação com clientes.
+
+O conteúdo apresenta dois padrões importantes:
+
+REST: permite acessar diferentes recursos de engajamento.
+
+SOAP: oferece acesso a funcionalidades específicas, incluindo recursos de e-mail.
+
+Exemplo: integrar uma aplicação de marketing para automatizar comunicações com clientes de acordo com suas interações.
+
+API em lote (Bulk API)
+A Bulk API foi desenvolvida para operações que envolvem grandes volumes de dados. Ela permite processar operações de forma assíncrona, sem 
+exigir que todos os registros sejam tratados individualmente em uma única sequência de requisições síncronas.
+
+Exemplo: importar milhares de registros de clientes para o Salesforce ou atualizar um grande conjunto de informações de produtos.
+
+API de Streaming
+As APIs de streaming permitem distribuir notificações relacionadas a alterações de dados ou eventos, conforme o mecanismo utilizado.
+
+Elas são úteis quando um sistema precisa receber atualizações sem consultar repetidamente os dados para verificar se algo mudou.
+
+Exemplo: notificar uma aplicação externa quando determinadas informações de uma propriedade forem alteradas.
+
+Connect REST API
+A Connect REST API oferece recursos relacionados a funcionalidades como Experience Cloud, arquivos, conteúdo e outros recursos de colaboração e interação do Salesforce.
+
+Exemplo: desenvolver uma experiência personalizada para que usuários de um portal consultem arquivos ou conteúdos disponibilizados pela organização.
+
+API de publicação e assinatura (Pub/Sub API)
+A Pub/Sub API permite publicar e receber eventos da plataforma usando um modelo de publicação e assinatura.
+
+Ela é especialmente útil para integrações orientadas a eventos e para sistemas que precisam reagir rapidamente a acontecimentos específicos.
+
+Exemplo: quando um pedido é criado, um evento pode ser publicado para que outro sistema inicie o processo de envio.
+
+GraphQL
+GraphQL é uma tecnologia de consulta de dados que permite ao cliente especificar quais informações deseja receber.
+
+Em vez de realizar várias consultas separadas para obter diferentes informações, uma única requisição pode reunir os dados necessários, quando eles 
+são disponibilizados pelo esquema e pelos recursos da API.
+
+Exemplo: uma interface pode solicitar os dados de um imóvel e as informações relacionadas necessárias para exibir sua página, reduzindo requisições desnecessárias.
+
+Como memorizar as APIs?
+SOAP: integração usando o protocolo SOAP.
+
+REST: acesso a recursos e dados por HTTP.
+
+Metadata API: gerenciamento de configurações e metadados.
+
+Tooling API: ferramentas de desenvolvimento.
+
+Marketing Cloud API: funcionalidades de marketing.
+
+Bulk API: grandes volumes de dados.
+
+Streaming: notificações de alterações e eventos.
+
+Connect REST API: conteúdo, arquivos e recursos de experiência e colaboração.
+
+Pub/Sub API: publicação e assinatura de eventos.
+
+GraphQL: consultas que permitem especificar os dados desejados.
+
+- Integrações com sistemas externos
+
+O Salesforce oferece muitas funcionalidades, mas nem sempre é responsável por todas as operações de uma empresa. Por isso, pode ser necessário integrá-lo a outros sistemas.
+
+Uma integração permite compartilhar informações entre plataformas, reduzir tarefas manuais e manter os dados sincronizados.
+
+Exemplos de integração
+Folha de pagamento: o Salesforce compartilha informações relevantes com um sistema de RH ou folha de pagamento, conforme as regras e permissões configuradas.
+
+Assinatura digital: uma imobiliária utiliza uma plataforma como o DocuSign para enviar contratos aos compradores e acompanhar as assinaturas.
+
+Sistemas financeiros: dados de clientes e transações podem ser integrados a sistemas financeiros externos.
+
+Aplicações web: um site público pode consultar dados do Salesforce para apresentar produtos, imóveis ou serviços.
+
+Outras ferramentas de integração
+Além das APIs, existem soluções que facilitam a conexão entre sistemas.
+
+Salesforce Connect: permite acessar dados de sistemas externos a partir do Salesforce sem necessariamente copiar todos esses dados para dentro da organização.
+
+Heroku Connect: sincroniza dados entre o Salesforce e um banco de dados Heroku Postgres, de acordo com a configuração.
+
+MuleSoft Composer: permite criar integrações entre aplicações utilizando ferramentas visuais e reduzindo a necessidade de escrever código.
+
+Apex: possibilita implementar integrações personalizadas, incluindo chamadas HTTP a serviços externos.
+
+A escolha depende do volume de dados, da complexidade da integração, da frequência de atualização e dos recursos técnicos disponíveis.
+
+- Eventos da plataforma (Platform Events)
+
+Os Platform Events permitem que diferentes partes de um sistema se comuniquem por meio de eventos que representam acontecimentos importantes.
+
+Em vez de um sistema consultar continuamente outro para verificar se algo mudou, ele pode receber uma notificação quando um evento relevante é publicado.
+
+Esse modelo é conhecido como comunicação orientada a eventos.
+
+Como funciona?
+Um processo identifica que algo aconteceu.
+
+O Salesforce publica um evento.
+
+Os sistemas ou processos inscritos nesse evento recebem a notificação.
+
+Os destinatários executam as ações necessárias.
+
+Os eventos podem ser publicados ou consumidos por mecanismos como Apex, Flow e aplicações externas compatíveis com as APIs.
+
+Exemplo: um cliente compra um produto. Quando o pedido é confirmado, o Salesforce publica um evento. Um sistema de logística recebe a notificação e inicia o processamento do envio.
+
+Benefícios dos Platform Events
+Facilitam a comunicação entre sistemas.
+
+Reduzem a necessidade de consultas repetitivas.
+
+Permitem reagir a acontecimentos em tempo oportuno.
+
+Ajudam a desacoplar sistemas, diminuindo a dependência de comunicação direta entre eles.
+
+É importante lembrar que eventos não são simplesmente registros comuns do Salesforce: são mensagens que representam acontecimentos e podem ser consumidas por diferentes assinantes.
+
+- Heroku: desenvolvimento de aplicações externas
+
+O Heroku é uma plataforma de nuvem utilizada para desenvolver, implantar e dimensionar aplicações.
+
+Enquanto o Salesforce oferece recursos específicos para CRM, automação e gestão de dados empresariais, o Heroku permite criar aplicações web personalizadas para atender a outras necessidades.
+
+O Heroku suporta diferentes linguagens e tecnologias, incluindo Java, Python, PHP e JavaScript, conforme os ambientes de execução disponíveis.
+
+Quais são os benefícios do Heroku?
+Flexibilidade: permite desenvolver aplicações utilizando diferentes linguagens.
+
+Implantação simplificada: oferece recursos para publicar aplicações na nuvem.
+
+Escalabilidade: permite ajustar a capacidade da aplicação conforme a demanda e os recursos contratados.
+
+Menor preocupação com infraestrutura: a plataforma gerencia parte das tarefas operacionais necessárias para executar aplicações.
+
+Integração com Salesforce: possibilita conectar aplicações externas aos dados e serviços da organização.
+
+O conteúdo destaca que o Heroku utiliza infraestrutura da AWS. Isso não significa que o desenvolvedor nunca precise se preocupar com infraestrutura: 
+configurações, desempenho, segurança, custos e capacidade continuam exigindo planejamento.
+
+Importante: o Heroku possui condições comerciais e de licenciamento próprias, conforme o plano e os serviços utilizados.
+
+O que é o Heroku Connect?
+O Heroku Connect permite sincronizar dados entre o Salesforce e o Heroku Postgres, que é um serviço de banco de dados PostgreSQL utilizado com aplicações no Heroku.
+
+Isso facilita o desenvolvimento de aplicações que precisam utilizar informações já existentes no Salesforce.
+
+Exemplo: uma empresa possui dados de clientes e produtos no Salesforce, mas deseja criar um portal externo personalizado. 
+A aplicação pode utilizar o Heroku para disponibilizar a experiência web e o Heroku Connect para sincronizar os dados necessários.
+
+Exemplo do aplicativo eCars
+O material apresenta o eCars, uma aplicação de exemplo relacionada à venda e ao atendimento automotivo.
+
+Nesse cenário:
+
+O cliente acessa um configurador de veículos pela web.
+
+A aplicação permite personalizar um carro elétrico.
+
+A aplicação se integra ao Salesforce por meio de APIs.
+
+Os dados podem ser utilizados nos processos de vendas e atendimento.
+
+O exemplo demonstra como uma aplicação web externa pode oferecer uma experiência personalizada sem precisar reproduzir todas as funcionalidades do Salesforce.
+
+- Agentforce: agentes de inteligência artificial
+
+O Agentforce é o conjunto de tecnologias da Salesforce voltado à criação e utilização de agentes de inteligência artificial para apoiar processos de negócio.
+
+Esses agentes podem interpretar solicitações, consultar informações disponíveis, seguir instruções e executar ações autorizadas por meio de recursos configurados na organização.
+
+O objetivo é ajudar empresas a automatizar tarefas, atender clientes e aumentar a produtividade dos funcionários.
+
+Como personalizar os agentes?
+Os agentes podem ser configurados de acordo com as necessidades da empresa, incluindo:
+
+Instruções: definem o papel do agente, seus objetivos e os limites de sua atuação.
+
+Tópicos e escopo de atuação: organizam os tipos de solicitações que o agente deve atender.
+
+Ações: permitem consultar dados ou executar tarefas por meio de recursos compatíveis, como Flows, prompts e código Apex.
+
+Dados e conhecimento: fornecem informações para fundamentar as respostas.
+
+Testes e monitoramento: ajudam a avaliar o comportamento e identificar oportunidades de melhoria.
+
+A disponibilidade de recursos específicos depende da configuração, das permissões e dos produtos contratados.
+
+Exemplos de agentes Agentforce
+Agentes de atendimento ao cliente
+
+Podem responder perguntas, consultar informações e auxiliar na resolução de solicitações de suporte.
+
+Agentes de pedidos e entregas
+
+Podem ajudar a consultar o status de pedidos, rastrear entregas e orientar clientes sobre devoluções e reembolsos, conforme as ações disponíveis e autorizadas.
+
+Agentes de vendas
+
+Podem auxiliar na qualificação de leads, na preparação de oportunidades comerciais e na identificação de informações incompletas.
+
+Agentes de serviços financeiros
+
+Podem apoiar consultas de faturamento, dúvidas sobre pagamentos e processos de análise de transações, respeitando os controles de acesso aplicáveis.
+
+Agentes de conhecimento
+
+Podem consultar bases de conhecimento para fornecer respostas fundamentadas em documentação e orientações da empresa.
+
+Agentes de gestão de contas e associados
+
+Podem auxiliar em dúvidas sobre contas, associações e problemas de acesso, conforme os processos configurados.
+
+O que é a camada de confiança do Einstein?
+A camada de confiança do Einstein (Einstein Trust Layer) reúne mecanismos de segurança e governança para ajudar a proteger dados e controlar o uso da inteligência artificial.
+
+Ela faz parte da abordagem da Salesforce para utilizar IA de maneira responsável, com recursos de proteção e tratamento de dados conforme os produtos e as configurações aplicáveis.
+
+Mesmo com essas proteções, a organização deve configurar corretamente as permissões, testar os agentes e monitorar suas ações. 
+A existência de recursos de segurança não elimina a necessidade de governança.
+
+- Como APIs, Heroku e Agentforce trabalham juntos?
+
+Imagine uma empresa que vende veículos elétricos.
+
+O Salesforce armazena os dados dos clientes, leads e oportunidades.
+
+As APIs permitem que outros sistemas consultem ou atualizem informações autorizadas.
+
+O Heroku hospeda um configurador web no qual o cliente personaliza seu veículo.
+
+O Heroku Connect pode sincronizar dados entre o Salesforce e o Heroku Postgres.
+
+O Agentforce pode responder a perguntas sobre os veículos, ajudar a qualificar leads ou orientar o cliente durante o atendimento.
+
+Os Platform Events podem comunicar acontecimentos importantes, como a confirmação de um pedido.
+
+Cada tecnologia possui uma responsabilidade, mas a integração permite construir uma solução única para o negócio.
