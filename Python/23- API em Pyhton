@@ -1,0 +1,190 @@
+O que é API ?
+
+API significa Application Programming Interface (Interface de Programação de Aplicações).
+
+Uma API é um conjunto de regras que permite que dois sistemas ou programas se comuniquem, troquem informações e executem ações.
+
+Por exemplo, quando você envia um e-mail, o aplicativo utiliza uma API para solicitar ao servidor que envie a mensagem ao destinatário.
+
+Outros exemplos do dia a dia:
+
+Um aplicativo de previsão do tempo que busca informações sobre o clima.
+
+Um aplicativo de banco que consulta o saldo da sua conta.
+
+Uma loja virtual que utiliza uma API para processar pagamentos.
+
+Um aplicativo que busca informações de filmes em outro sistema.
+
+Resumindo: uma API funciona como uma ponte entre dois sistemas, permitindo que eles se comuniquem sem que um precise conhecer todos os detalhes internos do outro.
+
+- O que são Web APIs?
+
+As Web APIs são APIs que permitem a comunicação entre aplicações por meio de uma rede ou da internet.
+
+Essa comunicação geralmente utiliza o protocolo HTTP, o mesmo protocolo usado pelos navegadores para acessar sites.
+
+O funcionamento básico acontece em três etapas:
+
+Cliente: o programa que solicita uma informação.
+
+Servidor: o sistema que recebe a solicitação e processa o pedido.
+
+Resposta: o servidor devolve os dados ou informa o resultado da operação.
+
+Por exemplo, imagine que você queira consultar a temperatura de uma cidade.
+
+Seu programa Python solicita a temperatura por meio de uma API.
+
+O servidor recebe o pedido e consulta os dados meteorológicos.
+
+A API devolve a resposta, que seu programa pode exibir na tela.
+
+Esse processo é chamado de requisição e resposta (request and response).
+
+- Os três tipos mais comuns de Web APIs
+
+Existem diferentes estilos de APIs. Os três apresentados no curso são:
+
+SOAP
+É um padrão mais formal, com regras e estrutura bem definidas.
+
+Muito utilizado em determinados sistemas corporativos.
+
+Possui protocolos e formatos mais rígidos.
+
+Pode ser adequado quando há requisitos específicos de integração e segurança.
+
+REST
+É um dos estilos mais populares para a criação de Web APIs.
+
+Geralmente utiliza HTTP.
+
+É relativamente simples de entender e implementar.
+
+Facilita a integração entre sistemas.
+
+É muito utilizado para consultar, criar, atualizar e excluir dados.
+
+GraphQL
+Permite que o cliente solicite exatamente os dados de que precisa.
+
+Oferece flexibilidade na consulta de informações.
+
+Pode evitar o recebimento de dados desnecessários.
+
+É útil em aplicações que precisam consultar dados relacionados de maneira específica.
+
+Neste curso, o foco é REST, por ser amplamente utilizado e oferecer uma boa maneira de começar a trabalhar com APIs em Python.
+
+- Como trabalhar com APIs em Python?
+
+O curso apresenta duas bibliotecas para fazer requisições HTTP: urllib e requests.
+
+Biblioteca urllib
+A urllib já vem instalada com o Python, ou seja, normalmente você não precisa instalar nada adicional para utilizá-la.
+
+Entretanto, ela exige algumas etapas para acessar e tratar a resposta de uma API.
+
+Exemplo:
+
+
+python
+from urllib.request import urlopen
+
+url = "https://jsonplaceholder.typicode.com/posts/1"
+
+resposta = urlopen(url)
+
+dados = resposta.read()
+
+texto = dados.decode("utf-8")
+
+print(texto)
+Entendendo o código:
+
+urlopen(url): envia a requisição para o endereço informado.
+
+resposta.read(): lê os dados recebidos.
+
+decode("utf-8"): converte os bytes recebidos em texto.
+
+print(texto): exibe o conteúdo retornado pela API.
+
+Nesse exemplo, a API retorna informações de uma publicação fictícia, como seu título e conteúdo.
+
+Biblioteca requests
+A biblioteca requests simplifica bastante o processo de fazer requisições HTTP.
+
+Para utilizá-la, instale o pacote no terminal:
+
+
+bash
+pip install requests
+O mesmo exemplo anterior fica assim:
+
+
+python
+import requests
+
+url = "https://jsonplaceholder.typicode.com/posts/1"
+
+resposta = requests.get(url)
+
+print(resposta.text)
+Observe que agora precisamos de menos código. O requests já facilita o envio da requisição e a leitura da resposta.
+
+A principal diferença: com urllib, precisamos realizar algumas etapas manualmente. Com requests, muitas dessas etapas são simplificadas.
+
+- Exemplo prático: consultando dados de uma API
+
+Vamos imaginar que você queira buscar uma publicação e mostrar somente seu título.
+
+Podemos fazer isso com requests:
+
+
+python
+import requests
+
+url = "https://jsonplaceholder.typicode.com/posts/1"
+
+resposta = requests.get(url)
+
+resposta.raise_for_status()
+
+dados = resposta.json()
+
+print("Título:", dados["title"])
+print("Conteúdo:", dados["body"])
+O que acontece nesse código?
+
+import requests: importa a biblioteca.
+
+requests.get(url): faz uma requisição HTTP do tipo GET.
+
+raise_for_status(): gera um erro se a resposta indicar falha HTTP.
+
+resposta.json(): transforma o JSON recebido em um objeto Python, normalmente um dicionário.
+
+dados["title"] e dados["body"]: acessam os campos desejados.
+
+A resposta da API contém dados semelhantes a estes:
+
+
+json
+{
+  "userId": 1,
+  "id": 1,
+  "title": "Título de exemplo",
+  "body": "Conteúdo de exemplo"
+}
+Como o JSON foi convertido para um dicionário Python, você pode acessar os valores pelas chaves, como faria com qualquer dicionário.
+
+Por exemplo:
+
+
+python
+print(dados["title"])
+Esse comando exibe somente o título da publicação.
+
+Observação: os textos acima são ilustrativos; o exemplo utiliza uma API pública de testes que retorna dados fictícios.
