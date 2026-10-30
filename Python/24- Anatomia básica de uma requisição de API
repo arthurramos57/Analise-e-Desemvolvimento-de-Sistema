@@ -1,0 +1,405 @@
+- Anatomia básica de uma requisição de API com Python (requests)
+
+Nesta aula, aprendemos como fazer requisições a uma API usando a biblioteca requests do Python. O objetivo é 
+entender como acessar informações, enviar dados, atualizar recursos e excluir informações de um servidor.
+
+Vamos por partes, com explicações e exemplos práticos.
+
+- O que é uma API?
+
+API (Application Programming Interface) é uma interface que permite que dois sistemas diferentes se comuniquem.
+
+Imagine que você tem um aplicativo de previsão do tempo. Ele precisa buscar informações sobre temperatura, chuva e umidade.
+
+Em vez de descobrir essas informações sozinho, o aplicativo faz uma requisição a uma API, que busca os dados em um servidor e devolve uma resposta.
+
+Exemplo do funcionamento:
+
+Você solicita a previsão do tempo para São Paulo.
+
+O Python envia uma requisição à API.
+
+A API processa o pedido.
+
+O servidor devolve os dados.
+
+O Python recebe e utiliza essas informações.
+
+Para trabalhar com APIs no Python, podemos utilizar a biblioteca requests.
+
+
+python
+import requests
+
+resposta = requests.get("https://api.github.com")
+
+print(resposta.status_code)
+print(resposta.json())
+import requests: importa a biblioteca.
+
+requests.get(): faz uma requisição para buscar informações.
+
+status_code: mostra o código de resposta do servidor.
+
+json(): transforma a resposta JSON em uma estrutura de dados Python.
+
+- O que são URLs?
+
+URL (Uniform Resource Locator) é o endereço utilizado para localizar um recurso na internet.
+
+Pense em um prédio comercial:
+
+O prédio representa o servidor.
+
+Cada sala representa um recurso.
+
+O endereço completo permite encontrar uma sala específica.
+
+Nas APIs, a URL indica qual recurso queremos acessar.
+
+Exemplo:
+
+
+python
+https://api.exemplo.com/usuarios/10
+Nesse exemplo, queremos acessar o usuário de número 10.
+
+A URL é importante porque informa ao servidor onde está o recurso com o qual desejamos interagir.
+
+- Os cinco componentes principais de uma URL
+
+Uma URL pode ser dividida em cinco componentes principais:
+
+Exemplo de URL
+
+https
+
+- Protocolo
+
+api.exemplo.com
+
+- Domínio
+
+:443
+
+- Porta (quando especificada)
+
+/usuarios/10
+
+- Caminho (path)
+
+?ativo=true
+
+- Query parameters
+
+Vamos entender cada um:
+
+- Protocolo
+
+Define como a comunicação será realizada.
+
+Os mais comuns são:
+
+http: protocolo de comunicação.
+
+https: versão segura do HTTP, com criptografia.
+
+- Domínio
+
+É o endereço do servidor onde a API está hospedada.
+
+Exemplo:
+
+
+python
+api.exemplo.com
+É como o endereço de um prédio.
+
+- Porta
+
+É o ponto de entrada utilizado para estabelecer a comunicação com o servidor.
+
+As portas padrão mais comuns são:
+
+80: HTTP.
+
+443: HTTPS.
+
+Normalmente, não precisamos informar essas portas na URL, pois o navegador ou a biblioteca utiliza a porta padrão automaticamente.
+
+- Caminho (Path)
+
+Indica exatamente qual recurso queremos acessar dentro da API.
+
+Exemplo:
+
+
+python
+/usuarios/10
+Nesse caso, queremos acessar o usuário de ID 10.
+
+- Query Parameters
+
+São parâmetros adicionais enviados na URL para filtrar ou personalizar uma consulta.
+
+Exemplo:
+
+
+python
+https://api.exemplo.com/usuarios?cidade=Itatiba
+Nesse caso, estamos solicitando os usuários que pertencem à cidade de Itatiba.
+
+Perceba que:
+
+cidade é a chave.
+
+Itatiba é o valor.
+
+Os parâmetros começam depois do símbolo ?.
+
+Quando temos mais de um parâmetro, utilizamos &:
+
+
+python
+https://api.exemplo.com/usuarios?cidade=Itatiba&ativo=true
+4. Como adicionar Query Parameters com requests?
+Podemos adicionar parâmetros diretamente na URL, mas existe uma maneira mais organizada usando o argumento params.
+
+Exemplo 1 – Colocando os parâmetros diretamente na URL:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios?cidade=Itatiba"
+
+resposta = requests.get(url)
+Funciona, mas pode ficar complicado quando temos muitos parâmetros.
+
+Exemplo 2 – Utilizando params (recomendado):
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios"
+
+parametros = {
+    "cidade": "Itatiba",
+    "ativo": True
+}
+
+resposta = requests.get(url, params=parametros)
+Vamos entender:
+
+url: endereço da API.
+
+parametros: dicionário com as informações que queremos enviar.
+
+params=parametros: informa à biblioteca que esses dados devem ser enviados como parâmetros da URL.
+
+A biblioteca monta a URL automaticamente.
+
+O resultado será equivalente a:
+
+
+text
+https://api.exemplo.com/usuarios?cidade=Itatiba&ativo=True
+Por que usar params?
+
+Porque o código fica mais organizado, fácil de entender e mais simples de modificar.
+
+- Verbos HTTP: GET, POST, PUT e DELETE
+
+Os verbos HTTP indicam qual ação queremos realizar no servidor.
+
+Imagine uma caixa de correio:
+
+GET: consultar o que existe dentro dela.
+
+POST: colocar algo novo nela.
+
+PUT: substituir ou atualizar algo que já existe.
+
+DELETE: remover algo.
+
+Esses são quatro dos principais métodos utilizados em APIs REST.
+
+GET – Buscar informações
+Utilizamos GET quando queremos consultar dados de uma API.
+
+Exemplo:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios"
+
+resposta = requests.get(url)
+
+print(resposta.json())
+Nesse caso, estamos solicitando a lista de usuários.
+
+GET normalmente não modifica os dados do servidor.
+
+POST – Criar informações
+Utilizamos POST quando queremos enviar informações para criar um novo recurso.
+
+Exemplo:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios"
+
+dados = {
+    "nome": "Maria",
+    "idade": 25
+}
+
+resposta = requests.post(url, data=dados)
+
+print(resposta.status_code)
+O que acontece?
+
+Criamos um dicionário chamado dados.
+
+Informamos o nome e a idade.
+
+Utilizamos requests.post().
+
+Passamos os dados pelo argumento data.
+
+A API recebe as informações e pode criar um novo usuário.
+
+PUT – Atualizar informações
+Utilizamos PUT quando queremos atualizar um recurso existente.
+
+Exemplo:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios/10"
+
+dados = {
+    "nome": "Maria",
+    "idade": 26
+}
+
+resposta = requests.put(url, data=dados)
+
+print(resposta.status_code)
+Nesse exemplo, estamos enviando novos dados para atualizar o usuário de ID 10.
+
+Uma observação importante: PUT geralmente representa a substituição do recurso, enquanto PATCH é mais utilizado para atualizar apenas alguns campos.
+
+DELETE – Excluir informações
+Utilizamos DELETE quando queremos remover um recurso.
+
+Exemplo:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios/10"
+
+resposta = requests.delete(url)
+
+print(resposta.status_code)
+Nesse caso, estamos solicitando a exclusão do usuário de ID 10.
+
+Observe que não precisamos passar data ou params nesse exemplo.
+
+- Como enviar dados com POST e PUT usando requests?
+
+A biblioteca requests disponibiliza funções específicas para cada verbo HTTP:
+
+
+python
+requests.get()
+requests.post()
+requests.put()
+requests.delete()
+Uma informação importante é entender a diferença entre params e data.
+
+params: utilizado para enviar parâmetros de consulta na URL.
+
+Exemplo:
+
+
+python
+parametros = {
+    "cidade": "Itatiba"
+}
+
+requests.get(url, params=parametros)
+data: utilizado para enviar dados no corpo da requisição (body).
+
+Exemplo:
+
+
+python
+dados = {
+    "nome": "Maria",
+    "idade": 25
+}
+
+requests.post(url, data=dados)
+Uma observação: muitas APIs modernas trabalham com JSON no corpo da requisição. Nesse caso, podemos utilizar json em vez de data:
+
+
+python
+requests.post(url, json=dados)
+O próprio requests converte o dicionário para JSON e configura o cabeçalho apropriado.
+
+- Exemplo completo para fixar o conteúdo
+
+Imagine que temos uma API responsável por gerenciar usuários.
+
+Vamos visualizar como utilizar os quatro métodos:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios"
+
+- GET - Buscar usuários
+resposta = requests.get(url)
+
+print("Consulta:", resposta.status_code)
+
+
+- POST - Criar usuário
+dados = {
+    "nome": "João",
+    "idade": 30
+}
+
+resposta = requests.post(url, json=dados)
+
+print("Cadastro:", resposta.status_code)
+
+
+- PUT - Atualizar usuário
+url_usuario = "https://api.exemplo.com/usuarios/10"
+
+novos_dados = {
+    "nome": "João Silva",
+    "idade": 31
+}
+
+resposta = requests.put(url_usuario, json=novos_dados)
+
+print("Atualização:", resposta.status_code)
+
+
+- DELETE - Excluir usuário
+resposta = requests.delete(url_usuario)
+
+print("Exclusão:", resposta.status_code)
