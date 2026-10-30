@@ -1,0 +1,602 @@
+Cabeçalhos (Headers) e códigos de status HTTP com Python
+
+Nesta aula, vamos aprofundar nossos conhecimentos sobre APIs e aprender dois conceitos muito importantes: Headers (cabeçalhos) e Status Codes (códigos de status).
+
+Na aula anterior, aprendemos a fazer requisições utilizando GET, POST, PUT e DELETE.
+
+Agora, vamos aprender a:
+
+Enviar instruções adicionais ao servidor.
+
+Identificar se uma requisição foi processada corretamente.
+
+Entender as informações que o servidor devolve.
+
+Adicionar e consultar cabeçalhos usando a biblioteca requests.
+
+- O que são Headers e Status Codes?
+
+Quando fazemos uma requisição para uma API, existe uma comunicação entre dois lados:
+
+Cliente: é quem faz a solicitação. Pode ser um programa Python, aplicativo ou navegador.
+
+Servidor: recebe a solicitação, processa e devolve uma resposta.
+
+Nessa comunicação, temos duas informações importantes:
+
+Headers (cabeçalhos):
+
+São informações adicionais que acompanham a requisição ou resposta.
+
+Por exemplo:
+
+Qual formato de dados queremos receber.
+
+Qual formato de dados estamos enviando.
+
+Informações sobre o conteúdo da resposta.
+
+Status Codes (códigos de status):
+
+São números que indicam o resultado de uma requisição.
+
+Por exemplo:
+
+200: deu tudo certo.
+
+404: o recurso não foi encontrado.
+
+500: aconteceu um erro no servidor.
+
+Uma maneira simples de memorizar:
+
+Headers = informações e instruções adicionais.
+
+Status Codes = resultado da comunicação.
+
+- Anatomia de uma requisição e resposta HTTP
+
+Uma mensagem HTTP, tanto de requisição quanto de resposta, possui três partes principais:
+
+Start-line (linha inicial).
+
+Headers (cabeçalhos).
+
+Body (corpo da mensagem), quando presente.
+
+Vamos entender cada uma.
+
+- Start-line (linha inicial)
+
+É a primeira linha da mensagem.
+
+Na requisição, recebe o nome de request-line.
+
+Ela informa:
+
+O método HTTP utilizado.
+
+O caminho do recurso solicitado.
+
+A versão do protocolo HTTP.
+
+Exemplo:
+
+
+http
+GET /usuarios/10 HTTP/1.1
+Significado:
+
+GET: queremos buscar informações.
+
+/usuarios/10: queremos acessar o usuário de ID 10.
+
+HTTP/1.1: versão do protocolo HTTP.
+
+Na resposta, a primeira linha recebe o nome de status-line.
+
+Exemplo:
+
+
+http
+HTTP/1.1 200 OK
+Significado:
+
+HTTP/1.1: versão do protocolo.
+
+200: código de status.
+
+OK: mensagem indicando sucesso.
+
+- Headers (cabeçalhos)
+
+São informações adicionais sobre a requisição ou resposta.
+
+Exemplo:
+
+
+http
+Content-Type: application/json
+Accept: application/json
+Cada cabeçalho possui:
+
+Uma chave (nome do header).
+
+Dois-pontos (:).
+
+Um valor.
+
+Importante: os nomes dos headers não diferenciam letras maiúsculas de minúsculas.
+
+3. Body (corpo da mensagem)
+É onde podem estar os dados enviados ou recebidos.
+
+Por exemplo, quando queremos cadastrar um usuário, podemos enviar:
+
+
+json
+{
+    "nome": "Maria",
+    "idade": 25
+}
+Esse conteúdo é o corpo da requisição.
+
+Já quando buscamos informações, o servidor pode devolver um JSON contendo os dados solicitados.
+
+Exemplo de uma requisição completa:
+
+
+http
+POST /usuarios HTTP/1.1
+Host: api.exemplo.com
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nome": "Maria",
+    "idade": 25
+}
+Perceba que temos:
+
+Linha inicial: informa que queremos criar um usuário.
+
+Headers: informam detalhes sobre o conteúdo.
+
+Body: contém os dados da pessoa.
+
+- Códigos de status HTTP (Status Codes)
+
+Os códigos de status são números de três dígitos que indicam o resultado de uma requisição HTTP.
+
+Eles são divididos em cinco categorias.
+
+As cinco categorias de status HTTP
+1xx
+Informação
+
+A requisição foi recebida e o processamento continua.
+
+2xx
+Sucesso
+
+A requisição foi recebida e processada corretamente.
+
+3xx
+Redirecionamento
+
+É necessário realizar outra ação para concluir a solicitação.
+
+4xx
+Erro do cliente
+
+Existe algum problema na solicitação enviada pelo cliente.
+
+5xx
+Erro do servidor
+
+O servidor não conseguiu concluir uma requisição aparentemente válida.
+
+Os códigos mais importantes para memorizar
+200 – OK
+
+Sucesso
+Significa que a requisição foi processada corretamente.
+
+Exemplo:
+
+
+python
+import requests
+
+resposta = requests.get("https://api.github.com")
+
+print(resposta.status_code)
+Se o resultado for 200, a requisição foi bem-sucedida.
+
+201 – Created
+
+Sucesso
+Significa que um novo recurso foi criado.
+
+É muito comum em requisições POST.
+
+204 – No Content
+
+Sucesso
+Significa que a requisição foi processada, mas o servidor não devolveu conteúdo no corpo da resposta.
+
+É comum em algumas operações DELETE.
+
+400 – Bad Request
+
+Erro do cliente
+Significa que a requisição foi enviada com algum problema, como dados inválidos ou malformados.
+
+401 – Unauthorized
+
+Erro do cliente
+Significa que a requisição não possui autenticação válida.
+
+Por exemplo, quando precisamos informar uma credencial ou token de acesso.
+
+403 – Forbidden
+
+Erro do cliente
+Significa que o servidor entendeu a solicitação, mas não permite que o cliente acesse aquele recurso.
+
+404 – Not Found
+
+Erro do cliente
+Significa que o recurso solicitado não foi encontrado.
+
+Exemplo:
+
+
+python
+resposta = requests.get(
+    "https://api.exemplo.com/usuarios/99999"
+)
+
+print(resposta.status_code)
+Se o usuário não existir, a API poderá retornar 404.
+
+500 – Internal Server Error
+
+Erro do servidor
+Significa que ocorreu um erro interno no servidor ao processar a requisição.
+
+Pode ser causado por problemas no código, banco de dados ou infraestrutura do servidor.
+
+Dica: não precisa decorar todos os códigos HTTP agora. Comece pelos principais: 200, 201, 400, 401, 403, 404 e 500.
+
+Você pode consultar a lista completa na documentação da MDN:
+
+MDN – HTTP response status codes 
+
+- O que são Headers (cabeçalhos)?
+
+Os headers são informações adicionais que acompanham as requisições e respostas HTTP.
+
+Eles ajudam o cliente e o servidor a entender como os dados devem ser enviados e recebidos.
+
+Alguns exemplos importantes:
+
+Content-Type
+
+Informa qual é o formato do conteúdo que está sendo enviado ou devolvido.
+
+Exemplo:
+
+
+http
+Content-Type: application/json
+Significa que o conteúdo está no formato JSON.
+
+Accept
+
+Informa ao servidor qual formato de resposta o cliente aceita.
+
+Exemplo:
+
+
+http
+Accept: application/json
+Significa que o cliente deseja receber uma resposta em JSON.
+
+Authorization
+
+Utilizado para enviar informações de autenticação, como tokens.
+
+Exemplo:
+
+
+http
+Authorization: Bearer meu_token
+User-Agent
+
+Identifica o programa ou cliente que está realizando a requisição.
+
+Exemplo:
+
+
+http
+User-Agent: MeuProgramaPython
+
+- Negociação de conteúdo com Headers
+
+Esse conceito é chamado de Content Negotiation (negociação de conteúdo).
+
+Imagine que um cliente deseja receber informações de uma API no formato JSON.
+
+Ele envia o seguinte header:
+
+
+http
+Accept: application/json
+O servidor recebe essa informação e, se conseguir atender à solicitação, devolve uma resposta contendo:
+
+
+http
+Content-Type: application/json
+Observe a diferença:
+
+Accept: informa o formato que o cliente deseja receber.
+
+Content-Type: informa o formato do conteúdo que está sendo enviado.
+
+Vamos imaginar uma conversa:
+
+O cliente diz: "Servidor, quero receber os dados em JSON".
+
+O servidor processa a solicitação.
+
+O servidor responde: "Estou enviando os dados em JSON".
+
+Isso facilita a comunicação entre sistemas que trabalham com diferentes formatos de dados.
+
+- Como adicionar Headers com Python requests?
+
+A biblioteca requests permite adicionar cabeçalhos utilizando o argumento headers.
+
+Esse argumento recebe um dicionário com pares de chave e valor.
+
+Exemplo:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios"
+
+cabecalhos = {
+    "Accept": "application/json",
+    "User-Agent": "MeuProgramaPython"
+}
+
+resposta = requests.get(
+    url,
+    headers=cabecalhos
+)
+
+print(resposta.status_code)
+Vamos entender:
+
+cabecalhos: é um dicionário com os headers.
+
+Accept: informa que queremos receber JSON.
+
+User-Agent: identifica nosso programa.
+
+headers=cabecalhos: envia essas informações junto com a requisição.
+
+Podemos adicionar quantos cabeçalhos forem necessários.
+
+Exemplo com POST
+Também podemos enviar headers em uma requisição POST.
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/usuarios"
+
+cabecalhos = {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+}
+
+dados = {
+    "nome": "Maria",
+    "idade": 25
+}
+
+resposta = requests.post(
+    url,
+    json=dados,
+    headers=cabecalhos
+)
+
+print(resposta.status_code)
+Nesse exemplo:
+
+json=dados: envia os dados no formato JSON.
+
+headers=cabecalhos: envia os cabeçalhos.
+
+requests.post(): solicita a criação de um novo usuário.
+
+Observação: quando usamos json=dados, o próprio requests já configura o Content-Type: application/json. Portanto, não é obrigatório adicioná-lo manualmente nesse exemplo.
+
+- Como consultar Headers da resposta?
+
+Até agora aprendemos a enviar headers.
+
+Mas como podemos consultar os cabeçalhos que o servidor devolveu?
+
+É muito simples!
+
+O objeto de resposta possui o atributo .headers.
+
+Exemplo:
+
+
+python
+import requests
+
+resposta = requests.get(
+    "https://api.github.com"
+)
+
+print(resposta.headers)
+Esse comando apresenta os cabeçalhos recebidos do servidor.
+
+Podemos também consultar um header específico.
+
+Utilizando colchetes:
+
+
+python
+print(resposta.headers["Content-Type"])
+Utilizando o método .get():
+
+
+python
+print(resposta.headers.get("Content-Type"))
+Qual a diferença?
+
+Com colchetes, se a chave não existir, ocorre um KeyError.
+
+Com .get(), se a chave não existir, o resultado será None (ou outro valor padrão, se informado).
+
+Por isso, .get() costuma ser uma opção mais segura.
+
+Outro exemplo:
+
+
+python
+tipo = resposta.headers.get("Content-Type")
+
+print(tipo)
+Assim, conseguimos descobrir qual formato de conteúdo o servidor devolveu.
+
+- Como consultar Status Codes com requests?
+
+Cada resposta recebida possui o atributo .status_code.
+
+Exemplo:
+
+
+python
+import requests
+
+resposta = requests.get(
+    "https://api.github.com"
+)
+
+print(resposta.status_code)
+O resultado pode ser 200, indicando sucesso.
+
+Mas existe um detalhe interessante!
+
+O Python requests oferece um objeto chamado requests.codes, que permite consultar os códigos HTTP utilizando nomes em vez de decorar os números.
+
+Exemplo:
+
+
+python
+import requests
+
+print(requests.codes.ok)
+Resultado:
+
+
+text
+200
+Outro exemplo:
+
+
+python
+print(requests.codes.not_found)
+Resultado:
+
+
+text
+404
+E também:
+
+
+python
+print(requests.codes.internal_server_error)
+Resultado:
+
+
+text
+500
+Isso facilita bastante a leitura do código.
+
+Comparando as duas maneiras
+Podemos verificar uma resposta de duas formas:
+
+Utilizando o número:
+
+
+python
+if resposta.status_code == 200:
+    print("Requisição realizada com sucesso!")
+Utilizando requests.codes:
+
+
+python
+if resposta.status_code == requests.codes.ok:
+    print("Requisição realizada com sucesso!")
+As duas formas funcionam.
+
+A segunda pode deixar o código mais fácil de compreender, pois utiliza um nome que representa o significado do código HTTP.
+
+- Exemplo completo: requisição com Headers e Status Codes
+
+Agora vamos juntar os conceitos aprendidos.
+
+Imagine que queremos consultar uma API e verificar:
+
+Se a requisição foi realizada corretamente.
+
+Qual formato de resposta recebemos.
+
+Quais dados foram devolvidos.
+
+
+python
+import requests
+
+url = "https://api.github.com"
+
+# Definindo os headers
+cabecalhos = {
+    "Accept": "application/json",
+    "User-Agent": "MeuProgramaPython"
+}
+
+# Realizando a requisição
+resposta = requests.get(
+    url,
+    headers=cabecalhos
+)
+
+# Verificando o status code
+if resposta.status_code == requests.codes.ok:
+
+    print("Requisição realizada com sucesso!")
+
+    # Consultando o Content-Type
+    tipo = resposta.headers.get("Content-Type")
+
+    print("Tipo de conteúdo:", tipo)
+
+    # Exibindo os dados recebidos
+    print(resposta.json())
+
+else:
+
+    print("Ocorreu um erro!")
+    print("Código:", resposta.status_code)
