@@ -1,0 +1,321 @@
+Autenticação de API com Python (Requests)
+
+- O que é autenticação de API?
+
+A autenticação de API é um mecanismo utilizado para verificar a identidade de quem está fazendo uma requisição a uma API.
+
+Imagine que uma API seja uma porta de entrada para um sistema que contém informações privadas, como:
+
+Dados pessoais de usuários.
+
+Informações financeiras.
+
+Coleções particulares de músicas e álbuns.
+
+Dados de clientes.
+
+Para impedir que qualquer pessoa acesse essas informações, a API exige que o cliente se identifique antes de liberar o acesso.
+
+Exemplo prático:
+
+Imagine que você queira acessar uma API que contém seus álbuns particulares.
+
+Se tentar acessar sem se identificar, o servidor poderá retornar:
+
+
+python
+401 Unauthorized
+Isso significa que a requisição não apresentou uma autenticação válida.
+
+Quando você envia suas credenciais corretamente, o servidor reconhece sua identidade e permite o acesso.
+
+Uma resposta de sucesso pode ser:
+
+
+python
+200 OK
+Ou seja, a requisição foi processada com sucesso.
+
+Atenção: autenticação e autorização são conceitos diferentes:
+
+Autenticação: verifica quem você é.
+
+Autorização: verifica o que você tem permissão para acessar.
+
+- Principais métodos de autenticação
+
+Existem diferentes maneiras de autenticar uma requisição. As mais comuns são:
+
+- Autenticação Básica (Basic Authentication)
+
+É a forma mais simples de autenticação.
+
+Ela utiliza duas informações:
+
+Nome de usuário (username).
+
+Senha (password).
+
+Essas informações são combinadas e codificadas em Base64, sendo enviadas no cabeçalho HTTP chamado Authorization.
+
+Exemplo de como funciona:
+
+Imagine que temos:
+
+
+python
+username = "joao"
+password = "123456"
+O sistema combina essas informações:
+
+
+text
+joao:123456
+Depois, codifica essa combinação em Base64 e envia no cabeçalho da requisição.
+
+Como fazer isso com Python e Requests:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/albums"
+
+response = requests.get(
+    url,
+    auth=("joao", "123456")
+)
+
+print(response.status_code)
+print(response.json())
+Observe o argumento:
+
+
+python
+auth=("joao", "123456")
+O pacote requests faz automaticamente o trabalho de:
+
+Combinar usuário e senha.
+
+Codificar as informações em Base64.
+
+Criar o cabeçalho de autorização.
+
+Enviar a requisição.
+
+Vantagem: é simples de implementar.
+
+Desvantagem: não é um método seguro quando utilizado sem HTTPS.
+
+Isso acontece porque Base64 não é criptografia. É apenas uma codificação que pode ser facilmente revertida.
+
+Portanto, nunca considere uma senha protegida apenas porque foi codificada em Base64.
+
+- Autenticação por chave de API ou Token
+
+Nesse método, em vez de utilizar usuário e senha em cada requisição, utilizamos uma chave de identificação chamada API Key ou Token.
+
+Essa chave funciona como uma credencial que identifica a aplicação ou o usuário perante a API.
+
+Exemplo:
+
+Imagine que a API forneça a seguinte chave:
+
+
+python
+api_key = "abc123xyz789"
+Existem duas maneiras comuns de enviar essa chave.
+
+Primeira maneira: utilizando parâmetros na URL (params)
+
+Podemos adicionar o token diretamente à URL como um parâmetro de consulta.
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/albums"
+
+params = {
+    "access_token": "abc123xyz789"
+}
+
+response = requests.get(
+    url,
+    params=params
+)
+
+print(response.status_code)
+print(response.json())
+O Requests monta uma URL semelhante a esta:
+
+
+text
+https://api.exemplo.com/albums?access_token=abc123xyz789
+Observe que:
+
+? indica o início dos parâmetros.
+
+access_token é o nome do parâmetro.
+
+abc123xyz789 é o valor do token.
+
+Essa forma é simples, mas pode ser menos segura, pois os parâmetros da URL podem aparecer em históricos, registros de servidores e ferramentas de monitoramento.
+
+Segunda maneira: utilizando cabeçalhos HTTP (headers)
+
+Outra opção é enviar o token no cabeçalho da requisição.
+
+Essa costuma ser a maneira preferida.
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/albums"
+
+headers = {
+    "Authorization": "Bearer abc123xyz789"
+}
+
+response = requests.get(
+    url,
+    headers=headers
+)
+
+print(response.status_code)
+print(response.json())
+Vamos entender:
+
+
+python
+headers = {
+    "Authorization": "Bearer abc123xyz789"
+}
+headers: argumento utilizado para enviar cabeçalhos HTTP.
+
+Authorization: cabeçalho responsável pelas informações de autenticação.
+
+Bearer: indica o tipo de esquema de autenticação utilizado.
+
+abc123xyz789: representa o token de acesso.
+
+Importante: nem toda API utiliza Bearer. Algumas exigem outro formato, como X-API-Key. Sempre consulte a documentação da API.
+
+2.3. JWT (JSON Web Token)
+JWT significa JSON Web Token.
+
+É um padrão utilizado para transmitir informações entre sistemas de maneira estruturada e verificável.
+
+Ele é semelhante à autenticação por token, mas possui algumas características importantes:
+
+Pode conter informações sobre o usuário.
+
+Pode possuir prazo de validade.
+
+Pode ser assinado digitalmente para verificar sua integridade.
+
+Permite que o servidor valide o token sem necessariamente consultar o banco de dados a cada requisição.
+
+Um JWT normalmente possui três partes:
+
+
+text
+Header.Payload.Signature
+Entendendo cada parte:
+
+Header: informa o tipo do token e o algoritmo utilizado.
+
+Payload: contém informações chamadas de claims, como identificação do usuário e data de expiração.
+
+Signature: assinatura utilizada para verificar a integridade do token.
+
+Exemplo ilustrativo:
+
+
+text
+eyJhbGciOiJIUzI1NiJ9
+.
+eyJzdWIiOiJqb2FvIn0
+.
+assinatura_exemplo
+Atenção: o conteúdo de um JWT geralmente é codificado em Base64URL, não necessariamente criptografado. Portanto, não se deve colocar senhas ou informações secretas no payload.
+
+2.4. OAuth 2.0
+O OAuth 2.0 é uma estrutura de autorização que permite que uma aplicação acesse determinados recursos de outra aplicação sem precisar receber diretamente a senha do usuário.
+
+Exemplo prático:
+
+Imagine que você utilize um aplicativo para organizar suas fotos e queira permitir que ele acesse suas imagens armazenadas em outro serviço.
+
+Com OAuth 2.0:
+
+O aplicativo solicita permissão de acesso.
+
+Você é direcionado ao serviço responsável pelas fotos.
+
+Você realiza a autenticação nesse serviço.
+
+O serviço solicita sua autorização.
+
+Se você permitir, o aplicativo recebe um token de acesso.
+
+O aplicativo utiliza esse token para acessar os recursos autorizados.
+
+A grande vantagem é que você não precisa compartilhar sua senha com o aplicativo.
+
+O OAuth 2.0 permite controlar quais recursos podem ser acessados e quais permissões foram concedidas.
+
+Observação: OAuth 2.0 é principalmente um framework de autorização. Quando também precisamos confirmar a identidade do usuário, normalmente utilizamos OpenID Connect (OIDC).
+
+- Como utilizar autenticação com Python Requests?
+O pacote requests facilita bastante o trabalho com APIs.
+
+Vamos revisar os três exemplos mais importantes apresentados na aula.
+
+Exemplo 1 – Autenticação Básica
+
+python
+import requests
+
+url = "https://api.exemplo.com/albums"
+
+response = requests.get(
+    url,
+    auth=("usuario", "senha")
+)
+Aqui, utilizamos auth para informar usuário e senha.
+
+Exemplo 2 – Token na URL
+
+python
+import requests
+
+url = "https://api.exemplo.com/albums"
+
+params = {
+    "access_token": "meu_token"
+}
+
+response = requests.get(
+    url,
+    params=params
+)
+Aqui, utilizamos params para adicionar o token como parâmetro da URL.
+
+Exemplo 3 – Token no cabeçalho
+
+python
+import requests
+
+url = "https://api.exemplo.com/albums"
+
+headers = {
+    "Authorization": "Bearer meu_token"
+}
+
+response = requests.get(
+    url,
+    headers=headers
+)
+Aqui, utilizamos headers para enviar o token no cabeçalho HTTP.
