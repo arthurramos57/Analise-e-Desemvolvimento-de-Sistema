@@ -1,0 +1,481 @@
+Trabalhando com dados estruturados em APIs
+
+Nesta aula, aprendemos como trabalhar com dados estruturados utilizando JSON em requisições de APIs com Python, usando a biblioteca requests.
+
+A ideia principal é entender como receber, enviar, converter e interpretar informações em formatos diferentes, principalmente JSON.
+
+- Trabalhando com dados estruturados
+
+Quando trabalhamos com APIs, podemos receber informações de diferentes maneiras.
+
+Em exemplos mais simples, uma API pode retornar apenas um texto, como a letra de uma música.
+
+Exemplo de resposta em texto simples:
+
+
+python
+"Imagine there's no heaven..."
+Porém, imagine que queremos obter informações completas sobre um álbum musical. Nesse caso, apenas um texto não seria suficiente.
+
+Precisaríamos de várias informações, como:
+
+ID do álbum;
+
+Nome do álbum;
+
+Nome do artista;
+
+Ano de lançamento;
+
+Lista de músicas.
+
+Essas informações formam uma estrutura de dados.
+
+Dados estruturados são informações organizadas de maneira que seja mais fácil identificar, acessar e manipular cada elemento.
+
+- Estruturas de dados complexas
+
+Uma estrutura de dados complexa permite agrupar várias informações relacionadas dentro de um mesmo objeto.
+
+Por exemplo, imagine um álbum musical representado em Python:
+
+
+python
+album = {
+    "id": 101,
+    "titulo": "Midnights",
+    "artista": "Taylor Swift",
+    "ano": 2022,
+    "faixas": [
+        "Lavender Haze",
+        "Maroon",
+        "Anti-Hero"
+    ]
+}
+Nesse exemplo, temos um dicionário Python contendo várias informações sobre um álbum.
+
+Podemos acessar cada informação individualmente:
+
+
+python
+print(album["titulo"])
+Resultado:
+
+
+text
+Midnights
+Para acessar o artista:
+
+
+python
+print(album["artista"])
+Resultado:
+
+
+text
+Taylor Swift
+Para acessar a primeira música:
+
+
+python
+print(album["faixas"][0])
+Resultado:
+
+
+text
+Lavender Haze
+Perceba que uma estrutura pode conter outras estruturas dentro dela. Nesse exemplo, temos um dicionário que contém uma lista de músicas.
+
+- Estruturas complexas: JSON
+
+Para transmitir dados estruturados entre aplicações e APIs, utilizamos formatos específicos.
+
+Um dos mais utilizados é o JSON (JavaScript Object Notation).
+
+O JSON é um formato leve, simples e fácil de interpretar, tanto por pessoas quanto por computadores.
+
+Apesar de ter surgido a partir da notação de objetos do JavaScript, ele pode ser utilizado em diversas linguagens, como Python, Java, PHP e JavaScript.
+
+Exemplo de JSON:
+
+
+json
+{
+    "id": 101,
+    "titulo": "Midnights",
+    "artista": "Taylor Swift",
+    "ano": 2022,
+    "faixas": [
+        "Lavender Haze",
+        "Maroon",
+        "Anti-Hero"
+    ]
+}
+Observe que a estrutura é muito parecida com um dicionário Python.
+
+O JSON trabalha principalmente com:
+
+Objetos: conjuntos de informações organizadas em pares de chave e valor.
+
+Arrays: listas de informações.
+
+Strings: textos entre aspas duplas.
+
+Numbers: números inteiros ou decimais.
+
+Booleans: valores true ou false.
+
+Null: representa ausência de valor.
+
+Exemplo:
+
+
+json
+{
+    "nome": "Carlos",
+    "idade": 25,
+    "ativo": true,
+    "telefone": null,
+    "notas": [8, 9, 10]
+}
+Outros formatos de dados
+Além do JSON, existem outros formatos utilizados para transmitir informações:
+
+XML: organiza dados utilizando etiquetas.
+
+CSV: organiza dados em linhas e colunas, separados por delimitadores.
+
+YAML: utiliza uma estrutura mais simples e legível, muito comum em configurações.
+
+Esses formatos são conhecidos como Content Types, MIME Types ou Media Types.
+
+São nomes utilizados para identificar o formato do conteúdo transmitido.
+
+- De Python para JSON e de JSON para Python
+
+Quando trabalhamos com APIs, precisamos entender que Python e JSON possuem representações diferentes.
+
+Por isso, muitas vezes precisamos converter os dados antes de enviá-los ou depois de recebê-los.
+
+Existem dois conceitos fundamentais:
+
+Codificação (Encoding):
+
+É o processo de transformar um objeto Python em uma string JSON.
+
+Decodificação (Decoding):
+
+É o processo inverso: transformar uma string JSON em um objeto Python.
+
+Para realizar essas operações, utilizamos a biblioteca nativa json do Python.
+
+- Codificando com json.dumps()
+
+A função json.dumps() transforma um objeto Python em uma string JSON.
+
+Exemplo:
+
+
+python
+import json
+
+pessoa = {
+    "nome": "Ana",
+    "idade": 28,
+    "cidade": "São Paulo"
+}
+
+dados_json = json.dumps(pessoa)
+
+print(dados_json)
+print(type(dados_json))
+Resultado:
+
+
+text
+{"nome": "Ana", "idade": 28, "cidade": "São Paulo"}
+
+<class 'str'>
+Observe que o resultado é uma string (str), ou seja, o objeto Python foi convertido para texto no formato JSON.
+
+- Decodificando com json.loads()
+
+A função json.loads() realiza o processo contrário.
+
+Ela recebe uma string JSON e transforma em um objeto Python.
+
+Exemplo:
+
+
+python
+import json
+
+dados_json = '{"nome": "Ana", "idade": 28}'
+
+pessoa = json.loads(dados_json)
+
+print(pessoa)
+print(type(pessoa))
+Resultado:
+
+
+text
+{'nome': 'Ana', 'idade': 28}
+
+<class 'dict'>
+Agora temos um dicionário Python e podemos acessar seus valores:
+
+
+python
+print(pessoa["nome"])
+Resultado:
+
+
+text
+Ana
+Atenção: diferença entre dumps() e loads()
+Uma maneira fácil de memorizar:
+
+json.dumps(): Python → JSON (string).
+
+json.loads(): JSON (string) → Python.
+
+O nome dumps está relacionado a serializar os dados, enquanto loads está relacionado a carregar e interpretar uma string JSON.
+
+- Solicitando dados JSON com Python e requests
+
+Agora vamos utilizar a biblioteca requests, que permite realizar requisições HTTP para APIs.
+
+Primeiro, precisamos importar a biblioteca:
+
+
+python
+import requests
+Imagine que queremos consultar uma API que retorna informações sobre uma música.
+
+- Fazendo uma requisição GET
+
+Utilizamos o método get() para solicitar informações ao servidor.
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/musica"
+
+response = requests.get(url)
+
+print(response.text)
+O atributo response.text retorna o conteúdo da resposta como texto.
+
+Dependendo da API, o servidor pode retornar informações em texto simples.
+
+- Solicitando uma resposta em JSON
+
+Podemos informar ao servidor que preferimos receber os dados no formato JSON utilizando o cabeçalho HTTP Accept.
+
+Exemplo:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/musica"
+
+headers = {
+    "Accept": "application/json"
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.text)
+O cabeçalho:
+
+
+python
+"Accept": "application/json"
+significa que estamos informando ao servidor que aceitamos receber a resposta no formato JSON.
+
+É importante entender que o cabeçalho Accept indica o formato que desejamos receber. A API ainda precisa oferecer suporte a esse formato.
+
+- Convertendo a resposta JSON em Python
+
+Quando recebemos uma resposta JSON, podemos utilizar o método .json() do objeto response.
+
+Exemplo:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/musica"
+
+response = requests.get(url)
+
+dados = response.json()
+
+print(dados)
+A grande vantagem é que não precisamos utilizar manualmente json.loads().
+
+O próprio requests faz a decodificação da resposta para nós.
+
+Imagine que a API retornou:
+
+
+json
+{
+    "artist": "Adele",
+    "song": "Hello",
+    "year": 2015
+}
+Podemos acessar o artista diretamente:
+
+
+python
+print(dados["artist"])
+Resultado:
+
+
+text
+Adele
+Também podemos acessar o nome da música:
+
+
+python
+print(dados["song"])
+Resultado:
+
+
+text
+Hello
+Importante: não confunda response.text com response.json().
+
+response.text: retorna o conteúdo da resposta como texto.
+
+response.json(): interpreta o conteúdo JSON e transforma em uma estrutura Python.
+
+- Enviando dados JSON para uma API
+
+Até agora aprendemos a receber dados JSON. Mas também podemos enviar informações para uma API.
+
+Imagine que temos uma playlist e queremos enviá-la para um servidor.
+
+Primeiro, criamos um dicionário Python:
+
+
+python
+playlist = {
+    "nome": "Minhas favoritas",
+    "musicas": [
+        "Hello",
+        "Perfect",
+        "Someone Like You"
+    ],
+    "publica": True
+}
+Para enviar esses dados, podemos utilizar o método post() da biblioteca requests.
+
+- Enviando JSON com requests.post()
+
+Exemplo:
+
+
+python
+import requests
+
+url = "https://api.exemplo.com/playlists"
+
+playlist = {
+    "nome": "Minhas favoritas",
+    "musicas": [
+        "Hello",
+        "Perfect",
+        "Someone Like You"
+    ]
+}
+
+response = requests.post(
+    url,
+    json=playlist
+)
+
+print(response.status_code)
+print(response.text)
+Observe o argumento:
+
+
+python
+json=playlist
+Essa é uma das partes mais importantes da aula!
+
+Quando utilizamos o argumento json no requests.post(), a biblioteca realiza automaticamente duas tarefas:
+
+Converte o objeto Python para JSON.
+
+Configura o cabeçalho Content-Type como application/json.
+
+Isso significa que não precisamos converter manualmente o dicionário com json.dumps() nem configurar o cabeçalho.
+
+- Entendendo o Content-Type
+
+O cabeçalho Content-Type informa ao servidor qual é o formato dos dados que estamos enviando.
+
+Quando utilizamos:
+
+
+python
+requests.post(url, json=playlist)
+O próprio requests configura:
+
+
+text
+Content-Type: application/json
+Isso permite que o servidor entenda que o conteúdo enviado está no formato JSON.
+
+- Diferença entre enviar com json e data
+
+Essa diferença é muito importante:
+
+Utilizando json:
+
+
+python
+requests.post(url, json=playlist)
+Converte automaticamente o objeto Python para JSON.
+
+Define automaticamente o Content-Type como application/json.
+
+É a opção mais prática para enviar JSON.
+
+Utilizando data:
+
+
+python
+requests.post(url, data=playlist)
+Não realiza automaticamente a mesma conversão para JSON.
+
+É utilizado para enviar dados de outras maneiras, como formulários.
+
+Se a intenção for enviar JSON usando data, será necessário fazer a conversão e configurar o cabeçalho adequadamente.
+
+Exemplo de envio manual:
+
+
+python
+import requests
+import json
+
+headers = {
+    "Content-Type": "application/json"
+}
+
+dados = {
+    "nome": "Minha playlist"
+}
+
+response = requests.post(
+    url,
+    data=json.dumps(dados),
+    headers=headers
+)
+Perceba que, usando json=, todo esse trabalho é feito automaticamente.
