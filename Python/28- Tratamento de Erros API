@@ -1,0 +1,103 @@
+Tratamento de Erros
+
+Ao integrar sistemas com uma API web pela internet, imprevistos acontecem. Por isso, saber lidar com falhas de forma elegante é essencial para evitar comportamentos 
+inesperados ou bugs na aplicação.
+
+- A Importância dos Códigos de Status (Status Code)
+
+As APIs REST utilizam o código de status (status_code) na resposta para indicar se a requisição teve sucesso ou se ocorreu algum problema. As faixas de erro dividem-se 
+em duas categorias principais:
+
+Erros na faixa dos 400 (Erros do Cliente): Indicam que a requisição enviada não pôde ser processada (por exemplo, cabeçalhos incorretos ou 
+falhas de autenticação). Geralmente, o próprio cliente consegue resolver o problema ajustando a requisição.
+
+Erros na faixa dos 500 (Erros do Servidor): Indicam problemas no lado do servidor, que reconheceu a requisição, mas falhou ao processá-la 
+(geralmente por sobrecarga ou erros de configuração). O cliente não consegue consertá-los diretamente, mas precisa tratá-los no código para evitar falhas graves.
+
+- Exemplos Comuns de Códigos de Erro
+
+Erros 4xx (Cliente):
+
+401 (Unauthorized): Ocorre ao tentar acessar um recurso protegido sem a devida autenticação. A solução é adicionar as credenciais corretas à requisição.
+
+404 (Not Found): O recurso solicitado não existe no servidor (geralmente aponta para um erro de rota ou URL incorreta).
+
+429 (Too Many Requests): Ocorre quando o limite de requisições permitidas é ultrapassado. Exige a implementação de um limitador de taxa (rate limiter) para espaçar as chamadas no tempo.
+
+Erros 5xx (Servidor):
+
+500 (Internal Server Error): Um erro genérico que sinaliza que algo deu errado internamente no servidor.
+
+502 e 504: Erros comuns relacionados a falhas na infraestrutura de rede ou portas de comunicação do servidor.
+
+- Como Tratar Erros na Prática
+
+Abordar o tratamento de erros apenas verificando o código de status é insuficiente, pois problemas de rede podem impedir que a requisição 
+sequer chegue ao servidor (caso em que não haverá resposta com código de status).
+
+Para um tratamento robusto usando a biblioteca requests do Python, devemos combinar duas estratégias:
+
+Utilizar blocos try/except para capturar exceções de conexão (como ConnectionError), que ocorrem antes mesmo de recebermos uma resposta.
+
+Tratar os códigos de status de erro HTTP retornados pelo servidor.
+
+- O Recurso raise_for_status()
+
+A biblioteca requests oferece uma função prática chamada raise_for_status().
+Quando chamada logo após o envio da requisição, ela verifica automaticamente se a resposta possui um código de status de erro 
+(4xx ou 5xx). Caso positivo, ela levanta um HTTPError de forma automática, permitindo que o desenvolvedor capture e trate esses erros de 
+maneira limpa logo após verificar eventuais falhas de conexão.
+
+Exemplo erros de solicitação
+
+- ConnectionError
+
+from requests.exceptions import ConnectionError
+
+url ="http://wronghost:3000/albums"
+
+try: 
+    r = requests.get(url) 
+    print(r.status_code)
+except ConnectionError as conn_err: 
+    print(f'Connection Error! {conn_err}.')
+
+-HTTPError
+
+from requests.exceptions import HTTPError
+
+url ="http://localhost:3000/albums/"
+try: 
+    r = requests.get(url) 
+
+    r.raise_for_status()
+    print(r.status_code)
+
+except HTTPError as http_err:
+    print(f'HTTP error occurred: {http_err}')
+
+
+Exemplo de API limites de taxa
+
+while True:
+    params = {'page': page_number, 'per_page': 500}
+    response = requests.get('http://localhost:3000/tracks', params=params, headers=headers)
+    response.raise_for_status()
+    response_data = response.json()
+    
+    print(f'Fetching tracks page {page_number}')
+
+    if len(response_data['results']) == 0:
+        break
+
+    for track in response_data['results']:
+        if(track['Length'] > longestTrackLength):
+            longestTrackLength = track['Length']
+            longestTrackTitle = track['Name']
+
+    page_number = page_number + 1
+    
+    
+    time.sleep(3)
+
+print('The longest track in my music library is: ' + longestTrackTitle)
