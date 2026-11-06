@@ -1,0 +1,31 @@
+- O que é o JavaScript?
+
+Criação: Em 1995, por Brendan Eich.
+
+Objetivo Inicial: Tornar as páginas da web (que eram apenas estáticas) mais interativas e dinâmicas.
+
+Status Atual: É suportado por todos os navegadores e é a linguagem essencial para a interação do usuário com aplicações web.
+
+- Front-end vs. Back-end
+
+O desenvolvimento web divide-se em duas grandes frentes, e o JavaScript atua em ambas:
+
+Front-end (A Interface / O Garçom):
+
+É tudo o que é exibido na tela do computador ou celular e com o qual o usuário interage diretamente (botões, textos, vídeos, animações).
+
+Analogia: É como o garçom que anota o seu pedido e entrega a refeição na mesa.
+
+Back-end (Os Bastidores / A Cozinha):
+
+É a parte responsável por receber as solicitações do front-end, buscar os dados armazenados, processar as informações e devolvê-las.
+
+Analogia: É a cozinha que recebe o pedido, prepara o prato e o envia de volta ao garçom.
+
+Exemplo prático (Login em rede social): O front-end coleta seus dados de acesso e os envia ao back-end. O back-end valida as
+credenciais e retorna as informações do seu perfil, que o front-end carrega e exibe para você.
+
+- A Grande Vantagem do JavaScript
+
+Hoje, o JavaScript é uma linguagem full-stack: ele é utilizado tanto no front-end quanto no back-end (com tecnologias como o Node.js). 
+Isso significa que aprender JavaScript capacita o desenvolvedor a atuar em todas as camadas de uma aplicação web!
