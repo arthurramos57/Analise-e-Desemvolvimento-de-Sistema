@@ -1,0 +1,36 @@
+- O que são Variáveis em JavaScript?
+
+Variáveis são espaços na memória do computador reservados para guardar dados. Pense nelas como caixas rotuladas 
+com uma etiqueta (o nome da variável) que armazenam um único valor por vez.
+
+- Como declarar e atribuir valoresPara criar uma variável em JavaScript, utilizamos a palavra-chave let, seguida pelo nome da variável, o operador de atribuição (=) 
+e o valor que deseja armazenar.JavaScriptlet roupa = 'camiseta';
+let: Informa ao computador que uma nova variável está sendo criada.roupa: É o nome da variável (a etiqueta da caixa).=: É o operador de atribuição que guarda o 
+valor.'camiseta': É o valor armazenado. Como é um texto, ele deve vir sempre entre aspas (simples ou duplas).
+
+- Regras e Boas Práticas para NomesPara nomear 
+variáveis corretamente, siga estas regras:Sem espaços: Não pode haver espaços entre as palavras (ex: comida favorita dá erro).Números: Não é permitido começar 
+o nome com um número, mas você pode usá-los no meio ou no fim (ex: comida1 funciona, mas 1comida não).Maiúsculas e minúsculas: O JavaScript diferencia letras 
+maiúsculas de minúsculas (Comida é diferente de comida).Padrão camelCase: É uma convenção onde a primeira palavra começa com letra minúscula e as seguintes 
+iniciam com letra maiúscula (ex: comidaFavorita, carroVermelho).
+
+- Como alterar (reatribuir) valoresAs variáveis guardam apenas um valor por vez. Se você quiser mudar o valor guardado, basta fazer uma nova atribuição sem 
+repetir a palavra let:JavaScriptlet comidaFavorita = 'Pizza'; comidaFavorita = 'Lasanha'; // O valor antigo 'Pizza' foi substituído por 'Lasanha'
+
+- Visualizando resultados no consolePara verificar o que está guardado dentro de uma variável, usamos o comando console.log():JavaScriptlet comidaFavorita = 'Pizza';
+console.log(comidaFavorita); // Exibe 'Pizza' no console do navegador
+
+- Diferenças entre let, var e constExistem três formas de declarar variáveis em JavaScript:let: Permite criar a variável e reatribuir novos valores a ela 
+quantas vezes precisar ao longo do código. É a forma mais recomendada atualmente.var: É uma forma mais antiga (anterior a 2015) que possui funcionamento 
+parecido com o let, mas hoje em dia é considerada uma boa prática evitar seu uso.const (Constante): Usada para valores fixos. Uma vez declarada com const, 
+o seu valor não pode mais ser alterado durante a execução do programa. Se tentar mudar, o programa gerará um erro.JavaScriptconst meuNome = 'Maria';
+meuNome = 'Aline'; // Erro! Não é possível alterar o valor de uma constante.
+
+Exemplo de Variável:
+
+let nome = 'Arthur';
+nome = 'Bruno';
+
+Exemplo de Constante:
+
+const cor = 'Verde';
