@@ -1,0 +1,44 @@
+- O que são Primitivos ?
+
+Os primitivos são os blocos de construção fundamentais no JavaScript. Eles servem para representar 
+informações do mundo real (como textos, números e estados) diretamente no código.
+
+- Os Principais Tipos Primitivos
+1- string (Textos)
+Representam sequências de caracteres, como palavras, frases ou senhas. Devem ser escritas sempre entre aspas simples (') ou duplas ("). Qualquer valor entre aspas é tratado como string.
+
+const login = 'Tryber';
+const cpf = '1234567890';
+
+2- number (Números)
+Representam números inteiros ou decimais (positivos ou negativos). O separador decimal obrigatório na programação é o ponto (.), e nunca a vírgula.
+
+let idade = 19;
+const pi = 3.14159;
+
+3- boolean (Booleanos)
+Representam uma lógica binária que assume apenas dois valores: verdadeiro (true) ou falso (false). São muito usados para verificar estados ou condições.
+
+let cadastroAtivo = true;
+let habilitado = false;
+
+4- null (Nulo)
+Indica um valor intencionalmente vazio. É a melhor prática utilizada quando sabemos que a variável precisará existir, mas ainda não possui um valor válido atribuído.
+
+let valorNulo = null;
+
+5- undefined (Indefinido)
+É atribuído automaticamente pelo JavaScript para variáveis que foram declaradas mas ainda não receberam nenhum valor, ou para variáveis que nunca foram declaradas. 
+Geralmente indica um comportamento inesperado ou erro no código.
+
+let variavelSemValor;
+console.log(typeof variavelSemValor); // undefined
+
+- Como descobrir o tipo de uma variável: typeof
+O operador typeof é utilizado antes do nome de uma variável ou dado para identificar e retornar o seu respectivo tipo primitivo em formato de texto.
+
+let nome = 'Tryber';
+let aprovado = true;
+
+console.log(typeof nome);     // Retorna: string
+console.log(typeof aprovado); // Retorna: boolean
