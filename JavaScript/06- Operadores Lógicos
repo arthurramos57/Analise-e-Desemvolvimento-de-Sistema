@@ -1,0 +1,39 @@
+- O que é um Operador Lógico?
+
+Os operadores lógicos são símbolos usados na programação para combinar ou inverter valores booleanos (true ou false). Eles permitem que nossos códigos tomem decisões mais complexas,
+avaliando múltiplas condições ao mesmo tempo, exatamente como fazemos no dia a dia.
+
+- Operador AND (&&) — "E"
+
+O operador AND (representado por &&) exige que todas as condições comparadas sejam verdadeiras. Se apenas uma delas for falsa, o resultado final será falso.
+
+Exemplo do Vinicius: Para ele ir à praia, precisa ser fim de semana E o dia precisa estar ensolarado.
+
+let ensolarado = true;
+let fimDeSemana = true;
+
+let vaiAPraia = ensolarado && fimDeSemana;
+console.log(vaiAPraia); // true (As duas condições são verdadeiras)
+
+- Operador OR (||) — "OU"
+
+O operador OR (representado por ||) exige que pelo menos uma das condições seja verdadeira. Ele só retorna falso se todas as condições envolvidas forem falsas.
+
+Exemplo do Vinicius: Para ir de carro, ele precisa ter gasolina OU ter dinheiro para abastecer (basta ter uma das duas opções).
+
+let gasolina = false;
+let dinheiro = true;
+
+let vaiAPraia = gasolina || dinheiro;
+console.log(vaiAPraia); // true (Pelo menos uma condição é verdadeira)
+
+- Operador NOT (!) — "NÃO" (Inversão)
+
+O operador NOT (representado por !) inverte o valor lógico de uma variável. Se algo é verdadeiro, ele vira falso; se é falso, vira verdadeiro.
+
+Exemplo do Vinicius: O carro não pode estar quebrado para ele conseguir viajar.
+
+let carroQuebrado = false; // O carro NÃO está quebrado
+
+let vaiAPraia = !carroQuebrado; 
+console.log(vaiAPraia); // true (Inverteu 'false' para 'true')
