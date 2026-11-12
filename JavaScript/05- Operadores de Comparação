@@ -1,0 +1,82 @@
+- O que são Operadores de Comparação?
+
+São pequenas expressões usadas para comparar dois valores. A estrutura básica segue sempre este formato:[valor] [operador de comparação] [valor]
+
+O resultado dessa comparação é sempre um valor booleano: true (verdadeiro) ou false (falso). Eles são fundamentais para que um programa tome decisões com base em diferentes cenários.
+
+- Operadores
+
+=== : Igualdade estrita (mesmo valor e mesmo tipo).
+
+!== : Diferença estrita (valores ou tipos diferentes).
+
+> : Maior que.
+
+< : Menor que.
+
+>= : Maior ou igual a.
+
+<= : Menor ou igual a.
+
+- Igualdade Estrita (===)
+
+Compara se dois valores são estritamente iguais.
+
+Regra de ouro: O operador === exige que os valores sejam do mesmo tipo primitivo (por exemplo, comparar uma string com outra string, ou um number com outro number).
+
+Exemplo:
+
+const cidade = 'Belo Horizonte';
+const verificaCidade = cidade === 'Belo Horizonte'; 
+console.log(verificaCidade); // true (mesmo valor e mesmo tipo)
+
+const idade = '45';
+const verificaIdade = idade === 45; 
+console.log(verificaIdade); // false (embora o número pareça igual, um é string e o outro é number)
+
+- Diferença Estrita (!==)
+
+Funciona como o oposto do operador ===. Ele verifica se dois valores são diferentes.
+
+Regra: Se os valores forem diferentes (considerando também o tipo primitivo), ele retorna true. Se forem iguais, retorna false.
+
+Exemplo:
+
+const nomeDoCachorro = 'Pipoca';
+const verificaNomeCachorro = nomeDoCachorro !== 'Pipoca'; 
+console.log(verificaNomeCachorro); // false (pois o nome é igual a 'Pipoca')
+
+- Maior que (>) e Menor que (<)
+
+Maior que (>): Verifica se o valor à esquerda é estritamente maior que o valor à direita.
+
+Menor que (<): Verifica se o valor à esquerda é estritamente menor que o valor à direita.
+
+Dica para lembrar: Pense no símbolo como o bico de um pássaro (> maior, < menor). O lado maior sempre aponta para o valor maior, e o bico fechado aponta para o menor.
+
+Exemplo:
+
+const classificacaoIndicativa = 14;
+const idadeDaPessoa = 15;
+
+const verificaIdadeMaior = idadeDaPessoa > classificacaoIndicativa; 
+console.log(verificaIdadeMaior); // true (15 é maior que 14)
+
+const verificaIdadeMenor = idadeDaPessoa < classificacaoIndicativa; 
+console.log(verificaIdadeMenor); // false (15 não é menor que 14)
+
+- Maior ou igual (>=) e Menor ou igual (<=)
+
+Maior ou igual (>=): Verifica se o valor da esquerda é maior ou igual ao da direita.
+
+Menor ou igual (<=): Verifica se o valor da esquerda é menor ou igual ao da direita.
+
+A lógica por trás desses operadores funciona como uma pergunta dividida em duas partes: se qualquer uma das condições for verdadeira (ser maior ou ser igual), o resultado geral será true.
+
+Exemplo:
+
+const idadeDaPessoa = 18;
+const idadeMaioridade = 18;
+
+const verificaIdadeMaiorOuIgual = idadeDaPessoa >= idadeMaioridade; 
+console.log(verificaIdadeMaiorOuIgual); // true (porque 18 é igual a 18)
