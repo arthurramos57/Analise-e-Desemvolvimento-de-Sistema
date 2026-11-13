@@ -1,0 +1,62 @@
+As estruturas condicionais permitem que o código tome decisões e execute caminhos diferentes com base em condições que 
+podem ser verdadeiras (true) ou falsas (false). É a forma como dizemos ao computador: "Se algo acontecer, faça isso; caso contrário, faça aquilo".
+
+Abaixo está o resumo completo de como funcionam os principais comandos no JavaScript.
+
+- O comando if (Se)
+
+O if é a base das condicionais. Ele avalia uma condição dentro de parênteses (). Se essa condição for verdadeira 
+(true), o código localizado dentro do seu escopo (o bloco delimitado por chaves {}) é executado. Se for falsa, o código é ignorado.
+
+Exemplo:
+
+const idade = 18;
+
+if (idade >= 18) {
+  console.log('Você é maior de idade!');
+}
+Escopo: É o bloco de código entre chaves {} que só é rodado se a condição do if for atendida.
+
+- O comando else (Se não)
+
+O else funciona como um complemento do if. Ele define um bloco de código alternativo que será executado obrigatoriamente quando a condição do if for falsa (false).
+
+Exemplo:
+
+const estaFrio = false;
+
+if (estaFrio) {
+  console.log('Saia com casaco.');
+} else {
+  console.log('Deixe o casaco em casa.');
+}
+
+- Encadeamento de Condicionais (else if)
+
+Quando você precisa verificar mais de duas condições em um único fluxo, utilizamos o else if (se não, se). 
+Você pode encadear quantos else if forem necessários para testar diferentes cenários em sequência.
+
+Exemplo com frutas:
+
+const frutaDisponivel = 'banana';
+
+if (frutaDisponivel === 'abacate') {
+  console.log('Vitamina de abacate saindo!');
+} else if (frutaDisponivel === 'banana') {
+  console.log('Vitamina de banana saindo!');
+} else {
+  console.log('Suco de ' + frutaDisponivel + ' saindo!');
+}
+Exemplo com notas escolares:
+
+const notaDaPessoaEstudante = 7.5;
+
+if (notaDaPessoaEstudante >= 8) {
+  console.log('Nota A');
+} else if (notaDaPessoaEstudante >= 6 && notaDaPessoaEstudante < 8) {
+  console.log('Nota B');
+} else if (notaDaPessoaEstudante >= 4 && notaDaPessoaEstudante < 6) {
+  console.log('Nota C');
+} else {
+  console.log('Nota D');
+}
