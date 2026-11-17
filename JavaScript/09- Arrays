@@ -1,0 +1,77 @@
+- O que são Variáveis Compostas e Arrays?
+
+Variável Simples: Armazena apenas um único valor por vez (ex: const nome = 'Fábio';).
+
+Variável Composta (Array): Uma lista que permite armazenar inúmeros valores dentro de uma única variável, separados por vírgulas e envolvidos por colchetes [].
+
+Exemplo:
+
+const alunosTurma1 = ['Fábio', 'Cristina', 'Jéssica'];
+const numerosSorteados = [39, 7, 2, 21, 6, 26];
+
+- Acessando valores pelo Índice (Index)
+
+Os itens de um array possuem posições numéricas chamadas de índices.
+
+Importante: O índice sempre começa a contar a partir do 0.
+
+Para acessar um item específico, usamos a estrutura: meuArray[indice].
+
+Exemplo:
+
+const pizzas = ['4 queijos', 'frango com catupiry', 'alho', 'chocolate', 'pepperoni'];
+
+console.log(pizzas[1]); // Retorna: 'frango com catupiry' (posição 1)
+console.log(pizzas[3]); // Retorna: 'chocolate' (posição 3)
+
+- Adicionando valores a um Array
+
+Existem duas formas principais de adicionar novos elementos a uma lista existente:
+
+- Usando o próximo índice disponível
+
+Você calcula manualmente qual é a próxima posição livre e atribui o valor.
+
+const listaDeCompras = ['arroz', 'feijão', 'ovo'];
+listaDeCompras[3] = 'farofa'; // O índice 3 é o próximo disponível
+console.log(listaDeCompras); // ['arroz', 'feijão', 'ovo', 'farofa']
+
+- Usando a função .push() (Mais prática)
+
+Adiciona o valor automaticamente ao final do array, sem que você precise saber o número do último índice.
+
+const listaCompras = ['arroz', 'feijão', 'ovo'];
+listaCompras.push('farofa');
+console.log(listaCompras); // ['arroz', 'feijão', 'ovo', 'farofa']
+
+- Substituindo um item em um Array
+
+Se você precisar alterar um valor que já está na lista sem reescrevê-la inteira, basta descobrir o índice do item indesejado e atribuir um novo valor a ele (meuArray[indice] = novoValor).
+
+Exemplo:
+
+const ingredientes = ['arroz', 'batata', 'cenoura', 'sal', 'pimenta do reino'];
+
+// Substituindo 'cenoura' (índice 2) por 'suco'
+ingredientes[2] = 'suco';
+
+console.log(ingredientes); // ['arroz', 'batata', 'suco', 'sal', 'pimenta do reino']
+
+- Recuperando o tamanho de um Array (.length)
+
+A propriedade .length retorna o comprimento (número total de itens) de um array.
+
+Exemplo básico:
+
+JavaScript
+const convidados = ['Sheila', 'Cleyton', 'Leticia', 'Gisele'];
+console.log(convidados.length); // Retorna: 4
+Descobrindo o último item da lista dinamicamente:
+Como o índice começa em 0, o último elemento de uma lista sempre ocupa a posição tamanhoTotal - 1. Podemos usar o .length para encontrar isso automaticamente:
+
+const convidados = ['Sheila', 'Cleyton', 'Leticia', 'Gisele', 'Evelyn'];
+
+// Acessa o último convidado subtraindo 1 do comprimento total
+const ultimoConvidado = convidados[convidados.length - 1];
+
+console.log(ultimoConvidado); // Retorna: 'Evelyn'
