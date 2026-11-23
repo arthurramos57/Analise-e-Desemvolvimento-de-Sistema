@@ -1,0 +1,59 @@
+- Funções são blocos de código reutilizáveis que executam uma tarefa específica sempre que são chamados. 
+Em vez de copiar e colar o mesmo código várias vezes, você centraliza a lógica dentro de uma função e a reutiliza 
+quantas vezes precisar — mantendo o código mais limpo, organizado e fácil de manter.
+
+- Como declarar e invocar uma função
+
+Para criar (declarar) uma função em JavaScript, usamos a palavra-chave function, seguida do nome da função, parênteses () e um bloco de código entre chaves {}.
+
+function imprimeSaudacao() {
+  const saudacao = 'Olá, Gisele!';
+  return saudacao;
+}
+Declaração (function nome() { ... }): define o que a função faz, mas não executa o código sozinha.
+
+Invocação (nome()): é quando você chama a função para que o bloco interno seja executado.
+
+imprimeSaudacao(); // Executa a função
+console.log(imprimeSaudacao()); // Exibe o valor retornado no console
+
+- O papel do return
+
+Uma função pode retornar um valor para quem a chamou usando a palavra-chave return. Sem return, a função pode até executar ações internas, 
+mas o resultado da chamada será undefined (caso você não tenha um retorno explícito).
+
+Além de devolver o valor, o return encerra imediatamente a execução da função: qualquer linha escrita abaixo dele dentro da mesma função será ignorada.
+
+function testeReturn() {
+  console.log('Esta linha aparece!');
+  return 'Valor final';
+  console.log('Esta linha NÃO será executada.');
+}
+
+console.log(testeReturn());
+
+- Parâmetros e múltiplos valores
+
+Parâmetros são variáveis declaradas entre os parênteses da função para receber dados dinâmicos quando a 
+função é chamada (os valores passados na chamada são chamados de argumentos). Você pode usar zero, um ou 
+vários parâmetros — separados por vírgula — e a ordem deles importa.
+
+function imprimeSaudacao(nome, sobrenome, idade) {
+  const saudacao = 'Olá, ' + nome + ' ' + sobrenome + '!';
+  const exibeIdade = 'Você tem ' + idade + ' anos.';
+  return saudacao + ' ' + exibeIdade;
+}
+
+console.log(imprimeSaudacao('Gisele', 'Santin', 25));
+console.log(imprimeSaudacao('Alberto', 'Cavalcanti', 85));
+
+- Exemplo prático: calculando despesas
+
+Funções também funcionam muito bem para cálculos e dados numéricos (number), permitindo reaproveitar a mesma lógica com valores diferentes:
+
+function calculaDespesa(luz, internet) {
+  const despesaTotal = luz + internet;
+  return 'Esse mês, a despesa foi de: R$ ' + despesaTotal;
+}
+
+console.log(calculaDespesa(230, 125)); // Esse mês, a despesa foi de: R$ 355
